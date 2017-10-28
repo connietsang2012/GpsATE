@@ -1,0 +1,132 @@
+object frmClientLogin: TfrmClientLogin
+  Left = 499
+  Top = 355
+  BorderStyle = bsToolWindow
+  Caption = 'GPS'#29983#20135#21806#21518#25511#21046#31995#32479'--'#29992#25143#30331#24405
+  ClientHeight = 183
+  ClientWidth = 438
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = '@Arial Unicode MS'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 15
+  object Label1: TLabel
+    Left = 39
+    Top = 27
+    Width = 90
+    Height = 20
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = #29992#25143#21517':'
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = #38582#20070
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 39
+    Top = 77
+    Width = 90
+    Height = 20
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = #23494#30721':'
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = #38582#20070
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 319
+    Top = 32
+    Width = 112
+    Height = 113
+    AutoSize = False
+    Caption = #35831#36755#20837#30456#24212#30340#29992#25143#21517#21644#23494#30721','#36755#23436#23494#30721#21518#25353#22238#36710#38190#21363#21487#30331#24405
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clBlue
+    Font.Height = -19
+    Font.Name = #38582#20070
+    Font.Style = []
+    ParentFont = False
+    WordWrap = True
+  end
+  object Shape1: TShape
+    Left = 301
+    Top = 0
+    Width = 1
+    Height = 180
+    Pen.Color = clSilver
+  end
+  object Edt_UserName: TEdit
+    Left = 131
+    Top = 25
+    Width = 121
+    Height = 28
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnKeyPress = Edt_UserNameKeyPress
+  end
+  object Edt_UserPassword: TEdit
+    Left = 131
+    Top = 75
+    Width = 121
+    Height = 28
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    PasswordChar = '*'
+    TabOrder = 1
+    OnKeyPress = Edt_UserPasswordKeyPress
+  end
+  object Btn_Ok: TButton
+    Left = 24
+    Top = 128
+    Width = 115
+    Height = 33
+    Caption = #30830#23450'(&E)'
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = #38582#20070
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = Btn_OkClick
+  end
+  object Btn_Cancle: TButton
+    Left = 157
+    Top = 128
+    Width = 115
+    Height = 33
+    Caption = #21462#28040'(&C)'
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = #38582#20070
+    Font.Style = []
+    ModalResult = 2
+    ParentFont = False
+    TabOrder = 3
+  end
+end

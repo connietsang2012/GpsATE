@@ -1,0 +1,59 @@
+2013-7-18 存储过程ModelTestParamCopy增加alter table Gps_AutoTestItem disable trigger all
+USE [GPSTest]
+GO
+/****** Object:  StoredProcedure [dbo].[ModelTestParamCopy]    Script Date: 07/18/2013 11:19:55 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[ModelTestParamCopy]
+@cSrcModel 		varchar(50),
+@cDstModel 		varchar(50),
+@iRecordCount	integer output
+AS
+BEGIN
+	SET @iRecordCount=1
+	
+	SELECT * FROM Gps_AutoTestItem WHERE ItemModel=@cSrcModel	
+			    
+	IF(@@ROWCOUNT <1) 
+		SET @iRecordCount=0 
+	ELSE
+	BEGIN
+		alter table Gps_AutoTestItem disable trigger all
+		INSERT INTO Gps_AutoTestItem(ItemModel,ItemName) 
+			SELECT @cDstModel,ItemName 
+				FROM Gps_AutoTestItem WHERE ItemModel=@cSrcModel
+		alter table Gps_AutoTestItem enable  trigger all
+		
+		INSERT INTO Gps_AutoTest_SrcSubItem(ItemModel,ItemName) 
+			SELECT @cDstModel,ItemName 
+				FROM Gps_AutoTestItem WHERE ItemModel=@cSrcModel
+	END
+	
+	IF(@@ROWCOUNT <1) 
+		SET @iRecordCount=0 
+	ELSE
+	BEGIN
+		
+				
+		INSERT INTO Gps_AutoTestSubItem(ItemModel,ItemName,SubItemName,SendAtComm,
+										AtComm,ReturnText,ReSendNum,TestTimeOut,
+										Compare,CompareValue,CompareRemark,
+										Remark1,Remark2,Remark3,Remark4,Remark5) 
+			SELECT @cDstModel,ItemName,SubItemName,SendAtComm,
+					AtComm,ReturnText,ReSendNum,TestTimeOut,
+					Compare,CompareValue,CompareRemark,
+					Remark1,Remark2,Remark3,Remark4,Remark5 
+				FROM Gps_AutoTestSubItem WHERE ItemModel=@cSrcModel
+			
+	END
+	IF(@@ROWCOUNT <1) 
+		SET @iRecordCount=0
+	--ELSE
+	--BEGIN
+	--	INSERT INTO Gps_AutoTest_SrcSubItem(ItemModel,ItemName) 
+	--		SELECT @cDstModel,ItemName 
+	--			FROM Gps_AutoTestSubItem WHERE ItemModel=@cSrcModel	
+	--END 
+END
