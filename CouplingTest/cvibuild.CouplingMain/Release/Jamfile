@@ -1,0 +1,66 @@
+HDRS = 	"d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\activex\\word"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\activex\\excel"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\custctrl"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\custctrl\\custsupp"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\cvirtsup"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\datasock"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\daqUtil"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\printing"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\toolbox"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\reportgen"
+	"c:\\program files\\national instruments\\cvi2013\\toolslib\\localui"
+	"c:\\program files\\national instruments\\cvi2013\\instr"
+	"C:\\Program Files\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\Documents and Settings\\All Users\\Application Data\\National Instruments\\CVI2013\\instr"
+	"c:\\program files\\national instruments\\cvi2013\\include"
+	"C:\\Program Files\\National Instruments\\Shared\\CVI\\include"
+	"C:\\Documents and Settings\\All Users\\Application Data\\National Instruments\\CVI2013\\include"
+	"C:\\Documents and Settings\\All Users\\Application Data\\National Instruments\\CVI\\include"
+	"c:\\program files\\national instruments\\cvi2013\\include\\ansi"
+	"c:\\program files\\national instruments\\cvi2013\\include\\clang\\2.9"
+	"C:\\Program Files\\IVI\\Include"
+	"C:\\Program Files\\VISA\\winnt\\include"
+	"c:\\program files\\national instruments\\cvi2013\\sdk\\include"
+	"c:\\Program Files\\National Instruments\\CVI2013\\bin"
+	"c:\\Documents and Settings\\All Users\\Application Data\\National Instruments\\CVI2013\\bin"
+	"c:\\Program Files\\National Instruments\\Shared\\CVI\\Bin"
+	"d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\WinNT\\INI"
+	"d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\WinNT\\AGE1960"
+	;
+include Jamfile_instr ;
+LOCATE on "age1960.h" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116" ;
+LOCATE on "brom.h" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116" ;
+LOCATE on "com_enum.h" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116" ;
+LOCATE on "CommonFunc.h" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116" ;
+LOCATE on "CommonFunction.c" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116" ;
+LOCATE on "CouplingMain.c" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116" ;
+LOCATE on "CouplingMain.h" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116" ;
+LOCATE on "meta.h" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116" ;
+Object "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CommonFunction.obj" : "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\CommonFunction.c" ;
+FILENUM on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CommonFunction.obj" = 1 ;
+DEFPROTS on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CommonFunction.obj" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CommonFunction.obj.cvidefprots" ;
+OUTFILE on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CommonFunction.obj" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CommonFunction.obj.out" ;
+PrjObjects += "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CommonFunction.obj" ;
+Object "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.obj" : "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\CouplingMain.c" ;
+FILENUM on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.obj" = 2 ;
+DEFPROTS on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.obj" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.obj.cvidefprots" ;
+OUTFILE on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.obj" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.obj.out" ;
+PrjObjects += "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.obj" ;
+Object "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\inifile.obj" : "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\WinNT\\INI\\inifile.c" ;
+FILENUM on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\inifile.obj" = 3 ;
+DEFPROTS on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\inifile.obj" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\inifile.obj.cvidefprots" ;
+OUTFILE on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\inifile.obj" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\inifile.obj.out" ;
+InstrObjects += "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\inifile.obj" ;
+Object "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\age1960.obj" : "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\WinNT\\AGE1960\\age1960.c" ;
+FILENUM on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\age1960.obj" = 4 ;
+DEFPROTS on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\age1960.obj" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\age1960.obj.cvidefprots" ;
+OUTFILE on "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\age1960.obj" = "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\age1960.obj.out" ;
+InstrObjects += "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\age1960.obj" ;
+Object "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\resources.res" : "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\resources.in.rc" ;
+MainFromObjects "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.exe" : $(PrjObjects) $(InstrObjects) ;
+Depends "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.exe" : "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\link_options.txt" ;
+Depends "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.exe" : "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\resources.res" ;
+Depends all : "d:\\Jimi\\CouplingTest 20171116\\CouplingTest 20171116\\cvibuild.CouplingMain\\Release\\CouplingMain.exe" ;

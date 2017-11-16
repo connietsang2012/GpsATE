@@ -1,0 +1,118 @@
+<====IMEI已输入====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====进入测试模式====>
+成功
+<====开始获得终端软件版本号====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+	[VERSION]NT33_20_A1D_D23_R0_V08
+成功
+<====开始获得LINK====>
+AT^GT_CM=LINK
+
+LINK:6
+
+成功
+<====开始读取RF参数====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+成功
+<====开始耦合测试====>
+Sensor_OK
+
+
+AT+CFU
+N=0
+
+
+
+
+
+OK
+
+
+成功
+<====开始开网====>
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+成功
+<====开始拔打112====>
+ATD112;
+
+
+OK
+
+
+成功
+<====开始查询TXP值====>
+IDLE
+IDLE
+SREQ
+<====当前DB值:28.70====>
+<====耦合测试成功====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+成功
+<====写IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111119
+OK! 111111111111119
+
+成功
+<====读IMEI====>
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+成功
+<====清除最后一个点====>
+
+AT^GT_CM=CLEAR
+OK!
+
+成功
+<====开始恢复出厂设置====>
+
+AT^GT_CM=FACTORYALL
+
+
+
+
+
+
+
+
+
+
+
+
+OK!
+T
+成功
+he terminal will restart after 60s!
+
+NVRAM执行成功!
+

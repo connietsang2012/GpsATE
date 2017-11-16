@@ -1,0 +1,10555 @@
+<=======================Start Test=======================><=======================Start Test=======================><=======================Start Test=======================><=======================Start Test=======================>
+<=======================Start Test=======================>
+<=======================Start Test=======================>
+<=======================Start Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+ËbÒÙˇâEãEãΩå˛ˇˇâ}∏fãçj˛ˇˇfâM∂fãïv˛ˇˇfâU¥fãµh˛ˇˇfâu≤ãù|˛ˇˇâ$ãçl˛ˇˇâL$ãçà˛ˇˇâL$ãçÑ˛ˇˇâL$«D$
+ËbÒÙˇâEãEãΩå˛ˇˇâ}∏fãçj˛ˇˇfâM∂fãïv˛ˇˇfâU¥fãµh˛ˇˇfâu≤ãù|˛ˇˇâ$ãçl˛ˇˇâL$ãçà˛ˇˇâL$ãçÑ˛ˇˇâL$«D$
+ËbÒÙˇâEãEãΩå˛ˇˇâ}∏fãçj˛ˇˇfâM∂fãïv˛ˇˇfâU¥fãµh˛ˇˇfâu≤ãù|˛ˇˇâ$ãçl˛ˇˇâL$ãçà˛ˇˇâL$ãçÑ˛ˇˇâL$«D$
+ï4˚ˇˇâQãµP˚ˇˇâqãΩT˚ˇˇâ9«A®˜_
+ï4˚ˇˇâQãµP˚ˇˇâqãΩT˚ˇˇâ9«A®˜_
+ï4˚ˇˇâQãµP˚ˇˇâqãΩT˚ˇˇâ9«A®˜_
+ï4˚ˇˇâQãµP˚ˇˇâqãΩT˚ˇˇâ9«A®˜_
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+CONN
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+SREQ
+SREQ
+SREQ
+SREQ
+SREQ
+SREQ
+SREQ
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+SREQ
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+SREQ
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+SREQ
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+SREQ
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+SREQ
+<=======================Start°°Coupling Test=======================>
+IDLE
+SREQ
+<=======================Start°°Coupling Test=======================>
+CONN
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+<=======================Start°°Coupling Test=======================>
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+power on
+current project : NT33
+
+
+
+No SIM
+
+No SIM
+
+No SIM
+
+T^GT_CM=TEST
+
+TEST_OK
+
+
+OK
+
+
+
+ATD112;AT+CMGD=0,2
+
+
+ER
+ROR
+
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+power on
+cu
+rrent project : NT33
+
+
+
+
+No SIM
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+No SIM
+No SIM
+AT+cfun=0;
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+AT+CMGL=0
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+
+
+
+
+
+
+AT+CMGD=0,2
+
+
+OK
+
+<=======================Start°°Coupling Test=======================>
+
+
+
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+ensor_OK
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+power o
+n
+current project : NT33
+
+
+
+
+No SIM
+
+No SIM
+
+No SIM
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+Sensor_OK
+AT+CMGD=0,2
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+Sensor_OK
+Sensor_OK
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+Sensor_OK
+Sensor_OK
+AT+CFUN=0
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+
+
+
+AT^GT_CM=TEST
+T
+EST_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+T^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+AT+CMGL=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+
+AT+CMGD=0,2
+
+
+O
+K
+
+
+
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+
+
+OK
+
+
+
+Sensor_OK
+
+ATD112;
+
+
+
+OK
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+Sensor_OK
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+CONN
+
+
+
+
+NO CARRIER
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+CONN
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+
+
+NO CARRIER
+
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+
+Sensor_OK
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATH;
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+ensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+
+
+OK
+
+
+
+
+
+
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 1029 0002
+01: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 0C73
+Jump to BL
+
+
+
+
+
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+power 
+on
+current project : NT33
+
+
+
+
+No SIM
+
+No SIM
+
+No SIM
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+
+
+OK
+
+
+
+
+
+AT+CMGL=0
+
+
+OK
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+O
+K
+
+
+
+AT+CMGD=0,2
+
+
+OK
+
+
+
+ATD112;
+
+
+
+
+OK
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+
+
+OK
+
+
+
+
+
+Sensor_OK
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+OK
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+Sensor_OK
+Sensor_OK
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 1029 0002
+01: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 0C73
+Jump to BL
+
+
+
+
+
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+power on
+
+current project : NT33
+
+
+
+
+No SIM
+
+No SIM
+
+No SIM
+
+AT+CMGL=0
+
+
+O
+K
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+Sensor_OK
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+CONN
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+CONN
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CMGD=0,2
+
+
+OK
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+
+
+Sensor_OK
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+ATH;
+
+
+OK
+
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+ensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+
+ATH;
+
+
+
+
+OK
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+Sensor_OK
+
+ATH;
+
+
+
+
+
+
+
+OK
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+
+ATH;
+
+
+
+
+
+
+OK
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+Sensor_OK
+
+ATH;
+
+
+
+
+
+
+OK
+
+
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+
+Sensor_OK
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+ATH;
+
+
+OK
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+Sensor_OK
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+ø™ ºÒÓ∫œ≤‚ ‘
+AT^GT_CM=TEST
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+>>>>>>>>>>ø™ ºÒÓ∫œ≤‚ ‘
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+No SIM
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+
+NO CARRIER
+
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+
+ATH;
+
+
+
+
+
+
+
+OK
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+O
+K
+
+
+
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+power on
+c
+urrent project : NT33
+
+
+
+
+No SIM
+
+No SIM
+
+No SIM
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+OK
+
+Sensor_OK
+
+AT^GT_CM=IMEI,1,123456789012345
+
+
+OK! 123456789012345
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+
+
+
+OK
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+
+OK
+
+
+
+
+
+
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+
+OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+Ä˝ˇˇˇˇ
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+AT+CMGL=0
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+NO CAR
+RIER
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+
+
+
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+
+Sensor_OK
+
+IDLE
+IDLE
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+Sensor_OK
+ATH;
+
+
+
+
+
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+Sensor_OK
+ATH;
+
+
+
+
+
+
+
+OK
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+
+
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+
+
+
+
+OK
+
+
+
+
+Sensor_OK
+
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+pow
+er on
+current project : NT33
+
+
+
+
+No SIM
+
+No SIM
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+No SIM
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+
+
+
+
+
+
+OK
+
+
+
+AT+CMGL=0
+
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+ATH;
+
+
+
+OK
+
+
+
+AT^GT_CM=IMEI,1,111111111111111
+OK! 111111111111111
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+OK
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+
+NO CA
+RRIER
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+NO CA
+RRIER
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,333333333333333
+
+OK! 333333333333333
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111111
+OK! 111111
+<====IMEI–¥»Î≥…π¶====>
+111111111
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,444444444444444
+OK! 444444444444444
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+AT+CMGL=0
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,999999999999999
+
+OK! 999999999999999
+
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+ensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 1029 0002
+01: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 0C73
+Jump to BL
+
+
+
+
+
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+
+power on
+current project : NT33
+
+
+
+
+No SIM
+
+No SIM
+
+No SIM
+
+AT+CMGL=0
+
+
+
+OK
+
+
+
+
+AT+CMGD=0,2
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+F1: 0000 0000
+
+V0: 0000 0000 [0001]
+00: 1029 0002
+01: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 0C73
+Jump to BL
+
+
+
+
+
+
+
+
+
+OSø™∑≈∏¯APPµƒΩ”ø⁄ ˝¡ø:327,  µº ◊¢≤·µƒ ˝¡ø:327
+
+
+p
+ower on
+current project : NT33
+
+
+
+
+No SIM
+
+No SIM
+
+No SIM
+
+AT+CMGL=0
+
+
+OK
+
+<=======================Start°°Coupling Test=======================>
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+AT^GT_CM=TEST
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+AT+CFUN=0
+
+
+NO CARRIER
+
+
+
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,
+Error: length!
+
+
+
+
+
+
+
+
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T+CMGL=0
+
+
+OK
+
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+TEST_OK
+
+AT+CFUN=0
+
+
+
+OK
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+
+
+
+
+ATD112;
+
+
+ERRO
+R
+
+
+
+
+AT+CMGD=0,2
+
+
+OK
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+Sensor_OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+
+NO C
+ARRIER
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,777777777777777
+
+
+OK! 777777777777777
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,777777777777777
+
+OK! 777777777777777
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,777777777777777
+
+OK! 777777777777777
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,777777777777777
+
+OK! 777777777777777
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+TEST_
+OK
+
+AT^GT_CM=TEST
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=TEST
+AT+CFUN=0
+
+
+TEST_OK
+
+
+AT+CFUN=1
+
+
+ERROR
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111111
+OK! 111111111111111
+NVRAM÷¥––≥…π¶!
+
+<====IMEI–¥»Î≥…π¶====>
+AT^GT_CM=IMEI,1,111111111111111
+OK! 111111111111111
+NVRAM÷¥––≥…π¶!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+TEST_
+OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+AT+CFUN=1
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+OK
+
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,555555555555555
+OK! 555555555555555
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,666666666666666
+OK! 666666666666666
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,999999999999999
+OK! 999999999999999
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+
+OK
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,123456789111111
+OK! 123456789111111
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+
+OK
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111111
+OK! 111111111111111
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+O
+K
+
+
++EUSIM: 0
+
+
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+<====µ±«∞DB÷µ:99099995300309287253099237414233178112.00====>
+AT+CMGL=0
+
+
+OK
+
+
+
+
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
++EUSIM: 0
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:99099995300309287253099237414233178112.00====>
+AT+CMGD=0,2
+
+
+OK
+
+
+
+
+
+
+
+
+<====µ±«∞DB÷µ:99099995300309287253099237414233178112.00====>
+<====µ±«∞DB÷µ:99099995300309287253099237414233178112.00====>
+<====µ±«∞DB÷µ:99099995300309287253099237414233178112.00====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,222222222222222
+OK! 222222222222222
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
++EUS
+IM: 0
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:29.19====>
+
+
+
+
+
+<====µ±«∞DB÷µ:29.18====>
+<====µ±«∞DB÷µ:29.16====>
+<====µ±«∞DB÷µ:29.11====>
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+AT+CMGL=0
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+
+
+OK
+
+
+
+AT+CF
+UN=1
+
+
+
+
+OK
+
+
++EUS
+IM: 0
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:29.11====>
+
+
+
+
+
+<====µ±«∞DB÷µ:29.10====>
+<====µ±«∞DB÷µ:29.11====>
+<====µ±«∞DB÷µ:29.10====>
+Sensor_OK
+
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+Sensor_OK
+
+Sensor_OK
+
+AT+CMGD=0,2
+
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T+CMGL=0
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+<====µ±«∞DB÷µ:27.19====>
+<====µ±«∞DB÷µ:27.19====>
+<====µ±«∞DB÷µ:27.20====>
+<====µ±«∞DB÷µ:27.20====>
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111111
+OK! 111111111111111
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,222222222222222
+
+
+OK! 222222222222222
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,222222222222222
+
+
+OK! 222222222222222
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+
+OK
+
+
+<====IMEI–¥»Î≥…π¶====>
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+OK
+
+
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+OK
+
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,222222222222222
+OK! 222222222222222
+
+<====IMEI–¥»Î≥…π¶====>
+NVRAM÷¥––≥…π¶!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,333333333333333
+OK! 333333333333333
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+EPO_REQ
+Sensor_OK
+
+
+
+
+Sensor_OK
+
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+ERROR
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,222222222222222
+
+
+OK! 222222222222222
+
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+Sensor_OK
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+GPIO21 [9:8]:(drv1_value:c00100,c00300)
+GPIO
+20 [7:6]:(drv1_value:c00300,c003c0)
+
+power on
+current project : GT02F
+
+EX_HW_RESET
+
+
+
+
+
+
+No SIM
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:32.99====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,333333333333333
+OK! 333333333333333
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+PO_REQ
+
+Sensor_OK
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+OK
+
+
+AT+CFUN=0
+
+
+
+OK
+
+
+
+ATD112;
+
+
+ERROR
+
+
+
+
+
+
+
+
+ATD112;
+
+
+ERR
+OR
+
+
+
+
+Sensor_OK
+
+ATD112;
+
+
+ERR
+OR
+
+
+
+
+AT+CMGD=0,2
+
+
+OK
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+Sensor_OK
+Sensor_OK
+EPO_REQ
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+Sensor_OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+GPIO21 [9:8]:(drv1_value:c00100,c00300)
+GPIO20 [7:
+6]:(drv1_value:c00300,c003c0)
+
+power on
+current project : GT02F
+
+EX_HW_RESET
+
+
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+No SIM
+EPO_REQ
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+EINT:3,LEVEL:1,KEY_OFF
+ACC_L
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,333333333333333
+OK! 333333333333333
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,444444444444444
+
+
+OK! 444444444444444
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,444444444444444
+
+OK! 444444444444444
+
+NVRAM÷¥––≥…π¶!
+
+AT+CMGL=0
+
+
+OK
+
+
+<====IMEI–¥»Î≥…π¶====>
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:33.25====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+Sensor_OK
+Sensor_OK
+Sensor_OK
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ATH;
+
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,333333333333333
+
+O
+K! 333333333333333
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=IMEI,1,333333333333333
+
+OK! 333333333333333
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=IMEI,1,333333333333333
+
+OK! 333333333333333
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=IMEI,1,333333333333333
+
+OK! 333333333333333
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+
+NO CARRIER
+
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:40.37====>
+<====µ±«∞DB÷µ:40.37====>
+<====µ±«∞DB÷µ:40.37====>
+<====µ±«∞DB÷µ:40.37====>
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+OK
+
+
+AT+CFU
+N=1
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:40.37====>
+<====µ±«∞DB÷µ:40.37====>
+<====µ±«∞DB÷µ:40.36====>
+<====µ±«∞DB÷µ:40.37====>
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:31.72====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,333333333333333
+OK! 333333333333333
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+AT+CFUN=0
+
+
+
+OK
+
+
+AT+CFUN=1
+
+
+
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+SREQ
+IDLE
+IDLE
+SREQ
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+
+
+Sensor_OK
+
+AT+CFUN=1
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+<====µ±«∞DB÷µ:33.10====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+Sensor_OK
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+ATH;
+
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI,1,222222222222222
+
+OK! 222222222222222
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+
+OK
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+
+
+OK
+
+
+
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+GPIO21 [9:8]:(drv1_value:c00100,c00300)
+GPIO20 
+[7:6]:(drv1_value:c00300,c003c0)
+
+power on
+current project : GT02F
+
+EX_HW_RESET
+
+
+
+
+
+
+No SIM
+
+AT+CMGL=0
+
+
+OK
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+AT+CMGD=0,2
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+OK
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+OK
+
+
+
+
+
+O
+K
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+Sensor_OK
+
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====∞Ê±æ∫≈====>
+–&
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈====>
+–&
+
+<====∞Ê±æ∫≈====>
+–&
+AT^GT_CM=VERSION
+
+<====∞Ê±æ∫≈====>
+–&
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈====>
+–&
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+<====∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈====>
+
+<====∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSIO
+<====∞Ê±æ∫≈====>
+N]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+
+<====∞Ê±æ∫≈====>
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+
+<====∞Ê±æ∫≈====>
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈====>
+
+OK
+
+<====∞Ê±æ∫≈====>
+
+
+<====∞Ê±æ∫≈====>
+
+<====∞Ê±æ∫≈====>
+EPO_REQ
+
+<====∞Ê±æ∫≈====>
+EPO_REQ
+
+<====∞Ê±æ∫≈====>
+
+OK
+
+
+<====∞Ê±æ∫≈====>
+
+<====∞Ê±æ∫≈====>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====∞Ê±æ∫≈TEST_OK
+====>
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+OK
+
+
+AT+CFUN=0
+
+
+OK
+
+
+AT+CFUN=1
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+<====µ±«∞DB÷µ:31.68====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+OK
+
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+<====ø™ º–¥IMEI====>
+
+AT^GT_CM=IMEI,1,333333333333333
+OK! 333333333333333
+
+<====IMEI–¥»Î≥…π¶====>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+TEST_OK
+
+AT^GT_CM=VERSION
+[
+VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+AT^GT_CM=VERSION
+
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+Sensor_OK
+
+AT^GT_CM=VERSION
+[
+VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+AT^GT_CM=VERSION
+
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=VERSION
+[VERSION
+]GT02F_20_61DM2_B25E_R0_V02
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+Sensor_OK
+
+AT^GT_CM=TEST
+TEST_OK
+
+
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<=======================Start°°Coupling Test=======================>
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+AT^GT_CM=VERSION
+AT+CFUN=0
+
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+
+
+
+
+
+AT^GT_CM=VERSION
+AT+CFU
+N=0
+
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+
+
+AT+CFUN=0
+
+
+O
+K
+
+
+
+
+AT+CFUN=0
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+IDLE
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+Sensor_OK
+
+
+
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+T^GT_CM=TEST
+
+
+OK
+
+TEST_OK
+
+
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<=======================Start°°Coupling Test=======================>
+
+OK
+
+
+
+
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+
+OK
+
+
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<=======================Start°°Coupling Test=======================>
+Sensor_OK
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+AT+CFUN=0
+
+
+
+
+
+OK
+
+
+
+AT+CFUN=1
+
+
+
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+
+ATD112;
+
+
+OK
+
+
+IDLE
+<====µ±«∞DB÷µ:34.41====>
+<====µ±«∞DB÷µ:34.41====>
+<====µ±«∞DB÷µ:34.41====>
+<====µ±«∞DB÷µ:34.41====>
+<====ÒÓ∫œ≤‚ ‘ ß∞‹====>
+
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+TEST_OK
+
+
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+
+AT^GT_CM=LINK
+LINK:3
+
+
+AT^GT_CM=LINK
+
+LINK:3
+
+AT^GT_CM=LINK
+
+LINK:3
+
+AT^GT_CM=LINK
+L
+INK:3
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+AT^GT_CM=VERSION
+
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+AT^GT_CM=LINK
+
+LINK:3
+
+AT^GT_CM=LINK
+LINK:3
+
+
+AT^GT_CM=LINK
+LIN
+K:3
+
+AT^GT_CM=LINK
+
+LINK:3
+
+Sensor_OK
+
+
+OK
+
+
+
+
+
+O
+K
+
+
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+F1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+GPIO21 [9:8]:(drv1_value:c00100,c00300)
+G
+PIO20 [7:6]:(drv1_value:c00300,c003c0)
+
+power on
+current project : GT02F
+
+EX_HW_RESET
+
+
+
+
+
+
+No SIM
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:3
+
+
+
+AT^GT_CM=LINK
+
+LINK:3
+
+AT^GT_CM=LINK
+
+LINK:3
+
+AT^GT_CM=LINK
+
+LINK:3
+
+Sensor_OK
+
+AT+CMGL=0
+
+
+
+OK
+
+
+
+
+
+
+OK
+
+
+
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:3
+
+
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+<====∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:3
+
+
+
+AT^GT_CM=LINK
+
+LINK:3
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+AT^GT_CM=VERSION
+
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK
+AT^GT_CM=LINK
+LINK:3
+
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=LINK
+
+LINK:3
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=LINK
+
+LINK:3
+
+Sensor_OK
+
+AT^GT_CM=LINK
+
+LINK:3
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK
+AT^GT_CM=LINK
+LINK:6
+
+	ªÒµ√LINK≥…π¶====>
+<====ø™ º∂¡»°RF≤Œ ˝
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+	∂¡»°RF≤Œ ˝≥…π¶====>
+<====ø™ ºÒÓ∫œ≤‚ ‘
+<=======================Start°°Coupling Test=======================>
+
+OK
+
+
+
+
+
+
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK
+AT^GT_CM=LINK
+LINK:6
+
+	ªÒµ√LINK≥…π¶====>
+<====ø™ º∂¡»°RF≤Œ ˝
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+	∂¡»°RF≤Œ ˝≥…π¶====>
+<====ø™ ºÒÓ∫œ≤‚ ‘
+<=======================Start°°Coupling Test=======================>
+
+
+
+Sensor_OK
+
+
+O
+K
+
+
+
+
+
+OK
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+Sensor_OK
+
+
+O
+K
+
+
+
+Sensor_OK
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+<====IMEI“— ‰»Î====>
+
+1: 0000 0000
+V0: 0000 0000 [0001]
+00: 0000 0000
+U0: 0000 0001 [0000]
+G0: 0002 0000 [0000]
+T0: 0000 00BB
+Jump to BL
+
+
+
+
+
+
+
+
+
+GPIO21 [9:8]:(drv1_value:c00100,c00300)
+G
+PIO20 [7:6]:(drv1_value:c00300,c003c0)
+
+power on
+current project : GT02F
+
+EX_HW_RESET
+
+
+
+
+
+
+No SIM
+
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK
+AT^GT_CM=LINK
+LINK:6
+
+	ªÒµ√LINK≥…π¶====>
+<====ø™ º∂¡»°RF≤Œ ˝
+EPO_REQ
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+	∂¡»°RF≤Œ ˝≥…π¶====>
+<====ø™ ºÒÓ∫œ≤‚ ‘
+<=======================Start°°Coupling Test=======================>
+
+
+
+
+EINT:3,LEVEL:1,KEY_OFF
+
+ACC_L
+
+Sensor_OK
+
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK
+AT^GT_CM=LINK
+LINK:6
+
+	ªÒµ√LINK≥…π¶====>
+<====ø™ º∂¡»°RF≤Œ ˝
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+	∂¡»°RF≤Œ ˝≥…π¶====>
+<====ø™ ºÒÓ∫œ≤‚ ‘
+<=======================Start°°Coupling Test=======================>
+
+
+
+AT+CMGL=0
+
+
+
+OK
+
+
+
+
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK
+AT^GT_CM=LINK
+LINK:6
+
+	ªÒµ√LINK≥…π¶====>
+<====ø™ º∂¡»°RF≤Œ ˝
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+	∂¡»°RF≤Œ ˝≥…π¶====>
+<====ø™ ºÒÓ∫œ≤‚ ‘
+<=======================Start°°Coupling Test=======================>
+
+
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK
+AT^GT_CM=LINK
+LINK:6
+
+	ªÒµ√LINK≥…π¶====>
+<====ø™ º∂¡»°RF≤Œ ˝
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+	∂¡»°RF≤Œ ˝≥…π¶====>
+<====ø™ ºÒÓ∫œ≤‚ ‘
+<=======================Start°°Coupling Test=======================>
+
+
+
+
+OK
+
+
+
+AT+CMGD=0,2
+
+
+
+OK
+
+
+
+
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+<====ø™ ºªÒµ√LINK
+AT^GT_CM=LINK
+LINK:6
+
+	ªÒµ√LINK≥…π¶====>
+<====ø™ º∂¡»°RF≤Œ ˝
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+	∂¡»°RF≤Œ ˝≥…π¶====>
+<====ø™ ºÒÓ∫œ≤‚ ‘
+<=======================Start°°Coupling Test=======================>
+
+
+OK
+
+
+
+
+
+
+
+O
+K
+
+
+
+
+O
+K
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+
+O
+K
+
+
+
+
+O
+K
+
+
+
+
+O
+K
+
+
+
+Sensor_OK
+
+
+O
+K
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+
+O
+K
+
+
+
+Sensor_OK
+
+EPO_REQ
+
+Sensor_OK
+
+Sensor_OK
+
+
+
+OK
+
+
+
+
+OK
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+
+
+OK
+
+
+
+
+OK
+
+
+
+
+Sensor_OK
+
+
+O
+K
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+
+O
+K
+
+
+
+
+O
+K
+
+
+
+
+O
+K
+
+
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+
+O
+K
+
+
+
+
+OK
+
+
+
+
+O
+K
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+Sensor_OK
+
+
+O
+K
+
+
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	∞Ê±æ∫≈[VERSION]GT02F_20_61DM2_B25E_R0_V02====>
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+
+
+OK
+
+
+
+
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	[VERSION]GT02F_20_61DM2_B25E_R0_V02
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+
+AT^GT_CM=VERSION
+[VERSION]GT02F_20_61DM2_B25E_R0_V02
+
+	[VERSION]GT02F_20_61DM2_B25E_R0_V02
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+
+
+
+AT+CMGL=0
+
+
+OK
+
+
+
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+<====IMEI“— ‰»Î====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+≥…π¶
+<====«Â≥˝◊Ó∫Û“ª∏ˆµ„====>
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+
+
+AT^GT_CM=VERSION
+
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+Sensor_OK
+
+Sensor_OK
+
+AT^GT_CM=VERSION
+
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+Sensor_OK
+
+AT^GT_CM=VERSION
+
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+	[VERSION]NT33_20_A1D_D23_R0_V08
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ ºø™Õ¯====>
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ º∞Œ¥Ú112====>
+ATD112;
+
+
+OK
+
+
+≥…π¶
+<====ø™ º≤È—ØTXP÷µ====>
+IDLE
+SREQ
+<====µ±«∞DB÷µ:28.83====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+≥…π¶
+<====–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111119
+
+OK! 111111111111119
+
+≥…π¶
+<====∂¡IMEI====>
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+	[VERSION]NT33_20_A1D_D23_R0_V08
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ ºø™Õ¯====>
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ º∞Œ¥Ú112====>
+ATD112;
+
+
+OK
+
+
+≥…π¶
+<====ø™ º≤È—ØTXP÷µ====>
+IDLE
+IDLE
+<====µ±«∞DB÷µ:28.61====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+≥…π¶
+<====–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111119
+OK! 111111111111119
+
+≥…π¶
+<====∂¡IMEI====>
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+NVRAM÷¥––≥…π¶!
+
+≥…π¶
+<====«Â≥˝◊Ó∫Û“ª∏ˆµ„====>
+AT^GT_CM=IMEI
+IMEI:111111111111119
+Sensor_OK
+
+AT^GT_CM=CLEAR
+OK!
+
+≥…π¶
+<====ø™ ºª÷∏¥≥ˆ≥ß…Ë÷√====>
+
+AT^GT_CM=FACTORYALL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK!
+The terminal will restart after 60s!
+
+≥…π¶
+
+
+
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+	[VERSION]NT33_20_A1D_D23_R0_V08
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ ºø™Õ¯====>
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ º∞Œ¥Ú112====>
+ATD112;
+
+
+OK
+
+
+≥…π¶
+<====ø™ º≤È—ØTXP÷µ====>
+CONN
+<====µ±«∞DB÷µ:29.05====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+≥…π¶
+<====–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111119
+
+
+OK! 111111111111119
+
+≥…π¶
+<====∂¡IMEI====>
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+NVRAM÷¥––≥…π¶!
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+NVRAM÷¥––≥…π¶!
+
+≥…π¶
+<====«Â≥˝◊Ó∫Û“ª∏ˆµ„====>
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+AT^GT_CM=CLEAR
+OK!
+
+≥…π¶
+<====ø™ ºª÷∏¥≥ˆ≥ß…Ë÷√====>
+
+AT^GT_CM=FACTORYALL
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK!
+The terminal will restart after 60s!
+
+≥…π¶
+
+
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+	[VERSION]NT33_20_A1D_D23_R0_V08
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ ºø™Õ¯====>
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ º∞Œ¥Ú112====>
+ATD112;
+
+
+OK
+
+
+≥…π¶
+<====ø™ º≤È—ØTXP÷µ====>
+IDLE
+IDLE
+<====µ±«∞DB÷µ:28.69====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+≥…π¶
+<====–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111119
+OK! 111111111111119
+
+≥…π¶
+<====∂¡IMEI====>
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+≥…π¶
+<====«Â≥˝◊Ó∫Û“ª∏ˆµ„====>
+
+AT^GT_CM=CLEAR
+OK!
+
+≥…π¶
+<====ø™ ºª÷∏¥≥ˆ≥ß…Ë÷√====>
+
+AT^GT_CM=FACTORYALL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK!
+
+≥…π¶
+The terminal will restart after 60s!
+
+NVRAM÷¥––≥…π¶!
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+	[VERSION]NT33_20_A1D_D23_R0_V08
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ ºø™Õ¯====>
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ º∞Œ¥Ú112====>
+ATD112;
+
+
+OK
+
+
+≥…π¶
+<====ø™ º≤È—ØTXP÷µ====>
+IDLE
+IDLE
+SREQ
+<====µ±«∞DB÷µ:28.81====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+≥…π¶
+<====–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111119
+OK! 111111111111119
+
+≥…π¶
+<====∂¡IMEI====>
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+≥…π¶
+<====«Â≥˝◊Ó∫Û“ª∏ˆµ„====>
+
+AT^GT_CM=CLEAR
+OK!
+
+≥…π¶
+<====ø™ ºª÷∏¥≥ˆ≥ß…Ë÷√====>
+
+AT^GT_CM=FACTORYALL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK!
+
+≥…π¶
+The terminal will restart after 60s!
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+	[VERSION]NT33_20_A1D_D23_R0_V08
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+Sensor_OK
+Sensor_OK
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ ºø™Õ¯====>
+AT+CFUN=1
+
+
+
+
+
+
+
+
+Sensor_OK
+
+
+
+
+O
+K
+
+
+
+Sensor_OK
+
+AT+CFUN=1
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ º∞Œ¥Ú112====>
+ATD112;
+
+
+OK
+
+
+≥…π¶
+<====ø™ º≤È—ØTXP÷µ====>
+IDLE
+IDLE
+<====µ±«∞DB÷µ:28.87====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+≥…π¶
+<====–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111119
+
+
+OK! 111111111111119
+
+≥…π¶
+<====∂¡IMEI====>
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+≥…π¶
+<====«Â≥˝◊Ó∫Û“ª∏ˆµ„====>
+
+AT^GT_CM=CLEAR
+OK!
+
+≥…π¶
+<====ø™ ºª÷∏¥≥ˆ≥ß…Ë÷√====>
+
+AT^GT_CM=FACTORYALL
+
+
+
+
+
+
+
+
+
+
+
+
+OK!
+
+≥…π¶
+The terminal will restart after 60s!
+
+NVRAM÷¥––≥…π¶!
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+Sensor_OK
+
+<====IMEI“— ‰»Î====>
+<====IMEI“— ‰»Î====>
+AT^GT_CM=TEST
+TEST_OK
+
+<====Ω¯»Î≤‚ ‘ƒ£ Ω====>
+≥…π¶
+<====ø™ ºªÒµ√÷’∂À»Ìº˛∞Ê±æ∫≈====>
+AT^GT_CM=VERSION
+[VERSION]NT33_20_A1D_D23_R0_V08
+
+	[VERSION]NT33_20_A1D_D23_R0_V08
+≥…π¶
+<====ø™ ºªÒµ√LINK====>
+AT^GT_CM=LINK
+LINK:6
+
+≥…π¶
+<====ø™ º∂¡»°RF≤Œ ˝====>
+AT^GT_CM=RF_BAR
+RF CODE PASS
+
+≥…π¶
+<====ø™ ºÒÓ∫œ≤‚ ‘====>
+
+AT+CFUN=0
+
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ ºø™Õ¯====>
+AT+CFUN=1
+
+
+
+
+
+
+
+
+
+O
+K
+
+
+
+AT+CFUN=1
+
+
+
+OK
+
+
+≥…π¶
+<====ø™ º∞Œ¥Ú112====>
+ATD112;
+
+
+OK
+
+
+≥…π¶
+<====ø™ º≤È—ØTXP÷µ====>
+IDLE
+IDLE
+<====µ±«∞DB÷µ:28.83====>
+<====ÒÓ∫œ≤‚ ‘≥…π¶====>
+
+NO CARRIER
+
+ATH;
+
+
+OK
+
+
+≥…π¶
+<====–¥IMEI====>
+
+AT^GT_CM=IMEI,1,111111111111119
+OK! 111111111111119
+
+≥…π¶
+<====∂¡IMEI====>
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+AT^GT_CM=IMEI
+IMEI:111111111111119
+
+≥…π¶
+<====«Â≥˝◊Ó∫Û“ª∏ˆµ„====>
+
+AT^GT_CM=CLEAR
+OK!
+
+≥…π¶
+<====ø™ ºª÷∏¥≥ˆ≥ß…Ë÷√====>
+
+AT^GT_CM=FACTORYALL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK!
+
+≥…π¶
+The terminal will restart after 60s!
+
+NVRAM÷¥––≥…π¶!
+
