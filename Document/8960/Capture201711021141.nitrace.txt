@@ -1,0 +1,525 @@
+1.  viPrintf (GPIB0::15::INSTR (0x01102538), "SYST:COMM:GPIB:DEB ON.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.031       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+2.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SYST:COMM:GPIB:DEB ON.", 22, 22)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.031       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+3.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:FUNC:CONN:TYPE AUTO.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.031       调用持续时间 00:00:00.015
+状态：0 (VI_SUCCESS)
+
+4.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:FUNC:CONN:TYPE A...", 25, 25)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.031       调用持续时间 00:00:00.015
+状态：0 (VI_SUCCESS)
+
+5.  viPrintf (GPIB0::15::INSTR (0x01102538), "SYST:BEEP:STAT OFF.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+6.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SYST:BEEP:STAT OFF.", 19, 19)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+7.  viPrintf (GPIB0::15::INSTR (0x01102538), "SET:CONT:OFF.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+8.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SET:CONT:OFF.", 13, 13)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+9.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:POW %f.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+10.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:POW -35.000000.", 20, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+11.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:MS:TADV 0.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+12.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:MS:TADV 0.", 15, 15)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+13.  viQueryf (GPIB0::15::INSTR (0x01102538), "SYST:SYNC?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.157
+状态：0 (VI_SUCCESS)
+
+14.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SYST:SYNC?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+15.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "+1.", 4096, 3)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.046       调用持续时间 00:00:00.157
+状态：0 (VI_SUCCESS)
+
+16.  viPrintf (GPIB0::15::INSTR (0x01102538), "*CLS.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.203       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+17.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "*CLS.", 5, 5)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.203       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+18.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:BIND?.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.203       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+19.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:BIND?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.203       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+20.  viRead (GPIB0::15::INSTR (0x01102538), "DCS.", 25000, NULL)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.203       调用持续时间 00:00:00.015
+状态：0 (VI_SUCCESS)
+
+21.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:TCH:BAND DCS.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+22.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:TCH:BAND DCS.", 18, 18)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+23.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:TCH:DCS %d.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+24.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:TCH:DCS 698.", 17, 17)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+25.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:MS:TXL %d.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+26.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:MS:TXL 0.", 14, 14)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+27.  viPrintf (GPIB0::15::INSTR (0x01102538), "SYST:MEAS:RES.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+28.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SYST:MEAS:RES.", 14, 14)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+29.  viPrintf (GPIB0::15::INSTR (0x01102538), "SYST:CORR:SFR  ...Z, 1842.40 MHZ.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+30.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SYST:CORR:SFR  1747.4...", 40, 40)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+31.  viPrintf (GPIB0::15::INSTR (0x01102538), "SYST:CORR:SGA -19.00,-19.00.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+32.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SYST:CORR:SGA -19.00,...", 28, 28)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.218       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+33.  viQueryf (GPIB0::15::INSTR (0x01102538), "CALL:CONN:STAT?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.937       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+34.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:CONN:STAT?.", 16, 16)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.937       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+35.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "0.", 4096, 2)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.937       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+36.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:MS:REP:CLE.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.937       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+37.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:MS:REP:CLE.", 16, 16)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.937       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+38.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:CONN:TIM 10 S.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.937       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+39.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:CONN:TIM 10 S.", 19, 19)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:30.937       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+40.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:CONN:ARM.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:31.234       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+41.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:CONN:ARM.", 14, 14)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:31.234       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+42.  viQueryf (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:31.734       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+43.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:31.734       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+44.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "IDLE.", 4096, 5)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:31.734       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+45.  viQueryf (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:32.234       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+46.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:32.234       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+47.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "IDLE.", 4096, 5)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:32.234       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+48.  viQueryf (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:32.734       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+49.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:32.734       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+50.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "SREQ.", 4096, 5)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:32.734       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+51.  viQueryf (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.234       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+52.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.234       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+53.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "SREQ.", 4096, 5)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.234       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+54.  viQueryf (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.734       调用持续时间 00:00:00.016
+状态：0 (VI_SUCCESS)
+
+55.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:STAT?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.734       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+56.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "CONN.", 4096, 5)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.734       调用持续时间 00:00:00.016
+状态：0 (VI_SUCCESS)
+
+57.  viPrintf (GPIB0::15::INSTR (0x01102538), "SET:TXP:TIM:STIM 10.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+58.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SET:TXP:TIM:STIM 10.", 20, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+59.  viPrintf (GPIB0::15::INSTR (0x01102538), "SET:TXP:COUN:SNUM %d.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+60.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SET:TXP:COUN:SNUM 3.", 20, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+61.  viPrintf (GPIB0::15::INSTR (0x01102538), "INIT:TXP.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+62.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:TXP.", 9, 9)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:33.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+63.  viQueryf (GPIB0::15::INSTR (0x01102538), "INIT:DONE?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+64.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:DONE?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+65.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "TXP.", 4096, 4)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+66.  viQueryf (GPIB0::15::INSTR (0x01102538), "FETC:TXP?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+67.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "FETC:TXP?.", 10, 10)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+68.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "+0,+2.12335100E+001.", 4096, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.750       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+69.  viPrintf (GPIB0::15::INSTR (0x01102538), "INIT:TXP:OFF.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+70.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:TXP:OFF.", 13, 13)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+71.  viPrintf (GPIB0::15::INSTR (0x01102538), "SET:TXP:TIM:STIM 10.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+72.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SET:TXP:TIM:STIM 10.", 20, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+73.  viPrintf (GPIB0::15::INSTR (0x01102538), "SET:TXP:COUN:SNUM %d.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+74.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SET:TXP:COUN:SNUM 3.", 20, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+75.  viPrintf (GPIB0::15::INSTR (0x01102538), "INIT:TXP.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+76.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:TXP.", 9, 9)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:34.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+77.  viQueryf (GPIB0::15::INSTR (0x01102538), "INIT:DONE?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+78.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:DONE?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+79.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "TXP.", 4096, 4)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+80.  viQueryf (GPIB0::15::INSTR (0x01102538), "FETC:TXP?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+81.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "FETC:TXP?.", 10, 10)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+82.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "+0,+2.11293300E+001.", 4096, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+83.  viPrintf (GPIB0::15::INSTR (0x01102538), "INIT:TXP:OFF.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+84.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:TXP:OFF.", 13, 13)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+85.  viPrintf (GPIB0::15::INSTR (0x01102538), "SET:TXP:TIM:STIM 10.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+86.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SET:TXP:TIM:STIM 10.", 20, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+87.  viPrintf (GPIB0::15::INSTR (0x01102538), "SET:TXP:COUN:SNUM %d.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+88.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "SET:TXP:COUN:SNUM 3.", 20, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+89.  viPrintf (GPIB0::15::INSTR (0x01102538), "INIT:TXP.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+90.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:TXP.", 9, 9)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:35.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+91.  viQueryf (GPIB0::15::INSTR (0x01102538), "INIT:DONE?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+92.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:DONE?.", 11, 11)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+93.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "TXP.", 4096, 4)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+94.  viQueryf (GPIB0::15::INSTR (0x01102538), "FETC:TXP?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+95.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "FETC:TXP?.", 10, 10)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+96.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "+0,+2.11651300E+001.", 4096, 20)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+97.  viPrintf (GPIB0::15::INSTR (0x01102538), "INIT:TXP:OFF.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+98.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "INIT:TXP:OFF.", 13, 13)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.796       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+99.  viPrintf (GPIB0::15::INSTR (0x01102538), "*CLS.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.812       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+100.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "*CLS.", 5, 5)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.812       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+101.  viPrintf (GPIB0::15::INSTR (0x01102538), "CALL:END.")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.812       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+102.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:END.", 9, 9)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:36.812       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+103.  viQueryf (GPIB0::15::INSTR (0x01102538), "CALL:STAT:STAT?.", "%t")
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:37.109       调用持续时间 00:00:00.531
+状态：0 (VI_SUCCESS)
+
+104.  Formatted viWrite (GPIB0::15::INSTR (0x01102538), "CALL:STAT:STAT?.", 16, 16)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:37.109       调用持续时间 00:00:00.000
+状态：0 (VI_SUCCESS)
+
+105.  Formatted viRead (GPIB0::15::INSTR (0x01102538), "IDLE.", 4096, 5)
+进程ID： 0x00000A08         线程ID： 0x00000A04
+起始时间： 11:40:37.109       调用持续时间 00:00:00.531
+状态：0 (VI_SUCCESS)
+

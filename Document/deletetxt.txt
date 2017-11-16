@@ -1,0 +1,18 @@
+			//char* ptr = strchr(AG_Read_Str, ',');  
+			//int pos = ptr-string;
+			//char Src[1024],Des[1024]; 
+			//strcpy(Src, "+0,+2.11651300E+001"); 
+			//strcpy(META_ErrCode_Msg, " Write TD-SCDMA TPC Cableloss Calibration  Fail=>"); 
+			//substring(Src,Des,TXPValue,atoi(strchr("+0,+2.11651300E+001", ',')),strlen("+0,+2.11651300E+001")-atoi(strchr("+0,+2.11651300E+001", ',')));
+			//char *pos=strchr(AG_Read_Str, ",");
+			//int strpos(const char *haystack,const char *needle, _Bool ignorecase ) 
+			//const char* pName = strrchr(*argv,'/');  
+			
+			//int StartPos=2;
+			//int StartPos=2;
+			//int StartPos = pos - TxPValue;
+
+
+			//substring(AG_Read_Str,TXPValue,atoi(strchr(AG_Read_Str, ',')),strlen(AG_Read_Str)-atoi(strchr(AG_Read_Str, ',')));
+			//substing(Src,Des,2,16);
+			//void substing(char *pSrc,char *pDes,int StartPos,int Len) 

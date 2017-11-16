@@ -1,0 +1,82 @@
+RUN
+
+RunSequence_Ex
+
+atd_EmergencyCall_MMS
+
+atd_func
+
+Start_Cal_FT
+
+Start_FinalTest
+
+
+
+TickTak, Generate Emergency Call, 8.304, sec.
+TickTak, Total Time, 8.589, sec.
+
+
+TickTak, Neglect, 0.285, sec.
+
+
+TickTak, Generate Emergency Call, 9.605, sec.
+TickTak, Total Time, 9.891, sec.
+
+
+TickTak, Neglect, 0.286, sec.
+
+
+TickTak, Generate Emergency Call, 8.304, sec.
+TickTak, Total Time, 8.589, sec.
+
+
+TickTak, Neglect, 0.285, sec.
+
+
+TickTak, Generate Emergency Call, 9.611, sec.
+TickTak, Total Time, 9.894, sec.
+
+
+TickTak, Neglect, 0.283, sec.
+
+
+
+	==> IMEI Number write OK!: 358688000000159
+	
+
+	----------------------------
+	GSM850  Band TCH , PCL 
+	----------------------------
+	GSM850 Band Test 3 Channels 
+	----------------------------
+	----------------------------
+	
+	GSM850  Band TCH 128, PCL 5
+	----------------------------
+
+
+CmdErr = rscmd55_init (GPIB_ADDR_8960, VI_TRUE, VI_TRUE, &cmd55);
+
+Cal_Read_Conf_Table
+
+GSM_LOCATION_UPDATE
+
+CALL:PAG:IMSI '001012345678901'	
+Initialize8960_Final
+Initialize8960_Final_Pre
+
+CALL:ORIG
+GSM_LOCATION_UPDATE
+
+CALL:CONN:STAT?
+GSM_LOCATION_UPDATE
+GSM_Parallel
+
+ATD112;
+atd_func  =>Start_Cal_FT FinalTest  GSM_LOCATION_UPDATE  
+atd_EmergencyCall_MMS
+
+
+
+RF Final Test=>RunSequence_Ex=>Start_FinalTest=>Tester_Preset_FT=>BarCode_Process_FT=>PowerOn2Ready=>FinalTest=>
+
