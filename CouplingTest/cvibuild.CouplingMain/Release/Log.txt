@@ -1,118 +1,41 @@
-<====IMEI已输入====>
-AT^GT_CM=TEST
-TEST_OK
+11-23-2017	10:36:29	GetCustomerSetupFile Start
+11-23-2017	10:36:29	E:\Project\GpsATE\CouplingTest 20171122\cvibuild.CouplingMain\Release\MTK_SETUP.ini
+11-23-2017	10:36:29	Error reading Inifile
+11-23-2017	10:36:29	GetComPortDynamiclly start
+11-23-2017	10:36:29	选择的串口:2
+11-23-2017	10:36:29	CloseComPort Start
+11-23-2017	10:36:29	CloseComPort End
+11-23-2017	10:36:29	OpenComPort Start
+11-23-2017	10:36:29	SetTestResultPrompt:-2,打开串口失败!
+11-23-2017	10:36:29	串口打开失败!
+11-23-2017	10:36:29	与服务器连接!
+11-23-2017	10:36:29	SetTestResultPrompt:-2,与服务器连接失败!
+11-23-2017	10:36:33	程序退出!
+11-23-2017	10:36:33	CloseComPort Start
+11-23-2017	10:36:33	CloseComPort End
+11-23-2017	10:36:33	串口第1次发送
+11-23-2017	10:36:55	GetCustomerSetupFile Start
+11-23-2017	10:36:55	E:\Project\GpsATE\CouplingTest 20171122\cvibuild.CouplingMain\Release\MTK_SETUP.ini
+11-23-2017	10:36:55	COM PORT:9
+TrafficBand:DCS
+TrafficPower:30+-TrafficPowerOffset:3
+Version:NT33_20_A1D_D23_R0_V08
+GPIB Address:GPIB0::15::INSTR
+TcpIp:192.168.0.167
+portNum:8889
+reATLINK:6
+Tester:CouplingTest
 
-<====进入测试模式====>
-成功
-<====开始获得终端软件版本号====>
-AT^GT_CM=VERSION
-[VERSION]NT33_20_A1D_D23_R0_V08
-
-	[VERSION]NT33_20_A1D_D23_R0_V08
-成功
-<====开始获得LINK====>
-AT^GT_CM=LINK
-
-LINK:6
-
-成功
-<====开始读取RF参数====>
-AT^GT_CM=RF_BAR
-RF CODE PASS
-
-成功
-<====开始耦合测试====>
-Sensor_OK
-
-
-AT+CFU
-N=0
-
-
-
-
-
-OK
-
-
-成功
-<====开始开网====>
-
-AT+CFUN=1
-
-
-
-
-
-
-OK
-
-
-成功
-<====开始拔打112====>
-ATD112;
-
-
-OK
-
-
-成功
-<====开始查询TXP值====>
-IDLE
-IDLE
-SREQ
-<====当前DB值:28.70====>
-<====耦合测试成功====>
-
-NO CARRIER
-
-ATH;
-
-
-OK
-
-
-成功
-<====写IMEI====>
-
-AT^GT_CM=IMEI,1,111111111111119
-OK! 111111111111119
-
-成功
-<====读IMEI====>
-
-AT^GT_CM=IMEI
-IMEI:111111111111119
-
-AT^GT_CM=IMEI
-IMEI:111111111111119
-
-成功
-<====清除最后一个点====>
-
-AT^GT_CM=CLEAR
-OK!
-
-成功
-<====开始恢复出厂设置====>
-
-AT^GT_CM=FACTORYALL
-
-
-
-
-
-
-
-
-
-
-
-
-OK!
-T
-成功
-he terminal will restart after 60s!
-
-NVRAM执行成功!
-
+11-23-2017	10:36:55	GetComPortDynamiclly start
+11-23-2017	10:36:55	选择的串口:9
+11-23-2017	10:36:55	CloseComPort Start
+11-23-2017	10:36:55	CloseComPort End
+11-23-2017	10:36:55	OpenComPort Start
+11-23-2017	10:36:55	SetTestResultPrompt:-2,打开串口失败!
+11-23-2017	10:36:55	串口打开失败!
+11-23-2017	10:36:55	与服务器连接!
+11-23-2017	10:36:55	与服务器连接成功!
+11-23-2017	10:36:58	程序退出!
+11-23-2017	10:36:58	CloseComPort Start
+11-23-2017	10:36:58	CloseComPort End
+11-23-2017	10:36:58	串口第1次发送

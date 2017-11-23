@@ -1,8 +1,10 @@
 CommonFunction.obj
+ComPortFun.obj
 CouplingMain.obj
 cvistart.lib
 cvi.lib
 age1960.obj
+brom.lib
 inifile.obj
 advapi32.lib
 kernel32.lib
@@ -12,4 +14,5 @@ cviauto.lib
 gdi32.lib
 user32.lib
 EXE Symbol Module
+Exports Module
 Resource Module

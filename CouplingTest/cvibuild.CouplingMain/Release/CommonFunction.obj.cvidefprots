@@ -18,3 +18,11 @@ Prototype="int AddLog(char *LogMsg);"
 Class="Function"
 Prototype="char GetIMEICheckDigit(char *pp_Imei);"
 
+[strreplace]
+Class="Function"
+Prototype="char *strreplace(const char *const original, const char *const pattern, const char *const replacement);"
+
+[strreplace2]
+Class="Function"
+Prototype="char *strreplace2(const char *src, const char *from, const char *to);"
+

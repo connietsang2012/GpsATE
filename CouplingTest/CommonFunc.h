@@ -4,6 +4,7 @@
 
 #include "meta.h"
 #include "age1960.h"
+#include "inifile.h"
 //#include "arraylist.h"
 
 #define VISA_BUF_LEN 32767
@@ -46,9 +47,16 @@ int String_To_Array_double_MT8820( char *src, double *array, int max_count );  /
 float getTXPValue(ViString AG_Read_Str); 
 void substring(char *pSrc,char *pDes,int StartPos,int Len); 
 int strpos(const char *haystack,const char *needle, _Bool ignorecase ); 
+char * strreplace(char const * const original, 
+    char const * const pattern, char const * const replacement);
 
 
  
 int AddLog(ViString);
 char GetIMEICheckDigit(char *);
+
+
+
+
+
 #endif

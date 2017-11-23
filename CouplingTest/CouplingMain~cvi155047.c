@@ -1,5 +1,5 @@
 #include <tcpsupp.h>
-#include "inifile.h" 
+#include "inifile.h"
 #include <rs232.h>
 #include <utility.h>
 #include <formatio.h>
@@ -15,40 +15,14 @@
 #include <string.h>
 #include "CommonFunc.h"
 
-#define MAX_SEND_LEN  512    /* 发送的最大长度 */ 
-#define MAX_REC_LEN  512    /* 接收的最大长度 */
-
-
-//串口的参数
-#define baudrate 115200
-#define parity 0
-#define databits 8
-#define stopbits 1
-#define inputq 32000
-#define outputq 32000
-
-
-#define ATTEST "AT^GT_CM=TEST" 				//进入测试模式   TEST_OK
-#define ATVERSION "AT^GT_CM=VERSION"		//读取软件版本  [VERSION]GT02F_20_61DM2_B25E_R0_V02
-#define ATLINK "AT^GT_CM=LINK"				//获得LINK   LINK:6
-#define ATRFBAR "AT^GT_CM=RF_BAR"			//读RF  RF CODE PASS
-#define ATCFUN0 "AT+CFUN=0"   				//关网
-#define ATCFUN1 "AT+CFUN=1"   				//开网
-#define ATD112 "ATD112;"		 			//拔打112
-#define ATH "ATH;"			 				//挂断
-#define ATID "AT^GT_CM=ID,1"			 	//读ID
-#define ATWIMEI "AT^GT_CM=IMEI,1,"			//写IMEI
-#define ATRIMEI "AT^GT_CM=IMEI"			 	//读IMEI  IMEI:222222222222222
-#define ATCLEAR "AT^GT_CM=CLEAR"			//清除GPS定位点  OK!
-#define ATFACTORYALL "AT^GT_CM=FACTORYALL"	//恢复出厂设置 NVRAM执行成功! The terminal will restart after 60s!
-
 //主界面
 static int panelHandle;
 
 //*************************************************************************************************************
 //-------------------------------耦合测试---------------------------
 //**************************************************************************************************************
-
+//GPIB地址
+char GPIB_ADDR_8960[MAX_PATHNAME_LEN]="";
 //GPIB通讯超时时间
 static int GPIB_TIMEOUT_8960=5000;
 //8960的读写操作结果
@@ -67,21 +41,39 @@ int StartCouplingTest(void);
 int QueryTXPValue();
 
 
+ViString TrafficBand="";
+int TrafficPower;
 
+int TrafficPowerOffset;
+float  TrafficPowerMax,TrafficPowerMin;
+
+//*************************************************************************************************************
+//-------------------------------从INI文件读取客户自定义参数---------------------------
+//**************************************************************************************************************
+//获得客户自定义设置
+int GetCustomerSetupFile(void);
+//客户自定义句柄
+IniText g_CustomerSetupFile = 0;
+//客户自定义文件名
+char CustomerFileName[MAX_PATHNAME_LEN]="";
 
 //*************************************************************************************************************
 //-------------------------------串口操作---------------------------
 //**************************************************************************************************************
+
 //打开串口参数
-
-int ComIsOpen=0; 
-
+int comport=2;
+int baudrate = 115200;
+int parity = 0;
+int databits = 8;
+int stopbits = 1;
+int inputq = 32000;
+int outputq = 32000;
 int OpenComPort(void);
 int CloseComPort(void);
 void SendByte(ViString);
-
-char CmdKey[MAX_REC_LEN];
-char write_buffer[MAX_SEND_LEN];
+char CmdKey[400];
+char write_buffer[400];
 
 int iSends=0;	//已发送次数
 //动态获得可用串口
@@ -92,9 +84,22 @@ int OpenComm(void);
 int CommRec_OK();
 
 
+ViString Version;
 
+char ATTEST[400]="AT^GT_CM=TEST";//进入测试模式   TEST_OK
+char ATVERSION[400]="AT^GT_CM=VERSION";//读取软件版本  [VERSION]GT02F_20_61DM2_B25E_R0_V02
+char ATLINK[400]="AT^GT_CM=LINK";//获得LINK   LINK:6
+char ATRFBAR[400]="AT^GT_CM=RF_BAR";			 //读RF  RF CODE PASS
+char ATCFUN0[400]="AT+CFUN=0";   //关网
+char ATCFUN1[400]="AT+CFUN=1";   //开网
+char ATD112[400]="ATD112;";		 //拔打112
+char ATH[400]="ATH;";			 //挂断
+char ATID[400]="AT^GT_CM=ID,1";			 //读ID 
+char ATWIMEI[400]="AT^GT_CM=IMEI,1,";			 //写IMEI
+char ATRIMEI[400]="AT^GT_CM=IMEI";			 //读IMEI  IMEI:222222222222222
 
-
+char ATCLEAR[400]="AT^GT_CM=CLEAR";			 //清除GPS定位点  OK!
+char ATFACTORYALL[400]="AT^GT_CM=FACTORYALL";			 //恢复出厂设置 NVRAM执行成功! The terminal will restart after 60s!
 
 //*************************************************************************************************************
 //-------------------------------更新测试结果,设置总测试结果---------------------------
@@ -102,8 +107,7 @@ int CommRec_OK();
 int UpdateResultMsg(ViString/*,int*/);
 
 int SetTestResult(int);
-int SetTestResultPrompt(int,ViString);
-char strRid[33];
+ViString strRid="";
 
 int WriteIMEI();
 char strIMEI[17];
@@ -111,11 +115,11 @@ char strIMEI[17];
 //*************************************************************************************************************
 //-------------------------------TCP---------------------------
 //**************************************************************************************************************
-
+int  portNum;
+ViString TcpIp;
 
 int iTcpSends=0;	//已发送次数
-char TcpCmdKey[MAX_SEND_LEN];
-char TcpCmd[MAX_SEND_LEN];
+char TcpCmdKey[400];
 
 int TcpConnect(void);
 int SendToTcp(ViString,ViString);
@@ -130,33 +134,6 @@ int CVICALLBACK ClientTCPCB (unsigned handle, int event, int error,
 							 void *callbackData);
 static void ReportTCPError (void);
 
-
-int comport=2;
-ViString TrafficBand="";
-int TrafficPower;
-int TrafficPowerOffset;
-float  TrafficPowerMax,TrafficPowerMin;
-
-ViString Version;
-ViString SoftModel;
-ViString Tester;
-//GPIB地址
-char GPIB_ADDR_8960[MAX_PATHNAME_LEN]="";
-int  portNum;
-ViString TcpIp;
-ViString reATLINK;
-//*************************************************************************************************************
-//-------------------------------从INI文件读取客户自定义参数---------------------------
-//**************************************************************************************************************
-//获得客户自定义设置
-int GetCustomerSetupFile(void);
-//客户自定义句柄
-IniText g_CustomerSetupFile = 0;
-//客户自定义文件名
-char CustomerFileName[MAX_PATHNAME_LEN]="";
-
-int g_TestResult=-1;
-char strLog[MAX_SEND_LEN];
 //*************************************************************************************************************
 //------------------------------------------源码--------------------------------------
 //**************************************************************************************************************
@@ -176,6 +153,7 @@ int main (int argc, char *argv[])
 	//打开串口
 	OpenComm();
 
+
 	//TCP连接
 	TcpConnect();
 
@@ -190,34 +168,14 @@ int CVICALLBACK CouplingTest (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
+			//SetCtrlAttribute (panelHandle, PANEL_IMEI, ATTR_CTRL_MODE, VAL_HOT);
+
 			//初始化测试结果，开始测试
 			SetTestResult(-1);
-			
 			UpdateResultMsg("<====开始耦合测试====>");
 			//发送TEST指令
-			UpdateResultMsg("<====进入测试模式====>"); 
 			strcpy(write_buffer, ATTEST);
 			SendByte(write_buffer);
-			break;
-	}
-	return 0;
-}
-int  CVICALLBACK ComConnect(int panel, int control, int event, void *callbackData, int eventData1, int eventData2){
-	switch (event)
-	{
-		case EVENT_COMMIT:
-			//连接串口
-			OpenComm();
-			break;
-	}
-	return 0;
-}
-int  CVICALLBACK ComDisConnect(int panel, int control, int event, void *callbackData, int eventData1, int eventData2){
-	switch (event)
-	{
-		case EVENT_COMMIT:
-			//断开串口 
-			CloseComPort(); 
 			break;
 	}
 	return 0;
@@ -228,10 +186,9 @@ int CVICALLBACK sendcmd_timer (int panel, int control, int event,
 {
 	if(++iSends<=3)
 	{
-		sprintf(strLog,"串口第%d次发送", iSends); 
-		AddLog(strLog); 
 		if(strcmp(CmdKey,"")!=0)
 		{
+
 			strcpy(write_buffer, CmdKey);
 			SendByte(write_buffer);
 		}
@@ -239,7 +196,6 @@ int CVICALLBACK sendcmd_timer (int panel, int control, int event,
 	else
 	{
 		iSends=0;
-		AddLog("AT指令超时，测试结果失败");
 		//AT指令超时，测试结果失败
 		SetCtrlAttribute (panelHandle, PANEL_TIMER_SENDCMD, ATTR_ENABLED, 0);
 		SetTestResult(0);
@@ -254,17 +210,15 @@ int CVICALLBACK sendTcpcmd_timer (int panel, int control, int event,
 	{
 		if(strcmp(TcpCmdKey,"")!=0)
 		{
-			sprintf(strLog,"TCP第%d次发送", iTcpSends); 
-			AddLog(strLog);
-			
-			SendToTcp(TcpCmdKey,TcpCmd);
+
+			strcpy(write_buffer, TcpCmdKey);
+			SendByte(write_buffer);
 		}
 	}
 	else
 	{
 		iTcpSends=0;
-		//TCP指令超时，测试结果失败
-		AddLog("TCP指令超时，测试结果失败");
+		//AT指令超时，测试结果失败
 		SetCtrlAttribute (panelHandle, PANEL_TIMER_SENDTCPCMD, ATTR_ENABLED, 0);
 		SetTestResult(0);
 	}
@@ -277,15 +231,8 @@ int CVICALLBACK Quit (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
-			AddLog("程序退出!"); 
-			strcpy(CmdKey,"");
-			strcpy(TcpCmdKey,"");
 			//关闭串口
 			CloseComPort();
-			
-			if (g_connected)
-					DisconnectFromTCPServer (g_hconversation);
-			
 			QuitUserInterface (0);
 			break;
 	}
@@ -314,29 +261,27 @@ int CVICALLBACK Get_IMEI (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			UpdateResultMsg("<====IMEI已输入====>");
-			
+			//判断IMEI是否有效
+
+
 			GetCtrlVal (panelHandle, PANEL_IMEI, strIMEI);
-			AddLog(strIMEI);
-			
-			//判断IMEI是否有效 
 			char IMEI14[14];
 			strncpy(IMEI14, strIMEI, 14);
 			char checkSum=GetIMEICheckDigit(IMEI14);
 			char scanCheckSum=strIMEI[14];
 			if(checkSum==scanCheckSum)
 			{
-				AddLog("合法IMEI");
-				
 				//初始化测试结果，开始测试
 				SetTestResult(-1);
-				
+				//UpdateResultMsg("<====开始耦合测试====>");
 				//发送TEST指令
 				strcpy(write_buffer, ATTEST);
 				SendByte(write_buffer);
+				//WriteIMEI();
 			}
 			else
 			{
-				SetTestResultPrompt(-2,"IMEI无效！");
+				MessagePopup("Error","IMEI无效！");
 			}
 			break;
 
@@ -348,24 +293,8 @@ int CVICALLBACK Get_IMEI (int panel, int control, int event,
 int OpenComm()
 {
 	GetCtrlVal (panelHandle, PANEL_COM_PORT_SETTING, &comport);
-	sprintf(strLog,"选择的串口:%d", comport);
-	AddLog(strLog);
 	CloseComPort();
 	OpenComPort();
-	if(ComIsOpen==1){
-		AddLog("串口打开成功!");
-		SetCtrlAttribute (panelHandle, PANEL_COMCONNECT, ATTR_DIMMED, 1);
-		SetCtrlAttribute (panelHandle, PANEL_COMDISCONNECT, ATTR_DIMMED, 0);
-		SetCtrlVal(panelHandle, PANEL_IMEI, ""); 
-		SetActiveCtrl ( panelHandle, PANEL_IMEI );
-		SetCtrlVal(panelHandle, PANEL_TESTRESULT, "");  
-	}
-	else{
-		AddLog("串口打开失败!");
-		SetCtrlAttribute (panelHandle, PANEL_COMCONNECT, ATTR_DIMMED, 0);
-		SetCtrlAttribute (panelHandle, PANEL_COMDISCONNECT, ATTR_DIMMED, 1);
-	}
-	
 	return 0;
 }
 int CommRec_OK()
@@ -379,7 +308,7 @@ int CommRec_OK()
 //串口收到数据
 void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 {
-	char readBuf[MAX_REC_LEN*2] = {0};
+	char readBuf[256] = {0};
 	int strLen;
 
 	strLen = GetInQLen(portNo);
@@ -394,10 +323,13 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 	{
 		if (strpos(readBuf,"TEST_OK",0)>=0)
 		{
+			UpdateResultMsg("<====进入测试模式====>");
 			CommRec_OK();
-			strcpy(write_buffer, ATVERSION);
+			/*strcpy(write_buffer, ATVERSION);
 			SendByte(write_buffer);
-			UpdateResultMsg("<====获得终端软件版本号====>");
+			UpdateResultMsg("<====开始获得终端软件版本号====>");*/
+			strcpy(write_buffer, ATH);
+			SendByte(write_buffer);
 		}
 
 	}
@@ -406,57 +338,41 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 
 		if (strpos(readBuf,Version,0)>=0)
 		{
-			sprintf(strLog, "\t%s",Version);
-			UpdateResultMsg(strLog);
+			char strVersion[400];
+			sprintf(strVersion, "\t%s",Version);
+			UpdateResultMsg(strVersion);
 
 			CommRec_OK();
-			strcpy(write_buffer, ATID);
+			strcpy(write_buffer, ATLINK);
 			SendByte(write_buffer);
-			UpdateResultMsg("<====读取基带ID====>");			
-		}
-		else{
-			UpdateResultMsg("软件版本不正确!");	
+			UpdateResultMsg("<====开始获得LINK====>");
 		}
 
-	}
-	else if(strcmp(CmdKey,ATID)==0)
-	{
-		if (strpos(readBuf,"RID:",0)>=0)
-		{
-			CommRec_OK();
-			
-			//取RID
-			ViString readTemp=readBuf;
-			char* data=strreplace(readTemp," ","");
-			int StartPos=strpos(data,"ChipRID:",0);
-			substring(data,strRid,StartPos+strlen("ChipRID:"),32);
-			
-			sprintf(TcpCmd, "Action=CheckTested#PlanName=WriteImei#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#", 
-				   strRid,SoftModel,Version,Tester);
-			SendToTcp("CheckTested",TcpCmd);
-		}
 	}
 	else if(strcmp(CmdKey,ATLINK)==0)
 	{
-		if (strpos(readBuf,reATLINK,0)>=0)
+		if (strpos(readBuf,"LINK:6",0)>=0)
 		{
 			CommRec_OK();
 			strcpy(write_buffer, ATRFBAR);
 			SendByte(write_buffer);
-			UpdateResultMsg("<====读取RF参数====>"); 
+			UpdateResultMsg("<====开始读取RF参数====>");
+
 		}
 
 	}
 	else if(strcmp(CmdKey,ATRFBAR)==0)
 	{
+
 		if (strpos(readBuf,"RF CODE PASS",0)>=0)
 		{
 			CommRec_OK();
-
+			UpdateResultMsg("<====开始耦合测试====>");
 			StartCouplingTest();
+
 		}
 	}
-	
+
 	else if(strcmp(CmdKey,ATCFUN0)==0)
 	{
 		if (strpos(readBuf,"OK",0)>=0)
@@ -464,8 +380,10 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 			CommRec_OK();
 			strcpy(write_buffer, ATCFUN1);
 			SendByte(write_buffer);
-			UpdateResultMsg("<====开网====>");
+			UpdateResultMsg("<====开始开网====>");
+
 		}
+
 	}
 	else if(strcmp(CmdKey,ATCFUN1)==0)
 	{
@@ -474,17 +392,21 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 			CommRec_OK();
 			strcpy(write_buffer, ATD112);
 			SendByte(write_buffer);
-			UpdateResultMsg("<====拔打112====>");
+			UpdateResultMsg("<====开始拔打112====>");
 		}
+
 	}
+
 	else if(strcmp(CmdKey,ATD112)==0)
 	{
 		if (strpos(readBuf,"OK",0)>=0)
 		{
 			CommRec_OK();
-			UpdateResultMsg("<====查询TXP值====>");
+			UpdateResultMsg("<====开始查询TXP值====>");
 			QueryTXPValue();
+
 		}
+
 	}
 	else if(strcmp(CmdKey,ATH)==0)
 	{
@@ -492,11 +414,42 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 		{
 			CommRec_OK();
 
-			sprintf(TcpCmd, "Action=CheckIMEI#IMEI=%s#Tester=%s#", strIMEI,Tester);
+			/*char TcpCmd[400];
+			//ViString sendCmd="CALL:TCH:BAND DCS";
+			sprintf(TcpCmd, "Action=CheckIMEI#IMEI=%s#Tester=%s#", "868120112589418","ZK");
+			SendToTcp("CheckIMEI",TcpCmd);*/
+			
+			strcpy(write_buffer, ATID);
+			SendByte(write_buffer);
+			UpdateResultMsg("<====开始读取基带ID====>");
+		}
+
+	}
+	//AT^GT_CM=ID,1
+	else if(strcmp(CmdKey,ATID)==0)
+	{
+		if (strpos(readBuf,"Chip RID:",0)>=0)
+		{
+			CommRec_OK();
+			//取RID
+			ViString readTemp=readBuf;
+			char* data=strreplace(readTemp," ","");
+			//printf("%s\n", data);
+			//readTemp=
+			//char rId[33];
+
+			int StartPos=strpos(data,"ChipRID:",0);
+
+			substring(data,strRid,StartPos+strlen("ChipRID:"),32);
+			
+			char TcpCmd[400];
+			//ViString sendCmd="CALL:TCH:BAND DCS";
+			sprintf(TcpCmd, "Action=CheckIMEI#IMEI=%s#Tester=%s#", "868120112589418","ZK");
 			SendToTcp("CheckIMEI",TcpCmd);
 		}
 
 	}
+	//AT^GT_CM=ID,1
 	else if(strpos(CmdKey,ATWIMEI,0)>=0)
 	{
 		if (strpos(readBuf,"OK",0)>=0)
@@ -505,6 +458,7 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 			UpdateResultMsg("<====读IMEI====>");
 			strcpy(write_buffer,ATRIMEI);
 			SendByte(write_buffer);
+
 		}
 
 	}
@@ -512,13 +466,13 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 	{
 		if (strpos(readBuf,"IMEI:",0)>=0)
 		{
-			//取机子中的IMEI
+			UpdateResultMsg(readBuf);
 			ViString readImei=readBuf;
 			char readImeiTemp[16];
+
 			int StartPos=strpos(readImei,"IMEI:",0);
+
 			substring(readImei,readImeiTemp,StartPos+strlen("IMEI:"),15);
-			UpdateResultMsg(readImeiTemp);
-			
 			if(strcmp(readImeiTemp,strIMEI)==0)
 			{
 				CommRec_OK();
@@ -528,7 +482,7 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 			}
 			else
 			{
-				UpdateResultMsg("<====IMEI读取的IMEI与写入的不相同====>");
+				UpdateResultMsg("<====IMEI写入错误====>");
 			}
 		}
 
@@ -538,10 +492,12 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 		if (strpos(readBuf,"OK",0)>=0)
 		{
 			CommRec_OK();
-			UpdateResultMsg("<====恢复出厂设置====>");
+			UpdateResultMsg("<====开始恢复出厂设置====>");
 			strcpy(write_buffer,ATFACTORYALL);
 			SendByte(write_buffer);
+
 		}
+
 	}
 	else if(strpos(CmdKey,ATFACTORYALL,0)>=0)
 	{
@@ -549,6 +505,7 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 		{
 			CommRec_OK();
 			SetTestResult(1);
+
 		}
 
 	}
@@ -557,7 +514,6 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 //------------------------------------------开始耦合测试-------------------------------------- //
 int StartCouplingTest()
 {
-	AddLog("StartCouplingTest Start");
 	//AG8960初始化
 	AG8960_Status = age1960_init (GPIB_ADDR_8960, VI_FALSE, VI_TRUE, &InstrHandle);
 	if( AG8960_Status != 0)
@@ -633,12 +589,14 @@ int StartCouplingTest()
 	}
 
 	//返回DCS
+	//AG8960_Status = age1960_cmdInt32_Q (InstrHandle, "CALL:BIND?",&AG_Read_Int32);
 	AG8960_Status = age1960_cmdString_Q (InstrHandle, "CALL:BIND?", 4,AG_Read_Str);
 	if( AG8960_Status != 0)
 	{
 		goto Error;
 	}
 
+	//AG8960_Status = age1960_cmd (InstrHandle, "CALL:TCH:BAND DCS");
 	ViString sendCmd="CALL:TCH:BAND DCS";
 	sprintf(sendCmd, "CALL:TCH:BAND %s", TrafficBand);
 	AG8960_Status = age1960_cmd (InstrHandle, sendCmd);
@@ -667,6 +625,7 @@ int StartCouplingTest()
 	}
 
 	AG8960_Status = age1960_cmd (InstrHandle, "SYST:CORR:SFR  1747.40 MHZ,1842.40 MHZ");
+	//AG8960_Status = age1960_cmd (InstrHandle, "SYST:CORR:SFR  1747.50 MHZ,1842.50 MHZ");
 	if( AG8960_Status != 0)
 	{
 		goto Error;
@@ -679,22 +638,26 @@ int StartCouplingTest()
 		goto Error;
 	}
 
-	UpdateResultMsg("<====关网====>");   
+
 	strcpy(write_buffer, ATCFUN0);
 	SendByte(write_buffer);
-	AddLog("StartCouplingTest End");
+
+
+
+	/*else
+	{
+		goto Error;
+	} */
 	return 0;
-	
 	//耦合测试失败
+
 Error:
-	AddLog("StartCouplingTest Error");
 	SetTestResult(0);
 	return (-1);
 
 }
 int QueryTXPValue()
 {
-	AddLog("QueryTXPValue Start"); 
 	bool testResult=TRUE;
 	int Count=0,AgainCount=0,RequestTXPCount=0;
 	//查询连接状态
@@ -707,7 +670,9 @@ int QueryTXPValue()
 		{
 			goto Error;
 		}
+		//atd_EmergencyCall_MMS();
 	}
+	//SetTestResult(-1);
 CallAgain:
 	AG8960_Status = age1960_cmd (InstrHandle, "CALL:CONN:TIM 10 S");
 	if( AG8960_Status != 0)
@@ -722,8 +687,11 @@ CallAgain:
 	}
 
 	//查询呼叫状态　IDLE SREQ CONN
+	//age1960_cmdInt32_Q (InstrHandle, "CALL:STAT?", &AG_Read_Str);
+	//AG_Read_Str="CALL:CONN:STAT?";
 	AG8960_Status = age1960_cmdString_Q (InstrHandle, "CALL:STAT?", 5,AG_Read_Str);
 	Delay(AG8960_DelayTime);
+	//AG8960_Status = age1960_cmdString_Q (InstrHandle, "CALL:BIND?", 4,&AG_Read_Str);
 	UpdateResultMsg(AG_Read_Str);
 	Count=0;
 	while(strcmp(AG_Read_Str,"CONN")!=0)
@@ -740,6 +708,8 @@ CallAgain:
 		}
 		AG8960_Status = age1960_cmdString_Q (InstrHandle, "CALL:STAT?", 5,AG_Read_Str);
 	}
+
+
 RequestTXP:
 	AG8960_Status = age1960_cmd (InstrHandle, "SET:TXP:TIM:STIM 10");
 	if( AG8960_Status != 0)
@@ -762,12 +732,23 @@ GetTXPValue:
 	age1960_cmdString_Q (InstrHandle, "INIT:DONE?",4, AG_Read_Str);
 	if(strcmp(AG_Read_Str,"TXP")==0)
 	{
+		//AG_Read_Str="abcdabcdabcdabcdabcd";
 		age1960_cmdString_Q (InstrHandle, "FETC:TXP?",20, AG_Read_Str);
 		float value=getTXPValue(AG_Read_Str);
-		sprintf(strLog, "<====当前DB值:%5.2f====>", value);
-		UpdateResultMsg(strLog);
+		//float value=atof(AG_Read_Str);
+		//if(value<25.0f || value>35.0f)
+
+		char DBValue[400];
+		//strcpy(DBValue, "<====当前DB值:");
+		//strcat(DBValue,value);
+		//strcat(DBValue,"====>");
+		sprintf(DBValue, "<====当前DB值:%5.2f====>", value);
+		UpdateResultMsg(DBValue);
 		if(value<=TrafficPowerMin || value>=TrafficPowerMax)
+			//if(value<30.0f || value>36.0f)
+			//if(value<20.0f)
 		{
+			//MessagePopup ("warning", "低于25。");
 			//判断信号值
 			if(++RequestTXPCount<4)
 			{
@@ -777,6 +758,7 @@ GetTXPValue:
 					goto Error;
 				}
 				goto  RequestTXP;
+
 			}
 			else
 			{
@@ -809,46 +791,153 @@ CouplingEnd:
 	{
 		goto Error;
 	}
+
+	//age1960_cmdInt32_Q (InstrHandle, "CALL:STAT?", &AG_Read_Str);
 	AG8960_Status = age1960_cmdString_Q (InstrHandle, "CALL:STAT?", 5,AG_Read_Str);
 	if(strcmp(AG_Read_Str,"IDLE")!=0)
 	{
 		goto Error;
 	}
+
+
 	if(testResult)
 	{
 		strcpy(write_buffer, ATH);
 		SendByte(write_buffer);
 		UpdateResultMsg("<====耦合测试成功====>");
+		//SetTestResult(1);
+
+
+		//IMEI
 		return 0;
 	}
 	else
 	{
 		goto Error;
 	}
-	AddLog("QueryTXPValue End"); 
-	return 0;
+
 	//耦合测试失败
+
 Error:
 	UpdateResultMsg("<====耦合测试失败====>");
 	SetTestResult(0);
 	return (-1);
+
 }
 
 int WriteIMEI()
 {
+
 	strcpy(write_buffer, ATWIMEI);
 	strcat(write_buffer,strIMEI);
-	sprintf(strLog,"写入IMEI:%s",strIMEI);
-	AddLog(strIMEI);
 	SendByte(write_buffer);
+
 	return 0;
 }
+int OpenComPort()
+{
+	int RS232Error;
+	char devicename[30];
+	//-----------Get COM port and Baurd rate--------
+	//comport = MMS_INFO[WorkingMS].ComPort;
+	// -------- Open the COM Port and Switch the MS to the PCS Band ----
+	//comport=6;
+	sprintf(devicename, "COM%d", comport);
+	DisableBreakOnLibraryErrors();
+	RS232Error = OpenComConfig (comport, devicename, baudrate, parity, databits, stopbits, inputq, outputq);
+	EnableBreakOnLibraryErrors();
+	if (RS232Error< 0)
+	{
+		MessagePopup ("COM INFORMATION", "OPEN COM PORT FAIL");
+		return -1;
+	}
+
+	SetComTime (comport, 0.2);
+
+	//--------------------Wrt AT+cfun=0; to target----------------------------
+
+	FlushInQ (comport);
+	FlushOutQ (comport);
+	//InstallComCallback (comport, LWRS_RECEIVE, 2, 0, Event_Char_Func, 0);
+	InstallComCallback(comport,LWRS_RXFLAG,0,10,Event_Char_Func,0);  //以回车为标志位，接收到回车就产生中断，调用中断函数UartComCall.
+	return 0;
+};
+int CloseComPort()
+{
+	//-------------------- close COM port ----------------------------
+	CloseCom (comport);
+	return 0;
+};
+
+void SendByte(ViString ch)
+{
+	int RS232Error;
+	/*if(port.port_open == 0)
+		MessagePopup("Error","串口还未打开！");
+	else */
+	{
+		FlushOutQ(comport);  //清空发送缓存区
+		strcpy(CmdKey,ch);
+		strcat(ch,"\r\n");
+		RS232Error = ComWrt (comport, ch,strlen(ch));
+		SetCtrlAttribute (panelHandle, PANEL_TIMER_SENDCMD, ATTR_ENABLED, 1);
+	}
+}
+
 //**********************************************************************
-//-------动态获得可用串口-------------------------
+//-------Get Customer Setup File Informations-------------------------
 //********************************************************************
+int GetCustomerSetupFile()
+{
+	int test_channel;
+	int cls_idx;
+	char *Temp_pChar;
+	int ReturnValue;
+	//***********************************************************************************
+	//--------Create a new Inifile object and read it from a file  ------------------
+	//***********************************************************************************
+	if (!(g_CustomerSetupFile = Ini_New (0)))
+	{
+		MessagePopup("Inifile","Error allocating memory for Inifile");
+		goto Error;
+	}
+	//****************************************************************************
+	// --------- Get Project pathname --------------------------
+	//***************************************************************************
+	GetProjectDir (CustomerFileName);
+
+	strcat(CustomerFileName,"\\MTK_SETUP.ini");	//main
+	//strcat(CustomerFileName,"\\Customer_Setup_B.txt");  //second
+	//********************************************************************
+	if (Ini_ReadFromFile (g_CustomerSetupFile, CustomerFileName))
+	{
+		MessagePopup("Inifile","Error reading Inifile");
+		goto Error;
+	}
+
+	Ini_GetInt (g_CustomerSetupFile, "Calibration Setup","COM PORT", &comport);
+	Ini_GetStringCopy (g_CustomerSetupFile, "Calibration Setup", "TrafficBand", &TrafficBand);
+	Ini_GetInt (g_CustomerSetupFile, "Calibration Setup","TrafficPower", &TrafficPower);
+	Ini_GetInt (g_CustomerSetupFile, "Calibration Setup","TrafficPowerOffset", &TrafficPowerOffset);
+	Ini_GetStringCopy (g_CustomerSetupFile, "Calibration Setup", "Version", &Version);
+
+	Ini_GetRawStringIntoBuffer (g_CustomerSetupFile, "System Setting", "MT8820 GPIB Address",GPIB_ADDR_8960,20 );
+
+	Ini_GetStringCopy (g_CustomerSetupFile, "Calibration Setup", "TcpIp", &TcpIp);
+	Ini_GetInt (g_CustomerSetupFile, "Calibration Setup","TcpPort", &portNum);
+
+	TrafficPowerMax=TrafficPower+TrafficPowerOffset;
+	TrafficPowerMin=TrafficPower-TrafficPowerOffset;
+	//strcpy(GPIB_ADDR_8960, "GPIB0::14::INSTR");
+
+
+	return 0;
+
+Error:
+	return -1;
+}
 int GetComPortDynamiclly(void)
 {
-	AddLog("GetComPortDynamiclly start");      
 	char DestString[10];
 	int i = 0, result = 0;
 	unsigned short ComPortArray[255] = {0};
@@ -876,7 +965,7 @@ int GetComPortDynamiclly(void)
 		{
 			goto Error;
 			MessagePopup("FAIL","Get Com Port Fail");
-			AddLog("Get Com Port Fail");
+
 		}
 	}
 
@@ -892,99 +981,116 @@ int GetComPortDynamiclly(void)
 		if ( result < 0 )
 		{
 			MessagePopup ("Com", "Fail");
-			AddLog("Fail");
 			goto Error;
 		}
 	}
+
+
 	return 0;
+
 Error:
+
 	return -1;
 }
-int UpdateResultMsg(ViString Msg)
+int UpdateResultMsg(ViString Msg/*,int StartOrEnd=0*/)
 {
+	char buffer[5000];
 	AddLog(Msg);
-	SetCtrlVal (panelHandle, PANEL_RESULTS, Msg);
-	InsertTextBoxLine (panelHandle, PANEL_RESULTS, -1, "");
+	//if(StartOrEnd==0){
+	//sprintf(buffer,"\n\t-------------%s",Msg);
+	//sprintf(buffer,"\n\t%s",Msg);
+	//    SetCtrlVal (panelHandle, PANEL_RESULTS, buffer);
+	//}
+	InsertTextBoxLine (panelHandle, PANEL_RESULTS, -1, Msg);
 	return 0;
 }
 
 int SetTestResult(int iResult)
 {
-	sprintf(strLog,"SetTestResult:%d",iResult);
-	AddLog(strLog);
-	g_TestResult=iResult;
 	if(iResult==-1)
 	{
-		AddLog("测试初始化!"); 
 		ResetTextBox (panelHandle, PANEL_RESULTS, "");
 		strcpy(CmdKey,"");
-		strcpy(TcpCmdKey,"");
 		SetCtrlAttribute (panelHandle, PANEL_TEST, ATTR_DIMMED, 1);
 		SetCtrlAttribute (panelHandle, PANEL_IMEI, ATTR_DIMMED, 1);
+		//SetCtrlAttribute (panelHandle, PANEL_FAIL, ATTR_VISIBLE, 0);
+		//SetCtrlAttribute (panelHandle, PANEL_PASS, ATTR_VISIBLE, 0);
 		SetCtrlVal(panelHandle, PANEL_TESTRESULT, "");
 		SetCtrlAttribute (panelHandle, PANEL_TESTRESULT, ATTR_TEXT_BGCOLOR , VAL_GRAY);
 	}
 	else if(iResult==0)
 	{
-		AddLog("测试失败!");
-		sprintf(TcpCmd, "Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#Imei=%s#iResult=%d#Tester=%s","WriteImei",strRid,SoftModel,Version,strIMEI,iResult,Tester);
-		SendToTcp("UpdateResult",TcpCmd);
-	}
-	else if(iResult==1)
-	{
-		AddLog("测试成功!");
-		sprintf(TcpCmd, "Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#Imei=%s#iResult=%d#Tester=%s","WriteImei",strRid,SoftModel,Version,strIMEI,iResult,Tester);
-		SendToTcp("UpdateResult",TcpCmd);
-	}
-	return 0;
-}
-int SetTestResultPrompt(int iResult,ViString prompt)
-{
-	sprintf(strLog,"SetTestResultPrompt:%d,%s",iResult,prompt);
-	AddLog(strLog);
-	
-	SetCtrlAttribute (panelHandle, PANEL_TEST, ATTR_DIMMED, 0);
-	SetCtrlAttribute (panelHandle, PANEL_IMEI, ATTR_DIMMED, 0);
-	SetCtrlVal(panelHandle, PANEL_TESTRESULT, prompt);
-	strcpy(CmdKey,"");
-	strcpy(TcpCmdKey,"");
-	SetCtrlVal(panelHandle, PANEL_IMEI, "");
-	SetActiveCtrl ( panelHandle, PANEL_IMEI );
-	if(iResult==-2)
-	{
-		//SetCtrlAttribute (panelHandle, PANEL_IMEI,ATTR_SELECTED,1);
-		SetCtrlAttribute (panelHandle, PANEL_TESTRESULT, ATTR_TEXT_BGCOLOR , VAL_GRAY);
-	}
-	else if(iResult==0)
-	{
+		SetCtrlVal(panelHandle, PANEL_IMEI, "");
+		SetCtrlAttribute (panelHandle, PANEL_TEST, ATTR_DIMMED, 0);
+		SetCtrlAttribute (panelHandle, PANEL_IMEI, ATTR_DIMMED, 0);
+		SetActiveCtrl ( panelHandle, PANEL_IMEI );
+		//SetCtrlAttribute (panelHandle, PANEL_FAIL, ATTR_VISIBLE, 1);
+		//SetCtrlAttribute (panelHandle, PANEL_PASS, ATTR_VISIBLE, 0);
+		SetCtrlVal(panelHandle, PANEL_TESTRESULT, "F A I L");
 		SetCtrlAttribute (panelHandle, PANEL_TESTRESULT, ATTR_TEXT_BGCOLOR , VAL_RED);
 	}
 	else if(iResult==1)
 	{
+		SetCtrlVal(panelHandle, PANEL_IMEI, "");
+		SetCtrlAttribute (panelHandle, PANEL_TEST, ATTR_DIMMED, 0);
+		SetCtrlAttribute (panelHandle, PANEL_IMEI, ATTR_DIMMED, 0);
+		SetActiveCtrl ( panelHandle, PANEL_IMEI );
+
+		//SetCtrlAttribute (panelHandle, PANEL_FAIL, ATTR_VISIBLE, 0);
+		//SetCtrlAttribute (panelHandle, PANEL_PASS, ATTR_VISIBLE, 1);
+		SetCtrlVal(panelHandle, PANEL_TESTRESULT, "P A S S");
 		SetCtrlAttribute (panelHandle, PANEL_TESTRESULT, ATTR_TEXT_BGCOLOR , VAL_GREEN);
+
 	}
 	return 0;
+
+
+
 }
 
 //TCP连接
 int TcpConnect()
 {
-	AddLog("与服务器连接!");
-	SetWaitCursor (1);
+	//SetWaitCursor (1);
 	if (ConnectToTCPServer (&g_hconversation, portNum, TcpIp, ClientTCPCB,
 							NULL, 5000) < 0)
-	{
-		//MessagePopup("TCP Client", "Connection to server failed !");
-		SetTestResultPrompt(-2,"与服务器连接失败!");
-		g_connected=0;
-	}
+		MessagePopup("TCP Client", "Connection to server failed !");
 	else
 	{
-		AddLog("与服务器连接成功!"); 
+		SetWaitCursor (0);
 		g_connected = 1;
+
+		/* We are successfully connected -- gather info */
 		SetCtrlVal (panelHandle, PANEL_CONNECTED, 1);
+		//SendToTcp("Connected");
+
+		//strSendText:=Format('Action=CheckIMEI#IMEI=%s#Tester=%s#',[strIMEI[CommIndex],User.UserName]);
+		//    SendToServer(CommIndex,'CheckIMEI',strSendText,True,CTimeOut*2);
+		//strSendText:=Format('Action=CheckTestedParamCpd#ChipRid=%s#IMEI=%s#Version=%s#Tester=%s#',[strChipRid[CommIndex],'',strVersion[CommIndex],User.UserName]);
+		//SendToServer(CommIndex,'CheckTestedParamCpd',strSendText,True,CTimeOut*2);
+		/*if (GetTCPHostAddr (tempBuf, 256) >= 0)
+			SetCtrlVal (g_hmainPanel, MAINPNL_CLIENT_IP, tempBuf);
+		if (GetTCPHostName (tempBuf, 256) >= 0)
+			SetCtrlVal (g_hmainPanel, MAINPNL_CLIENT_NAME, tempBuf);*/
+		/*tcpChk (GetTCPPeerAddr (g_hconversation, tempBuf, 256));
+		SetCtrlVal (g_hmainPanel, MAINPNL_SERVER_IP, tempBuf);
+		tcpChk (GetTCPPeerName (g_hconversation, tempBuf, 256));
+		SetCtrlVal (g_hmainPanel, MAINPNL_SERVER_NAME, tempBuf);*/
+
+		/* display the panel and run the UI */
+		//DisplayPanel (g_hmainPanel);
+		//SetActiveCtrl (g_hmainPanel, MAINPNL_STRING);
+		//RunUserInterface ();
 	}
-	SetWaitCursor (0);
+
+//Done:
+	/* Disconnect from the TCP server */
+//    if (g_connected)
+//    	DisconnectFromTCPServer (g_hconversation);
+
+	/* Free resources and return */
+	//DiscardPanel (g_hmainPanel);
+//    CloseCVIRTE ();
 	return 0;
 }
 
@@ -998,75 +1104,51 @@ int TcpConnect()
 int CVICALLBACK ClientTCPCB (unsigned handle, int event, int error,
 							 void *callbackData)
 {
-	char receiveBuf[MAX_REC_LEN] = {0};
-	
+	char receiveBuf[256] = {0};
 	ssize_t dataSize         = sizeof (receiveBuf) - 1;
 
 	switch (event)
 	{
 		case TCP_DATAREADY:
 			if ((dataSize = ClientTCPRead (g_hconversation, receiveBuf,
-										   dataSize, 1000))< 0)
+										   dataSize, 1000))
+					< 0)
 			{
-				SetTestResultPrompt(-2,"接收失败!");
+				//SetCtrlVal (g_hmainPanel, MAINPNL_RECEIVE, "Receive Error\n");
 			}
 			else
 			{
 				receiveBuf[dataSize] = '\0';
-				AddLog(receiveBuf);
 				//处理收到的数据
-				if((strcmp(TcpCmdKey,"CheckIMEI")==0) || (strcmp(TcpCmdKey,"UpdateResult")==0) 
-				  || (strcmp(TcpCmdKey,"CheckTested")==0))
+				if(strcmp(TcpCmdKey,"CheckIMEI")==0)
 				{
 					//取结果
 					char result[2];
+
 					int StartPos=strpos(receiveBuf,"iRecordCount=",0);
+
 					substring(receiveBuf,result,StartPos+strlen("iRecordCount="),1);
 					int iResult=atoi(result);
-					if(strcmp(TcpCmdKey,"CheckTested")==0)
+					if(iResult>=1)
 					{
-						if(iResult>=1)
-						{
-							SetTestResultPrompt(-2,"此机子已测试过!");
-						}
-						else
-						{	
-							UpdateResultMsg("<====开始耦合测试====>");
-							strcpy(write_buffer, ATLINK);
-							SendByte(write_buffer);
-							UpdateResultMsg("<====获得LINK====>");
-						}
-					}
-					else if(strcmp(TcpCmdKey,"CheckIMEI")==0)
-					{
+						MessagePopup ("Error", "此条码已烧写过，请联系管理员!");
 
-						if(iResult>=1)
-						{
-							SetTestResultPrompt(-2,"此IMEI已烧写过!");
-						}
-						else
-						{
-							UpdateResultMsg("<====写IMEI====>");
-							WriteIMEI();
-						}
 					}
-					else if(strcmp(TcpCmdKey,"UpdateResult")==0)
+					else
 					{
-						if((iResult>=1) && (g_TestResult==1))
-						{
-							SetTestResultPrompt(1,"P A S S");
-						}
-						else
-						{
-							SetTestResultPrompt(0,"F A I L");
-						}
+						UpdateResultMsg("<====写IMEI====>");
+						WriteIMEI();
 					}
+
+
+					//SetCtrlVal (g_hmainPanel, MAINPNL_RECEIVE, receiveBuf);
 				}
 				break;
 			case TCP_DISCONNECT:
-				SetTestResultPrompt(-2,"与服务器断开!");;
-				SetCtrlVal (panelHandle, PANEL_CONNECTED, 0);
+				MessagePopup ("TCP Client", "Server has closed connection!");
+				//SetCtrlVal (g_hmainPanel, MAINPNL_CONNECTED, 0);
 				g_connected = 0;
+				//MainPanelCB (0, EVENT_CLOSE, 0, 0, 0);
 				break;
 			}
 			return 0;
@@ -1074,129 +1156,22 @@ int CVICALLBACK ClientTCPCB (unsigned handle, int event, int error,
 	return 1;
 }
 
-//发送至服务器　 TempTcpCmdKey:关键字　 SendMsg:发送的内容
 int SendToTcp(ViString TempTcpCmdKey,ViString SendMsg)
 {
-	if(g_connected==0){
-		SetTestResultPrompt(-2,"未连接服务器!");
-	}
-	else{
-	AddLog(SendMsg); 	
+	char    transmitBuf[512] = {0};
 	strcpy(TcpCmdKey,TempTcpCmdKey);
-	strcat (SendMsg, "\n");
-	if (ClientTCPWrite (g_hconversation, SendMsg,strlen (SendMsg), 1000)<0)
-	{
-		SetTestResultPrompt(-2,"发送服务器失败!");
-	}
-	}
-	return 0;
-}
-int OpenComPort()
-{
-	AddLog("OpenComPort Start");
-	int RS232Error;
-	char devicename[30];
-	sprintf(devicename, "COM%d", comport);
-	DisableBreakOnLibraryErrors();
-	RS232Error = OpenComConfig (comport, devicename, baudrate, parity, databits, stopbits, inputq, outputq);
-	EnableBreakOnLibraryErrors();
-	if (RS232Error< 0)
-	{
-		SetTestResultPrompt(-2,"打开串口失败!");
-		ComIsOpen=0;
-		return -1;
-	}
-	ComIsOpen=1;
-	SetComTime (comport, 0.2);
-	FlushInQ (comport);
-	FlushOutQ (comport);
-	InstallComCallback(comport,LWRS_RXFLAG,0,10,Event_Char_Func,0);  //以回车为标志位，接收到回车就产生中断，调用中断函数UartComCall
-	AddLog("OpenComPort End");
-	return 0;
-};
-int CloseComPort()
-{
-	AddLog("CloseComPort Start");
-	ComIsOpen=0;
-	CloseCom (comport);
-	if(ComIsOpen==1){
-		
-		SetCtrlAttribute (panelHandle, PANEL_COMCONNECT, ATTR_DIMMED, 1);
-		SetCtrlAttribute (panelHandle, PANEL_COMDISCONNECT, ATTR_DIMMED, 0);
-	}
-	else{
-		SetCtrlAttribute (panelHandle, PANEL_COMCONNECT, ATTR_DIMMED, 0);
-		SetCtrlAttribute (panelHandle, PANEL_COMDISCONNECT, ATTR_DIMMED, 1);
-	}
-	AddLog("CloseComPort End"); 
-	return 0;
-};
 
-void SendByte(ViString ch)
-{
-	int RS232Error;
-	if(ComIsOpen == 0)
-		SetTestResultPrompt(-2,"串口还未打开!");
-	else
-	{
-		FlushOutQ(comport);  //清空发送缓存区
-		strcpy(CmdKey,ch);
-		strcat(ch,"\r\n");
-		RS232Error = ComWrt (comport, ch,strlen(ch));
-		SetCtrlAttribute (panelHandle, PANEL_TIMER_SENDCMD, ATTR_ENABLED, 1);
-	}
-}
+	strcpy(transmitBuf,SendMsg);
+	//GetCtrlVal (panelHandle, MAINPNL_STRING, transmitBuf);
+	strcat (transmitBuf, "\n");
+	//SetCtrlVal (panelHandle, MAINPNL_TRANSMIT, transmitBuf);
+	//SetCtrlVal (panelHandle, MAINPNL_STRING, "");
+	if (ClientTCPWrite (g_hconversation, transmitBuf,
+						strlen (transmitBuf), 1000) < 0)
+		//SetCtrlVal (panelHandle, MAINPNL_TRANSMIT,
+		//           "Transmit Error\n");
+		;
 
-//**********************************************************************
-//-------Get Customer Setup File Informations-------------------------
-//********************************************************************
-int GetCustomerSetupFile()
-{
-	AddLog("GetCustomerSetupFile Start");
-	//***********************************************************************************
-	//--------Create a new Inifile object and read it from a file  ------------------
-	//***********************************************************************************
-	if (!(g_CustomerSetupFile = Ini_New (0)))
-	{
-		AddLog("Error allocating memory for Inifile");
-		goto Error;
-	}
-	//****************************************************************************
-	// --------- Get Project pathname --------------------------
-	//***************************************************************************
-	GetProjectDir (CustomerFileName);
-
-	strcat(CustomerFileName,"\\MTK_SETUP.ini");
-	AddLog(CustomerFileName);
-	//********************************************************************
-	if (Ini_ReadFromFile (g_CustomerSetupFile, CustomerFileName))
-	{
-		AddLog("Error reading Inifile"); 
-		goto Error;
-	}
-
-	//读取参数
-	Ini_GetInt (g_CustomerSetupFile, "Coupling Setup","COM PORT", &comport);
-	Ini_GetStringCopy (g_CustomerSetupFile, "Coupling Setup", "TrafficBand", &TrafficBand);
-	Ini_GetInt (g_CustomerSetupFile, "Coupling Setup","TrafficPower", &TrafficPower);
-	Ini_GetInt (g_CustomerSetupFile, "Coupling Setup","TrafficPowerOffset", &TrafficPowerOffset);
-	Ini_GetStringCopy (g_CustomerSetupFile, "Coupling Setup", "Version", &Version);
-	Ini_GetStringCopy (g_CustomerSetupFile, "Coupling Setup", "SoftModel", &SoftModel);
-	Ini_GetRawStringIntoBuffer (g_CustomerSetupFile, "Coupling Setup", "GPIB Address",GPIB_ADDR_8960,20 );
-	Ini_GetStringCopy (g_CustomerSetupFile, "Coupling Setup", "TcpIp", &TcpIp);
-	Ini_GetInt (g_CustomerSetupFile, "Coupling Setup","TcpPort", &portNum);
-	TrafficPowerMax=TrafficPower+TrafficPowerOffset;
-	TrafficPowerMin=TrafficPower-TrafficPowerOffset;
-	Ini_GetStringCopy (g_CustomerSetupFile, "Coupling Setup","ATLINK", &reATLINK);
-	Ini_GetStringCopy (g_CustomerSetupFile, "Coupling Setup","Tester", &Tester);
-	
-	//读取的参数写入日志中
-	sprintf(strLog, "COM PORT:%d\r\nTrafficBand:%s\r\nTrafficPower:%d+-TrafficPowerOffset:%d\r\nVersion:%s\r\nGPIB Address:%s\r\nTcpIp:%s\r\nportNum:%d\r\nreATLINK:%s\r\nTester:%s\r\n", 
-			comport,TrafficBand,TrafficPower,TrafficPowerOffset,Version,GPIB_ADDR_8960,TcpIp,portNum,reATLINK,Tester);
-	AddLog(strLog);
-	
 	return 0;
-Error:
-	return -1;
 }
 

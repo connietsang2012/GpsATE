@@ -20,7 +20,11 @@
 #define  PANEL_TEST                       5       /* control type: command, callback function: CouplingTest */
 #define  PANEL_RESULTS                    6       /* control type: textBox, callback function: (none) */
 #define  PANEL_TESTRESULT                 7       /* control type: string, callback function: (none) */
-#define  PANEL_TIMER_SENDCMD              8       /* control type: timer, callback function: sendcmd_timer */
+#define  PANEL_TIMER_SENDTCPCMD           8       /* control type: timer, callback function: sendTcpcmd_timer */
+#define  PANEL_TIMER_SENDCMD              9       /* control type: timer, callback function: sendcmd_timer */
+#define  PANEL_CONNECTED                  10      /* control type: LED, callback function: (none) */
+#define  PANEL_COMDISCONNECT              11      /* control type: command, callback function: ComDisConnect */
+#define  PANEL_COMCONNECT                 12      /* control type: command, callback function: ComConnect */
 
 
      /* Control Arrays: */
@@ -35,11 +39,14 @@
 
      /* Callback Prototypes: */
 
+int  CVICALLBACK ComConnect(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
+int  CVICALLBACK ComDisConnect(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK CouplingTest(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK Get_IMEI(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK ListComPortDynamiclly(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK Quit(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK sendcmd_timer(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
+int  CVICALLBACK sendTcpcmd_timer(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 
 
 #ifdef __cplusplus

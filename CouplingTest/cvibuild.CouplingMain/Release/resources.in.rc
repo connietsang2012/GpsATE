@@ -1,6 +1,6 @@
-#include "c:\program files\national instruments\cvi2013\sdk\include\winver.h"
+#include "C:\Program Files (x86)\National Instruments\Shared\MSDTRedistributables\SDKHeaderFiles\8.1\winver.h"
 
-2 ICON "c:\\program files\\national instruments\\cvi2013\\bin\\default.ico"
+2 ICON "c:\\program files (x86)\\national instruments\\cvi2015\\bin\\default.ico"
 
 STRINGTABLE DISCARDABLE
 BEGIN
@@ -20,13 +20,13 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "Sky123.Org\0"
+            VALUE "CompanyName", "www.newttl.com\0"
             VALUE "FileDescription", "CouplingMain (Release x86)\0"
             VALUE "FileVersion", "1.0\0"
             VALUE "InternalName", "CouplingMain\0"
-            VALUE "LegalCopyright", "Copyright © Sky123.Org 2017\0"
+            VALUE "LegalCopyright", "Copyright © www.newttl.com 2017\0"
             VALUE "OriginalFilename", "CouplingMain.exe\0"
-            VALUE "ProductName", "Sky123.Org CouplingMain\0"
+            VALUE "ProductName", "www.newttl.com CouplingMain\0"
             VALUE "ProductVersion", "1.0\0"
         END
     END

@@ -1,5 +1,7 @@
 cvi.lib
 cvirte.dll
+brom.lib
+brom.dll
 advapi32.lib
 ADVAPI32.dll
 kernel32.lib

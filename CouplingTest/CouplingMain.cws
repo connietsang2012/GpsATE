@@ -1,23 +1,22 @@
 [Workspace Header]
-Version = 1302
-Pathname = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CouplingMain.cws"
-CVI Dir = "/c/program files/national instruments/cvi2013"
-CVI Shared Dir = "/C/Program Files/National Instruments/Shared/CVI"
-CVI Pub Local Dir Line0001 = "/C/Documents and Settings/All Users/Application Data/National Instruments/CVI201"
-CVI Pub Local Dir Line0002 = "3"
-CVI Pub Global Dir = "/C/Documents and Settings/All Users/Application Data/National Instruments/CVI"
-IVI Standard Root Dir = "/C/Program Files/IVI"
-IVI Standard Root 64-bit Dir = "/C/Program Files/IVI"
-VXIplug&play Framework Dir = "/C/Program Files/VISA/winnt"
-VXIplug&play Framework 64-bit Dir = "/C/Program Files/VISA/win64"
+Version = 1500
+Pathname = "/e/Project/GpsATE/CouplingTest 20171122/CouplingMain.cws"
+CVI Dir = "/c/program files (x86)/national instruments/cvi2015"
+CVI Shared Dir = "/C/Program Files (x86)/National Instruments/Shared/CVI"
+CVI Pub Local Dir = "/C/ProgramData/National Instruments/CVI2015"
+CVI Pub Global Dir = "/C/ProgramData/National Instruments/CVI"
+IVI Standard Root Dir = "/C/Program Files (x86)/IVI Foundation/IVI"
+IVI Standard Root 64-bit Dir = "/C/Program Files/IVI Foundation/IVI"
+VXIplug&play Framework Dir = "/C/Program Files (x86)/IVI Foundation/VISA/winnt"
+VXIplug&play Framework 64-bit Dir = "/C/Program Files/IVI Foundation/VISA/win64"
 Number of Projects = 1
 Active Project = 1
 Project 0001 = "CouplingMain.prj"
-Drag Bar Left = 160
-Window Top = 156
-Window Left = 22
-Window Bottom = 658
-Window Right = 812
+Drag Bar Left = 154
+Window Top = 428
+Window Left = 492
+Window Bottom = 1205
+Window Right = 1728
 Maximized = True
 Maximized Children = True
 Max32 Number Of Errors = 20
@@ -31,14 +30,14 @@ Save Changes Before Compiling = "Always"
 Hide Windows = False
 Break At First Statement = False
 Sort Type = "File Name"
-Number of Opened Files = 4
+Number of Opened Files = 7
 Window Confinement Region Enabled = True
-MainColumnWidth = 143
+MainColumnWidth = 137
 FileDateColumnWidth = 70
 FileSizeColumnWidth = 70
 
 [Project Header 0001]
-Version = 1302
+Version = 1500
 Don't Update DistKit = False
 Platform Code = 4
 Build Configuration = "Release"
@@ -47,64 +46,95 @@ Batch Build Release = False
 Batch Build Debug = False
 
 [File 0001]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CouplingMain.c"
+Path = "/e/Project/GpsATE/CouplingTest 20171122/CouplingMain.c"
 File Type = "CSource"
-Disk Date = 3593663400
+Disk Date = 3594250251
 In Projects = "1,"
-Window Top = 45
+Window Top = 47
+Window Left = 13
 Window Z-Order = 1
-Source Window State = "1,908,908,908,4,19,19,0,3,138,0,766,0,4,0,37,899,0,908,4,400,600,1,47,"
-Breakpoint 0001 = "143,0,enabled,"
+Source Window State = "1,379,379,379,17,32,32,0,3,168,0,0,0,0,0,30,445,0,379,17,431,775,1,0,"
+Breakpoint 0001 = "200,0,enabled,"
 
 [File 0002]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CommonFunc.h"
+Path = "/e/Project/GpsATE/CouplingTest 20171122/CommonFunc.h"
 File Type = "Include"
-Disk Date = 3593577211
+Disk Date = 3594101387
 In Projects = "1,"
 Window Top = 71
 Window Left = 30
-Window Z-Order = 3
-Source Window State = "1,52,52,52,29,36,29,0,0,80,0,11,0,0,0,25,5,0,52,31,323,517,1,15,"
+Window Z-Order = 6
+Source Window State = "1,6,6,6,0,21,21,0,3,43,0,11,0,0,0,14,34,0,6,0,323,517,1,15,"
 
 [File 0003]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CommonFunction.c"
+Path = "/e/Project/GpsATE/CouplingTest 20171122/CommonFunction.c"
 File Type = "CSource"
-Disk Date = 3593575060
+Disk Date = 3594182323
 In Projects = "1,"
 Window Top = 45
 Window Left = 6
-Window Z-Order = 2
-Source Window State = "1,67,74,67,4,34,4,0,0,80,0,0,0,0,0,25,50,0,63,4,323,517,1,0,"
+Window Z-Order = 4
+Source Window State = "1,96,96,96,4,51,51,0,0,43,0,0,0,0,0,14,79,0,99,46,323,517,1,0,"
 
 [File 0004]
-Path = "/c/Program Files/National Instruments/CVI2013/include/userint.h"
-File Type = "Include"
-Disk Date = 3486474000
-In Projects = ""
-Window Top = 71
-Window Left = 30
-Window Z-Order = 4
-Source Window State = "1,978,978,978,8,16,16,0,0,80,0,949,0,0,0,25,964,0,986,27,323,517,1,15,"
-
-[File 0005]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CouplingMain.uir"
+Path = "/e/Project/GpsATE/CouplingTest 20171122/CouplingMain.uir"
 File Type = "User Interface Resource"
-Disk Date = 3593404566
+Disk Date = 3594246462
 In Projects = "1,"
 Window Top = 47
 Window Left = 13
 Window Height = 587
-Window Width = 1072
+Window Width = 1028
+Window Z-Order = 2
+
+[File 0005]
+Path = "/e/Project/GpsATE/CouplingTest 20171122/CouplingMain.h"
+File Type = "Include"
+Disk Date = 3594186144
+In Projects = "1,"
+Window Top = 182
+Window Left = 82
+Window Z-Order = 3
+Source Window State = "1,41,42,42,0,120,120,0,0,80,0,24,0,0,0,19,24,0,51,34,411,895,1,28,"
 
 [File 0006]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/age1960.h"
+Path = "/e/Project/GpsATE/CouplingTest 20171122/ComPortFun.h"
+File Type = "Include"
+Disk Date = 3594081360
+In Projects = "1,"
+Window Top = 137
+Window Left = 59
+Window Z-Order = 7
+Source Window State = "1,3,5,5,0,26,26,0,0,80,0,7,0,7,0,19,0,0,3,0,411,895,1,0,"
+
+[File 0007]
+Path = "/c/Program Files (x86)/National Instruments/CVI2015/include/userint.h"
+File Type = "Include"
+Disk Date = 3517405200
+In Projects = ""
+Window Top = 62
+Window Left = 22
+Window Z-Order = 5
+Source Window State = "1,260,260,260,8,19,19,0,0,43,0,0,0,0,0,10,1662,0,1676,14,239,517,1,0,"
+
+[File 0008]
+Path = "/e/Project/GpsATE/CouplingTest 20171122/ComPortFun.c"
+File Type = "CSource"
+Disk Date = 3594081328
+In Projects = "1,"
+Window Top = 227
+Window Left = 105
+Source Window State = "1,6,15,15,0,18,18,0,0,0,0,9,0,9,0,0,0,0,6,0,411,895,1,0,"
+
+[File 0009]
+Path = "/e/Project/GpsATE/CouplingTest 20171122/age1960.h"
 File Type = "Include"
 Disk Date = 3539153992
 In Projects = "1,"
 Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
 
-[File 0007]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/brom.h"
+[File 0010]
+Path = "/e/Project/GpsATE/CouplingTest 20171122/brom.h"
 File Type = "Include"
 Disk Date = 3592607997
 In Projects = "1,"
@@ -112,24 +142,17 @@ Window Top = 47
 Window Left = 13
 Source Window State = "1,32,32,32,10,19,10,0,0,0,0,74,0,74,0,0,0,0,73,0,351,895,1,0,"
 
-[File 0008]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/com_enum.h"
+[File 0011]
+Path = "/e/Project/GpsATE/CouplingTest 20171122/com_enum.h"
 File Type = "Include"
 Disk Date = 3592608025
 In Projects = "1,"
 Window Top = 47
 Window Left = 13
-Source Window State = "1,66,66,66,0,109,0,0,0,0,0,0,0,0,0,0,21,0,72,0,411,895,1,0,"
+Source Window State = "1,90,90,90,0,7,7,0,3,0,0,0,0,0,0,0,62,0,90,0,411,895,1,0,"
 
-[File 0009]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CouplingMain.h"
-File Type = "Include"
-Disk Date = 3593232353
-In Projects = "1,"
-Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
-
-[File 0010]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/meta.h"
+[File 0012]
+Path = "/e/Project/GpsATE/CouplingTest 20171122/meta.h"
 File Type = "Include"
 Disk Date = 3592606590
 In Projects = "1,"
@@ -137,17 +160,20 @@ Window Top = 92
 Window Left = 36
 Source Window State = "1,69,70,70,0,8,8,0,0,0,0,72,0,72,0,0,47,0,70,6,411,895,1,0,"
 
-[File 0011]
-Path = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/brom.lib"
+[File 0013]
+Path = "/e/Project/GpsATE/CouplingTest 20171122/brom.lib"
 File Type = "Library"
 Disk Date = 3556001974
 In Projects = "1,"
 
 [Tab Order]
-Tab 0001 = "/c/Program Files/National Instruments/CVI2013/include/userint.h"
-Tab 0002 = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CommonFunc.h"
-Tab 0003 = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CommonFunction.c"
-Tab 0004 = "/d/Jimi/CouplingTest 20171116/CouplingTest 20171116/CouplingMain.c"
+Tab 0001 = "/e/Project/GpsATE/CouplingTest 20171122/ComPortFun.h"
+Tab 0002 = "/e/Project/GpsATE/CouplingTest 20171122/CommonFunc.h"
+Tab 0003 = "/c/Program Files (x86)/National Instruments/CVI2015/include/userint.h"
+Tab 0004 = "/e/Project/GpsATE/CouplingTest 20171122/CommonFunction.c"
+Tab 0005 = "/e/Project/GpsATE/CouplingTest 20171122/CouplingMain.h"
+Tab 0006 = "/e/Project/GpsATE/CouplingTest 20171122/CouplingMain.uir"
+Tab 0007 = "/e/Project/GpsATE/CouplingTest 20171122/CouplingMain.c"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True
@@ -238,125 +264,251 @@ Working Directory = ""
 Environment Options = ""
 
 [Watch 1]
-Watch Expression = "Msg"
+Watch Expression = "&AG_Read_Str"
 
 [Watch 2]
-Watch Expression = "&AG_Read_Str"
+Watch Expression = "CmdKey"
 
 [Watch 3]
-Watch Expression = "CmdKey"
+Watch Expression = "ATTEST"
 
 [Watch 4]
-Watch Expression = "ATTEST"
+Watch Expression = "ATD112"
 
 [Watch 5]
-Watch Expression = "ATD112"
+Watch Expression = "int"
 
 [Watch 6]
-Watch Expression = "int"
+Watch Expression = "comport"
 
 [Watch 7]
-Watch Expression = "comport"
+Watch Expression = "Ini_GetStringCopy"
 
 [Watch 8]
-Watch Expression = "Ini_GetStringCopy"
+Watch Expression = "Msg"
 
 [Watch 9]
-Watch Expression = "Msg"
+Watch Expression = "&AG_Read_Str"
 
 [Watch 10]
-Watch Expression = "&AG_Read_Str"
+Watch Expression = "CmdKey"
 
 [Watch 11]
-Watch Expression = "CmdKey"
+Watch Expression = "ATTEST"
 
 [Watch 12]
-Watch Expression = "ATTEST"
+Watch Expression = "ATD112"
 
 [Watch 13]
-Watch Expression = "ATD112"
+Watch Expression = "int"
 
 [Watch 14]
-Watch Expression = "int"
+Watch Expression = "comport"
 
 [Watch 15]
-Watch Expression = "comport"
+Watch Expression = "Ini_GetStringCopy"
 
 [Watch 16]
-Watch Expression = "Ini_GetStringCopy"
+Watch Expression = "Msg"
 
 [Watch 17]
-Watch Expression = "Msg"
+Watch Expression = "&AG_Read_Str"
 
 [Watch 18]
-Watch Expression = "&AG_Read_Str"
+Watch Expression = "CmdKey"
 
 [Watch 19]
-Watch Expression = "CmdKey"
+Watch Expression = "ATTEST"
 
 [Watch 20]
-Watch Expression = "ATTEST"
+Watch Expression = "ATD112"
 
 [Watch 21]
-Watch Expression = "ATD112"
+Watch Expression = "int"
 
 [Watch 22]
-Watch Expression = "int"
+Watch Expression = "comport"
 
 [Watch 23]
-Watch Expression = "comport"
+Watch Expression = "Ini_GetStringCopy"
 
 [Watch 24]
-Watch Expression = "Ini_GetStringCopy"
+Watch Expression = "Msg"
 
 [Watch 25]
-Watch Expression = "Msg"
+Watch Expression = "&AG_Read_Str"
 
 [Watch 26]
-Watch Expression = "&AG_Read_Str"
+Watch Expression = "CmdKey"
 
 [Watch 27]
-Watch Expression = "CmdKey"
+Watch Expression = "ATTEST"
 
 [Watch 28]
-Watch Expression = "ATTEST"
+Watch Expression = "ATD112"
 
 [Watch 29]
-Watch Expression = "ATD112"
+Watch Expression = "int"
 
 [Watch 30]
-Watch Expression = "int"
+Watch Expression = "comport"
 
 [Watch 31]
-Watch Expression = "comport"
+Watch Expression = "Ini_GetStringCopy"
 
 [Watch 32]
-Watch Expression = "Ini_GetStringCopy"
-
-[Watch 33]
 Watch Expression = "Msg"
 
-[Watch 34]
+[Watch 33]
 Watch Expression = "&AG_Read_Str"
 
-[Watch 35]
+[Watch 34]
 Watch Expression = "CmdKey"
 
-[Watch 36]
+[Watch 35]
 Watch Expression = "ATTEST"
 
-[Watch 37]
+[Watch 36]
 Watch Expression = "ATD112"
 
-[Watch 38]
+[Watch 37]
 Watch Expression = "int"
 
-[Watch 39]
+[Watch 38]
 Watch Expression = "comport"
 
-[Watch 40]
+[Watch 39]
 Watch Expression = "Ini_GetStringCopy"
 
-[Watch 41]
+[Watch 40]
 Watch Expression = "checkSum"
+
+[Watch 41]
+Watch Expression = "tempBuf"
+
+[Watch 42]
+Watch Expression = "Msg"
+
+[Watch 43]
+Watch Expression = "&AG_Read_Str"
+
+[Watch 44]
+Watch Expression = "CmdKey"
+
+[Watch 45]
+Watch Expression = "ATTEST"
+
+[Watch 46]
+Watch Expression = "ATD112"
+
+[Watch 47]
+Watch Expression = "int"
+
+[Watch 48]
+Watch Expression = "comport"
+
+[Watch 49]
+Watch Expression = "Ini_GetStringCopy"
+
+[Watch 50]
+Watch Expression = "Msg"
+
+[Watch 51]
+Watch Expression = "&AG_Read_Str"
+
+[Watch 52]
+Watch Expression = "CmdKey"
+
+[Watch 53]
+Watch Expression = "ATTEST"
+
+[Watch 54]
+Watch Expression = "ATD112"
+
+[Watch 55]
+Watch Expression = "int"
+
+[Watch 56]
+Watch Expression = "comport"
+
+[Watch 57]
+Watch Expression = "Ini_GetStringCopy"
+
+[Watch 58]
+Watch Expression = "Msg"
+
+[Watch 59]
+Watch Expression = "&AG_Read_Str"
+
+[Watch 60]
+Watch Expression = "CmdKey"
+
+[Watch 61]
+Watch Expression = "ATTEST"
+
+[Watch 62]
+Watch Expression = "ATD112"
+
+[Watch 63]
+Watch Expression = "int"
+
+[Watch 64]
+Watch Expression = "comport"
+
+[Watch 65]
+Watch Expression = "Ini_GetStringCopy"
+
+[Watch 66]
+Watch Expression = "Msg"
+
+[Watch 67]
+Watch Expression = "&AG_Read_Str"
+
+[Watch 68]
+Watch Expression = "CmdKey"
+
+[Watch 69]
+Watch Expression = "ATTEST"
+
+[Watch 70]
+Watch Expression = "ATD112"
+
+[Watch 71]
+Watch Expression = "int"
+
+[Watch 72]
+Watch Expression = "comport"
+
+[Watch 73]
+Watch Expression = "Ini_GetStringCopy"
+
+[Watch 74]
+Watch Expression = "Msg"
+
+[Watch 75]
+Watch Expression = "&AG_Read_Str"
+
+[Watch 76]
+Watch Expression = "CmdKey"
+
+[Watch 77]
+Watch Expression = "ATTEST"
+
+[Watch 78]
+Watch Expression = "ATD112"
+
+[Watch 79]
+Watch Expression = "int"
+
+[Watch 80]
+Watch Expression = "comport"
+
+[Watch 81]
+Watch Expression = "Ini_GetStringCopy"
+
+[Watch 82]
+Watch Expression = "checkSum"
+
+[Watch 83]
+Watch Expression = "tempBuf"
 
