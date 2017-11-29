@@ -516,3 +516,103 @@ Tester:CouplingTest
 11-23-2017	10:51:48	CloseComPort Start
 11-23-2017	10:51:48	CloseComPort End
 11-23-2017	10:51:48	串口第1次发送
+11-28-2017	15:07:51	GetCustomerSetupFile Start
+11-28-2017	15:07:51	e:\Project\GpsATE\CouplingTest\MTK_SETUP.ini
+11-28-2017	15:07:51	COM PORT:9
+TrafficBand:DCS
+TrafficPower:30+-TrafficPowerOffset:3
+Version:NT33_20_A1D_D23_R0_V08
+GPIB Address:GPIB0::15::INSTR
+TcpIp:192.168.0.167
+portNum:8889
+reATLINK:6
+Tester:CouplingTest
+
+11-28-2017	15:07:51	GetComPortDynamiclly start
+11-28-2017	15:07:51	选择的串口:9
+11-28-2017	15:07:51	CloseComPort Start
+11-28-2017	15:07:51	CloseComPort End
+11-28-2017	15:07:51	OpenComPort Start
+11-28-2017	15:07:51	SetTestResultPrompt:-2,打开串口失败!
+11-28-2017	15:07:52	串口打开失败!
+11-28-2017	15:07:52	与服务器连接!
+11-28-2017	15:07:52	与服务器连接成功!
+11-28-2017	15:07:53	程序退出!
+11-28-2017	15:07:53	CloseComPort Start
+11-28-2017	15:07:53	CloseComPort End
+11-28-2017	15:07:53	串口第1次发送
+11-28-2017	15:10:55	GetCustomerSetupFile Start
+11-28-2017	15:10:55	e:\Project\GpsATE\CouplingTest\MTK_SETUP.ini
+11-28-2017	15:10:55	COM PORT:9
+TrafficBand:DCS
+TrafficPower:30+-TrafficPowerOffset:3
+Version:NT33_20_A1D_D23_R0_V08
+GPIB Address:GPIB0::15::INSTR
+TcpIp:192.168.0.167
+portNum:8889
+reATLINK:6
+Tester:CouplingTest
+
+11-28-2017	15:10:55	GetComPortDynamiclly start
+11-28-2017	15:10:55	选择的串口:9
+11-28-2017	15:10:55	CloseComPort Start
+11-28-2017	15:10:56	CloseComPort End
+11-28-2017	15:10:56	OpenComPort Start
+11-28-2017	15:10:56	SetTestResultPrompt:-2,打开串口失败!
+11-28-2017	15:10:56	串口打开失败!
+11-28-2017	15:10:56	与服务器连接!
+11-28-2017	15:10:56	与服务器连接成功!
+11-28-2017	15:11:00	程序退出!
+11-28-2017	15:11:00	CloseComPort Start
+11-28-2017	15:11:00	CloseComPort End
+11-28-2017	15:11:00	串口第1次发送
+11-28-2017	15:19:18	GetCustomerSetupFile Start
+11-28-2017	15:19:18	e:\Project\GpsATE\CouplingTest\MTK_SETUP.ini
+11-28-2017	15:19:18	COM PORT:9
+TrafficBand:DCS
+TrafficPower:30+-TrafficPowerOffset:3
+Version:NT33_20_A1D_D23_R0_V08
+GPIB Address:GPIB0::15::INSTR
+TcpIp:192.168.0.167
+portNum:8889
+reATLINK:6
+Tester:CouplingTest
+
+11-28-2017	15:19:18	GetComPortDynamiclly start
+11-28-2017	15:19:18	选择的串口:9
+11-28-2017	15:19:18	CloseComPort Start
+11-28-2017	15:19:18	CloseComPort End
+11-28-2017	15:19:18	OpenComPort Start
+11-28-2017	15:19:19	SetTestResultPrompt:-2,打开串口失败!
+11-28-2017	15:19:19	串口打开失败!
+11-28-2017	15:19:19	与服务器连接!
+11-28-2017	15:19:19	与服务器连接成功!
+11-28-2017	15:19:20	程序退出!
+11-28-2017	15:19:20	CloseComPort Start
+11-28-2017	15:19:20	CloseComPort End
+11-28-2017	15:19:20	串口第1次发送
+11-28-2017	15:19:48	GetCustomerSetupFile Start
+11-28-2017	15:19:48	E:\Project\GpsATE\CouplingTest\MTK_SETUP.ini
+11-28-2017	15:19:48	COM PORT:9
+TrafficBand:DCS
+TrafficPower:30+-TrafficPowerOffset:3
+Version:NT33_20_A1D_D23_R0_V08
+GPIB Address:GPIB0::15::INSTR
+TcpIp:192.168.0.167
+portNum:8889
+reATLINK:6
+Tester:CouplingTest
+
+11-28-2017	15:19:49	GetComPortDynamiclly start
+11-28-2017	15:19:49	选择的串口:9
+11-28-2017	15:19:49	CloseComPort Start
+11-28-2017	15:19:49	CloseComPort End
+11-28-2017	15:19:49	OpenComPort Start
+11-28-2017	15:19:49	SetTestResultPrompt:-2,打开串口失败!
+11-28-2017	15:19:49	串口打开失败!
+11-28-2017	15:19:49	与服务器连接!
+11-28-2017	15:19:49	与服务器连接成功!
+11-28-2017	15:19:50	程序退出!
+11-28-2017	15:19:50	CloseComPort Start
+11-28-2017	15:19:50	CloseComPort End
+11-28-2017	15:19:50	串口第1次发送

@@ -1,0 +1,14 @@
+dbo.Gps_AutoTest_Result.Table
+dbo.Gps_CartonBoxTwenty_Result.Table
+dbo.Gps_CoupleTest_Result.Table
+dbo.Gps_CoupleTest_Result_Backup.Table
+dbo.Gps_GetCoupleDifferValue.Table
+dbo.Gps_GetDifferValue.Table
+dbo.Gps_GetImeiDifferValue.Table
+dbo.Gps_GetParamDownloadDifferValue.Table
+dbo.Gps_GetQCDifferValue.Table
+dbo.Gps_GetQCImeiDifferValue.Table
+dbo.Gps_GetQCParamDownloadDifferValue.Table
+dbo.Gps_GetQCWhiteCardDifferValue.Table
+
+dbo.Gps_TestResult.Table

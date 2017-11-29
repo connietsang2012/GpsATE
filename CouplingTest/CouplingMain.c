@@ -330,9 +330,9 @@ int CVICALLBACK Get_IMEI (int panel, int control, int event,
 				//初始化测试结果，开始测试
 				SetTestResult(-1);
 				
-				//发送TEST指令
-				strcpy(write_buffer, ATTEST);
-				SendByte(write_buffer);
+				sprintf(TcpCmd, "Action=CheckIMEI#IMEI=%s#Tester=%s#", strIMEI,Tester);
+				SendToTcp("CheckIMEI",TcpCmd);
+				
 			}
 			else
 			{
@@ -492,8 +492,8 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 		{
 			CommRec_OK();
 
-			sprintf(TcpCmd, "Action=CheckIMEI#IMEI=%s#Tester=%s#", strIMEI,Tester);
-			SendToTcp("CheckIMEI",TcpCmd);
+			UpdateResultMsg("<====写IMEI====>");
+			WriteIMEI();
 		}
 
 	}
@@ -919,6 +919,7 @@ int SetTestResult(int iResult)
 		ResetTextBox (panelHandle, PANEL_RESULTS, "");
 		strcpy(CmdKey,"");
 		strcpy(TcpCmdKey,"");
+		strcpy(strRid,"");
 		SetCtrlAttribute (panelHandle, PANEL_TEST, ATTR_DIMMED, 1);
 		SetCtrlAttribute (panelHandle, PANEL_IMEI, ATTR_DIMMED, 1);
 		SetCtrlVal(panelHandle, PANEL_TESTRESULT, "");
@@ -1046,8 +1047,10 @@ int CVICALLBACK ClientTCPCB (unsigned handle, int event, int error,
 						}
 						else
 						{
-							UpdateResultMsg("<====写IMEI====>");
-							WriteIMEI();
+							//发送TEST指令
+							UpdateResultMsg("<====进入测试模式====>");
+							strcpy(write_buffer, ATTEST);
+							SendByte(write_buffer);
 						}
 					}
 					else if(strcmp(TcpCmdKey,"UpdateResult")==0)
