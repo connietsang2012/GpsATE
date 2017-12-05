@@ -1,36 +1,36 @@
 inherited frmSMTIQCTest: TfrmSMTIQCTest
   Left = -24
   Top = 164
-  Width = 1448
-  Height = 878
+  Width = 1036
+  Height = 780
   Caption = 'SMT OQC'#27979#35797#20301
   OldCreateOrder = True
   OnResize = FormResize
   PixelsPerInch = 96
-  TextHeight = 11
+  TextHeight = 13
   inherited pnlClient: TPanel
-    Width = 1440
-    Height = 844
+    Width = 1028
+    Height = 746
     inherited pnlLeft: TPanel
-      Width = 1438
-      Height = 842
+      Width = 1026
+      Height = 744
       object lblPassCount: TLabel [0]
-        Left = 1008
-        Top = 56
-        Width = 8
-        Height = 16
+        Left = 1191
+        Top = 66
+        Width = 5
+        Height = 24
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -19
         Font.Name = 'MS Sans Serif'
         Font.Style = []
         ParentFont = False
       end
       object lbl_TestCount: TLabel [1]
-        Left = 1064
-        Top = 128
-        Width = 50
-        Height = 11
+        Left = 1257
+        Top = 151
+        Width = 51
+        Height = 13
         Caption = #24050#27979#21488#25968':'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -40,10 +40,10 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         ParentFont = False
       end
       object lbl5: TLabel [2]
-        Left = 1056
-        Top = 72
-        Width = 72
-        Height = 11
+        Left = 1248
+        Top = 85
+        Width = 75
+        Height = 13
         Caption = #35013#31665#25968#37327#35774#32622':'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -53,26 +53,26 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         ParentFont = False
       end
       inherited pnlClientTop: TPanel
-        Width = 1436
-        Height = 50
+        Width = 1024
+        Height = 59
         Visible = False
         inherited cbbCom_0: TComboBox
           Visible = True
         end
       end
       inherited pnlClientBottom: TPanel
-        Top = 790
-        Width = 1436
+        Top = 683
+        Width = 1024
       end
       object btn2: TButton
-        Left = 1064
-        Top = 192
-        Width = 73
-        Height = 33
+        Left = 1257
+        Top = 227
+        Width = 87
+        Height = 39
         Caption = #25171#21360
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -19
         Font.Name = 'MS Sans Serif'
         Font.Style = []
         ParentFont = False
@@ -80,70 +80,70 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         OnClick = btn2Click
       end
       object chk1: TCheckBox
-        Left = 227
-        Top = 9
-        Width = 97
-        Height = 17
+        Left = 268
+        Top = 11
+        Width = 115
+        Height = 20
         Caption = #33258#21160#26816#27979#20018#21475
         TabOrder = 3
       end
       object edt_TestCount: TEdit
-        Left = 1064
-        Top = 152
-        Width = 50
-        Height = 19
+        Left = 1257
+        Top = 180
+        Width = 60
+        Height = 21
         Enabled = False
         TabOrder = 4
       end
       object edt_setAutoTestCount: TEdit
-        Left = 1064
-        Top = 96
-        Width = 50
-        Height = 19
+        Left = 1257
+        Top = 113
+        Width = 60
+        Height = 21
         TabOrder = 5
         Text = '150'
       end
     end
     object pnl1: TPanel
-      Left = 9
-      Top = 11
-      Width = 1024
-      Height = 518
+      Left = 11
+      Top = 13
+      Width = 1210
+      Height = 612
       TabOrder = 1
       object grp1: TGroupBox
         Left = 0
         Top = 0
-        Width = 508
-        Height = 254
+        Width = 600
+        Height = 300
         Caption = 'SMT OQC'#27979#35797#32467#26524'('#20018#21475#19968')'
         TabOrder = 0
         object pnl3: TPanel
           Left = 2
-          Top = 13
-          Width = 504
-          Height = 190
+          Top = 15
+          Width = 596
+          Height = 229
           Align = alClient
           TabOrder = 0
           object pnl2: TPanel
             Left = 1
             Top = 1
-            Width = 502
-            Height = 188
+            Width = 594
+            Height = 227
             Align = alClient
             Caption = 'Panel1'
             TabOrder = 0
             object pnl4: TPanel
               Left = 1
               Top = 1
-              Width = 500
-              Height = 40
+              Width = 592
+              Height = 47
               Align = alTop
               TabOrder = 0
               object lbl7: TLabel
-                Left = 31
-                Top = 9
-                Width = 39
-                Height = 19
+                Left = 37
+                Top = 11
+                Width = 46
+                Height = 22
                 Alignment = taRightJustify
                 AutoSize = False
                 Caption = #20018#21475':'
@@ -155,8 +155,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 ParentFont = False
               end
               object imgCommGreen: TImage
-                Left = 5
-                Top = 4
+                Left = 6
+                Top = 5
                 Width = 32
                 Height = 32
                 AutoSize = True
@@ -189,8 +189,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 Visible = False
               end
               object imgCommRed: TImage
-                Left = 5
-                Top = 4
+                Left = 6
+                Top = 5
                 Width = 32
                 Height = 32
                 AutoSize = True
@@ -222,25 +222,25 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                   FFFFFFFF}
               end
               object cbbCom_1: TComboBox
-                Left = 74
-                Top = 7
-                Width = 66
-                Height = 19
+                Left = 87
+                Top = 8
+                Width = 78
+                Height = 21
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -11
                 Font.Name = 'MS Sans Serif'
                 Font.Style = []
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                ItemHeight = 11
+                ItemHeight = 13
                 ParentFont = False
                 TabOrder = 0
               end
               object btnStart_1: TButton
-                Left = 148
-                Top = 7
-                Width = 72
-                Height = 18
+                Left = 175
+                Top = 8
+                Width = 85
+                Height = 22
                 Caption = #36830#25509
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -252,10 +252,10 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 OnClick = btnStart_1Click
               end
               object btnReTest1: TButton
-                Left = 416
-                Top = 4
-                Width = 80
-                Height = 21
+                Left = 492
+                Top = 5
+                Width = 94
+                Height = 25
                 BiDiMode = bdLeftToRight
                 Caption = #37325#26032#27979#35797
                 ParentBiDiMode = False
@@ -263,41 +263,41 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 OnClick = btnReTest1Click
               end
               object btnBtn_ResultEnable: TButton
-                Left = 327
-                Top = 5
-                Width = 80
-                Height = 21
+                Left = 386
+                Top = 6
+                Width = 95
+                Height = 25
                 Caption = #26597#30475
                 TabOrder = 3
                 OnClick = btnBtn_ResultEnableClick
               end
               object CheckBoxAutoTestCom1: TCheckBox
-                Left = 227
-                Top = 8
-                Width = 89
-                Height = 17
+                Left = 268
+                Top = 9
+                Width = 105
+                Height = 21
                 Caption = #33258#21160#26816#27979#20018#21475
                 TabOrder = 4
               end
             end
             object pnlTestResult_1: TPanel
               Left = 1
-              Top = 41
-              Width = 500
-              Height = 146
+              Top = 48
+              Width = 592
+              Height = 178
               Align = alClient
               Caption = 'pnlTestResult_1'
               TabOrder = 1
               object TestResultDetail_1: TDBGrid
                 Left = 1
                 Top = 1
-                Width = 498
-                Height = 144
+                Width = 590
+                Height = 176
                 Align = alClient
                 DataSource = DS_TestResult_1
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clBlack
-                Font.Height = -9
+                Font.Height = -11
                 Font.Name = 'MS Sans Serif'
                 Font.Style = []
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -356,14 +356,14 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
         object TestResult1: TPanel
           Left = 2
-          Top = 203
-          Width = 504
-          Height = 27
+          Top = 244
+          Width = 596
+          Height = 32
           Align = alBottom
           Color = clRed
           Font.Charset = GB2312_CHARSET
           Font.Color = clWindowText
-          Font.Height = -19
+          Font.Height = -23
           Font.Name = #38582#20070
           Font.Style = [fsBold]
           ParentFont = False
@@ -371,8 +371,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
         object SB_TestStatus_1: TStatusBar
           Left = 2
-          Top = 230
-          Width = 504
+          Top = 276
+          Width = 596
           Height = 22
           Panels = <
             item
@@ -388,39 +388,39 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
       end
       object grp2: TGroupBox
-        Left = 508
+        Left = 600
         Top = 0
-        Width = 507
-        Height = 254
+        Width = 600
+        Height = 300
         Caption = 'SMT OQC'#27979#35797#32467#26524'('#20018#21475#20108')'
         TabOrder = 1
         object pnlResult1: TPanel
           Left = 2
-          Top = 13
-          Width = 503
-          Height = 190
+          Top = 15
+          Width = 596
+          Height = 229
           Align = alClient
           TabOrder = 0
           object pnlResult2: TPanel
             Left = 1
             Top = 1
-            Width = 501
-            Height = 188
+            Width = 594
+            Height = 227
             Align = alClient
             Caption = 'Panel1'
             TabOrder = 0
             object pnlResult3: TPanel
               Left = 1
               Top = 1
-              Width = 499
-              Height = 40
+              Width = 592
+              Height = 47
               Align = alTop
               TabOrder = 0
               object lbl4: TLabel
-                Left = 31
-                Top = 9
-                Width = 39
-                Height = 19
+                Left = 37
+                Top = 11
+                Width = 46
+                Height = 22
                 Alignment = taRightJustify
                 AutoSize = False
                 Caption = #20018#21475':'
@@ -432,8 +432,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 ParentFont = False
               end
               object img1: TImage
-                Left = 5
-                Top = 4
+                Left = 6
+                Top = 5
                 Width = 32
                 Height = 32
                 AutoSize = True
@@ -466,8 +466,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 Visible = False
               end
               object img2: TImage
-                Left = 5
-                Top = 4
+                Left = 6
+                Top = 5
                 Width = 32
                 Height = 32
                 AutoSize = True
@@ -499,25 +499,25 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                   FFFFFFFF}
               end
               object cbbCom_2: TComboBox
-                Left = 74
-                Top = 7
-                Width = 66
-                Height = 19
+                Left = 87
+                Top = 8
+                Width = 78
+                Height = 21
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -11
                 Font.Name = 'MS Sans Serif'
                 Font.Style = []
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                ItemHeight = 11
+                ItemHeight = 13
                 ParentFont = False
                 TabOrder = 0
               end
               object btnStart_2: TButton
-                Left = 148
-                Top = 7
-                Width = 72
-                Height = 18
+                Left = 175
+                Top = 8
+                Width = 85
+                Height = 22
                 Caption = #36830#25509
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -529,10 +529,10 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 OnClick = btnStart_2Click
               end
               object btnReTest2: TButton
-                Left = 406
-                Top = 4
-                Width = 89
-                Height = 21
+                Left = 480
+                Top = 5
+                Width = 105
+                Height = 25
                 BiDiMode = bdLeftToRight
                 Caption = #37325#26032#27979#35797
                 ParentBiDiMode = False
@@ -540,32 +540,32 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 OnClick = btnReTest2Click
               end
               object CheckBoxAutoTestCom2: TCheckBox
-                Left = 227
-                Top = 9
-                Width = 97
-                Height = 17
+                Left = 268
+                Top = 11
+                Width = 115
+                Height = 20
                 Caption = #33258#21160#26816#27979#20018#21475
                 TabOrder = 3
               end
             end
             object pnlTestResult_2: TPanel
               Left = 1
-              Top = 41
-              Width = 499
-              Height = 146
+              Top = 48
+              Width = 592
+              Height = 178
               Align = alClient
               Caption = 'pnlTestResult_1'
               TabOrder = 1
               object TestResultDetail_2: TDBGrid
                 Left = 1
                 Top = 1
-                Width = 497
-                Height = 144
+                Width = 590
+                Height = 176
                 Align = alClient
                 DataSource = DS_TestResult_2
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clBlack
-                Font.Height = -9
+                Font.Height = -11
                 Font.Name = 'MS Sans Serif'
                 Font.Style = []
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -624,14 +624,14 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
         object TestResult2: TPanel
           Left = 2
-          Top = 203
-          Width = 503
-          Height = 27
+          Top = 244
+          Width = 596
+          Height = 32
           Align = alBottom
           Color = clRed
           Font.Charset = GB2312_CHARSET
           Font.Color = clWindowText
-          Font.Height = -19
+          Font.Height = -23
           Font.Name = #38582#20070
           Font.Style = [fsBold]
           ParentFont = False
@@ -639,8 +639,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
         object SB_TestStatus_2: TStatusBar
           Left = 2
-          Top = 230
-          Width = 503
+          Top = 276
+          Width = 596
           Height = 22
           Panels = <
             item
@@ -657,43 +657,43 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
       end
       object grp3: TGroupBox
         Left = 0
-        Top = 257
-        Width = 508
-        Height = 254
+        Top = 304
+        Width = 600
+        Height = 300
         Caption = 'SMT OQC'#27979#35797#32467#26524'('#20018#21475#19977')'
         TabOrder = 2
         object pnlResult4: TPanel
           Left = 2
-          Top = 13
-          Width = 504
-          Height = 190
+          Top = 15
+          Width = 596
+          Height = 229
           Align = alClient
           TabOrder = 0
           object pnlResult5: TPanel
             Left = 1
             Top = 1
-            Width = 502
-            Height = 188
+            Width = 594
+            Height = 227
             Align = alClient
             Caption = 'Panel1'
             TabOrder = 0
             object pnlTestResult_3: TPanel
               Left = 1
-              Top = 41
-              Width = 500
-              Height = 146
+              Top = 48
+              Width = 592
+              Height = 178
               Align = alClient
               Caption = 'pnlTestResult_1'
               TabOrder = 0
               object TestResultDetail_3: TDBGrid
                 Left = 1
                 Top = 1
-                Width = 498
-                Height = 144
+                Width = 590
+                Height = 176
                 Align = alClient
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clBlack
-                Font.Height = -9
+                Font.Height = -11
                 Font.Name = 'MS Sans Serif'
                 Font.Style = []
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -751,15 +751,15 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
             object pnlResult6: TPanel
               Left = 1
               Top = 1
-              Width = 500
-              Height = 40
+              Width = 592
+              Height = 47
               Align = alTop
               TabOrder = 1
               object lbl2: TLabel
-                Left = 31
-                Top = 9
-                Width = 39
-                Height = 19
+                Left = 37
+                Top = 11
+                Width = 46
+                Height = 22
                 Alignment = taRightJustify
                 AutoSize = False
                 Caption = #20018#21475':'
@@ -771,8 +771,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 ParentFont = False
               end
               object img3: TImage
-                Left = 5
-                Top = 4
+                Left = 6
+                Top = 5
                 Width = 32
                 Height = 32
                 AutoSize = True
@@ -805,8 +805,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 Visible = False
               end
               object img4: TImage
-                Left = 5
-                Top = 4
+                Left = 6
+                Top = 5
                 Width = 32
                 Height = 32
                 AutoSize = True
@@ -838,25 +838,25 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                   FFFFFFFF}
               end
               object cbbCom_3: TComboBox
-                Left = 74
-                Top = 7
-                Width = 66
-                Height = 19
+                Left = 87
+                Top = 8
+                Width = 78
+                Height = 21
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -11
                 Font.Name = 'MS Sans Serif'
                 Font.Style = []
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                ItemHeight = 11
+                ItemHeight = 13
                 ParentFont = False
                 TabOrder = 0
               end
               object btnStart_3: TButton
-                Left = 148
-                Top = 7
-                Width = 72
-                Height = 18
+                Left = 175
+                Top = 8
+                Width = 85
+                Height = 22
                 Caption = #36830#25509
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -868,10 +868,10 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 OnClick = btnStart_3Click
               end
               object btnReTest3: TButton
-                Left = 406
-                Top = 4
-                Width = 89
-                Height = 21
+                Left = 480
+                Top = 5
+                Width = 105
+                Height = 25
                 BiDiMode = bdLeftToRight
                 Caption = #37325#26032#27979#35797
                 ParentBiDiMode = False
@@ -879,10 +879,10 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 OnClick = btnReTest3Click
               end
               object CheckBoxAutoTestCom3: TCheckBox
-                Left = 227
-                Top = 16
-                Width = 97
-                Height = 17
+                Left = 268
+                Top = 19
+                Width = 115
+                Height = 20
                 Caption = #33258#21160#26816#27979#20018#21475
                 TabOrder = 3
               end
@@ -891,14 +891,14 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
         object TestResult3: TPanel
           Left = 2
-          Top = 203
-          Width = 504
-          Height = 27
+          Top = 244
+          Width = 596
+          Height = 32
           Align = alBottom
           Color = clRed
           Font.Charset = GB2312_CHARSET
           Font.Color = clWindowText
-          Font.Height = -19
+          Font.Height = -23
           Font.Name = #38582#20070
           Font.Style = [fsBold]
           ParentFont = False
@@ -906,8 +906,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
         object SB_TestStatus_3: TStatusBar
           Left = 2
-          Top = 230
-          Width = 504
+          Top = 276
+          Width = 596
           Height = 22
           Panels = <
             item
@@ -923,39 +923,39 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
       end
       object grp4: TGroupBox
-        Left = 508
-        Top = 257
-        Width = 507
-        Height = 254
+        Left = 600
+        Top = 304
+        Width = 600
+        Height = 300
         Caption = 'SMT OQC'#27979#35797#32467#26524'('#20018#21475#22235')'
         TabOrder = 3
         object pnlResult9: TPanel
           Left = 2
-          Top = 13
-          Width = 503
-          Height = 190
+          Top = 15
+          Width = 596
+          Height = 229
           Align = alClient
           TabOrder = 0
           object pnlResult10: TPanel
             Left = 1
             Top = 1
-            Width = 501
-            Height = 188
+            Width = 594
+            Height = 227
             Align = alClient
             Caption = 'Panel1'
             TabOrder = 0
             object pnlResult11: TPanel
               Left = 1
               Top = 1
-              Width = 499
-              Height = 40
+              Width = 592
+              Height = 47
               Align = alTop
               TabOrder = 0
               object lbl3: TLabel
-                Left = 31
-                Top = 9
-                Width = 39
-                Height = 19
+                Left = 37
+                Top = 11
+                Width = 46
+                Height = 22
                 Alignment = taRightJustify
                 AutoSize = False
                 Caption = #20018#21475':'
@@ -967,8 +967,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 ParentFont = False
               end
               object img5: TImage
-                Left = 5
-                Top = 4
+                Left = 6
+                Top = 5
                 Width = 32
                 Height = 32
                 AutoSize = True
@@ -1001,8 +1001,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 Visible = False
               end
               object img6: TImage
-                Left = 5
-                Top = 4
+                Left = 6
+                Top = 5
                 Width = 32
                 Height = 32
                 AutoSize = True
@@ -1034,25 +1034,25 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                   FFFFFFFF}
               end
               object cbbCom_4: TComboBox
-                Left = 74
-                Top = 7
-                Width = 66
-                Height = 19
+                Left = 87
+                Top = 8
+                Width = 78
+                Height = 21
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -11
                 Font.Name = 'MS Sans Serif'
                 Font.Style = []
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                ItemHeight = 11
+                ItemHeight = 13
                 ParentFont = False
                 TabOrder = 0
               end
               object btnStart_4: TButton
-                Left = 148
-                Top = 7
-                Width = 72
-                Height = 18
+                Left = 175
+                Top = 8
+                Width = 85
+                Height = 22
                 Caption = #36830#25509
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -1064,10 +1064,10 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 OnClick = btnStart_4Click
               end
               object btnReTest4: TButton
-                Left = 406
-                Top = 4
-                Width = 89
-                Height = 21
+                Left = 480
+                Top = 5
+                Width = 105
+                Height = 25
                 BiDiMode = bdLeftToRight
                 Caption = #37325#26032#27979#35797
                 ParentBiDiMode = False
@@ -1075,41 +1075,41 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
                 OnClick = btnReTest4Click
               end
               object CheckBoxAutoTestCom4: TCheckBox
-                Left = 227
-                Top = 16
-                Width = 97
-                Height = 17
+                Left = 268
+                Top = 19
+                Width = 115
+                Height = 20
                 Caption = #33258#21160#26816#27979#20018#21475
                 TabOrder = 3
               end
               object cbbComAgilent_5: TComboBox
-                Left = 432
-                Top = 32
-                Width = 66
-                Height = 19
+                Left = 511
+                Top = 38
+                Width = 78
+                Height = 21
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                ItemHeight = 11
+                ItemHeight = 13
                 TabOrder = 4
                 Visible = False
               end
             end
             object pnlTestResult_4: TPanel
               Left = 1
-              Top = 41
-              Width = 499
-              Height = 146
+              Top = 48
+              Width = 592
+              Height = 178
               Align = alClient
               Caption = 'pnlTestResult_1'
               TabOrder = 1
               object TestResultDetail_4: TDBGrid
                 Left = 1
                 Top = 1
-                Width = 497
-                Height = 144
+                Width = 590
+                Height = 176
                 Align = alClient
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clBlack
-                Font.Height = -9
+                Font.Height = -11
                 Font.Name = 'MS Sans Serif'
                 Font.Style = []
                 ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -1168,14 +1168,14 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
         object TestResult4: TPanel
           Left = 2
-          Top = 203
-          Width = 503
-          Height = 27
+          Top = 244
+          Width = 596
+          Height = 32
           Align = alBottom
           Color = clRed
           Font.Charset = GB2312_CHARSET
           Font.Color = clWindowText
-          Font.Height = -19
+          Font.Height = -23
           Font.Name = #38582#20070
           Font.Style = [fsBold]
           ParentFont = False
@@ -1183,8 +1183,8 @@ inherited frmSMTIQCTest: TfrmSMTIQCTest
         end
         object SB_TestStatus_4: TStatusBar
           Left = 2
-          Top = 230
-          Width = 503
+          Top = 276
+          Width = 596
           Height = 22
           Panels = <
             item

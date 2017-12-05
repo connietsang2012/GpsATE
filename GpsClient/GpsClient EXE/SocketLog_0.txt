@@ -1,928 +1,269 @@
-[2015-1-31 12:11:12 156ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 12:11:21 812ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 12:12:03 437ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 12:12:03 546ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 12:12:29 625ms]		[S:]====Action=CheckTestPass#IMEI=358899053318021#Tester=q#
-[2015-1-31 12:12:30 109ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:12:40 453ms]		[S:]====Action=CheckTestPass#IMEI=358899053318021#Tester=q#
-[2015-1-31 12:12:40 921ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:12:55 875ms]		[S:]====Action=CheckTestPass#IMEI=358899053318021#Tester=q#
-[2015-1-31 12:12:56 359ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:04 687ms]		[S:]====Action=CheckTestPass#IMEI=358899053318005#Tester=q#
-[2015-1-31 12:13:05 156ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:09 328ms]		[S:]====Action=CheckTestPass#IMEI=358899053317973#Tester=q#
-[2015-1-31 12:13:09 828ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:13 218ms]		[S:]====Action=CheckTestPass#IMEI=358899053318013#Tester=q#
-[2015-1-31 12:13:13 703ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:17 171ms]		[S:]====Action=CheckTestPass#IMEI=358899053318047#Tester=q#
-[2015-1-31 12:13:17 656ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:23 15ms]		[S:]====Action=CheckTestPass#IMEI=358899053318054#Tester=q#
-[2015-1-31 12:13:23 484ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:27 296ms]		[S:]====Action=CheckTestPass#IMEI=358899053317924#Tester=q#
-[2015-1-31 12:13:27 765ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:32 62ms]		[S:]====Action=CheckTestPass#IMEI=358899053317957#Tester=q#
-[2015-1-31 12:13:32 546ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:36 593ms]		[S:]====Action=CheckTestPass#IMEI=358899053317593#Tester=q#
-[2015-1-31 12:13:37 46ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:41 593ms]		[S:]====Action=CheckTestPass#IMEI=358899053317601#Tester=q#
-[2015-1-31 12:13:42 78ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:46 78ms]		[S:]====Action=CheckTestPass#IMEI=358899053317965#Tester=q#
-[2015-1-31 12:13:46 546ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:51 31ms]		[S:]====Action=CheckTestPass#IMEI=358899053317940#Tester=q#
-[2015-1-31 12:13:51 531ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:55 203ms]		[S:]====Action=CheckTestPass#IMEI=358899053317932#Tester=q#
-[2015-1-31 12:13:55 671ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:13:59 453ms]		[S:]====Action=CheckTestPass#IMEI=358899053317619#Tester=q#
-[2015-1-31 12:13:59 875ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:14:03 375ms]		[S:]====Action=CheckTestPass#IMEI=358899053317627#Tester=q#
-[2015-1-31 12:14:03 859ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:14:07 515ms]		[S:]====Action=CheckTestPass#IMEI=358899053317635#Tester=q#
-[2015-1-31 12:14:07 968ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:14:12 500ms]		[S:]====Action=CheckTestPass#IMEI=358899053317643#Tester=q#
-[2015-1-31 12:14:12 968ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:14:16 265ms]		[S:]====Action=CheckTestPass#IMEI=358899053317650#Tester=q#
-[2015-1-31 12:14:16 718ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:14:21 421ms]		[S:]====Action=CheckTestPass#IMEI=358899053317908#Tester=q#
-[2015-1-31 12:14:21 937ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:14:26 546ms]		[S:]====Action=CheckTestPass#IMEI=358899053317890#Tester=q#
-[2015-1-31 12:14:27 15ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:14:39 156ms]		[S:]====Action=CheckTestPass#IMEI=358899053317890#Tester=q#
-[2015-1-31 12:14:39 609ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:15:35 640ms]		[S:]====Action=CheckTestPass#IMEI=358899053317890#Tester=q#
-[2015-1-31 12:15:36 109ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:15:41 156ms]		[S:]====Action=CheckTestPass#IMEI=358899053317908#Tester=q#
-[2015-1-31 12:15:41 640ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:15:46 171ms]		[S:]====Action=CheckTestPass#IMEI=358899053317650#Tester=q#
-[2015-1-31 12:15:46 656ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:15:51 390ms]		[S:]====Action=CheckTestPass#IMEI=358899053317643#Tester=q#
-[2015-1-31 12:15:51 859ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:15:55 640ms]		[S:]====Action=CheckTestPass#IMEI=358899053317635#Tester=q#
-[2015-1-31 12:15:56 109ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:15:59 781ms]		[S:]====Action=CheckTestPass#IMEI=358899053317627#Tester=q#
-[2015-1-31 12:16:00 265ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:03 750ms]		[S:]====Action=CheckTestPass#IMEI=358899053317619#Tester=q#
-[2015-1-31 12:16:04 250ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:07 875ms]		[S:]====Action=CheckTestPass#IMEI=358899053317932#Tester=q#
-[2015-1-31 12:16:08 359ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:13 515ms]		[S:]====Action=CheckTestPass#IMEI=358899053317940#Tester=q#
-[2015-1-31 12:16:14 62ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:19 343ms]		[S:]====Action=CheckTestPass#IMEI=358899053317965#Tester=q#
-[2015-1-31 12:16:19 843ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:23 968ms]		[S:]====Action=CheckTestPass#IMEI=358899053317601#Tester=q#
-[2015-1-31 12:16:24 437ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:28 562ms]		[S:]====Action=CheckTestPass#IMEI=358899053317593#Tester=q#
-[2015-1-31 12:16:29 31ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:33 421ms]		[S:]====Action=CheckTestPass#IMEI=358899053317957#Tester=q#
-[2015-1-31 12:16:33 937ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:37 703ms]		[S:]====Action=CheckTestPass#IMEI=358899053317924#Tester=q#
-[2015-1-31 12:16:38 218ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:41 609ms]		[S:]====Action=CheckTestPass#IMEI=358899053318054#Tester=q#
-[2015-1-31 12:16:42 93ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:45 953ms]		[S:]====Action=CheckTestPass#IMEI=358899053318047#Tester=q#
-[2015-1-31 12:16:46 421ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:50 437ms]		[S:]====Action=CheckTestPass#IMEI=358899053318013#Tester=q#
-[2015-1-31 12:16:50 906ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:54 265ms]		[S:]====Action=CheckTestPass#IMEI=358899053317973#Tester=q#
-[2015-1-31 12:16:54 734ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:16:58 125ms]		[S:]====Action=CheckTestPass#IMEI=358899053318005#Tester=q#
-[2015-1-31 12:16:58 625ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:17:01 843ms]		[S:]====Action=CheckTestPass#IMEI=358899053318021#Tester=q#
-[2015-1-31 12:17:02 296ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=0#AutoTest=1#Result=0#
-[2015-1-31 12:22:31 296ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 12:22:31 390ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 12:23:26 984ms]		[S:]====Action=Login#Username=q#UserPwd=882547#Tester=q#
-[2015-1-31 12:23:27 78ms]		[R:]====Action=Login#UserDes=#UserType=#TestPlan=#Result=0#
-[2015-1-31 12:23:33 125ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 12:23:33 234ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 14:22:11 984ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 14:22:12 78ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 14:37:21 843ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 14:37:22 312ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 14:39:24 437ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 14:39:24 921ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 14:41:47 109ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 14:41:47 437ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 14:43:31 218ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 14:43:31 375ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 14:50:16 921ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 14:50:17 15ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 14:54:35 109ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 14:54:35 218ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-1-31 14:56:41 750ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-1-31 14:56:41 859ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-3-1 8:02:13 140ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
+[2017-11-29 下午 07:44:17 328ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-29 下午 07:44:17 343ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-29 下午 07:45:01 187ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-29 下午 07:45:01 203ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-29 下午 07:45:08 843ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-29 下午 07:45:08 843ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-29 下午 07:45:18 859ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-29 下午 07:45:20 250ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-29 下午 07:46:00 656ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-29 下午 07:46:00 671ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-29 下午 07:46:10 171ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-29 下午 07:46:10 187ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 上午 11:50:15 15ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 上午 11:50:15 46ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 上午 11:50:30 390ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 上午 11:50:30 406ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 12:38:10 421ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 12:38:15 437ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 12:38:20 437ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+[2017-11-30 下午 12:39:14 500ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 12:39:14 515ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 12:39:33 328ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 12:39:33 406ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 02:12:08 625ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 02:12:08 640ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 02:12:52 968ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 02:12:52 984ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 02:13:44 921ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 02:13:44 921ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 02:27:35 93ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 02:27:35 125ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 02:28:23 171ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 02:28:23 171ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 02:29:26 500ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 02:29:26 515ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 02:31:22 765ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 02:31:22 781ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:12:46 296ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 03:12:46 296ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 03:14:33 31ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 03:14:33 31ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 03:15:53 859ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 03:15:53 875ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 03:20:43 859ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 03:20:43 859ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 03:21:59 687ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:21:59 703ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:23:46 93ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 03:23:46 93ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 03:24:01 453ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:24:01 453ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:24:44 640ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:24:44 656ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:25:02 687ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:25:02 703ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:26:02 359ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:26:02 406ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:49:10 62ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 03:49:10 62ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 03:49:22 625ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:49:22 656ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:49:27 906ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:49:27 921ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:50:08 609ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 03:50:08 625ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 03:50:25 984ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:50:26 0ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 03:50:54 687ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 03:50:54 703ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 04:10:15 359ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:10:20 359ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:10:25 359ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:17:12 328ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 04:17:12 343ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 04:17:31 437ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:17:31 500ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 04:17:40 453ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:17:40 468ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 04:18:33 156ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:18:33 171ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 04:19:07 640ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:19:07 656ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+服务器连接失败!10053
+[2017-11-30 下午 04:22:54 703ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 04:22:54 703ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 04:23:06 515ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:23:06 531ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-11-30 下午 04:34:13 500ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:36:14 281ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+服务器连接失败!10053
+[2017-11-30 下午 04:41:25 468ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+服务器连接失败!10054
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+服务器连接失败!10060
+[2017-11-30 下午 04:40:53 937ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-11-30 下午 04:40:53 968ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-11-30 下午 04:41:16 671ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-11-30 下午 04:41:16 687ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 07:49:17 781ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 07:49:17 828ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 07:49:36 109ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 07:49:36 125ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 07:52:06 375ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 07:52:06 375ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 07:53:53 62ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 07:53:53 93ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 07:54:11 718ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 07:54:11 734ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 07:55:20 765ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 07:55:20 765ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 07:55:32 718ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 07:55:32 734ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 08:02:28 125ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 08:02:28 125ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 08:02:42 984ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 08:02:42 984ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 08:04:43 78ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 08:04:43 78ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 08:04:53 890ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 08:04:53 937ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 08:25:01 125ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 08:25:01 140ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 08:25:17 625ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 08:25:17 656ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 08:27:27 375ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 08:27:27 390ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 08:27:39 187ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 08:27:39 218ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 08:28:11 984ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 08:28:12 0ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 08:28:27 734ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 08:28:27 750ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 08:35:57 140ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+服务器连接失败!10057
 服务器连接失败!10038
-[2015-3-1 8:02:41 421ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-3-1 8:02:41 515ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2015-6-3 9:05:46 691ms]		[S:]====Action=Login#Username=q#UserPwd=8822547#Tester=q#
-[2015-6-3 9:05:46 801ms]		[R:]====Action=Login#UserDes=强#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2017-10-18 下午 06:43:46 609ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-[2017-10-18 下午 06:43:46 765ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-[2017-10-20 下午 04:33:04 765ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-[2017-10-20 下午 04:33:09 765ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-[2017-10-20 下午 04:33:14 781ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-[2017-10-20 下午 04:33:40 531ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-[2017-10-20 下午 04:33:40 546ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2017-10-20 下午 04:35:02 265ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-[2017-10-20 下午 04:35:02 703ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2017-10-20 下午 04:36:45 62ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-[2017-10-20 下午 04:36:45 93ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2017-10-20 下午 04:43:31 281ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-[2017-10-20 下午 04:43:31 953ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2017-10-20 下午 04:48:44 968ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-[2017-10-20 下午 04:48:46 140ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-[2017-10-21 上午 03:36:10 890ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-[2017-10-21 上午 03:36:15 890ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-[2017-10-22 下午 09:15:16 718ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
-[2017-10-22 下午 09:15:16 765ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
-服务器连接失败!10061
+[2017-12-1 上午 08:36:02 140ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 08:36:02 140ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 08:36:02 140ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 08:36:02 140ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 08:36:02 140ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 08:36:02 906ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 08:36:14 781ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 08:36:14 796ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 08:36:19 109ms]		[S:]====Action=CheckTestPass#IMEI=111111111111119#Tester=SuperAdmin#
+[2017-12-1 上午 08:36:19 125ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=0#Result=0#
+[2017-12-1 上午 09:19:39 734ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 09:19:39 734ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 09:24:26 625ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 09:24:26 640ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 09:24:58 734ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 09:24:58 750ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 09:27:02 984ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 上午 09:27:02 984ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 上午 09:27:22 562ms]		[S:]====Action=Login#Username=ylxCarton#UserPwd=ylx#Tester=ylxCarton#
+[2017-12-1 上午 09:27:22 562ms]		[R:]====Action=Login#UserDes=ylxCarton#UserType=QC_KT#TestPlan=CartonBox#Result=1#
+[2017-12-1 下午 12:14:57 812ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 下午 12:14:57 859ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 下午 12:19:19 531ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 下午 12:19:19 531ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 下午 12:20:57 750ms]		[S:]====Action=CheckTestPass#IMEI=868120184881016#Tester=SuperAdmin#
+[2017-12-1 下午 12:20:57 765ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=1#Result=1#
+[2017-12-1 下午 12:49:20 406ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-1 下午 12:49:20 421ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-1 下午 12:50:54 140ms]		[S:]====Action=CheckTestPass#IMEI=868120184881016#Tester=SuperAdmin#
+[2017-12-1 下午 12:50:54 156ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=1#Result=1#
+[2017-12-1 下午 12:51:36 78ms]		[S:]====Action=CheckTestPass#IMEI=868120184881016#Tester=SuperAdmin#
+[2017-12-1 下午 12:51:36 109ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=1#Result=1#
+[2017-12-2 下午 04:50:49 546ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-2 下午 04:50:49 562ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-2 下午 05:05:38 578ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-2 下午 05:05:38 578ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-2 下午 05:06:01 875ms]		[S:]====Action=CheckTestPass#IMEI=868120184888128#Tester=SuperAdmin#
+[2017-12-2 下午 05:06:01 906ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=1#Result=1#
+[2017-12-2 下午 05:07:56 796ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-2 下午 05:07:56 812ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-2 下午 05:08:19 187ms]		[S:]====Action=CheckTestPass#IMEI=868120184888128#Tester=SuperAdmin#
+[2017-12-2 下午 05:08:19 203ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=1#Result=1#
+[2017-12-2 下午 05:14:45 890ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-2 下午 05:14:45 890ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-2 下午 05:15:08 828ms]		[S:]====Action=CheckTestPass#IMEI=868120184888128#Tester=SuperAdmin#
+[2017-12-2 下午 05:15:08 843ms]		[R:]====Action=CheckTestPass#FunctionTest=1#GPS=1#CoupleTest=1#WriteImei=1#ParamDownload=1#AutoTest=1#Result=1#
+[2017-12-2 下午 06:56:37 593ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-2 下午 06:56:37 593ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#
+[2017-12-2 下午 06:57:35 515ms]		[S:]====Action=Login#Username=SuperAdmin#UserPwd=1#Tester=SuperAdmin#
+[2017-12-2 下午 06:57:35 531ms]		[R:]====Action=Login#UserDes=超级管理员#UserType=SuperAdmin#TestPlan=ALL#Result=1#

@@ -1230,7 +1230,7 @@ begin
     frmClientMain.ac_CoupleTest.Enabled:=((User.TestPlan='ALL') or (User.TestPlan='CoupleTest'));
     frmClientMain.ac_WriteImeiTest.Enabled:=((User.TestPlan='ALL') or (User.TestPlan='WriteImei'));
     frmClientMain.ac_ParamDownloadTest.Enabled:=((User.TestPlan='ALL') or (User.TestPlan='ParamDownload'));
-    frmClientMain.ac_CartonBoxSet.Enabled:=((User.TestPlan='ALL') or (User.TestPlan='CartonBox'));
+    frmClientMain.ac_CartonBoxSet.Enabled:=((User.TestPlan='ALL') or (User.TestPlan='CartonBox') or (User.TestPlan='ParamConfig'));
     //frmClientMain.AutoTest.Enabled:=((User.TestPlan='ALL') or (User.TestPlan='AutoTest'));
     frmClientMain.ac_AutoTest.Enabled:=((User.TestPlan='ALL') or (User.TestPlan='AutoTest'));
     frmClientMain.ac_AutoTestSMT.Enabled:=((User.TestPlan='ALL') or (User.TestPlan='AutoTestSMT'));

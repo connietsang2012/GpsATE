@@ -33,7 +33,8 @@ uses
   uLongWaitTrd in 'uLongWaitTrd.pas',
   uReadBack in 'ReadBack\uReadBack.pas' {frmReadBack},
   uPrintProcess in 'uPrintProcess.pas' {frmPrintProcess},
-  uParamLoadConfig in 'ParamLoadConfig\uParamLoadConfig.pas' {frmParamDownLoadConfig};
+  uParamLoadConfig in 'ParamLoadConfig\uParamLoadConfig.pas' {frmParamDownLoadConfig},
+  uGiftBoxMain in 'GiftBox\uGiftBoxMain.pas' {frmGiftBoxMain};
 
 {$R *.res}
 var
@@ -48,6 +49,7 @@ begin
         Application.CreateForm(TDMMain, DMMain);
   Application.CreateForm(TfrmClientMain, frmClientMain);
   Application.CreateForm(TfrmMessagebox, frmMessagebox);
+  Application.CreateForm(TfrmGiftBoxMain, frmGiftBoxMain);
   Application.ShowMainForm:=False;
           
         //œ‘ æµ«¬ºΩÁ√Ê

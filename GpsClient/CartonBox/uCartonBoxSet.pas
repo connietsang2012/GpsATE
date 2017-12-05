@@ -57,12 +57,12 @@ end;
 
 procedure TfrmCartonBoxSet.cbbPrintCountChange(Sender: TObject);
 begin
-    if cbbPrintCount.ItemIndex=0 then
+    {if cbbPrintCount.ItemIndex=0 then
     begin
         cbbPrintType.ItemIndex:=0;
         cbbPrintType.Enabled:=False;
     end
-    else
+    else }
     begin
         cbbPrintType.Enabled:=True;
         cbbPrintType.Items.Clear;

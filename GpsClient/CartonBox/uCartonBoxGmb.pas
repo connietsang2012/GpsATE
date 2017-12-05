@@ -69,17 +69,19 @@ begin
     strFile :=ExtractFilePath(ParamStr(0))+'CartonBox\gmb\'+IntToStr(mmoMEI.Lines.Count)+'.btw';
     with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
     begin
-        SetNamedSubStringValue('TextZd','SHIPPING MARK:'+trim(EdtSMark.Text));
-        SetNamedSubStringValue('BarCodeXH',trim(EdtBoxNum.Text)+trim(EdtBoxNum1.Text));
+        SetNamedSubStringValue('ZhiDan','SHIPPING MARK:'+trim(EdtSMark.Text));
+        SetNamedSubStringValue('BoxNum',trim(EdtBoxNum.Text)+trim(EdtBoxNum1.Text));
         SetNamedSubStringValue('TextProduct','PRODUCT:'+trim(EdtProduct.Text));
-        SetNamedSubStringValue('BarCodeJX',trim(EdtModel.Text));
-        SetNamedSubStringValue('TextYsDate','Color:'+trim(EdtColor.Text)+'    Date:'+trim(EdtDate.Text));
-        SetNamedSubStringValue('TextSlMz','QTY:'+trim(EdtQty.Text)+'    G.W:'+trim(EdtGW.Text));
-        SetNamedSubStringValue('Text','Product Code:'+trim(EdtPCode.Text));
-        SetNamedSubStringValue('Text1','Version:'+trim(EdtParamVersion.Text));
+        SetNamedSubStringValue('MachineType',trim(EdtModel.Text));
+        SetNamedSubStringValue('ProductColor','Color:'+trim(EdtColor.Text));
+        SetNamedSubStringValue('ProductDate','Date:'+trim(EdtDate.Text));
+        SetNamedSubStringValue('ProductCount','QTY:'+trim(EdtQty.Text));
+        SetNamedSubStringValue('ProductWeight','G.W:'+trim(EdtGW.Text));
+        SetNamedSubStringValue('ProductNum','产品编码:'+trim(EdtPCode.Text));
+        SetNamedSubStringValue('Remark',trim(EdtParamVersion.Text));
 
         //strver := trim(EdtVersion.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);
-        strver:=SysUtils.Format('Boxno:%s%s  TextZd:%s  Type:%s  Color:%s      Date:%s  QTY:%s PCS  G.W:%s KG  Product Code:%s  Version:%s',
+        strver:=SysUtils.Format('Boxno:%s%s  ZhiDan:%s  Type:%s  Color:%s      Date:%s  QTY:%s PCS  G.W:%s KG  Product Code:%s  Version:%s',
                     [EdtBoxNum.Text,EdtBoxNum1.Text,EdtSMark.Text,EdtModel.Text,EdtColor.Text,EdtDate.Text,EdtQty.Text,EdtGW.Text,EdtPCode.Text,EdtParamVersion.Text]);
         AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\gmbdblog.txt');
         for i:=0 to (mmoMEI.Lines.Count-1) do
@@ -160,6 +162,39 @@ begin
         EdtBoxNum1.Text :='00'+ EdtBoxNum1.Text
     else if (Length(EdtBoxNum1.Text) =4) then
         EdtBoxNum1.Text :='0'+ EdtBoxNum1.Text;
+
+    if (User.UserType<>'ParamConfig') and (User.UserType<>'admin') and (User.UserType<>'SuperAdmin') then
+    begin
+        {EdtVersion.Enabled:=false;
+        EdtBoxNum.Enabled:=false;
+        EdtBoxNum1.Enabled:=false;
+        EdtColor.Enabled:=false;
+        EdtQty.Enabled:=false;
+        EdtDate.Enabled:=false;
+        Edtzhidan.Enabled:=false;
+        EdtProNo.Enabled:=false;
+        EdtParamVersion.Enabled:=false;
+        EdtTac.Enabled:=false;
+        EdtQty1.Enabled:=false;
+        Edt_IMEISTART.Enabled:=false;
+        Edt_IMEIEND.Enabled:=false;
+        EdtCpName.Enabled:=false;}
+
+        EdtSMark.Enabled:=false;
+        EdtProduct.Enabled:=false;
+        EdtBoxNum.Enabled:=false;
+        EdtBoxNum1.Enabled:=false;
+        EdtColor.Enabled:=false;
+        EdtDate.Enabled:=false;
+        EdtQty.Enabled:=false;
+        EdtGW.Enabled:=false;
+        EdtPCode.Enabled:=false;
+        EdtParamVersion.Enabled:=false;
+        EdtModel.Enabled:=false;
+        EdtTac.Enabled:=false;
+        Edt_IMEISTART.Enabled:=false;
+        Edt_IMEIEND.Enabled:=false;
+    end;
 end;
 
 procedure TfrmCartonBoxGmb.FormClose(Sender: TObject;

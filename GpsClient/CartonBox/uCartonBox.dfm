@@ -1,6 +1,6 @@
 object frmCartonBox: TfrmCartonBox
-  Left = 284
-  Top = 148
+  Left = 209
+  Top = 155
   Width = 936
   Height = 634
   Caption = #24086#32440#27169#26495
@@ -16,29 +16,29 @@ object frmCartonBox: TfrmCartonBox
   OnResize = FormResize
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 11
+  TextHeight = 13
   object pnlParent: TPanel
-    Left = 7
-    Top = 7
-    Width = 834
-    Height = 508
+    Left = 8
+    Top = 8
+    Width = 986
+    Height = 601
     TabOrder = 0
     object grp1: TGroupBox
-      Left = 5
+      Left = 6
       Top = 0
-      Width = 604
-      Height = 65
+      Width = 714
+      Height = 77
       Caption = #25195#25551#21306
       TabOrder = 0
       object EdtMEI: TEdit
         Left = 0
-        Top = 14
-        Width = 583
-        Height = 48
+        Top = 17
+        Width = 689
+        Height = 56
         AutoSize = False
         Font.Charset = ANSI_CHARSET
         Font.Color = clBlue
-        Font.Height = -48
+        Font.Height = -57
         Font.Name = #23435#20307
         Font.Style = [fsBold]
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -49,18 +49,46 @@ object frmCartonBox: TfrmCartonBox
       end
     end
     object grp2: TGroupBox
-      Left = 5
-      Top = 68
-      Width = 604
-      Height = 38
+      Left = 6
+      Top = 80
+      Width = 714
+      Height = 45
       Caption = #21151#33021#21306
       TabOrder = 1
       object lbl8: TLabel
-        Left = 270
-        Top = 13
-        Width = 323
-        Height = 21
+        Left = 319
+        Top = 15
+        Width = 382
+        Height = 25
         AutoSize = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -19
+        Font.Name = #23435#20307
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl9: TLabel
+        Left = 210
+        Top = 17
+        Width = 62
+        Height = 18
+        AutoSize = False
+        Caption = #25968#25454#26465#25968':'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl10: TLabel
+        Left = 290
+        Top = 15
+        Width = 31
+        Height = 23
+        AutoSize = False
+        Caption = '0'
         Font.Charset = ANSI_CHARSET
         Font.Color = clRed
         Font.Height = -16
@@ -68,39 +96,11 @@ object frmCartonBox: TfrmCartonBox
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object lbl9: TLabel
-        Left = 178
-        Top = 14
-        Width = 52
-        Height = 16
-        AutoSize = False
-        Caption = #25968#25454#26465#25968':'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = #23435#20307
-        Font.Style = []
-        ParentFont = False
-      end
-      object lbl10: TLabel
-        Left = 245
-        Top = 13
-        Width = 27
-        Height = 19
-        AutoSize = False
-        Caption = '0'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = #23435#20307
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object btnPrint: TSpeedButton
-        Left = 74
-        Top = 13
-        Width = 20
-        Height = 18
+        Left = 87
+        Top = 15
+        Width = 24
+        Height = 22
         Hint = #25171#21360
         Glyph.Data = {
           26050000424D26050000000000003604000028000000100000000F0000000100
@@ -148,41 +148,41 @@ object frmCartonBox: TfrmCartonBox
         OnClick = btnPrintClick
       end
       object chkAuto: TCheckBox
-        Left = 8
-        Top = 16
-        Width = 61
-        Height = 14
+        Left = 9
+        Top = 19
+        Width = 73
+        Height = 16
         Caption = #33258#21160#25171#21360
         Checked = True
         State = cbChecked
         TabOrder = 0
       end
       object btnClear: TButton
-        Left = 108
-        Top = 10
-        Width = 64
-        Height = 21
+        Left = 128
+        Top = 12
+        Width = 75
+        Height = 25
         Caption = #28165#31354#37325#25195
         TabOrder = 1
         OnClick = btnClearClick
       end
     end
     object grp3: TGroupBox
-      Left = 5
-      Top = 106
-      Width = 604
-      Height = 183
+      Left = 6
+      Top = 125
+      Width = 714
+      Height = 217
       Caption = #26174#31034#21306
       TabOrder = 2
       object mmoMEI: TMemo
         Left = 2
-        Top = 13
-        Width = 600
-        Height = 168
+        Top = 15
+        Width = 710
+        Height = 200
         Align = alClient
         Font.Charset = ANSI_CHARSET
         Font.Color = clRed
-        Font.Height = -27
+        Font.Height = -32
         Font.Name = #23435#20307
         Font.Style = [fsBold]
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -193,17 +193,17 @@ object frmCartonBox: TfrmCartonBox
       end
     end
     object grp4: TGroupBox
-      Left = 5
-      Top = 294
-      Width = 604
-      Height = 190
+      Left = 6
+      Top = 347
+      Width = 714
+      Height = 225
       Caption = #29256#26412#20449#24687#21306
       TabOrder = 3
       object lbl13: TLabel
-        Left = 4
-        Top = 140
-        Width = 51
-        Height = 11
+        Left = 5
+        Top = 165
+        Width = 60
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -211,10 +211,10 @@ object frmCartonBox: TfrmCartonBox
         ParentBiDiMode = False
       end
       object lbl12: TLabel
-        Left = 4
-        Top = 44
-        Width = 51
-        Height = 11
+        Left = 5
+        Top = 52
+        Width = 60
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -222,10 +222,10 @@ object frmCartonBox: TfrmCartonBox
         ParentBiDiMode = False
       end
       object lbl16: TLabel
-        Left = 32
-        Top = 92
-        Width = 55
-        Height = 11
+        Left = 38
+        Top = 109
+        Width = 65
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -233,10 +233,10 @@ object frmCartonBox: TfrmCartonBox
         ParentBiDiMode = False
       end
       object lbl17: TLabel
-        Left = 248
-        Top = 92
-        Width = 33
-        Height = 11
+        Left = 293
+        Top = 109
+        Width = 39
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -244,10 +244,10 @@ object frmCartonBox: TfrmCartonBox
         ParentBiDiMode = False
       end
       object lbl18: TLabel
-        Left = 12
-        Top = 60
-        Width = 51
-        Height = 11
+        Left = 14
+        Top = 71
+        Width = 60
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -255,117 +255,117 @@ object frmCartonBox: TfrmCartonBox
         ParentBiDiMode = False
       end
       object EdtTac: TEdit
-        Left = 61
-        Top = 135
-        Width = 178
-        Height = 19
+        Left = 72
+        Top = 160
+        Width = 210
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 15
         TabOrder = 0
         OnKeyPress = EdtTacKeyPress
       end
       object EdtBoxNum: TEdit
-        Left = 61
-        Top = 40
-        Width = 68
-        Height = 19
+        Left = 72
+        Top = 47
+        Width = 80
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 3
+        MaxLength = 5
         TabOrder = 1
       end
       object Edt_IMEISTART: TEdit
-        Left = 93
-        Top = 87
-        Width = 148
-        Height = 19
+        Left = 110
+        Top = 103
+        Width = 175
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 14
         TabOrder = 2
       end
       object Edt_IMEIEND: TEdit
-        Left = 285
-        Top = 87
-        Width = 148
-        Height = 19
+        Left = 337
+        Top = 103
+        Width = 175
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 14
         TabOrder = 3
       end
       object EdtParamVersion: TEdit
-        Left = 69
-        Top = 56
-        Width = 68
-        Height = 19
+        Left = 82
+        Top = 66
+        Width = 80
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 50
         TabOrder = 4
       end
     end
     object GrpTestPass: TGroupBox
-      Left = 660
-      Top = 94
-      Width = 114
-      Height = 122
+      Left = 780
+      Top = 111
+      Width = 135
+      Height = 144
       Caption = #27979#35797#26410#36890#36807#24037#31449
       Enabled = False
       TabOrder = 4
       Visible = False
       object chk_FuncTest: TCheckBox
-        Left = 12
-        Top = 135
-        Width = 101
-        Height = 14
+        Left = 14
+        Top = 160
+        Width = 120
+        Height = 16
         Caption = #21151#33021#27979#35797#20301
         TabOrder = 0
         Visible = False
       end
       object chk_GPSTest: TCheckBox
-        Left = 12
-        Top = 154
-        Width = 101
-        Height = 14
+        Left = 14
+        Top = 182
+        Width = 120
+        Height = 17
         Caption = 'GPS'#27979#35797#20301
         TabOrder = 1
         Visible = False
       end
       object chk_CoupleTest: TCheckBox
-        Left = 5
-        Top = 22
-        Width = 102
-        Height = 14
+        Left = 6
+        Top = 26
+        Width = 120
+        Height = 17
         Caption = #32806#21512#27979#35797#20301
         TabOrder = 2
       end
       object chk_WriteImei: TCheckBox
-        Left = 5
-        Top = 44
-        Width = 102
-        Height = 14
+        Left = 6
+        Top = 52
+        Width = 120
+        Height = 17
         Caption = 'IMEI'#28903#20889#20301
         TabOrder = 3
       end
       object chk_ParamDownload: TCheckBox
-        Left = 5
-        Top = 66
-        Width = 102
-        Height = 14
+        Left = 6
+        Top = 78
+        Width = 120
+        Height = 17
         Caption = #36719#20214#21442#25968#19979#36733#20301
         TabOrder = 4
       end
       object chk_AutoTest: TCheckBox
-        Left = 5
-        Top = 88
-        Width = 102
-        Height = 14
+        Left = 6
+        Top = 104
+        Width = 120
+        Height = 17
         Caption = #33258#21160#27979#35797#20301
         TabOrder = 5
       end
     end
     object chkMustParamterDownload: TCheckBox
-      Left = 612
-      Top = 20
-      Width = 156
-      Height = 15
+      Left = 723
+      Top = 24
+      Width = 185
+      Height = 17
       Caption = #26159#21542#26816#27979#36719#20214#21442#25968#19979#36733#20301
       Checked = True
       Enabled = False
@@ -374,18 +374,18 @@ object frmCartonBox: TfrmCartonBox
       OnClick = chkMustParamterDownloadClick
     end
     object medtParamterDownload: TMaskEdit
-      Left = 612
-      Top = 41
-      Width = 156
-      Height = 19
+      Left = 723
+      Top = 48
+      Width = 185
+      Height = 21
       PasswordChar = '*'
       TabOrder = 6
     end
     object btnParamterDownload: TBitBtn
-      Left = 708
-      Top = 68
-      Width = 63
-      Height = 21
+      Left = 837
+      Top = 80
+      Width = 74
+      Height = 25
       Caption = #30830'    '#23450
       TabOrder = 7
       OnClick = btnParamterDownloadClick
@@ -650,7 +650,32 @@ object frmCartonBox: TfrmCartonBox
   object sp1: TUniStoredProc
     StoredProcName = 'CheckTestedByImei'
     Connection = DMMain.UniConGpsTest
-    Left = 872
+    Left = 856
     Top = 224
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cIMEI'
+        ParamType = ptInput
+        Value = '357404080086880'
+      end
+      item
+        DataType = ftInteger
+        Name = 'iRecordCount'
+        ParamType = ptInputOutput
+        Value = 1
+      end>
+    CommandStoredProcName = 'CheckTestedByImei'
+    StoredProcIsQuery = True
+  end
+  object UniQuery_FindRidByImei: TUniQuery
+    Left = 536
+    Top = 8
   end
 end

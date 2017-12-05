@@ -1585,8 +1585,8 @@ inherited;
   try
   with btplctnSMTOQCPrint.Formats.Open(strFile, True, '') do //打开打印标签文件
   begin
-      SetNamedSubStringValue('BarCodeXH',BoxNo);
-      SetNamedSubStringValue('TextZd','数量:' + IntToStr(strOQCList.Count));
+      SetNamedSubStringValue('BoxNum',BoxNo);
+      SetNamedSubStringValue('ZhiDan','数量:' + IntToStr(strOQCList.Count));
       SetNamedSubStringValue('Text','日期:' + IntToStr(Year)+ '-'+IntToStr(Month)+ '-'+IntToStr(Day));
       try
       PrintOut(False, False);

@@ -49,9 +49,6 @@ type
     UniQuery_IMEIRemark4: TStringField;
     UniQuery_IMEIRemark5: TStringField;
     unqry1: TUniQuery;
-    ExcelApplication1: TExcelApplication;
-    ExcelWorksheet1: TExcelWorksheet;
-    ExcelWorkbook1: TExcelWorkbook;
     StringGrid1: TStringGrid;
     shp1: TShape;
 
@@ -81,6 +78,7 @@ var
   i,iGrid:Integer;
   strtemp:string;
   //strGrid:TStringGrid;
+  strRid:string;
 begin
     ///清空stringgrid
     ClearStringGrid(StringGrid1);
@@ -102,40 +100,54 @@ begin
     strBar :='';
     strver :='';
     strFile :=ExtractFilePath(ParamStr(0))+'CartonBox\llf\'+IntToStr(mmoMEI.Lines.Count)+'.btw';
+    AppendTxt(strFile,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
     if chkAuto.Checked then
     begin
       with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
       begin
-          SetNamedSubStringValue('BarCodeXH',trim(EdtBoxNum.Text)+trim(EdtBoxNum1.Text));
-          SetNamedSubStringValue('TextZd','订单:'+trim(Edtzhidan.Text));
-          SetNamedSubStringValue('BarCodeJX',trim(EdtVersion.Text));
-          SetNamedSubStringValue('TextYsDate','颜色:'+trim(EdtColor.Text)+'    日期:'+trim(EdtDate.Text));
-          SetNamedSubStringValue('TextSlMz','数量:'+trim(EdtQty1.Text)+'    毛重:'+trim(EdtQty.Text));
-          SetNamedSubStringValue('Text','Product Code:'+trim(EdtProNo.Text));
-          SetNamedSubStringValue('Text1','Version:'+trim(EdtParamVersion.Text));
+          SetNamedSubStringValue('BoxNum',trim(EdtBoxNum.Text)+trim(EdtBoxNum1.Text));
+          SetNamedSubStringValue('ZhiDan','制单:'+trim(Edtzhidan.Text));
+          SetNamedSubStringValue('MachineType',trim(EdtVersion.Text));
+          SetNamedSubStringValue('ProductColor','颜色:'+trim(EdtColor.Text));
+          SetNamedSubStringValue('ProductDate','日期:'+trim(EdtDate.Text));
+          SetNamedSubStringValue('ProductCount','数量:'+trim(EdtQty1.Text));
+          SetNamedSubStringValue('ProductWeight','毛重'+(EdtQty.Text));
+          SetNamedSubStringValue('ProductNum','产品编码:'+trim(EdtProNo.Text));
+          SetNamedSubStringValue('Remark',trim(EdtParamVersion.Text));
 
           //strver := trim(EdtVersion.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);
-          strver:=SysUtils.Format('箱号:%s%s  制单:%s  机型:%s  颜色:%s    日期:%s  数量:%s  毛重:%sKG  Product Code:%s  Version:%s',
-                      [EdtBoxNum.Text,EdtBoxNum1.Text,Edtzhidan.Text,EdtVersion.Text,EdtColor.Text,EdtDate.Text,EdtQty1.Text,EdtQty.Text,EdtProNo.Text,EdtParamVersion.Text]);
+          strver:=SysUtils.Format('箱号:%s%s'+#13#10+'制单:%s'+#13#10+'颜色:%s'+#13#10+'日期:%s'+#13#10+'数量:%s'+#13#10+'毛重%s'+#13#10+'产品编码:%s'+#13#10+'机型:%s'+#13#10+'',
+                      [EdtBoxNum.Text,EdtBoxNum1.Text,Edtzhidan.Text,EdtColor.Text,EdtDate.Text,EdtQty1.Text,EdtQty.Text,EdtProNo.Text,EdtVersion.Text]);
           AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
-     
+
           for i:=0 to (mmoMEI.Lines.Count-1) do
           begin
-              strBar  :='BarCode' +IntToStr(i+1);
+              strver:=strver+StrList.Strings[i]+''+#13#10+'';
+              strBar  :='IMEI' +IntToStr(i);
               SetNamedSubStringValue(strBar,StrList.Strings[i]); //设置值
               AppendTxt(DateTimeToStr(Now)+'-----------'+StrList.Strings[i],LowerDir(ExtractFilePath(ParamStr(0)))+'\PrintLog\log.txt');
-              AppendTxt(StrList.Strings[i],LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
+              //AppendTxt(StrList.Strings[i],LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
+
+              //得到基带ID
+              strRid:='';
+              UniQuery_FindRidByImei.Close;
+              UniQuery_FindRidByImei.ParamByName('IMEI').value:=StrList.Strings[i];
+              UniQuery_FindRidByImei.Open;
+              UniQuery_FindRidByImei.First;
+              strRid:=UniQuery_FindRidByImei.FieldByName('Rid').AsString;
+              AppendTxt(StrList.Strings[i]+','+strRid,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
+
 
               UniQuery_IMEI.Close;
               UniQuery_IMEI.Sql.Clear;
               //strtemp := Format('Insert into Gps_CartonBoxTwenty_Result (BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId) values(''%s%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'')',
               //[EdtBoxNum.Text, EdtBoxNum1.Text, StrList.Strings[i], Edtzhidan.Text, EdtVersion.Text, EdtVersion1.Text, EdtProNo.Text, EdtColor.Text, EdtQty1.Text, EdtQty.Text, EdtDate.Text, EdtTac.Text, EdtCpName.Text, User.UserName]);
 
-              strtemp:='Insert into Gps_CartonBoxTwenty_Result(BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId) values('''
+              strtemp:='Insert into Gps_CartonBoxTwenty_Result(BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId,Remark2) values('''
                         + EdtBoxNum.Text+EdtBoxNum1.Text+''','''+StrList.Strings[i]+''','''+Edtzhidan.Text
                         + ''','''+EdtVersion.Text+''','''+EdtParamVersion.Text+''','''+EdtProNo.Text+''','''
                         + EdtColor.Text+''','''+EdtQty1.Text+''','''+EdtQty.Text+''','''+EdtDate.Text+''','''
-                        + EdtTac.Text+''','''+EdtCpName.Text+''','''+User.UserName + ''')';
+                        + EdtTac.Text+''','''+EdtCpName.Text+''','''+User.UserName + ''','''+strRid+''')';
 
 
               UniQuery_IMEI.SQL.Text:=strtemp;
@@ -154,6 +166,7 @@ begin
           StringGrid1.Cells[i,10]:=EdtDate.Text; }
 
           end;
+          SetNamedSubStringValue('QRCode',strver); //设置值
           try
               PrintOut(False, False);
               //InserExcell(StringGrid1);
@@ -184,28 +197,60 @@ begin
     end
     else
     begin
+    //strver:=SysUtils.Format('箱号:%s%s'+#13#10+'制单:%s'+#13#10+'颜色:%s'+#13#10+'日期:%s'+#13#10+'数量:%s'+#13#10+'毛重%s'+#13#10+'产品编码:%s'+#13#10+'机型:%s'+#13#10+'',
+    //                  [EdtBoxNum.Text,EdtBoxNum1.Text,Edtzhidan.Text,EdtColor.Text,EdtDate.Text,EdtQty1.Text,EdtQty.Text,EdtProNo.Text,EdtVersion.Text]);
+
       with btappBtnPrint.Formats.Open(strFile, True, '') do //打开标签文件
       begin
-          SetNamedSubStringValue('BarCodeXH',trim(EdtBoxNum.Text)+trim(EdtBoxNum1.Text));
-          SetNamedSubStringValue('TextZd','订单:'+trim(Edtzhidan.Text));
-          SetNamedSubStringValue('BarCodeJX',trim(EdtVersion.Text));
-          SetNamedSubStringValue('TextYsDate','颜色:'+trim(EdtColor.Text)+'    日期:'+trim(EdtDate.Text));
-          SetNamedSubStringValue('TextSlMz','数量:'+trim(EdtQty1.Text)+'    毛重:'+trim(EdtQty.Text));
-          SetNamedSubStringValue('Text','Product Code:'+trim(EdtProNo.Text));
-          SetNamedSubStringValue('Text1','Version:'+trim(EdtParamVersion.Text));
+          {SetNamedSubStringValue('BoxNum',trim(EdtBoxNum.Text)+trim(EdtBoxNum1.Text));
+          SetNamedSubStringValue('ZhiDan','订单:'+trim(Edtzhidan.Text));
+          SetNamedSubStringValue('MachineType',trim(EdtVersion.Text));
+          SetNamedSubStringValue('ProductColor','颜色:'+trim(EdtColor.Text));
+          SetNamedSubStringValue('ProductDate','日期:'+trim(EdtDate.Text));
+          SetNamedSubStringValue('ProductCount','数量'+trim(EdtQty1.Text));
+          SetNamedSubStringValue('ProductWeight','毛重'+(EdtQty.Text));
+          SetNamedSubStringValue('ProductNum','产品编码:'+trim(EdtProNo.Text));
+          SetNamedSubStringValue('Remark',trim(EdtParamVersion.Text));
 
           //strver := trim(EdtVersion.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);
-          strver:=SysUtils.Format('箱号:%s%s  制单:%s  机型:%s  颜色:%s    日期:%s  数量:%s  毛重:%sKG  Product Code:%s  Version:%s',
+          strver:=SysUtils.Format('箱号:%s%s  制单:%s  机型:%s  颜色:%s    日期:%s  数量:%s  毛重%sKG  Product Code:%s  Version:%s',
                       [EdtBoxNum.Text,EdtBoxNum1.Text,Edtzhidan.Text,EdtVersion.Text,EdtColor.Text,EdtDate.Text,EdtQty1.Text,EdtQty.Text,EdtProNo.Text,EdtParamVersion.Text]);
+          AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt'); }
+
+          SetNamedSubStringValue('BoxNum',trim(EdtBoxNum.Text)+trim(EdtBoxNum1.Text));
+          SetNamedSubStringValue('ZhiDan','制单:'+trim(Edtzhidan.Text));
+          SetNamedSubStringValue('MachineType',trim(EdtVersion.Text));
+          SetNamedSubStringValue('ProductColor','颜色:'+trim(EdtColor.Text));
+          SetNamedSubStringValue('ProductDate','日期:'+trim(EdtDate.Text));
+          SetNamedSubStringValue('ProductCount','数量:'+trim(EdtQty1.Text));
+          SetNamedSubStringValue('ProductWeight','毛重'+trim(EdtQty.Text));
+          SetNamedSubStringValue('ProductNum','产品编码:'+trim(EdtProNo.Text));
+          SetNamedSubStringValue('Remark',trim(EdtParamVersion.Text));
+
+          //strver := trim(EdtVersion.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);
+          strver:=SysUtils.Format('箱号:%s%s'+#13#10+'制单:%s'+#13#10+'颜色:%s'+#13#10+'日期:%s'+#13#10+'数量:%s'+#13#10+'毛重%s'+#13#10+'产品编码:%s'+#13#10+'机型:%s'+#13#10+'',
+                      [EdtBoxNum.Text,EdtBoxNum1.Text,Edtzhidan.Text,EdtColor.Text,EdtDate.Text,EdtQty1.Text,EdtQty.Text,EdtProNo.Text,EdtVersion.Text]);
           AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
 
 
           for i:=0 to (mmoMEI.Lines.Count-1) do
           begin
-              strBar  :='BarCode' +IntToStr(i+1);
+              strver:=strver+StrList.Strings[i]+''+#13#10+'';
+              strBar  :='IMEI' +IntToStr(i);
               SetNamedSubStringValue(strBar,StrList.Strings[i]); //设置值
               AppendTxt(DateTimeToStr(Now)+'-----------'+StrList.Strings[i],LowerDir(ExtractFilePath(ParamStr(0)))+'\PrintLog\log.txt');
-              AppendTxt(StrList.Strings[i],LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
+              //AppendTxt(StrList.Strings[i],LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
+
+              //得到基带ID
+              strRid:='';
+              UniQuery_FindRidByImei.Close;
+              UniQuery_FindRidByImei.ParamByName('IMEI').value:=StrList.Strings[i];
+              UniQuery_FindRidByImei.Open;
+              UniQuery_FindRidByImei.First;
+              strRid:=UniQuery_FindRidByImei.FieldByName('Rid').AsString;
+              AppendTxt(StrList.Strings[i]+','+strRid,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
+
+
           {StringGrid1.RowCount:=StringGrid1.RowCount+1;
           StringGrid1.Cells[i, 0]:=StrList.Strings[i];
           StringGrid1.Cells[i,1]:=SNList.Strings[i];
@@ -218,7 +263,7 @@ begin
           StringGrid1.Cells[i,8]:= EdtBoxNum.Text+EdtBoxNum1.Text;
           StringGrid1.Cells[i,9]:='';
           StringGrid1.Cells[i,10]:=EdtDate.Text;}
-        
+
 
               UniQuery_IMEI.Close;
               UniQuery_IMEI.Sql.Clear;
@@ -233,7 +278,7 @@ begin
               UniQuery_IMEI.Execute;
 
           end;
-
+          SetNamedSubStringValue('QRCode',strver); //设置值
           try
 
               PrintOut(False, true); //打印
@@ -273,7 +318,7 @@ begin
     WriteIni('llf','Color',trim(EdtColor.Text));      //颜色
     WriteIni('llf','BoxNum',trim(EdtBoxNum.Text));    //箱号
     WriteIni('llf','BoxNum1',trim(EdtBoxNum1.Text));  //箱号分支
-    WriteIni('llf','Qty',trim(EdtQty.Text));          //重量
+    WriteIni('llf','Qty',(EdtQty.Text));          //重量
     WriteIni('llf','ZhiDan',trim(Edtzhidan.Text));    //制单
     WriteIni('llf','Date',trim(EdtDate.Text));        //日期
     WriteIni('llf','ProNo',trim(EdtProNo.Text));      //产品号
@@ -315,6 +360,24 @@ begin
     else
         chkAuto.Checked :=False;
 
+    if (User.UserType<>'ParamConfig') and (User.UserType<>'admin') and (User.UserType<>'SuperAdmin') then
+    begin
+        EdtVersion.Enabled:=false;
+        EdtBoxNum.Enabled:=false;
+        EdtBoxNum1.Enabled:=false;
+        EdtColor.Enabled:=false;
+        EdtQty.Enabled:=false;
+        EdtDate.Enabled:=false;
+        Edtzhidan.Enabled:=false;
+        EdtProNo.Enabled:=false;
+        EdtParamVersion.Enabled:=false;
+        EdtTac.Enabled:=false;
+        EdtQty1.Enabled:=false;
+        Edt_IMEISTART.Enabled:=false;
+        Edt_IMEIEND.Enabled:=false;
+        EdtCpName.Enabled:=false;
+    end;
+
 
 end;
 
@@ -328,14 +391,11 @@ var
   strngrd1: TStringGrid;
   sheet:Variant;
 begin
-  filepath:=LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\IMEI.xls';
+  {filepath:=LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\IMEI.xls';
   //ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt'
 
   try
-  ExcelApplication1.Connect;
-  ExcelApplication1.Workbooks.Open (filepath,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,0);
-  ExcelWorkbook1.ConnectTo(ExcelApplication1.Workbooks[1]);
-  ExcelWorksheet1.ConnectTo(ExcelWorkbook1.Sheets[1] as _WorkSheet);
+
   //strt:=ExcelWorksheet1.Cells.Item[2,1];
   Row:=ExcelWorksheet1.Cells.Rows.Count;
   for i:=2 to Row do
@@ -366,20 +426,20 @@ begin
   //ExcelWorkbook1.Close;
   ExcelApplication1.Quit;
   ExcelApplication1.Disconnect;
-   end;
+   end;}
 end;
 
 procedure TfrmCartonBoxLlf.ClearStringGrid(dbgrid:TStringGrid);
 var
   i,j:Integer;
 begin
-  for i:=0 to dbgrid.RowCount-1 do
+  {for i:=0 to dbgrid.RowCount-1 do
   begin
     for j:=0 to dbgrid.ColCount-1 do
     begin
        dbgrid.Cells[i,j]:='';
     end;  
-  end;  
+  end; } 
 end;
 
 end.

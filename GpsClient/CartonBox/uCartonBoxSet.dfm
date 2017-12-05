@@ -13,12 +13,12 @@ object frmCartonBoxSet: TfrmCartonBoxSet
   OldCreateOrder = False
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 11
+  TextHeight = 13
   object lbl1: TLabel
-    Left = 14
-    Top = 22
-    Width = 67
-    Height = 12
+    Left = 17
+    Top = 26
+    Width = 79
+    Height = 14
     Alignment = taRightJustify
     AutoSize = False
     BiDiMode = bdRightToLeft
@@ -26,10 +26,10 @@ object frmCartonBoxSet: TfrmCartonBoxSet
     ParentBiDiMode = False
   end
   object lbl2: TLabel
-    Left = 14
-    Top = 54
-    Width = 67
-    Height = 11
+    Left = 17
+    Top = 64
+    Width = 79
+    Height = 13
     Alignment = taRightJustify
     AutoSize = False
     BiDiMode = bdRightToLeft
@@ -37,56 +37,52 @@ object frmCartonBoxSet: TfrmCartonBoxSet
     ParentBiDiMode = False
   end
   object cbbPrintCount: TComboBox
-    Left = 86
-    Top = 19
-    Width = 186
-    Height = 19
+    Left = 102
+    Top = 22
+    Width = 219
+    Height = 21
     Style = csDropDownList
-    ItemHeight = 11
-    ItemIndex = 1
+    ItemHeight = 13
     TabOrder = 0
-    Text = '20'
     OnChange = cbbPrintCountChange
     Items.Strings = (
-      '10'
       '20')
   end
   object cbbPrintType: TComboBox
-    Left = 86
-    Top = 52
-    Width = 186
-    Height = 19
-    ItemHeight = 11
+    Left = 102
+    Top = 61
+    Width = 219
+    Height = 21
+    ItemHeight = 13
     TabOrder = 1
     Text = #40664#35748
     Items.Strings = (
-      #40664#35748
       #20013#25991
       #33521#25991)
   end
   object btnOk: TButton
-    Left = 63
-    Top = 87
-    Width = 64
-    Height = 21
+    Left = 74
+    Top = 103
+    Width = 76
+    Height = 25
     Caption = #30830#35748'(&O)'
     TabOrder = 2
     OnClick = btnOkClick
   end
   object btnCancel: TButton
-    Left = 185
-    Top = 87
-    Width = 64
-    Height = 21
+    Left = 219
+    Top = 103
+    Width = 75
+    Height = 25
     Caption = #21462#28040'(&C)'
     TabOrder = 3
     OnClick = btnCancelClick
   end
   object rg1: TRadioGroup
-    Left = 96
-    Top = 96
-    Width = 185
-    Height = 105
+    Left = 113
+    Top = 113
+    Width = 219
+    Height = 125
     Caption = 'rg1'
     TabOrder = 4
     Visible = False

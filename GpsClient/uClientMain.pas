@@ -116,7 +116,9 @@ type
     UniQuery_TestTypeTestReadBackRom: TBooleanField;
     UniQuery_TestTypeTestCartonBox: TBooleanField;
     UniQuery_TestType_MASK_FROM_V2: TBytesField;
-    ParamConfig: TMenuItem;////线程
+    ParamConfig: TMenuItem;
+    GiftBox: TMenuItem;
+    ac_GiftBox: TAction;////线程
 
     //==================================================================//
     procedure FormCreate(Sender: TObject);
@@ -189,6 +191,7 @@ type
     procedure ROM1Click(Sender: TObject);
 
     procedure ParamConfigClick(Sender: TObject);
+    procedure ac_GiftBoxExecute(Sender: TObject);
 
 
   private
@@ -223,7 +226,8 @@ uses
     uPublicFunc,uClientLogin, uCartonBox,uCartonBoxSet,uCartonBoxMan,uModuleForm,
   uCoupleTest, uWriteImeiTest, uParamDownloadTest,
   uBasicTestParam, uClientDataModuleForm,uTwiceTest, uAutoTest, uDmMain,
-  uAutoTestSMT,uSMTIQCTest, uIncomCheck, uReadBack, uParamLoadConfig;
+  uAutoTestSMT,uSMTIQCTest, uIncomCheck, uReadBack, uParamLoadConfig,
+  uGiftBoxMain;
 
 {$R *.dfm}
 //==================================================================//
@@ -322,8 +326,8 @@ begin
     GPSTestParam.GPSDbMin:=StrToInt(ReadIni_GPS('GpsTC','MinDB','0'));
     GPSTestParam.GPSDbMax:=StrToInt(ReadIni_GPS('GpsTC','MaxDB','0'));
     GPSTestParam.GPSNumbers_DY:=StrToInt(ReadIni_GPS('GpsNumberDY','num','0'));
-    GPSTestParam.GPSContTime:=5;
-    GPSTestParam.GPSSer:=10;
+    GPSTestParam.GPSContTime:=StrToInt(ReadIni_GPS('GPSContTime','Time','5'));
+    GPSTestParam.GPSSer:=StrToInt(ReadIni_GPS('GPSSer','Ser','10'));
 
 
     BasicTestParam.CoupleTestTestTime:=UniQuery_GpsTestParamter.FieldByName('CoupleTestTestTime').AsInteger;
@@ -780,7 +784,14 @@ begin
             if StrListNumberSign[CommIndex].Count>1 then
             begin
                 SendToServer(CommIndex);
-                TfrmCartonBox(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex],CommIndex);
+                if strPlanName='CartonBox' then
+                begin
+                        TfrmCartonBox(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex],CommIndex);
+                end
+                else
+                begin
+                       TfrmGiftBoxMain(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex],CommIndex);
+                end;
 
             end
             else
@@ -1521,6 +1532,15 @@ begin
     begin
         frmParamDownLoadConfig:=TfrmParamDownLoadConfig.Create(Self);
         ShowForm(frmParamDownLoadConfig);
+    end;
+end;
+
+procedure TfrmClientMain.ac_GiftBoxExecute(Sender: TObject);
+begin
+    if (CurrentFrom=nil) or ( CurrentFrom.ClassName<>'TfrmGiftBoxMain') then
+    begin
+        frmGiftBoxMain:=TfrmGiftBoxMain.Create(Self);
+        ShowForm(frmGiftBoxMain);
     end;
 end;
 

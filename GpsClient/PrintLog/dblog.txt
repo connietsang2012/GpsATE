@@ -283,3 +283,177 @@
 358899053318021
 
 
+箱号:XXN00077
+制单:2013122601
+颜色:蓝色
+日期:2014.3.21
+数量:20台
+毛重:_______
+产品编码:KS180-成品
+软件版本:S-180
+
+868120183488367
+868120183487625
+868120183497111
+868120183488359
+868120183497079
+868120183499026
+868120183497087
+868120183498986
+868120183496725
+868120183497129
+868120183499000
+868120183498994
+868120183497152
+868120183496857
+868120183496782
+868120183487633
+868120183487922
+868120183496709
+868120183487930
+868120183499018
+
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171125\GpsClient EXE\CartonBox\llf\20.btw
+箱号:XXN00078
+制单:2013122601
+颜色:蓝色
+日期:2014.3.21
+数量:20台
+毛重:_______
+产品编码:KS180-成品
+软件版本:S-180
+
+868120183499000
+868120183497129
+868120183488359
+868120183496709
+868120183499018
+868120183499026
+868120183487633
+868120183496725
+868120183497079
+868120183497087
+868120183497152
+868120183498986
+868120183487625
+868120183497111
+868120183488367
+868120183496857
+868120183496782
+868120183498994
+868120183487922
+868120183487930
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700001L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700002L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700002L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700002L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700003L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700003L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700003L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700003L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+IMEI:111111111111119
+SN:HZXXP1700003L
+SoftModel:NT3
+ProductDate:2017.11.30
+
+
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171130\GpsClient EXE\GiftBox\model.btw
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171204\GpsClient EXE\CartonBox\llf\1.btw
+箱号:XXN00078
+制单:2013122601
+颜色:蓝色
+日期:2014.3.21
+数量:20台
+毛重KG
+产品编码:KS180-成品
+机型:S-180
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171204\GpsClient EXE\CartonBox\llf\1.btw
+箱号:XXN00078
+制单:2013122601
+颜色:蓝色
+日期:2014.3.21
+数量:20台
+毛重KG
+产品编码:KS180-成品
+机型:S-180
+
+C:\DELPHI\program\GpsClient 3.0\GpsClient 20171204\GpsClient EXE\CartonBox\llf\1.btw
+箱号:XXN00078
+制单:2013122601
+颜色:蓝色
+日期:2014.3.21
+数量:20台
+毛重KG
+产品编码:KS180-成品
+机型:S-180
+
+868120184888128,74132A1CCFBC027EAF20D71BD3CF805A

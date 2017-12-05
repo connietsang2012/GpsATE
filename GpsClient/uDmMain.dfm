@@ -11,7 +11,7 @@ object DMMain: TDMMain
     Database = 'GPSTest'
     Username = 'sa'
     Password = 'sa123ABC'
-    Server = '10.10.11.130'
+    Server = '192.168.0.167'
     Connected = True
     ConnectDialog = UniConDGpsTest
     LoginPrompt = False

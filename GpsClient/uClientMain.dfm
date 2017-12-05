@@ -229,6 +229,10 @@ object frmClientMain: TfrmClientMain
       Visible = False
       OnClick = ROM1Click
     end
+    object GiftBox: TMenuItem
+      Action = ac_GiftBox
+      Caption = #24425#30418#25171#21360
+    end
     object CartonBox: TMenuItem
       Action = ac_CartonBoxSet
       object N12: TMenuItem
@@ -319,6 +323,10 @@ object frmClientMain: TfrmClientMain
     object ac_IncomCheck: TAction
       Caption = #20837#24211#26816#27979
       OnExecute = ac_IncomCheckExecute
+    end
+    object ac_GiftBox: TAction
+      Caption = 'ac_GiftBox'
+      OnExecute = ac_GiftBoxExecute
     end
   end
   object tmrSocket_1: TTimer

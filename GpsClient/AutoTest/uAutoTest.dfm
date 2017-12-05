@@ -1,6 +1,6 @@
 inherited frmAutoTestMain: TfrmAutoTestMain
-  Left = -20
-  Top = 150
+  Left = 194
+  Top = 140
   Width = 1036
   Height = 734
   Align = alClient

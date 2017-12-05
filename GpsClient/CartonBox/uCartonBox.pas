@@ -93,6 +93,7 @@ type
     lbl18: TLabel;
     EdtParamVersion: TEdit;
     sp1: TUniStoredProc;
+    UniQuery_FindRidByImei: TUniQuery;
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure EdtMEIKeyPress(Sender: TObject; var Key: Char);
@@ -363,7 +364,7 @@ begin
         if StrToInt(StrListNumberSign.Values['WriteImei'])=0 then
         begin
             chk_WriteImei.Checked:=True;
-            with sp1 do
+            {with sp1 do
             begin
               Close;
               Params.ParamByName('@cIMEI').Value:=EdtMEI.Text;
@@ -385,7 +386,7 @@ begin
                     Exit;
                  end;
               end;
-            end;
+            end;}
         end;
         if StrToInt(StrListNumberSign.Values['ParamDownload'])=0 then
         begin
@@ -396,13 +397,13 @@ begin
             else
             begin
               chk_ParamDownload.Checked:=False;
-              if not (chk_FuncTest.Checked or chk_GPSTest.Checked or chk_CoupleTest.Checked or chk_WriteImei.Checked
+              {if not (chk_FuncTest.Checked or chk_GPSTest.Checked or chk_CoupleTest.Checked or chk_WriteImei.Checked
                       or chk_AutoTest.Checked or chk_ParamDownload.Checked) then
               begin
                 AllowPrint();
                 GrpTestPass.Visible:=False;
                 Exit;
-              end;
+              end;}
             end;
         end;
         GrpTestPass.Visible:=True;

@@ -1,6 +1,6 @@
 object frmModule: TfrmModule
-  Left = 282
-  Top = 175
+  Left = 209
+  Top = 165
   Width = 1024
   Height = 627
   Caption = #27169#29256
@@ -14,12 +14,12 @@ object frmModule: TfrmModule
   OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 11
+  TextHeight = 13
   object Label42: TLabel
-    Left = 521
-    Top = 257
-    Width = 42
-    Height = 11
+    Left = 616
+    Top = 304
+    Width = 38
+    Height = 13
     Caption = 'Label42'
   end
   object pnlClient: TPanel
@@ -41,12 +41,12 @@ object frmModule: TfrmModule
         Left = 1
         Top = 1
         Width = 1012
-        Height = 53
+        Height = 63
         Align = alTop
         TabOrder = 0
         object imgCommRed_0: TImage
-          Left = 4
-          Top = 3
+          Left = 5
+          Top = 4
           Width = 32
           Height = 32
           AutoSize = True
@@ -78,8 +78,8 @@ object frmModule: TfrmModule
             FFFFFFFF}
         end
         object imgCommGreen_0: TImage
-          Left = 4
-          Top = 3
+          Left = 5
+          Top = 4
           Width = 32
           Height = 32
           AutoSize = True
@@ -112,10 +112,10 @@ object frmModule: TfrmModule
           Visible = False
         end
         object lbl1: TLabel
-          Left = 30
-          Top = 10
-          Width = 42
-          Height = 20
+          Left = 35
+          Top = 12
+          Width = 50
+          Height = 23
           Alignment = taRightJustify
           AutoSize = False
           Caption = #20018#21475':'
@@ -127,10 +127,10 @@ object frmModule: TfrmModule
           ParentFont = False
         end
         object Label1: TLabel
-          Left = 444
-          Top = 12
-          Width = 84
-          Height = 20
+          Left = 525
+          Top = 14
+          Width = 99
+          Height = 24
           Alignment = taRightJustify
           AutoSize = False
           Caption = #26426#23376#36719#20214#29256#26412':'
@@ -142,70 +142,70 @@ object frmModule: TfrmModule
           ParentFont = False
         end
         object btnStart_0: TButton
-          Left = 160
-          Top = 8
-          Width = 76
-          Height = 25
+          Left = 189
+          Top = 9
+          Width = 90
+          Height = 30
           Caption = #36830#25509
           TabOrder = 0
           OnClick = btnStart_0Click
         end
         object cbbCom_0: TComboBox
-          Left = 77
-          Top = 10
-          Width = 74
-          Height = 19
+          Left = 91
+          Top = 12
+          Width = 87
+          Height = 21
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-          ItemHeight = 11
+          ItemHeight = 13
           TabOrder = 1
           Visible = False
         end
         object EdtVersion_0: TEdit
-          Left = 532
-          Top = 12
-          Width = 221
-          Height = 19
+          Left = 629
+          Top = 14
+          Width = 261
+          Height = 21
           Enabled = False
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
           TabOrder = 2
         end
         object BtnReTest: TButton
-          Left = 255
-          Top = 8
-          Width = 76
-          Height = 25
+          Left = 301
+          Top = 9
+          Width = 90
+          Height = 30
           Caption = #37325#26032#27979#35797
           TabOrder = 3
           OnClick = BtnReTestClick
         end
         object CheckBoxAutoTestCom0: TCheckBox
-          Left = 345
-          Top = 14
-          Width = 96
-          Height = 14
+          Left = 408
+          Top = 17
+          Width = 113
+          Height = 16
           Caption = #33258#21160#26816#27979#20018#21475
           TabOrder = 4
         end
       end
       object pnlClientBottom: TPanel
         Left = 1
-        Top = 539
+        Top = 530
         Width = 1012
-        Height = 51
+        Height = 60
         Align = alBottom
         TabOrder = 1
         OnResize = pnlClientBottomResize
         object EdtResult_0: TEdit
           Left = 0
           Top = 0
-          Width = 725
-          Height = 55
+          Width = 857
+          Height = 65
           AutoSize = False
           Color = clSilver
           Enabled = False
           Font.Charset = GB2312_CHARSET
           Font.Color = clWindowText
-          Font.Height = -45
+          Font.Height = -53
           Font.Name = #38582#20070
           Font.Style = []
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -216,15 +216,15 @@ object frmModule: TfrmModule
     end
   end
   object btnStart_StartTest: TButton
-    Left = 7
-    Top = 386
-    Width = 135
-    Height = 51
+    Left = 8
+    Top = 456
+    Width = 160
+    Height = 60
     Caption = #24320#22987#27979#35797
     Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -23
+    Font.Height = -27
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False

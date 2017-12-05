@@ -1,36 +1,62 @@
 inherited frmCartonBoxLlf: TfrmCartonBoxLlf
-  Left = 88
-  Top = 175
-  Width = 1448
-  Height = 878
-  Caption = #32769#26469#31119#24086#32440'(20)'
+  Left = 184
+  Top = 42
+  Width = 1036
+  Height = 780
+  Caption = #22269#20869#24086#32440'(20)'
   OldCreateOrder = True
   PixelsPerInch = 96
-  TextHeight = 11
+  TextHeight = 13
   object shp1: TShape [0]
-    Left = 440
-    Top = 280
-    Width = 65
-    Height = 65
+    Left = 520
+    Top = 331
+    Width = 77
+    Height = 77
   end
   inherited pnlParent: TPanel
-    Top = 15
-    Width = 818
-    Height = 538
+    Top = 18
+    Width = 967
+    Height = 636
     inherited grp2: TGroupBox
       inherited lbl10: TLabel
-        Left = 269
+        Left = 318
+      end
+    end
+    inherited grp3: TGroupBox
+      inherited mmoMEI: TMemo
+        Lines.Strings = (
+          '1'
+          '2'
+          '3'
+          '4'
+          '5'
+          '6'
+          '7'
+          '8'
+          '9'
+          '10'
+          '11'
+          '12'
+          '13'
+          '14'
+          '15'
+          '16'
+          '17'
+          '18'
+          '19'
+          '20')
       end
     end
     inherited grp4: TGroupBox
-      Left = 8
-      Width = 593
-      Height = 227
+      Left = 1
+      Top = 355
+      Width = 701
+      Height = 331
       object lbl11: TLabel [2]
-        Left = 4
-        Top = 20
-        Width = 51
-        Height = 11
+        Left = 5
+        Top = 24
+        Width = 60
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -38,35 +64,35 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ParentBiDiMode = False
       end
       object lbl14: TLabel [3]
-        Left = 256
-        Top = 20
-        Width = 33
-        Height = 11
+        Left = 303
+        Top = 24
+        Width = 39
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         Caption = #39068#33394':'
       end
       object lbl15: TLabel [4]
-        Left = 256
-        Top = 44
-        Width = 33
-        Height = 11
+        Left = 303
+        Top = 52
+        Width = 39
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         Caption = #37325#37327':'
       end
       object lbl1: TLabel [5]
-        Left = 137
-        Top = 44
-        Width = 6
-        Height = 11
+        Left = 162
+        Top = 52
+        Width = 3
+        Height = 13
         Caption = '-'
       end
       object lbl2: TLabel [6]
-        Left = 4
-        Top = 68
-        Width = 51
-        Height = 11
+        Left = 5
+        Top = 80
+        Width = 60
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -74,19 +100,19 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ParentBiDiMode = False
       end
       object lbl3: TLabel [7]
-        Left = 256
-        Top = 68
-        Width = 33
-        Height = 11
+        Left = 303
+        Top = 80
+        Width = 39
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         Caption = #26085#26399':'
       end
       object lbl4: TLabel [8]
-        Left = 4
-        Top = 91
-        Width = 51
-        Height = 11
+        Left = 5
+        Top = 108
+        Width = 60
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -94,19 +120,19 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ParentBiDiMode = False
       end
       object lbl6: TLabel [9]
-        Left = 256
-        Top = 140
-        Width = 33
-        Height = 11
+        Left = 303
+        Top = 165
+        Width = 39
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         Caption = #25968#37327':'
       end
       object lbl7: TLabel [10]
-        Left = 4
-        Top = 195
-        Width = 51
-        Height = 11
+        Left = 5
+        Top = 134
+        Width = 60
+        Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
@@ -115,117 +141,117 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       inherited lbl16: TLabel
         Left = 0
-        Top = 164
-        Width = 53
+        Top = 194
+        Width = 63
       end
       inherited lbl17: TLabel
-        Left = 216
-        Top = 164
-        Width = 17
+        Left = 255
+        Top = 194
+        Width = 20
       end
       inherited lbl18: TLabel
-        Left = 4
-        Top = 116
+        Left = 5
+        Top = 233
       end
       object EdtVersion: TEdit [16]
-        Left = 61
-        Top = 16
-        Width = 178
-        Height = 19
+        Left = 72
+        Top = 19
+        Width = 210
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 2
       end
       object EdtColor: TEdit [17]
-        Left = 296
-        Top = 16
-        Width = 186
-        Height = 19
+        Left = 350
+        Top = 19
+        Width = 220
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 3
       end
       object EdtQty: TEdit [18]
-        Left = 296
-        Top = 40
-        Width = 186
-        Height = 19
+        Left = 350
+        Top = 47
+        Width = 220
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 20
         TabOrder = 4
       end
       object EdtBoxNum1: TEdit [19]
-        Left = 149
-        Top = 40
-        Width = 89
-        Height = 19
+        Left = 176
+        Top = 47
+        Width = 105
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 10
         TabOrder = 5
       end
       object Edtzhidan: TEdit [20]
-        Left = 61
-        Top = 63
-        Width = 178
-        Height = 19
+        Left = 72
+        Top = 74
+        Width = 210
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 6
       end
       object EdtDate: TEdit [21]
-        Left = 296
-        Top = 63
-        Width = 186
-        Height = 19
+        Left = 350
+        Top = 74
+        Width = 220
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 7
       end
       object EdtProNo: TEdit [22]
-        Left = 61
-        Top = 87
-        Width = 423
-        Height = 19
+        Left = 72
+        Top = 103
+        Width = 500
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 100
         TabOrder = 8
       end
       object EdtQty1: TEdit [23]
-        Left = 296
-        Top = 135
-        Width = 186
-        Height = 19
+        Left = 350
+        Top = 160
+        Width = 220
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 9
       end
       object EdtCpName: TEdit [24]
-        Left = 61
-        Top = 190
-        Width = 423
-        Height = 19
+        Left = 72
+        Top = 225
+        Width = 500
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 100
         TabOrder = 10
       end
       inherited Edt_IMEISTART: TEdit
-        Left = 61
-        Top = 159
+        Left = 72
+        Top = 188
         TabOrder = 11
       end
       inherited Edt_IMEIEND: TEdit
-        Left = 245
-        Top = 159
+        Left = 290
+        Top = 188
         TabOrder = 12
       end
       inherited EdtParamVersion: TEdit
-        Left = 61
-        Top = 112
-        Width = 423
+        Left = 72
+        Top = 132
+        Width = 500
         TabOrder = 13
       end
     end
   end
   object StringGrid1: TStringGrid [2]
-    Left = 688
-    Top = 504
-    Width = 136
-    Height = 120
+    Left = 749
+    Top = 252
+    Width = 161
+    Height = 141
     ColCount = 11
     RowCount = 1
     FixedRows = 0
@@ -350,23 +376,40 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     Left = 768
     Top = 192
   end
-  object ExcelApplication1: TExcelApplication [11]
-    AutoConnect = False
-    ConnectKind = ckRunningOrNew
-    AutoQuit = False
-    Left = 456
-    Top = 240
+  inherited sp1: TUniStoredProc
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Size = 2038695129
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cIMEI'
+        ParamType = ptInput
+        Size = 15
+      end
+      item
+        DataType = ftInteger
+        Name = 'iRecordCount'
+        ParamType = ptInputOutput
+        Value = 1
+      end>
+    CommandStoredProcName = 'CheckTestedByImei'
+    StoredProcIsQuery = True
   end
-  object ExcelWorksheet1: TExcelWorksheet [12]
-    AutoConnect = False
-    ConnectKind = ckRunningOrNew
-    Left = 456
-    Top = 296
-  end
-  object ExcelWorkbook1: TExcelWorkbook [13]
-    AutoConnect = False
-    ConnectKind = ckRunningOrNew
-    Left = 528
-    Top = 296
+  inherited UniQuery_FindRidByImei: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT SN as Rid'
+      'FROM Gps_TestResult '
+      '  where IMEI=:IMEI')
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end>
   end
 end
