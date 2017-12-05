@@ -13,7 +13,7 @@
 
 
 
-char logfilename[MAX_PATHNAME_LEN]="";
+char logfilename[2][MAX_PATHNAME_LEN]={"D:\\Log_1.txt","D:\\Log_2.txt"};
 
 /* {{{ 查找字符串首次出现的位置，没有找到返回 -1，两个字符串相等返回 0
    在GCC下使用C99：
@@ -83,16 +83,29 @@ float getTXPValue(ViString AG_Read_Str)
 	return dValue;
 }
 
-int AddLog(ViString LogMsg)
+int AddLog_All(ViString LogMsg)
+{
+	AddLog(0,LogMsg);
+	AddLog(1,LogMsg);
+	return 1;
+}
+int AddLog(int Target,ViString LogMsg)
 {
 	char *date,*time;
 	date = DateStr ();
 	time = TimeStr ();
 
 	int LogFile;
-	GetProjectDir (logfilename);
-	strcat(logfilename,"\\Log.txt");
-	LogFile = OpenFile (logfilename, VAL_WRITE_ONLY, VAL_APPEND, VAL_ASCII);
+	//logfilename[Target]=""; 
+	//GetProjectDir (logfilename[Target]);
+	/*if(Target==0){
+		logfilename[0]="D:\\Log_1.txt";
+	}
+	else{
+		strcat(logfilename[Target],"D:\\Log_2.txt");
+	}*/
+	
+	LogFile = OpenFile (logfilename[Target], VAL_WRITE_ONLY, VAL_APPEND, VAL_ASCII);
 	WriteFile (LogFile, date, StringLength (date));
 	WriteFile (LogFile, "\t", StringLength ("\t"));
 	WriteFile (LogFile, time, StringLength (time));
@@ -100,6 +113,7 @@ int AddLog(ViString LogMsg)
 	WriteFile (LogFile, LogMsg, StringLength (LogMsg));
 	WriteFile (LogFile, "\r\n", StringLength ("\r\n"));
 	CloseFile (LogFile);
+	
 	return 0;
 }
 

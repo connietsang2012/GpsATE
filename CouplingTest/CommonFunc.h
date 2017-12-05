@@ -51,8 +51,8 @@ char * strreplace(char const * const original,
     char const * const pattern, char const * const replacement);
 
 
- 
-int AddLog(ViString);
+int AddLog_All(ViString LogMsg); 
+int AddLog(int Target,ViString LogMsg);
 char GetIMEICheckDigit(char *);
 
 
