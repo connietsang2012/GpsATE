@@ -151,7 +151,7 @@ inherited frmCartonBoxGmb: TfrmCartonBoxGmb
         Width = 210
         Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        TabOrder = 4
+        TabOrder = 13
       end
       object EdtBoxNum1: TEdit [19]
         Left = 176
@@ -213,12 +213,6 @@ inherited frmCartonBoxGmb: TfrmCartonBoxGmb
         Left = 299
         Top = 188
         TabOrder = 12
-      end
-      inherited EdtParamVersion: TEdit
-        Left = 72
-        Top = 132
-        Width = 209
-        TabOrder = 13
       end
     end
   end

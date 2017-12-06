@@ -45,7 +45,7 @@ begin
     IMEIErrorPrompt('');
 
     //读取相关打印内容
-    EdtParamVersion.Text :=ReadIni('default10','Version','');
+    EdtSoftModel.Text :=ReadIni('default10','Version','');
     EdtBoxNum.Text :=ReadIni('default10','BoxNum','001');
     EdtTac.Text :=ReadIni('default10','Tac','000000');
     EdtColor.Text :=ReadIni('default10','Color','');
@@ -82,14 +82,14 @@ begin
         with btappAutoPrint.Formats.Open(strBarFile, True, '') do //打开标签文件
         begin
             //设置要打印的内容
-            SetNamedSubStringValue('Text','机型:'+trim(EdtParamVersion.Text));
+            SetNamedSubStringValue('Text','机型:'+trim(EdtSoftModel.Text));
             SetNamedSubStringValue('Text1','箱号:'+trim(EdtBoxNum.Text));
             SetNamedSubStringValue('Text2','颜色:'+trim(EdtColor.Text));
             SetNamedSubStringValue('Text3','重量:'+trim(EdtQty.Text));
             SetNamedSubStringValue('Text5',trim(EdtOther1.Text));
             SetNamedSubStringValue('Text6',trim(EdtOther2.Text));
 
-            strver := trim(EdtParamVersion.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);;
+            strver := trim(EdtSoftModel.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);;
             AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
             for i:=0 to (mmoMEI.Lines.Count-1) do
             begin
@@ -121,14 +121,14 @@ begin
         with btappBtnPrint.Formats.Open(strBarFile, True, '') do //打开标签文件
         begin
             //设置要打印的内容
-            SetNamedSubStringValue('Text','机型:'+trim(EdtParamVersion.Text));
+            SetNamedSubStringValue('Text','机型:'+trim(EdtSoftModel.Text));
             SetNamedSubStringValue('Text1','箱号:'+trim(EdtBoxNum.Text));
             SetNamedSubStringValue('Text2','颜色:'+trim(EdtColor.Text));
             SetNamedSubStringValue('Text3','重量:'+trim(EdtQty.Text));
             SetNamedSubStringValue('Text5',trim(EdtOther1.Text));
             SetNamedSubStringValue('Text6',trim(EdtOther2.Text));
 
-            strver := trim(EdtParamVersion.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);;
+            strver := trim(EdtSoftModel.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);;
             AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
             for i:=0 to (mmoMEI.Lines.Count-1) do
             begin
@@ -163,7 +163,7 @@ procedure TfrmCartonBox_10.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   inherited;
-    WriteIni('default10','Version',trim(EdtParamVersion.Text));
+    WriteIni('default10','Version',trim(EdtSoftModel.Text));
     WriteIni('default10','BoxNum',trim(EdtBoxNum.Text));
     WriteIni('default10','Tac',trim(EdtTac.Text));
     WriteIni('default10','Color',trim(EdtColor.Text));

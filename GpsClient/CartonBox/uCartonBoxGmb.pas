@@ -54,7 +54,7 @@ begin
         ShowMessage('当前数据为空,不能进行打印');
         Exit;
     end;
-    if (trim(EdtParamVersion.Text) ='') then
+    if (trim(EdtSoftModel.Text) ='') then
     begin
         ShowMessage('版本信息不能为空');
         Exit;
@@ -78,11 +78,11 @@ begin
         SetNamedSubStringValue('ProductCount','QTY:'+trim(EdtQty.Text));
         SetNamedSubStringValue('ProductWeight','G.W:'+trim(EdtGW.Text));
         SetNamedSubStringValue('ProductNum','产品编码:'+trim(EdtPCode.Text));
-        SetNamedSubStringValue('Remark',trim(EdtParamVersion.Text));
+        SetNamedSubStringValue('Remark',trim(EdtSoftModel.Text));
 
         //strver := trim(EdtVersion.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);
         strver:=SysUtils.Format('Boxno:%s%s  ZhiDan:%s  Type:%s  Color:%s      Date:%s  QTY:%s PCS  G.W:%s KG  Product Code:%s  Version:%s',
-                    [EdtBoxNum.Text,EdtBoxNum1.Text,EdtSMark.Text,EdtModel.Text,EdtColor.Text,EdtDate.Text,EdtQty.Text,EdtGW.Text,EdtPCode.Text,EdtParamVersion.Text]);
+                    [EdtBoxNum.Text,EdtBoxNum1.Text,EdtSMark.Text,EdtModel.Text,EdtColor.Text,EdtDate.Text,EdtQty.Text,EdtGW.Text,EdtPCode.Text,EdtSoftModel.Text]);
         AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\gmbdblog.txt');
         for i:=0 to (mmoMEI.Lines.Count-1) do
         begin
@@ -99,7 +99,7 @@ begin
             strtemp:='Insert into Gps_CartonBoxTwenty_Result (BoxNo,IMEI,ZhiDan,SoftModel,Version,'
                         + 'ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId) values('''
                         + EdtBoxNum.Text+EdtBoxNum1.Text+''','''+StrList.Strings[i]+''','''+EdtSMark.Text+''','''
-                        + EdtModel.Text+''','''+EdtParamVersion.Text+''','''+EdtPCode.Text+''','''+EdtColor.Text+''','''
+                        + EdtModel.Text+''','''+EdtSoftModel.Text+''','''+EdtPCode.Text+''','''+EdtColor.Text+''','''
                         + EdtQty.Text+''','''+EdtGW.Text+''','''+EdtDate.Text+''','''+EdtTac.Text+''','''+''+''','''+User.UserName+''')';
 
 
@@ -141,7 +141,7 @@ begin
     EdtBoxNum1.Text :=ReadIni('gmb','BoxNum1','');
     EdtDate.Text :=ReadIni('gmb','Date','');
     EdtGW.Text :=ReadIni('gmb','GW','');
-    EdtParamVersion.Text :=ReadIni('gmb','Version','');
+    EdtSoftModel.Text :=ReadIni('gmb','Version','');
     EdtProduct.Text :=ReadIni('gmb','Product','');
     EdtColor.Text :=ReadIni('gmb','Color','');
     EdtQty.Text :=ReadIni('gmb','Qty','');
@@ -189,7 +189,7 @@ begin
         EdtQty.Enabled:=false;
         EdtGW.Enabled:=false;
         EdtPCode.Enabled:=false;
-        EdtParamVersion.Enabled:=false;
+        EdtSoftModel.Enabled:=false;
         EdtModel.Enabled:=false;
         EdtTac.Enabled:=false;
         Edt_IMEISTART.Enabled:=false;
@@ -206,7 +206,7 @@ begin
     WriteIni('gmb','BoxNum1',trim(EdtBoxNum1.Text));  //箱号分支
     WriteIni('gmb','Date',trim(EdtDate.Text));        //日期
     WriteIni('gmb','GW',trim(EdtGW.Text));      //颜色
-    WriteIni('gmb','Version',trim(EdtParamVersion.Text)); //版本号
+    WriteIni('gmb','Version',trim(EdtSoftModel.Text)); //版本号
     WriteIni('gmb','Tac',trim(EdtTac.Text));          //Tac信息
     WriteIni('gmb','Product',trim(EdtProduct.Text));        //数量
     WriteIni('gmb','Color',trim(EdtColor.Text));          //重量

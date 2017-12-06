@@ -291,7 +291,7 @@ object frmCartonBox: TfrmCartonBox
         MaxLength = 14
         TabOrder = 3
       end
-      object EdtParamVersion: TEdit
+      object EdtSoftModel: TEdit
         Left = 82
         Top = 66
         Width = 80

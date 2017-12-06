@@ -1,6 +1,6 @@
 inherited frmCartonBoxLlf: TfrmCartonBoxLlf
-  Left = 184
-  Top = 42
+  Left = 217
+  Top = 6
   Width = 1036
   Height = 780
   Caption = #22269#20869#24086#32440'(20)'
@@ -13,10 +13,28 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     Width = 77
     Height = 77
   end
+  object Label2: TLabel [1]
+    Left = 13
+    Top = 630
+    Width = 60
+    Height = 13
+    Alignment = taRightJustify
+    AutoSize = False
+    BiDiMode = bdRightToLeft
+    Caption = #20844#21496#21517#31216':'
+    ParentBiDiMode = False
+  end
   inherited pnlParent: TPanel
     Top = 18
     Width = 967
     Height = 636
+    object Label1: TLabel [0]
+      Left = 720
+      Top = 440
+      Width = 27
+      Height = 13
+      Caption = #31665#21495':'
+    end
     inherited grp2: TGroupBox
       inherited lbl10: TLabel
         Left = 318
@@ -130,7 +148,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       object lbl7: TLabel [10]
         Left = 5
-        Top = 134
+        Top = 230
         Width = 60
         Height = 13
         Alignment = taRightJustify
@@ -148,20 +166,32 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Left = 255
         Top = 194
         Width = 20
+        Caption = '__'
       end
       inherited lbl18: TLabel
         Left = 5
-        Top = 233
+        Top = 137
       end
-      object EdtVersion: TEdit [16]
+      object Label3: TLabel [14]
+        Left = 5
+        Top = 254
+        Width = 60
+        Height = 13
+        Alignment = taRightJustify
+        AutoSize = False
+        BiDiMode = bdRightToLeft
+        Caption = #22791#27880':'
+        ParentBiDiMode = False
+      end
+      object EdtVersion: TEdit [17]
         Left = 72
-        Top = 19
-        Width = 210
+        Top = 131
+        Width = 497
         Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 2
       end
-      object EdtColor: TEdit [17]
+      object EdtColor: TEdit [18]
         Left = 350
         Top = 19
         Width = 220
@@ -169,16 +199,16 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 3
       end
-      object EdtQty: TEdit [18]
+      object EdtQty: TEdit [19]
         Left = 350
-        Top = 47
+        Top = 159
         Width = 220
         Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 20
         TabOrder = 4
       end
-      object EdtBoxNum1: TEdit [19]
+      object EdtBoxNum1: TEdit [20]
         Left = 176
         Top = 47
         Width = 105
@@ -187,7 +217,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         MaxLength = 10
         TabOrder = 5
       end
-      object Edtzhidan: TEdit [20]
+      object Edtzhidan: TEdit [21]
         Left = 72
         Top = 74
         Width = 210
@@ -195,7 +225,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 6
       end
-      object EdtDate: TEdit [21]
+      object EdtDate: TEdit [22]
         Left = 350
         Top = 74
         Width = 220
@@ -203,7 +233,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 7
       end
-      object EdtProNo: TEdit [22]
+      object EdtProNo: TEdit [23]
         Left = 72
         Top = 103
         Width = 500
@@ -212,15 +242,15 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         MaxLength = 100
         TabOrder = 8
       end
-      object EdtQty1: TEdit [23]
+      object EdtWeight: TEdit [24]
         Left = 350
-        Top = 160
+        Top = 48
         Width = 220
         Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 9
       end
-      object EdtCpName: TEdit [24]
+      object EdtCpName: TEdit [25]
         Left = 72
         Top = 225
         Width = 500
@@ -239,15 +269,40 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Top = 188
         TabOrder = 12
       end
-      inherited EdtParamVersion: TEdit
+      inherited EdtSoftModel: TEdit
         Left = 72
-        Top = 132
-        Width = 500
+        Top = 20
+        Width = 209
         TabOrder = 13
       end
+      object edt_Remark1: TEdit
+        Left = 72
+        Top = 249
+        Width = 500
+        Height = 21
+        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+        MaxLength = 100
+        TabOrder = 14
+      end
+    end
+    object edt_RePrint: TEdit
+      Left = 768
+      Top = 432
+      Width = 153
+      Height = 21
+      TabOrder = 8
+    end
+    object btn_RePrint: TButton
+      Left = 720
+      Top = 464
+      Width = 209
+      Height = 25
+      Caption = #37325#25171
+      TabOrder = 9
+      OnClick = btn_RePrintClick
     end
   end
-  object StringGrid1: TStringGrid [2]
+  object StringGrid1: TStringGrid [3]
     Left = 749
     Top = 252
     Width = 161
@@ -368,7 +423,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Name = 'IMEI'
       end>
   end
-  object unqry1: TUniQuery [10]
+  object unqry1: TUniQuery [11]
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
       'SELECT *  '
@@ -411,5 +466,129 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         DataType = ftUnknown
         Name = 'IMEI'
       end>
+  end
+  object UniQuery_RePrint: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT BoxNo'
+      '      ,IMEI'
+      '      ,ZhiDan'
+      '      ,SoftModel'
+      '      ,Version'
+      '      ,ProductCode'
+      '      ,Color'
+      '      ,Qty'
+      '      ,Weight'
+      '      ,Date'
+      '      ,TACInfo'
+      '      ,CompanyName'
+      '      ,TesterId'
+      '      ,TestTime'
+      '      ,Remark1'
+      '      ,Remark2'
+      '      ,Remark3'
+      '      ,Remark4'
+      '      ,Remark5'
+      '      ,_MASK_FROM_V2'
+      '  FROM Gps_CartonBoxTwenty_Result'
+      '  where BoxNo=:BoxNo and ZhiDan=:ZhiDan'
+      'order by id')
+    Left = 744
+    Top = 400
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'BoxNo'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'ZhiDan'
+      end>
+    object UniQuery_RePrintBoxNo: TStringField
+      FieldName = 'BoxNo'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_RePrintIMEI: TStringField
+      FieldName = 'IMEI'
+      Required = True
+      Size = 15
+    end
+    object UniQuery_RePrintZhiDan: TStringField
+      FieldName = 'ZhiDan'
+      Required = True
+      Size = 100
+    end
+    object UniQuery_RePrintSoftModel: TStringField
+      FieldName = 'SoftModel'
+      Required = True
+    end
+    object UniQuery_RePrintVersion: TStringField
+      FieldName = 'Version'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_RePrintProductCode: TStringField
+      FieldName = 'ProductCode'
+      Size = 100
+    end
+    object UniQuery_RePrintColor: TStringField
+      FieldName = 'Color'
+      Size = 50
+    end
+    object UniQuery_RePrintQty: TStringField
+      FieldName = 'Qty'
+      Size = 50
+    end
+    object UniQuery_RePrintWeight: TStringField
+      FieldName = 'Weight'
+      Size = 50
+    end
+    object UniQuery_RePrintDate: TStringField
+      FieldName = 'Date'
+      Size = 50
+    end
+    object UniQuery_RePrintTACInfo: TStringField
+      FieldName = 'TACInfo'
+      Size = 200
+    end
+    object UniQuery_RePrintCompanyName: TStringField
+      FieldName = 'CompanyName'
+      Size = 200
+    end
+    object UniQuery_RePrintTesterId: TStringField
+      FieldName = 'TesterId'
+      Required = True
+    end
+    object UniQuery_RePrintTestTime: TDateTimeField
+      FieldName = 'TestTime'
+      Required = True
+    end
+    object UniQuery_RePrintRemark1: TStringField
+      FieldName = 'Remark1'
+      Size = 200
+    end
+    object UniQuery_RePrintRemark2: TStringField
+      FieldName = 'Remark2'
+      Size = 200
+    end
+    object UniQuery_RePrintRemark3: TStringField
+      FieldName = 'Remark3'
+      Size = 200
+    end
+    object UniQuery_RePrintRemark4: TStringField
+      FieldName = 'Remark4'
+      Size = 200
+    end
+    object UniQuery_RePrintRemark5: TStringField
+      FieldName = 'Remark5'
+      Size = 200
+    end
+    object UniQuery_RePrint_MASK_FROM_V2: TBytesField
+      FieldName = '_MASK_FROM_V2'
+      ReadOnly = True
+      Required = True
+      Size = 8
+    end
   end
 end
