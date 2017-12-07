@@ -1,71 +1,71 @@
 inherited frmParamDownloadTest: TfrmParamDownloadTest
-  Left = 151
-  Top = 152
-  Width = 1170
-  Height = 641
+  Left = 195
+  Top = 121
+  Width = 1036
+  Height = 696
   Caption = #36719#20214#21442#25968#19979#36733#20301
   OldCreateOrder = True
   OnResize = FormResize
   PixelsPerInch = 96
-  TextHeight = 11
+  TextHeight = 13
   inherited pnlClient: TPanel
-    Width = 1162
-    Height = 607
+    Width = 1028
+    Height = 662
     inherited pnlLeft: TPanel
-      Width = 1160
-      Height = 605
+      Width = 1026
+      Height = 660
       inherited pnlClientTop: TPanel
-        Width = 1158
+        Width = 1024
         Visible = False
         inherited cbbCom_0: TComboBox
           Visible = True
         end
       end
       inherited pnlClientBottom: TPanel
-        Top = 599
-        Width = 1158
-        Height = 5
+        Top = 653
+        Width = 1024
+        Height = 6
       end
       object Panel1: TPanel
         Left = 1
-        Top = 41
-        Width = 1022
-        Height = 570
+        Top = 48
+        Width = 1208
+        Height = 674
         TabOrder = 2
         object grp1: TGroupBox
           Left = 0
           Top = 0
-          Width = 508
-          Height = 280
+          Width = 600
+          Height = 331
           Caption = #19979#36733#32467#26524'('#20018#21475#19968')'
           TabOrder = 0
           object pnl3: TPanel
             Left = 2
-            Top = 13
-            Width = 504
-            Height = 217
+            Top = 15
+            Width = 596
+            Height = 261
             Align = alClient
             TabOrder = 0
             object Panel2: TPanel
               Left = 1
               Top = 1
-              Width = 502
-              Height = 215
+              Width = 594
+              Height = 259
               Align = alClient
               Caption = 'Panel1'
               TabOrder = 0
               object Panel3: TPanel
                 Left = 1
                 Top = 1
-                Width = 500
-                Height = 50
+                Width = 592
+                Height = 59
                 Align = alTop
                 TabOrder = 0
                 object Label2: TLabel
-                  Left = 31
-                  Top = 9
-                  Width = 39
-                  Height = 19
+                  Left = 37
+                  Top = 11
+                  Width = 46
+                  Height = 22
                   Alignment = taRightJustify
                   AutoSize = False
                   Caption = #20018#21475':'
@@ -77,8 +77,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   ParentFont = False
                 end
                 object imgCommGreen: TImage
-                  Left = 5
-                  Top = 4
+                  Left = 6
+                  Top = 5
                   Width = 32
                   Height = 32
                   AutoSize = True
@@ -111,8 +111,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   Visible = False
                 end
                 object imgCommRed: TImage
-                  Left = 5
-                  Top = 4
+                  Left = 6
+                  Top = 5
                   Width = 32
                   Height = 32
                   AutoSize = True
@@ -144,25 +144,25 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                     FFFFFFFF}
                 end
                 object cbbCom_1: TComboBox
-                  Left = 74
-                  Top = 7
-                  Width = 66
-                  Height = 19
+                  Left = 87
+                  Top = 8
+                  Width = 78
+                  Height = 21
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -11
                   Font.Name = 'MS Sans Serif'
                   Font.Style = []
                   ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                  ItemHeight = 11
+                  ItemHeight = 13
                   ParentFont = False
                   TabOrder = 0
                 end
                 object btnStart_1: TButton
-                  Left = 148
-                  Top = 7
-                  Width = 72
-                  Height = 18
+                  Left = 175
+                  Top = 8
+                  Width = 85
+                  Height = 22
                   Caption = #36830#25509
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
@@ -174,10 +174,10 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   OnClick = btnStart_1Click
                 end
                 object btnReTest1: TButton
-                  Left = 406
-                  Top = 4
-                  Width = 89
-                  Height = 21
+                  Left = 480
+                  Top = 5
+                  Width = 105
+                  Height = 25
                   BiDiMode = bdLeftToRight
                   Caption = #37325#26032#27979#35797
                   ParentBiDiMode = False
@@ -185,41 +185,41 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   OnClick = btnReTest1Click
                 end
                 object Btn_ResultEnable: TButton
-                  Left = 335
-                  Top = 5
-                  Width = 60
-                  Height = 21
+                  Left = 396
+                  Top = 6
+                  Width = 71
+                  Height = 25
                   Caption = #26597#30475
                   TabOrder = 3
                   OnClick = Btn_ResultEnableClick
                 end
                 object CheckBoxAutoTestCom1: TCheckBox
-                  Left = 234
-                  Top = 8
-                  Width = 90
-                  Height = 17
+                  Left = 277
+                  Top = 9
+                  Width = 106
+                  Height = 21
                   Caption = #33258#21160#26816#27979#20018#21475
                   TabOrder = 4
                 end
               end
               object pnlTestResult_1: TPanel
                 Left = 1
-                Top = 51
-                Width = 500
-                Height = 163
+                Top = 60
+                Width = 592
+                Height = 198
                 Align = alClient
                 Caption = 'pnlTestResult_1'
                 TabOrder = 1
                 object TestResultDetail_1: TDBGrid
                   Left = 1
                   Top = 1
-                  Width = 498
-                  Height = 161
+                  Width = 590
+                  Height = 196
                   Align = alClient
                   DataSource = DS_TestResult_1
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
-                  Font.Height = -9
+                  Font.Height = -11
                   Font.Name = 'MS Sans Serif'
                   Font.Style = []
                   ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -278,14 +278,14 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object TestResult1: TPanel
             Left = 2
-            Top = 230
-            Width = 504
-            Height = 26
+            Top = 276
+            Width = 596
+            Height = 31
             Align = alBottom
             Color = clRed
             Font.Charset = GB2312_CHARSET
             Font.Color = clWindowText
-            Font.Height = -19
+            Font.Height = -23
             Font.Name = #38582#20070
             Font.Style = [fsBold]
             ParentFont = False
@@ -293,8 +293,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object SB_TestStatus_1: TStatusBar
             Left = 2
-            Top = 256
-            Width = 504
+            Top = 307
+            Width = 596
             Height = 22
             Panels = <
               item
@@ -310,21 +310,21 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
         end
         object TestItem: TListBox
-          Left = 1003
+          Left = 1185
           Top = 0
-          Width = 80
-          Height = 69
+          Width = 95
+          Height = 82
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-          ItemHeight = 11
+          ItemHeight = 13
           MultiSelect = True
           TabOrder = 1
           Visible = False
         end
         object TestParameter1: TDBGrid
-          Left = 880
-          Top = 102
-          Width = 406
-          Height = 109
+          Left = 1040
+          Top = 121
+          Width = 480
+          Height = 128
           DataSource = DS_TestItemParam_1
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
           TabOrder = 2
@@ -336,54 +336,54 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           Visible = False
         end
         object TesItem_Comm1: TListBox
-          Left = 935
-          Top = 7
-          Width = 80
-          Height = 68
+          Left = 1105
+          Top = 8
+          Width = 95
+          Height = 81
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-          ItemHeight = 11
+          ItemHeight = 13
           MultiSelect = True
           TabOrder = 3
           Visible = False
         end
         object TesItem_Comm2: TListBox
-          Left = 942
-          Top = 14
-          Width = 80
-          Height = 68
+          Left = 1113
+          Top = 17
+          Width = 95
+          Height = 80
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-          ItemHeight = 11
+          ItemHeight = 13
           MultiSelect = True
           TabOrder = 4
           Visible = False
         end
         object TesItem_Comm3: TListBox
-          Left = 1016
-          Top = 338
-          Width = 81
-          Height = 69
+          Left = 1201
+          Top = 399
+          Width = 95
+          Height = 82
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-          ItemHeight = 11
+          ItemHeight = 13
           MultiSelect = True
           TabOrder = 5
           Visible = False
         end
         object TesItem_Comm4: TListBox
-          Left = 1003
-          Top = 68
-          Width = 80
-          Height = 68
+          Left = 1185
+          Top = 80
+          Width = 95
+          Height = 81
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-          ItemHeight = 11
+          ItemHeight = 13
           MultiSelect = True
           TabOrder = 6
           Visible = False
         end
         object TestParameter2: TDBGrid
-          Left = 887
-          Top = 129
-          Width = 406
-          Height = 109
+          Left = 1048
+          Top = 152
+          Width = 480
+          Height = 129
           DataSource = DS_TestItemParam_2
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
           TabOrder = 7
@@ -395,10 +395,10 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           Visible = False
         end
         object TestParameter3: TDBGrid
-          Left = 900
-          Top = 156
-          Width = 406
-          Height = 109
+          Left = 1064
+          Top = 184
+          Width = 479
+          Height = 129
           DataSource = DS_TestItemParam_3
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
           TabOrder = 8
@@ -410,10 +410,10 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           Visible = False
         end
         object TestParameter4: TDBGrid
-          Left = 914
-          Top = 183
-          Width = 406
-          Height = 109
+          Left = 1080
+          Top = 216
+          Width = 480
+          Height = 129
           DataSource = DS_TestItemParam_4
           ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
           TabOrder = 9
@@ -425,39 +425,39 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           Visible = False
         end
         object grp2: TGroupBox
-          Left = 508
+          Left = 600
           Top = 0
-          Width = 507
-          Height = 280
+          Width = 600
+          Height = 331
           Caption = #19979#36733#32467#26524'('#20018#21475#20108')'
           TabOrder = 10
           object estResult1: TPanel
             Left = 2
-            Top = 13
-            Width = 503
-            Height = 217
+            Top = 15
+            Width = 596
+            Height = 261
             Align = alClient
             TabOrder = 0
             object estResult2: TPanel
               Left = 1
               Top = 1
-              Width = 501
-              Height = 215
+              Width = 594
+              Height = 259
               Align = alClient
               Caption = 'Panel1'
               TabOrder = 0
               object estResult3: TPanel
                 Left = 1
                 Top = 1
-                Width = 499
-                Height = 50
+                Width = 592
+                Height = 59
                 Align = alTop
                 TabOrder = 0
                 object lbl4: TLabel
-                  Left = 31
-                  Top = 9
-                  Width = 39
-                  Height = 19
+                  Left = 37
+                  Top = 11
+                  Width = 46
+                  Height = 22
                   Alignment = taRightJustify
                   AutoSize = False
                   Caption = #20018#21475':'
@@ -469,8 +469,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   ParentFont = False
                 end
                 object img1: TImage
-                  Left = 5
-                  Top = 4
+                  Left = 6
+                  Top = 5
                   Width = 32
                   Height = 32
                   AutoSize = True
@@ -503,8 +503,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   Visible = False
                 end
                 object img2: TImage
-                  Left = 5
-                  Top = 4
+                  Left = 6
+                  Top = 5
                   Width = 32
                   Height = 32
                   AutoSize = True
@@ -536,38 +536,38 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                     FFFFFFFF}
                 end
                 object lbl5: TLabel
-                  Left = 6
-                  Top = 30
-                  Width = 423
-                  Height = 17
+                  Left = 7
+                  Top = 35
+                  Width = 500
+                  Height = 21
                   AutoSize = False
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clRed
-                  Font.Height = -13
+                  Font.Height = -16
                   Font.Name = 'MS Sans Serif'
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
                 object cbbCom_2: TComboBox
-                  Left = 74
-                  Top = 7
-                  Width = 66
-                  Height = 19
+                  Left = 87
+                  Top = 8
+                  Width = 78
+                  Height = 21
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -11
                   Font.Name = 'MS Sans Serif'
                   Font.Style = []
                   ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                  ItemHeight = 11
+                  ItemHeight = 13
                   ParentFont = False
                   TabOrder = 0
                 end
                 object btnStart_2: TButton
-                  Left = 148
-                  Top = 7
-                  Width = 72
-                  Height = 18
+                  Left = 175
+                  Top = 8
+                  Width = 85
+                  Height = 22
                   Caption = #36830#25509
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
@@ -579,10 +579,10 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   OnClick = btnStart_2Click
                 end
                 object btnReTest2: TButton
-                  Left = 406
-                  Top = 4
-                  Width = 89
-                  Height = 21
+                  Left = 480
+                  Top = 5
+                  Width = 105
+                  Height = 25
                   BiDiMode = bdLeftToRight
                   Caption = #37325#26032#27979#35797
                   ParentBiDiMode = False
@@ -590,32 +590,32 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   OnClick = btnReTest2Click
                 end
                 object CheckBoxAutoTestCom2: TCheckBox
-                  Left = 232
-                  Top = 8
-                  Width = 90
-                  Height = 17
+                  Left = 274
+                  Top = 9
+                  Width = 107
+                  Height = 21
                   Caption = #33258#21160#26816#27979#20018#21475
                   TabOrder = 3
                 end
               end
               object pnlTestResult_2: TPanel
                 Left = 1
-                Top = 51
-                Width = 499
-                Height = 163
+                Top = 60
+                Width = 592
+                Height = 198
                 Align = alClient
                 Caption = 'pnlTestResult_1'
                 TabOrder = 1
                 object TestResultDetail_2: TDBGrid
                   Left = 1
                   Top = 1
-                  Width = 497
-                  Height = 161
+                  Width = 590
+                  Height = 196
                   Align = alClient
                   DataSource = DS_TestResult_2
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
-                  Font.Height = -9
+                  Font.Height = -11
                   Font.Name = 'MS Sans Serif'
                   Font.Style = []
                   ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -674,14 +674,14 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object TestResult2: TPanel
             Left = 2
-            Top = 230
-            Width = 503
-            Height = 26
+            Top = 276
+            Width = 596
+            Height = 31
             Align = alBottom
             Color = clRed
             Font.Charset = GB2312_CHARSET
             Font.Color = clWindowText
-            Font.Height = -19
+            Font.Height = -23
             Font.Name = #38582#20070
             Font.Style = [fsBold]
             ParentFont = False
@@ -689,8 +689,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object SB_TestStatus_2: TStatusBar
             Left = 2
-            Top = 256
-            Width = 503
+            Top = 307
+            Width = 596
             Height = 22
             Panels = <
               item
@@ -707,38 +707,38 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
         end
         object grp3: TGroupBox
           Left = 0
-          Top = 287
-          Width = 508
-          Height = 280
+          Top = 339
+          Width = 600
+          Height = 331
           Caption = #19979#36733#32467#26524'('#20018#21475#19977')'
           TabOrder = 11
           object estResult4: TPanel
             Left = 2
-            Top = 13
-            Width = 504
-            Height = 217
+            Top = 15
+            Width = 596
+            Height = 261
             Align = alClient
             TabOrder = 0
             object estResult5: TPanel
               Left = 1
               Top = 1
-              Width = 502
-              Height = 215
+              Width = 594
+              Height = 259
               Align = alClient
               Caption = 'Panel1'
               TabOrder = 0
               object estResult6: TPanel
                 Left = 1
                 Top = 1
-                Width = 500
-                Height = 50
+                Width = 592
+                Height = 59
                 Align = alTop
                 TabOrder = 0
                 object lbl2: TLabel
-                  Left = 31
-                  Top = 9
-                  Width = 39
-                  Height = 19
+                  Left = 37
+                  Top = 11
+                  Width = 46
+                  Height = 22
                   Alignment = taRightJustify
                   AutoSize = False
                   Caption = #20018#21475':'
@@ -750,8 +750,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   ParentFont = False
                 end
                 object img3: TImage
-                  Left = 5
-                  Top = 4
+                  Left = 6
+                  Top = 5
                   Width = 32
                   Height = 32
                   AutoSize = True
@@ -784,8 +784,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   Visible = False
                 end
                 object img4: TImage
-                  Left = 5
-                  Top = 4
+                  Left = 6
+                  Top = 5
                   Width = 32
                   Height = 32
                   AutoSize = True
@@ -817,25 +817,25 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                     FFFFFFFF}
                 end
                 object cbbCom_3: TComboBox
-                  Left = 74
-                  Top = 7
-                  Width = 66
-                  Height = 19
+                  Left = 87
+                  Top = 8
+                  Width = 78
+                  Height = 21
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -11
                   Font.Name = 'MS Sans Serif'
                   Font.Style = []
                   ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                  ItemHeight = 11
+                  ItemHeight = 13
                   ParentFont = False
                   TabOrder = 0
                 end
                 object btnStart_3: TButton
-                  Left = 148
-                  Top = 7
-                  Width = 72
-                  Height = 18
+                  Left = 175
+                  Top = 8
+                  Width = 85
+                  Height = 22
                   Caption = #36830#25509
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
@@ -847,10 +847,10 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   OnClick = btnStart_3Click
                 end
                 object btnReTest3: TButton
-                  Left = 406
-                  Top = 4
-                  Width = 89
-                  Height = 21
+                  Left = 480
+                  Top = 5
+                  Width = 105
+                  Height = 25
                   BiDiMode = bdLeftToRight
                   Caption = #37325#26032#27979#35797
                   ParentBiDiMode = False
@@ -858,32 +858,32 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   OnClick = btnReTest3Click
                 end
                 object CheckBoxAutoTestCom3: TCheckBox
-                  Left = 232
-                  Top = 8
-                  Width = 90
-                  Height = 17
+                  Left = 274
+                  Top = 9
+                  Width = 107
+                  Height = 21
                   Caption = #33258#21160#26816#27979#20018#21475
                   TabOrder = 3
                 end
               end
               object pnlTestResult_3: TPanel
                 Left = 1
-                Top = 51
-                Width = 500
-                Height = 163
+                Top = 60
+                Width = 592
+                Height = 198
                 Align = alClient
                 Caption = 'pnlTestResult_1'
                 TabOrder = 1
                 object TestResultDetail_3: TDBGrid
                   Left = 1
                   Top = 1
-                  Width = 498
-                  Height = 161
+                  Width = 590
+                  Height = 196
                   Align = alClient
                   DataSource = DS_TestResult_3
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
-                  Font.Height = -9
+                  Font.Height = -11
                   Font.Name = 'MS Sans Serif'
                   Font.Style = []
                   ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -942,14 +942,14 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object TestResult3: TPanel
             Left = 2
-            Top = 230
-            Width = 504
-            Height = 26
+            Top = 276
+            Width = 596
+            Height = 31
             Align = alBottom
             Color = clRed
             Font.Charset = GB2312_CHARSET
             Font.Color = clWindowText
-            Font.Height = -19
+            Font.Height = -23
             Font.Name = #38582#20070
             Font.Style = [fsBold]
             ParentFont = False
@@ -957,8 +957,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object SB_TestStatus_3: TStatusBar
             Left = 2
-            Top = 256
-            Width = 504
+            Top = 307
+            Width = 596
             Height = 22
             Panels = <
               item
@@ -974,39 +974,39 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
         end
         object grp4: TGroupBox
-          Left = 508
-          Top = 287
-          Width = 507
-          Height = 280
+          Left = 600
+          Top = 339
+          Width = 600
+          Height = 331
           Caption = #19979#36733#32467#26524'('#20018#21475#22235')'
           TabOrder = 12
           object estResult9: TPanel
             Left = 2
-            Top = 13
-            Width = 503
-            Height = 217
+            Top = 15
+            Width = 596
+            Height = 261
             Align = alClient
             TabOrder = 0
             object estResult10: TPanel
               Left = 1
               Top = 1
-              Width = 501
-              Height = 215
+              Width = 594
+              Height = 259
               Align = alClient
               Caption = 'Panel1'
               TabOrder = 0
               object estResult11: TPanel
                 Left = 1
                 Top = 1
-                Width = 499
-                Height = 50
+                Width = 592
+                Height = 59
                 Align = alTop
                 TabOrder = 0
                 object lbl3: TLabel
-                  Left = 31
-                  Top = 9
-                  Width = 39
-                  Height = 19
+                  Left = 37
+                  Top = 11
+                  Width = 46
+                  Height = 22
                   Alignment = taRightJustify
                   AutoSize = False
                   Caption = #20018#21475':'
@@ -1018,8 +1018,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   ParentFont = False
                 end
                 object img5: TImage
-                  Left = 5
-                  Top = 4
+                  Left = 6
+                  Top = 5
                   Width = 32
                   Height = 32
                   AutoSize = True
@@ -1052,8 +1052,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   Visible = False
                 end
                 object img6: TImage
-                  Left = 5
-                  Top = 4
+                  Left = 6
+                  Top = 5
                   Width = 32
                   Height = 32
                   AutoSize = True
@@ -1085,38 +1085,38 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                     FFFFFFFF}
                 end
                 object lbl6: TLabel
-                  Left = 13
-                  Top = 31
-                  Width = 423
-                  Height = 17
+                  Left = 15
+                  Top = 37
+                  Width = 500
+                  Height = 20
                   AutoSize = False
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clRed
-                  Font.Height = -13
+                  Font.Height = -16
                   Font.Name = 'MS Sans Serif'
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
                 object cbbCom_4: TComboBox
-                  Left = 74
-                  Top = 7
-                  Width = 66
-                  Height = 19
+                  Left = 87
+                  Top = 8
+                  Width = 78
+                  Height = 21
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -11
                   Font.Name = 'MS Sans Serif'
                   Font.Style = []
                   ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-                  ItemHeight = 11
+                  ItemHeight = 13
                   ParentFont = False
                   TabOrder = 0
                 end
                 object btnStart_4: TButton
-                  Left = 148
-                  Top = 7
-                  Width = 72
-                  Height = 18
+                  Left = 175
+                  Top = 8
+                  Width = 85
+                  Height = 22
                   Caption = #36830#25509
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
@@ -1128,10 +1128,10 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   OnClick = btnStart_4Click
                 end
                 object btnReTest4: TButton
-                  Left = 406
-                  Top = 4
-                  Width = 89
-                  Height = 21
+                  Left = 480
+                  Top = 5
+                  Width = 105
+                  Height = 25
                   BiDiMode = bdLeftToRight
                   Caption = #37325#26032#27979#35797
                   ParentBiDiMode = False
@@ -1139,32 +1139,32 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   OnClick = btnReTest4Click
                 end
                 object CheckBoxAutoTestCom4: TCheckBox
-                  Left = 232
-                  Top = 8
-                  Width = 90
-                  Height = 17
+                  Left = 274
+                  Top = 9
+                  Width = 107
+                  Height = 21
                   Caption = #33258#21160#26816#27979#20018#21475
                   TabOrder = 3
                 end
               end
               object pnlTestResult_4: TPanel
                 Left = 1
-                Top = 51
-                Width = 499
-                Height = 163
+                Top = 60
+                Width = 592
+                Height = 198
                 Align = alClient
                 Caption = 'pnlTestResult_1'
                 TabOrder = 1
                 object TestResultDetail_4: TDBGrid
                   Left = 1
                   Top = 1
-                  Width = 497
-                  Height = 161
+                  Width = 590
+                  Height = 196
                   Align = alClient
                   DataSource = DS_TestResult_4
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
-                  Font.Height = -9
+                  Font.Height = -11
                   Font.Name = 'MS Sans Serif'
                   Font.Style = []
                   ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -1223,14 +1223,14 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object TestResult4: TPanel
             Left = 2
-            Top = 230
-            Width = 503
-            Height = 26
+            Top = 276
+            Width = 596
+            Height = 31
             Align = alBottom
             Color = clRed
             Font.Charset = GB2312_CHARSET
             Font.Color = clWindowText
-            Font.Height = -19
+            Font.Height = -23
             Font.Name = #38582#20070
             Font.Style = [fsBold]
             ParentFont = False
@@ -1238,8 +1238,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object SB_TestStatus_4: TStatusBar
             Left = 2
-            Top = 256
-            Width = 503
+            Top = 307
+            Width = 596
             Height = 22
             Panels = <
               item
@@ -1257,53 +1257,53 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
       end
     end
     object TestItemParam_Comm4: TListBox
-      Left = 843
-      Top = 150
-      Width = 80
-      Height = 69
+      Left = 836
+      Top = 257
+      Width = 95
+      Height = 82
       ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      ItemHeight = 11
+      ItemHeight = 13
       MultiSelect = True
       TabOrder = 1
       Visible = False
     end
     object TestItemParam_Comm3: TListBox
-      Left = 891
-      Top = 122
-      Width = 80
-      Height = 68
+      Left = 1053
+      Top = 144
+      Width = 95
+      Height = 81
       ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      ItemHeight = 11
+      ItemHeight = 13
       MultiSelect = True
       TabOrder = 2
       Visible = False
     end
     object TestItemParam_Comm2: TListBox
-      Left = 811
-      Top = 140
-      Width = 80
-      Height = 67
+      Left = 830
+      Top = 181
+      Width = 95
+      Height = 80
       ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      ItemHeight = 11
+      ItemHeight = 13
       MultiSelect = True
       TabOrder = 3
       Visible = False
     end
     object TestItemParam_Comm1: TListBox
-      Left = 851
-      Top = 122
-      Width = 80
-      Height = 69
+      Left = 726
+      Top = 192
+      Width = 94
+      Height = 82
       ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      ItemHeight = 11
+      ItemHeight = 13
       MultiSelect = True
       TabOrder = 4
       Visible = False
     end
   end
   inherited btnStart_StartTest: TButton
-    Left = 988
-    Top = 528
+    Left = 1168
+    Top = 624
   end
   inherited tmrRecCommTimeOut_0: TTimer
     Left = 678

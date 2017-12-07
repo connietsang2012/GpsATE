@@ -379,7 +379,7 @@ begin
         CommList.free;
 
         //恢复初始测试状态
-        //ResumeTestState(iCommindex);
+        ResumeTestState(iCommindex);
     end;
 
     for iCommindex := 1 to CommCount-1 do
@@ -395,7 +395,7 @@ begin
 
     //if strAutoTestModel='' then
 
-    if strParamAutoTestModel='' then    //2014.10.29
+    if strAutoTestModel='' then    //2014.10.29
     begin
         Application.MessageBox('请在测试参数设置选项中选择要测试的机型和IMEI号段!','警告',MB_OK+MB_ICONWARNING);
         frmClientMain.ac_BasicTestParam.Execute();
@@ -404,7 +404,7 @@ begin
     //将要测试的项放至列表框中
     TestItem.Items.Clear;
     UniQuery_DstSubItem.Close;
-    UniQuery_DstSubItem.Params.ParamByName('ItemModel').Value:=strParamAutoTestModel;
+    UniQuery_DstSubItem.Params.ParamByName('ItemModel').Value:=strAutoTestModel;
     UniQuery_DstSubItem.Open;
     UniQuery_DstSubItem.First;
     while not UniQuery_DstSubItem.Eof do
@@ -701,7 +701,7 @@ label NextLoop;
 begin
     Application.ProcessMessages;
     //bGetTestItemed[CommIndex]:=False;
-    strTemp:=Format('ItemModel=''%s'' and ItemName=''%s''',[strParamAutoTestModel,strTestItem]);
+    strTemp:=Format('ItemModel=''%s'' and ItemName=''%s''',[strAutoTestModel,strTestItem]);
     TUniQuery(FindComponent('UniQuery_TestItemParam_ByItemName_'+inttostr(CommIndex))).Close;
     TUniQuery(FindComponent('UniQuery_TestItemParam_ByItemName_'+inttostr(CommIndex))).Filter:=strTemp;
     TUniQuery(FindComponent('UniQuery_TestItemParam_ByItemName_'+inttostr(CommIndex))).Filtered:=True;

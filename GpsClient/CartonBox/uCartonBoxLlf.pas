@@ -125,11 +125,11 @@ begin
         SetNamedSubStringValue('ProductColor', '颜色:' + trim(EdtColor.Text));
         SetNamedSubStringValue('ProductDate', '日期:' + trim(EdtDate.Text));
         SetNamedSubStringValue('ProductCount', '数量:' + trim(EdtQty.Text));
-        SetNamedSubStringValue('ProductWeight', '毛重' + (EdtWeight.Text));
+        SetNamedSubStringValue('ProductWeight', '毛重:' + (EdtWeight.Text));
         SetNamedSubStringValue('ProductNum', '产品编码:' + trim(EdtProNo.Text));
         SetNamedSubStringValue('Remark', trim(edt_Remark1.Text));
-        strver := SysUtils.Format('箱号:%s%s' + #13#10 + '制单:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重%s' + #13#10 + '产品编码:%s' + #13#10 + '机型:%s' + #13#10 + '',
-            [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edtsoftmodel.Text]);
+        strver := SysUtils.Format('箱号:%s%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 +'颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 +'%s' + #13#10 +  '',
+            [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text,EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text,edt_Remark1.text ]);
         AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
         for i := 0 to (mmoMEI.Lines.Count - 1) do
         begin
@@ -302,18 +302,20 @@ begin
         SetNamedSubStringValue('ProductColor', '颜色:' + UniQuery_RePrint.FieldByName('Color').AsString);
         SetNamedSubStringValue('ProductDate', '日期:' + UniQuery_RePrint.FieldByName('Date').AsString);
         SetNamedSubStringValue('ProductCount', '数量:' + UniQuery_RePrint.FieldByName('Qty').AsString);
-        SetNamedSubStringValue('ProductWeight', '毛重' + UniQuery_RePrint.FieldByName('Weight').AsString);
+        SetNamedSubStringValue('ProductWeight', '毛重:' + UniQuery_RePrint.FieldByName('Weight').AsString);
         SetNamedSubStringValue('ProductNum', '产品编码:' + UniQuery_RePrint.FieldByName('ProductCode').AsString);
         SetNamedSubStringValue('Remark', UniQuery_RePrint.FieldByName('Remark1').AsString);
-        strver := SysUtils.Format('箱号:%s' + #13#10 + '制单:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重%s' + #13#10 + '产品编码:%s' + #13#10 + '机型:%s' + #13#10 + '',
+        strver := SysUtils.Format('箱号:%s' + #13#10 + '制单:%s' + #13#10  + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 +'%s' + '',
             [UniQuery_RePrint.FieldByName('BoxNo').AsString,
             UniQuery_RePrint.FieldByName('ZhiDan').AsString,
+            UniQuery_RePrint.FieldByName('SoftModel').AsString,
                 UniQuery_RePrint.FieldByName('Color').AsString,
                 UniQuery_RePrint.FieldByName('Date').AsString,
                 UniQuery_RePrint.FieldByName('Qty').AsString,
                 UniQuery_RePrint.FieldByName('Weight').AsString,
                 UniQuery_RePrint.FieldByName('ProductCode').AsString,
-                UniQuery_RePrint.FieldByName('SoftModel').AsString]);
+                UniQuery_RePrint.FieldByName('Remark1').AsString
+                ]);
         AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
         rowCount := 0;
         while not UniQuery_RePrint.Eof do

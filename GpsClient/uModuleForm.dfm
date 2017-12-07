@@ -1,6 +1,6 @@
 object frmModule: TfrmModule
-  Left = 209
-  Top = 165
+  Left = 178
+  Top = 99
   Width = 1024
   Height = 627
   Caption = #27169#29256
