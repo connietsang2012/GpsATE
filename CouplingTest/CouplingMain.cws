@@ -30,7 +30,7 @@ Save Changes Before Compiling = "Always"
 Hide Windows = False
 Break At First Statement = False
 Sort Type = "File Name"
-Number of Opened Files = 0
+Number of Opened Files = 1
 Window Confinement Region Enabled = True
 MainColumnWidth = 210
 FileDateColumnWidth = 70
@@ -48,10 +48,11 @@ Batch Build Debug = False
 [File 0001]
 Path = "/e/Project/GpsATE/CouplingTest/CouplingMain.c"
 File Type = "CSource"
-Disk Date = 3595220456
+Disk Date = 3595479723
 In Projects = "1,"
 Window Top = 45
-Source Window State = "1,1698,1698,1698,4,17,17,0,3,0,0,232,0,0,0,0,1735,0,1698,4,431,775,1,78,"
+Window Z-Order = 1
+Source Window State = "1,885,893,885,12,13,12,0,0,160,0,232,0,0,0,29,874,0,885,12,431,775,1,78,"
 Breakpoint 0001 = "410,0,enabled,"
 
 [File 0002]
@@ -65,24 +66,15 @@ Window Height = 587
 Window Width = 1028
 
 [File 0003]
-Path = "/e/Project/GpsATE/CouplingTest/CouplingMain.h"
-File Type = "Include"
-Disk Date = 3595049522
-In Projects = "1,"
-Window Top = 182
-Window Left = 82
-Source Window State = "1,26,26,26,9,45,45,0,0,0,0,24,0,0,0,0,40,0,57,17,411,895,1,28,"
-
-[File 0004]
 Path = "/e/Project/GpsATE/CouplingTest/CommonFunction.c"
 File Type = "CSource"
 Disk Date = 3595215968
 In Projects = "1,"
 Window Top = 45
 Window Left = 6
-Source Window State = "1,91,91,91,4,10,10,0,0,160,0,0,0,0,0,30,6,0,105,7,323,517,1,0,"
+Source Window State = "1,91,91,91,4,10,10,0,0,0,0,0,0,0,0,0,6,0,105,7,323,517,1,0,"
 
-[File 0005]
+[File 0004]
 Path = "/e/Project/GpsATE/CouplingTest/ComPortFun.c"
 File Type = "CSource"
 Disk Date = 3594081328
@@ -91,14 +83,14 @@ Window Top = 227
 Window Left = 105
 Source Window State = "1,6,15,15,0,18,18,0,0,0,0,9,0,9,0,0,0,0,6,0,411,895,1,0,"
 
-[File 0006]
+[File 0005]
 Path = "/e/Project/GpsATE/CouplingTest/age1960.h"
 File Type = "Include"
 Disk Date = 3539153992
 In Projects = "1,"
 Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
 
-[File 0007]
+[File 0006]
 Path = "/e/Project/GpsATE/CouplingTest/brom.h"
 File Type = "Include"
 Disk Date = 3592607997
@@ -107,7 +99,7 @@ Window Top = 47
 Window Left = 13
 Source Window State = "1,32,32,32,10,19,10,0,0,0,0,74,0,74,0,0,0,0,73,0,351,895,1,0,"
 
-[File 0008]
+[File 0007]
 Path = "/e/Project/GpsATE/CouplingTest/com_enum.h"
 File Type = "Include"
 Disk Date = 3592608025
@@ -116,7 +108,7 @@ Window Top = 47
 Window Left = 13
 Source Window State = "1,90,90,90,0,7,7,0,3,0,0,0,0,0,0,0,62,0,90,0,411,895,1,0,"
 
-[File 0009]
+[File 0008]
 Path = "/e/Project/GpsATE/CouplingTest/CommonFunc.h"
 File Type = "Include"
 Disk Date = 3594786607
@@ -125,7 +117,7 @@ Window Top = 71
 Window Left = 30
 Source Window State = "1,53,53,53,4,14,14,0,0,0,0,11,0,0,0,0,47,0,54,0,323,517,1,15,"
 
-[File 0010]
+[File 0009]
 Path = "/e/Project/GpsATE/CouplingTest/ComPortFun.h"
 File Type = "Include"
 Disk Date = 3594081360
@@ -133,6 +125,15 @@ In Projects = "1,"
 Window Top = 137
 Window Left = 59
 Source Window State = "1,3,5,5,0,26,26,0,0,0,0,7,0,7,0,0,0,0,3,0,411,895,1,0,"
+
+[File 0010]
+Path = "/e/Project/GpsATE/CouplingTest/CouplingMain.h"
+File Type = "Include"
+Disk Date = 3595049522
+In Projects = "1,"
+Window Top = 182
+Window Left = 82
+Source Window State = "1,26,26,26,9,45,45,0,0,0,0,24,0,0,0,0,40,0,57,17,411,895,1,28,"
 
 [File 0011]
 Path = "/e/Project/GpsATE/CouplingTest/meta.h"
@@ -148,6 +149,9 @@ Path = "/e/Project/GpsATE/CouplingTest/brom.lib"
 File Type = "Library"
 Disk Date = 3556001974
 In Projects = "1,"
+
+[Tab Order]
+Tab 0001 = "/e/Project/GpsATE/CouplingTest/CouplingMain.c"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True

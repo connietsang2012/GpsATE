@@ -684,14 +684,21 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 	{
 		if (strpos(readBuf,"RID:",0)>=0)
 		{
-			CommRec_OK(Target);
+			
 
 			//ȡRID
 			ViString readTemp=readBuf;
+			readTemp=strreplace(readTemp,"\r\n",""); 
 			char* data=strreplace(readTemp," ","");
 			int StartPos=strpos(data,"ChipRID:",0);
-			substring(data,strRid[Target],StartPos+strlen("ChipRID:"),32);
-
+			if(strlen (data)>=32+strlen("ChipRID:")){ 
+				substring(data,strRid[Target],StartPos+strlen("ChipRID:"),32);
+				CommRec_OK(Target);
+			}
+			else 
+			{
+				return;
+			}
 			sprintf(TcpCmd[Target], "Action=CheckTested#PlanName=WriteImei#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#",
 					strRid[Target],SoftModel,Version,Tester);
 			SendToTcp(Target,"CheckTested",TcpCmd[Target]);
@@ -869,14 +876,23 @@ void CVICALLBACK Event_Char_Func_2(int portNo, int eventMask, void *callbackData
 	{
 		if (strpos(readBuf,"RID:",0)>=0)
 		{
-			CommRec_OK(Target);
+			//CommRec_OK(Target);
 
 			//ȡRID
 			ViString readTemp=readBuf;
+			readTemp=strreplace(readTemp,"\r\n",""); 
 			char* data=strreplace(readTemp," ","");
 			int StartPos=strpos(data,"ChipRID:",0);
-			substring(data,strRid[Target],StartPos+strlen("ChipRID:"),32);
-
+			
+			if(strlen (data)>=32+strlen("ChipRID:")){ 
+				substring(data,strRid[Target],StartPos+strlen("ChipRID:"),32);
+				CommRec_OK(Target);
+			}
+			else 
+			{
+				return;
+			}
+			
 			sprintf(TcpCmd[Target], "Action=CheckTested#PlanName=WriteImei#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#",
 					strRid[Target],SoftModel,Version,Tester);
 			SendToTcp(Target,"CheckTested",TcpCmd[Target]);
