@@ -1,8 +1,8 @@
 inherited frmCartonBoxLlf: TfrmCartonBoxLlf
-  Left = 217
-  Top = 6
+  Left = 144
+  Top = 104
   Width = 1036
-  Height = 780
+  Height = 749
   Caption = #22269#20869#24086#32440'(20)'
   OldCreateOrder = True
   PixelsPerInch = 96
@@ -11,13 +11,13 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     Left = 520
     Top = 331
     Width = 77
-    Height = 77
+    Height = 87
   end
   object Label2: TLabel [1]
     Left = 13
     Top = 630
     Width = 60
-    Height = 13
+    Height = 23
     Alignment = taRightJustify
     AutoSize = False
     BiDiMode = bdRightToLeft
@@ -25,9 +25,11 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     ParentBiDiMode = False
   end
   inherited pnlParent: TPanel
-    Top = 18
-    Width = 967
-    Height = 636
+    Left = 0
+    Top = 41
+    Width = 1028
+    Height = 674
+    Align = alClient
     object Label1: TLabel [0]
       Left = 720
       Top = 440
@@ -35,13 +37,20 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       Height = 13
       Caption = #31665#21495':'
     end
+    inherited grp1: TGroupBox
+      inherited EdtMEI: TEdit
+        Left = 8
+      end
+    end
     inherited grp2: TGroupBox
       inherited lbl10: TLabel
         Left = 318
       end
     end
     inherited grp3: TGroupBox
+      Height = 180
       inherited mmoMEI: TMemo
+        Height = 163
         Lines.Strings = (
           '1'
           '2'
@@ -66,8 +75,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
     end
     inherited grp4: TGroupBox
-      Left = 1
-      Top = 355
+      Left = 7
+      Top = 313
       Width = 701
       Height = 331
       object lbl11: TLabel [2]
@@ -172,7 +181,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Left = 5
         Top = 137
       end
-      object Label3: TLabel [14]
+      object Label3: TLabel
         Left = 5
         Top = 254
         Width = 60
@@ -183,105 +192,154 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Caption = #22791#27880':'
         ParentBiDiMode = False
       end
-      object EdtVersion: TEdit [17]
+      object EdtSoftModel: TDBEdit
+        Left = 72
+        Top = 16
+        Width = 209
+        Height = 21
+        DataField = 'SoftModel'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 0
+      end
+      object EdtColor: TDBEdit
+        Left = 352
+        Top = 16
+        Width = 217
+        Height = 21
+        DataField = 'Color'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 1
+      end
+      object EdtBoxNum: TDBEdit
+        Left = 72
+        Top = 48
+        Width = 81
+        Height = 21
+        DataField = 'BoxNo1'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 2
+      end
+      object EdtBoxNum1: TDBEdit
+        Left = 168
+        Top = 48
+        Width = 113
+        Height = 21
+        DataField = 'BoxNo2'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 3
+      end
+      object EdtWeight: TDBEdit
+        Left = 352
+        Top = 48
+        Width = 217
+        Height = 21
+        DataField = 'Weight'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 4
+      end
+      object Edtzhidan: TDBEdit
+        Left = 72
+        Top = 76
+        Width = 217
+        Height = 21
+        DataField = 'ZhiDan'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 5
+      end
+      object EdtDate: TDBEdit
+        Left = 352
+        Top = 76
+        Width = 217
+        Height = 21
+        DataField = 'ProductDate'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 6
+      end
+      object EdtProNo: TDBEdit
+        Left = 72
+        Top = 103
+        Width = 497
+        Height = 21
+        DataField = 'ProductNo'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 7
+      end
+      object EdtVersion: TDBEdit
         Left = 72
         Top = 131
         Width = 497
         Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        TabOrder = 2
-      end
-      object EdtColor: TEdit [18]
-        Left = 350
-        Top = 19
-        Width = 220
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        TabOrder = 3
-      end
-      object EdtQty: TEdit [19]
-        Left = 350
-        Top = 159
-        Width = 220
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 20
-        TabOrder = 4
-      end
-      object EdtBoxNum1: TEdit [20]
-        Left = 176
-        Top = 47
-        Width = 105
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 10
-        TabOrder = 5
-      end
-      object Edtzhidan: TEdit [21]
-        Left = 72
-        Top = 74
-        Width = 210
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        TabOrder = 6
-      end
-      object EdtDate: TEdit [22]
-        Left = 350
-        Top = 74
-        Width = 220
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        TabOrder = 7
-      end
-      object EdtProNo: TEdit [23]
-        Left = 72
-        Top = 103
-        Width = 500
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 100
+        DataField = 'Version'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
         TabOrder = 8
       end
-      object EdtWeight: TEdit [24]
-        Left = 350
-        Top = 48
-        Width = 220
+      object EdtTac: TDBEdit
+        Left = 72
+        Top = 160
+        Width = 217
         Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+        DataField = 'TACInfo'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
         TabOrder = 9
       end
-      object EdtCpName: TEdit [25]
-        Left = 72
-        Top = 225
-        Width = 500
+      object EdtQty: TDBEdit
+        Left = 352
+        Top = 160
+        Width = 217
         Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 100
+        DataField = 'Qty'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
         TabOrder = 10
       end
-      inherited Edt_IMEISTART: TEdit
+      object Edt_IMEISTART: TDBEdit
         Left = 72
-        Top = 188
+        Top = 192
+        Width = 185
+        Height = 21
+        DataField = 'IMEIStart'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
         TabOrder = 11
       end
-      inherited Edt_IMEIEND: TEdit
-        Left = 290
-        Top = 188
+      object Edt_IMEIEND: TDBEdit
+        Left = 280
+        Top = 193
+        Width = 185
+        Height = 21
+        DataField = 'IMEIEnd'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
         TabOrder = 12
       end
-      inherited EdtSoftModel: TEdit
+      object EdtCpName: TDBEdit
         Left = 72
-        Top = 20
-        Width = 209
+        Top = 223
+        Width = 497
+        Height = 21
+        DataField = 'CompanyName'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
         TabOrder = 13
       end
-      object edt_Remark1: TEdit
+      object edt_Remark1: TDBEdit
         Left = 72
-        Top = 249
-        Width = 500
+        Top = 252
+        Width = 497
         Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 100
+        DataField = 'Remark1'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
         TabOrder = 14
       end
     end
@@ -290,6 +348,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       Top = 432
       Width = 153
       Height = 21
+      Enabled = False
       TabOrder = 8
     end
     object btn_RePrint: TButton
@@ -306,7 +365,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     Left = 749
     Top = 252
     Width = 161
-    Height = 141
+    Height = 151
     ColCount = 11
     RowCount = 1
     FixedRows = 0
@@ -326,6 +385,36 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       64)
     RowHeights = (
       24)
+  end
+  object Panel1: TPanel [4]
+    Left = 0
+    Top = 0
+    Width = 1028
+    Height = 41
+    Align = alTop
+    TabOrder = 2
+    object Label7: TLabel
+      Left = 24
+      Top = 12
+      Width = 81
+      Height = 23
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = #21046#21333#21495':'
+    end
+    object cbManuOrder: TComboBox
+      Left = 112
+      Top = 8
+      Width = 201
+      Height = 21
+      ItemHeight = 13
+      TabOrder = 0
+      Text = #26080
+      OnChange = cbManuOrderChange
+      Items.Strings = (
+        #26080
+        'IMEI'#19982'SIM'#21345#32465#23450)
+    end
   end
   inherited UniQuery_IMEI: TUniQuery
     Connection = DMMain.UniConGpsTest
@@ -423,7 +512,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Name = 'IMEI'
       end>
   end
-  object unqry1: TUniQuery [11]
+  object unqry1: TUniQuery [12]
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
       'SELECT *  '
@@ -460,7 +549,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     SQL.Strings = (
       'SELECT SN as Rid'
       'FROM Gps_TestResult '
-      '  where IMEI=:IMEI')
+      '  where IMEI=:IMEI and WriteImeiResult=1')
     ParamData = <
       item
         DataType = ftUnknown
@@ -585,6 +674,209 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       Size = 200
     end
     object UniQuery_RePrint_MASK_FROM_V2: TBytesField
+      FieldName = '_MASK_FROM_V2'
+      ReadOnly = True
+      Required = True
+      Size = 8
+    end
+  end
+  object UniQuery_ManuOrder: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT ZhiDan      '
+      '  FROM Gps_ManuOrderParam'
+      '  WHERE status=1')
+    Left = 672
+    Top = 8
+    object UniQuery_ManuOrderZhiDan: TStringField
+      FieldName = 'ZhiDan'
+      Required = True
+      Size = 50
+    end
+  end
+  object UniQuery_ManuOrderParam: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT ZhiDan'
+      '      ,SoftModel'
+      '      ,BoxNo1'
+      '      ,BoxNo2'
+      '      ,ProductDate'
+      '      ,Color'
+      '      ,Weight'
+      '      ,Qty'
+      '      ,ProductNo'
+      '      ,Version'
+      '      ,IMEIStart'
+      '      ,IMEIEnd'
+      '      ,TACInfo'
+      '      ,CompanyName'
+      '      ,Remark1'
+      '      ,Remark2'
+      '      ,Remark3'
+      '      ,Remark4'
+      '      ,Remark5'
+      '  FROM Gps_ManuOrderParam'
+      '  WHERE ZhiDan=:ZhiDan')
+    Left = 712
+    Top = 8
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'ZhiDan'
+      end>
+    object UniQuery_ManuOrderParamZhiDan: TStringField
+      FieldName = 'ZhiDan'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamSoftModel: TStringField
+      FieldName = 'SoftModel'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamBoxNo1: TStringField
+      FieldName = 'BoxNo1'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamBoxNo2: TStringField
+      FieldName = 'BoxNo2'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamProductDate: TStringField
+      FieldName = 'ProductDate'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamColor: TStringField
+      FieldName = 'Color'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamWeight: TStringField
+      FieldName = 'Weight'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamQty: TStringField
+      FieldName = 'Qty'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamProductNo: TStringField
+      FieldName = 'ProductNo'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamVersion: TStringField
+      FieldName = 'Version'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamIMEIStart: TStringField
+      FieldName = 'IMEIStart'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamIMEIEnd: TStringField
+      FieldName = 'IMEIEnd'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamTACInfo: TStringField
+      FieldName = 'TACInfo'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamCompanyName: TStringField
+      FieldName = 'CompanyName'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark1: TStringField
+      FieldName = 'Remark1'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark2: TStringField
+      FieldName = 'Remark2'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark3: TStringField
+      FieldName = 'Remark3'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark4: TStringField
+      FieldName = 'Remark4'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark5: TStringField
+      FieldName = 'Remark5'
+      Size = 50
+    end
+  end
+  object UniQuery_IMEIRel: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'select * from Gps_IMEIRel')
+    Left = 760
+    Top = 8
+    object UniQuery_IMEIRelRelId: TIntegerField
+      FieldName = 'RelId'
+      ReadOnly = True
+      Required = True
+    end
+    object UniQuery_IMEIRelIMEIRelNo: TStringField
+      FieldName = 'IMEIRelNo'
+      Required = True
+    end
+    object UniQuery_IMEIRelIMEIRelDes: TStringField
+      FieldName = 'IMEIRelDes'
+      Required = True
+    end
+    object UniQuery_IMEIRel_MASK_FROM_V2: TBytesField
+      FieldName = '_MASK_FROM_V2'
+      ReadOnly = True
+      Required = True
+      Size = 8
+    end
+  end
+  object DS_ManuOrderParam: TDataSource
+    DataSet = UniQuery_ManuOrderParam
+    Left = 712
+    Top = 48
+  end
+  object UniQuery_UpdateBoxNo: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'UPDATE Gps_ManuOrderParam'
+      'SET BoxNo2=:BoxNo2'
+      'WHERE ZhiDan=:ZhiDan')
+    Left = 792
+    Top = 8
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'BoxNo2'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'ZhiDan'
+      end>
+    object IntegerField1: TIntegerField
+      FieldName = 'RelId'
+      ReadOnly = True
+      Required = True
+    end
+    object StringField1: TStringField
+      FieldName = 'IMEIRelNo'
+      Required = True
+    end
+    object StringField2: TStringField
+      FieldName = 'IMEIRelDes'
+      Required = True
+    end
+    object BytesField1: TBytesField
       FieldName = '_MASK_FROM_V2'
       ReadOnly = True
       Required = True

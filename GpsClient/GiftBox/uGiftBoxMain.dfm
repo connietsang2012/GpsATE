@@ -1,6 +1,6 @@
 object frmGiftBoxMain: TfrmGiftBoxMain
-  Left = 158
-  Top = 73
+  Left = 127
+  Top = 117
   Width = 983
   Height = 666
   Caption = #24425#30418#25171#21360
@@ -219,12 +219,21 @@ object frmGiftBoxMain: TfrmGiftBoxMain
       ParentFont = False
     end
     object lblrel: TLabel
-      Left = 48
+      Left = 368
       Top = 24
       Width = 65
       Height = 13
       AutoSize = False
       Caption = #32465#23450#20851#31995':'
+    end
+    object Label7: TLabel
+      Left = 40
+      Top = 24
+      Width = 81
+      Height = 13
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = #21046#21333#21495':'
     end
     object Edt_IMEI: TEdit
       Left = 133
@@ -261,8 +270,8 @@ object frmGiftBoxMain: TfrmGiftBoxMain
       TabOrder = 1
       OnKeyPress = edt_SIMKeyPress
     end
-    object cbb_Rel: TComboBox
-      Left = 128
+    object cbManuOrder: TComboBox
+      Left = 136
       Top = 16
       Width = 145
       Height = 21
@@ -273,6 +282,16 @@ object frmGiftBoxMain: TfrmGiftBoxMain
       Items.Strings = (
         #26080
         'IMEI'#19982'SIM'#21345#32465#23450)
+    end
+    object cbb_Rel: TDBLookupComboBox
+      Left = 432
+      Top = 16
+      Width = 145
+      Height = 21
+      DataField = 'IMEIRelDesc'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 3
     end
   end
   object grp4: TGroupBox
@@ -323,7 +342,7 @@ object frmGiftBoxMain: TfrmGiftBoxMain
       Alignment = taRightJustify
       AutoSize = False
       BiDiMode = bdRightToLeft
-      Caption = #8212#8212#8212#8212
+      Caption = '---'
       ParentBiDiMode = False
     end
     object lbl18: TLabel
@@ -367,100 +386,120 @@ object frmGiftBoxMain: TfrmGiftBoxMain
       Alignment = taRightJustify
       AutoSize = False
       BiDiMode = bdRightToLeft
-      Caption = #8212#8212#8212#8212
+      Caption = '---'
       ParentBiDiMode = False
     end
-    object edt_Tac: TEdit
-      Left = 80
-      Top = 185
-      Width = 210
-      Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 15
-      TabOrder = 0
-      OnKeyPress = edt_TacKeyPress
-    end
-    object edt_SN1: TEdit
-      Left = 80
-      Top = 58
-      Width = 80
-      Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 7
-      TabOrder = 1
-    end
-    object Edt_IMEISTART: TEdit
-      Left = 80
-      Top = 143
-      Width = 175
-      Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 14
-      TabOrder = 2
-    end
-    object Edt_IMEIEND: TEdit
-      Left = 297
-      Top = 143
-      Width = 175
-      Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 14
-      TabOrder = 3
-    end
-    object edt_Date: TEdit
-      Left = 80
-      Top = 100
-      Width = 217
-      Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 50
-      TabOrder = 4
-    end
-    object edt_SoftModel: TEdit
+    object edt_SoftModel: TDBEdit
       Left = 80
       Top = 16
-      Width = 393
+      Width = 369
       Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 30
+      DataField = 'SoftModel'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 0
+    end
+    object edt_SN1: TDBEdit
+      Left = 80
+      Top = 56
+      Width = 121
+      Height = 21
+      DataField = 'SN1'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 1
+    end
+    object edt_SN2: TDBEdit
+      Left = 208
+      Top = 56
+      Width = 121
+      Height = 21
+      DataField = 'SN2'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 2
+    end
+    object edt_SN3: TDBEdit
+      Left = 336
+      Top = 56
+      Width = 113
+      Height = 21
+      DataField = 'SN3'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 3
+    end
+    object edt_Date: TDBEdit
+      Left = 80
+      Top = 102
+      Width = 369
+      Height = 21
+      DataField = 'ProductDate'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 4
+    end
+    object Edt_IMEISTART: TDBEdit
+      Left = 80
+      Top = 144
+      Width = 185
+      Height = 21
+      DataField = 'IMEIStart'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
       TabOrder = 5
     end
-    object edt_SN2: TEdit
-      Left = 168
-      Top = 58
-      Width = 80
+    object Edt_IMEIEND: TDBEdit
+      Left = 288
+      Top = 144
+      Width = 161
       Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 5
+      DataField = 'IMEIEnd'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
       TabOrder = 6
     end
-    object edt_SN3: TEdit
-      Left = 256
-      Top = 58
-      Width = 80
+    object edt_Tac: TDBEdit
+      Left = 80
+      Top = 184
+      Width = 369
       Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 1
+      DataField = 'TACInfo'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
       TabOrder = 7
     end
-    object Edt_SIMSTART: TEdit
+    object Edt_SIMSTART: TDBEdit
       Left = 80
-      Top = 231
-      Width = 175
+      Top = 232
+      Width = 185
       Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 13
+      DataField = 'SIMStart'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
       TabOrder = 8
     end
-    object Edt_SIMEND: TEdit
-      Left = 297
-      Top = 231
-      Width = 175
+    object Edt_SIMEND: TDBEdit
+      Left = 288
+      Top = 232
+      Width = 161
       Height = 21
-      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-      MaxLength = 13
+      DataField = 'SIMEnd'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
       TabOrder = 9
     end
+  end
+  object edtReprintImei: TEdit
+    Left = 513
+    Top = 303
+    Width = 175
+    Height = 21
+    Enabled = False
+    ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+    MaxLength = 15
+    TabOrder = 4
+    OnKeyPress = edtReprintImeiKeyPress
   end
   object btappAutoPrint: TBTApplication
     AutoConnect = True
@@ -582,12 +621,242 @@ object frmGiftBoxMain: TfrmGiftBoxMain
     SQL.Strings = (
       'SELECT * From Gps_GiftBox_Result'
       'WHERE SIMNO=:SIMNO')
-    Left = 664
-    Top = 288
+    Left = 672
+    Top = 264
     ParamData = <
       item
         DataType = ftUnknown
         Name = 'SIMNO'
       end>
+  end
+  object UniQuery_GiftBoxByImeiReprint: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT Id'
+      '      ,SN'
+      '      ,IMEI'
+      '      ,SIMNO'
+      '      ,ZhiDan'
+      '      ,SoftModel'
+      '      ,Date'
+      '      ,CompanyName'
+      '      ,TesterId'
+      '      ,TestTime'
+      '      ,Remark1'
+      '      ,Remark2'
+      '      ,Remark3'
+      '      ,Remark4'
+      '      ,Remark5'
+      '      ,_MASK_FROM_V2'
+      '  FROM Gps_GiftBox_Result'
+      '  WHERE IMEI=:IMEI')
+    Left = 664
+    Top = 336
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end>
+  end
+  object UniQuery_ManuOrderParam: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT ZhiDan'
+      '      ,SoftModel'
+      '      ,SN1'
+      '      ,SN2'
+      '      ,SN3'
+      '      ,ProductDate'
+      '      ,ProductNo'
+      '      ,Version'
+      '      ,IMEIStart'
+      '      ,IMEIEnd'
+      '      ,SIMStart'
+      '      ,SIMEnd'
+      '      ,IMEIRel'
+      '      ,TACInfo'
+      '      ,CompanyName'
+      '      ,Status'
+      '      ,_MASK_FROM_V2'
+      '  FROM Gps_ManuOrderParam'
+      '  WHERE ZhiDan=:ZhiDan')
+    Left = 712
+    Top = 56
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'ZhiDan'
+      end>
+    object UniQuery_ManuOrderParamZhiDan: TStringField
+      FieldName = 'ZhiDan'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamSoftModel: TStringField
+      FieldName = 'SoftModel'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamSN1: TStringField
+      FieldName = 'SN1'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamSN2: TStringField
+      FieldName = 'SN2'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamSN3: TStringField
+      FieldName = 'SN3'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamProductDate: TStringField
+      FieldName = 'ProductDate'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamProductNo: TStringField
+      FieldName = 'ProductNo'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamVersion: TStringField
+      FieldName = 'Version'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamIMEIStart: TStringField
+      FieldName = 'IMEIStart'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamIMEIEnd: TStringField
+      FieldName = 'IMEIEnd'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamSIMStart: TStringField
+      FieldName = 'SIMStart'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamSIMEnd: TStringField
+      FieldName = 'SIMEnd'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamIMEIRel: TIntegerField
+      FieldName = 'IMEIRel'
+      Required = True
+    end
+    object UniQuery_ManuOrderParamTACInfo: TStringField
+      FieldName = 'TACInfo'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamCompanyName: TStringField
+      FieldName = 'CompanyName'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamStatus: TIntegerField
+      FieldName = 'Status'
+      Required = True
+    end
+    object UniQuery_ManuOrderParam_MASK_FROM_V2: TBytesField
+      FieldName = '_MASK_FROM_V2'
+      ReadOnly = True
+      Required = True
+      Size = 8
+    end
+    object UniQuery_ManuOrderParamIMEIRelDesc: TStringField
+      FieldKind = fkLookup
+      FieldName = 'IMEIRelDesc'
+      LookupDataSet = UniQuery_IMEIRel
+      LookupKeyFields = 'IMEIRelNo'
+      LookupResultField = 'IMEIRelDes'
+      KeyFields = 'IMEIRel'
+      Lookup = True
+    end
+  end
+  object UniQuery_ManuOrder: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT ZhiDan      '
+      '  FROM Gps_ManuOrderParam'
+      '  WHERE status=1')
+    Left = 672
+    Top = 56
+    object UniQuery_ManuOrderZhiDan: TStringField
+      FieldName = 'ZhiDan'
+      Required = True
+      Size = 50
+    end
+  end
+  object UniQuery_IMEIRel: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'select * from Gps_IMEIRel')
+    Left = 760
+    Top = 56
+    object UniQuery_IMEIRelRelId: TIntegerField
+      FieldName = 'RelId'
+      ReadOnly = True
+      Required = True
+    end
+    object UniQuery_IMEIRelIMEIRelNo: TStringField
+      FieldName = 'IMEIRelNo'
+      Required = True
+    end
+    object UniQuery_IMEIRelIMEIRelDes: TStringField
+      FieldName = 'IMEIRelDes'
+      Required = True
+    end
+    object UniQuery_IMEIRel_MASK_FROM_V2: TBytesField
+      FieldName = '_MASK_FROM_V2'
+      ReadOnly = True
+      Required = True
+      Size = 8
+    end
+  end
+  object DS_ManuOrderParam: TDataSource
+    DataSet = UniQuery_ManuOrderParam
+    Left = 712
+    Top = 96
+  end
+  object UniQuery_UpdateSN: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'UPDATE Gps_ManuOrderParam'
+      'SET SN2=:SN2'
+      'WHERE ZhiDan=:ZhiDan')
+    Left = 800
+    Top = 56
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'SN2'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'ZhiDan'
+      end>
+    object IntegerField1: TIntegerField
+      FieldName = 'RelId'
+      ReadOnly = True
+      Required = True
+    end
+    object StringField1: TStringField
+      FieldName = 'IMEIRelNo'
+      Required = True
+    end
+    object StringField2: TStringField
+      FieldName = 'IMEIRelDes'
+      Required = True
+    end
+    object BytesField1: TBytesField
+      FieldName = '_MASK_FROM_V2'
+      ReadOnly = True
+      Required = True
+      Size = 8
+    end
   end
 end

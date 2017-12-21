@@ -76,23 +76,15 @@ inherited frmCartonBox_10: TfrmCartonBox_10
         Left = 255
         Top = 165
       end
-      inherited EdtTac: TEdit
-        Top = 131
-        Width = 498
-      end
-      inherited EdtBoxNum: TEdit
-        Top = 56
-        Width = 210
-      end
-      object EdtVersion: TEdit [12]
+      object EdtVersion: TEdit
         Left = 72
         Top = 19
         Width = 210
         Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        TabOrder = 2
+        TabOrder = 1
       end
-      object EdtColor: TEdit [13]
+      object EdtColor: TEdit
         Left = 360
         Top = 19
         Width = 210
@@ -100,40 +92,30 @@ inherited frmCartonBox_10: TfrmCartonBox_10
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         TabOrder = 3
       end
-      object EdtQty: TEdit [14]
+      object EdtQty: TEdit
         Left = 360
         Top = 52
         Width = 210
         Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 7
-        TabOrder = 9
+        TabOrder = 0
       end
-      object EdtOther1: TEdit [15]
+      object EdtOther1: TEdit
         Left = 72
         Top = 95
         Width = 210
         Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        TabOrder = 5
+        TabOrder = 2
       end
-      object EdtOther2: TEdit [16]
+      object EdtOther2: TEdit
         Left = 360
         Top = 92
         Width = 210
         Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        TabOrder = 6
-      end
-      inherited Edt_IMEISTART: TEdit
-        Left = 72
-        Top = 160
-        TabOrder = 7
-      end
-      inherited Edt_IMEIEND: TEdit
-        Left = 299
-        Top = 160
-        TabOrder = 8
+        TabOrder = 4
       end
     end
   end

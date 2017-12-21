@@ -77,6 +77,12 @@ interface
         GPSSer              :Integer;           //GPS误码率
         GPSDbMin            :Integer;           //GPS最小值
         GPSDbMax            :Integer;           //GPS最大值
+        GPSDbMin2            :Integer;           //GPS最小值
+        GPSDbMax2            :Integer;           //GPS最大值
+        GPSDbMin3            :Integer;           //GPS最小值
+        GPSDbMax3            :Integer;           //GPS最大值
+        GPSDbMin4            :Integer;           //GPS最小值
+        GPSDbMax4            :Integer;           //GPS最大值
         GPSNumbers_DY          :Integer;           //GPS卫星数（DESAY）
 
     end;

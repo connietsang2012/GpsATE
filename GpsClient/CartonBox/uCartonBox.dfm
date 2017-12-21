@@ -1,6 +1,6 @@
 object frmCartonBox: TfrmCartonBox
-  Left = 209
-  Top = 155
+  Left = 408
+  Top = 125
   Width = 936
   Height = 634
   Caption = #24086#32440#27169#26495
@@ -253,52 +253,6 @@ object frmCartonBox: TfrmCartonBox
         BiDiMode = bdRightToLeft
         Caption = #29256#26412#21495':'
         ParentBiDiMode = False
-      end
-      object EdtTac: TEdit
-        Left = 72
-        Top = 160
-        Width = 210
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 15
-        TabOrder = 0
-        OnKeyPress = EdtTacKeyPress
-      end
-      object EdtBoxNum: TEdit
-        Left = 72
-        Top = 47
-        Width = 80
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 5
-        TabOrder = 1
-      end
-      object Edt_IMEISTART: TEdit
-        Left = 110
-        Top = 103
-        Width = 175
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 14
-        TabOrder = 2
-      end
-      object Edt_IMEIEND: TEdit
-        Left = 337
-        Top = 103
-        Width = 175
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 14
-        TabOrder = 3
-      end
-      object EdtSoftModel: TEdit
-        Left = 82
-        Top = 66
-        Width = 80
-        Height = 21
-        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
-        MaxLength = 50
-        TabOrder = 4
       end
     end
     object GrpTestPass: TGroupBox

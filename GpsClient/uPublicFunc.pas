@@ -94,7 +94,7 @@ uses
 implementation
 
 uses
-    uClientMain,uCartonBox10,uCartonBoxLlf,uCartonBoxGmb;
+    uClientMain,uCartonBox10,uCartonBoxLlf;
 
 //function GetCrc16(chid:pBytes;nleng:Integer):Word;stdcall;External 'CRC.dll';
 
@@ -1378,8 +1378,8 @@ begin
     end
     else if ReadIni('CartonBoxSet','PrintType','默认')='英文' then
     begin
-        frmCartonBoxGmb:=TfrmCartonBoxGmb.Create(frmClientMain);
-        ShowForm(frmCartonBoxGmb);
+        //frmCartonBoxGmb:=TfrmCartonBoxGmb.Create(frmClientMain);
+        //ShowForm(frmCartonBoxGmb);
     end;
     {else if ReadIni('CartonBoxSet','PrintType','默认')='俄罗斯' then
     begin

@@ -15,7 +15,6 @@ uses
   uCartonBoxSet in 'CartonBox\uCartonBoxSet.pas' {frmCartonBoxSet},
   uCartonBoxLlf in 'CartonBox\uCartonBoxLlf.pas' {frmCartonBoxLlf},
   uCartonBox10 in 'CartonBox\uCartonBox10.pas' {frmCartonBox_10},
-  uCartonBoxGmb in 'CartonBox\uCartonBoxGmb.pas' {frmCartonBoxGmb},
   uCartonBoxMan in 'CartonBox\uCartonBoxMan.pas' {frmCartonBoxMan},
   uModuleForm in 'uModuleForm.pas' {frmModule},
   uGlobalVar in 'uGlobalVar.pas',
@@ -49,7 +48,6 @@ begin
         Application.CreateForm(TDMMain, DMMain);
   Application.CreateForm(TfrmClientMain, frmClientMain);
   Application.CreateForm(TfrmMessagebox, frmMessagebox);
-  Application.CreateForm(TfrmGiftBoxMain, frmGiftBoxMain);
   Application.ShowMainForm:=False;
           
         //œ‘ æµ«¬ºΩÁ√Ê

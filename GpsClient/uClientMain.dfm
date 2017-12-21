@@ -156,6 +156,7 @@ object frmClientMain: TfrmClientMain
     end
     object ParamConfig: TMenuItem
       Caption = #19979#36733#21442#25968#37197#32622
+      Visible = False
       OnClick = ParamConfigClick
     end
     object BasicSet: TMenuItem

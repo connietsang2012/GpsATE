@@ -45,7 +45,7 @@ begin
     IMEIErrorPrompt('');
 
     //读取相关打印内容
-    EdtSoftModel.Text :=ReadIni('default10','Version','');
+    {EdtSoftModel.Text :=ReadIni('default10','Version','');
     EdtBoxNum.Text :=ReadIni('default10','BoxNum','001');
     EdtTac.Text :=ReadIni('default10','Tac','000000');
     EdtColor.Text :=ReadIni('default10','Color','');
@@ -56,7 +56,7 @@ begin
     if (Length(EdtBoxNum.Text) =1)  then
         EdtBoxNum.Text :='00'+EdtBoxNum.Text
     else if (Length(EdtBoxNum.Text) =2) then
-        EdtBoxNum.Text :='0'+ EdtBoxNum.Text;
+        EdtBoxNum.Text :='0'+ EdtBoxNum.Text; }
 
     if ReadIni('Auto','Print','0') ='1' then
         ChkAuto.Checked :=True
@@ -82,14 +82,14 @@ begin
         with btappAutoPrint.Formats.Open(strBarFile, True, '') do //打开标签文件
         begin
             //设置要打印的内容
-            SetNamedSubStringValue('Text','机型:'+trim(EdtSoftModel.Text));
-            SetNamedSubStringValue('Text1','箱号:'+trim(EdtBoxNum.Text));
+            //SetNamedSubStringValue('Text','机型:'+trim(EdtSoftModel.Text));
+            //SetNamedSubStringValue('Text1','箱号:'+trim(EdtBoxNum.Text));
             SetNamedSubStringValue('Text2','颜色:'+trim(EdtColor.Text));
             SetNamedSubStringValue('Text3','重量:'+trim(EdtQty.Text));
             SetNamedSubStringValue('Text5',trim(EdtOther1.Text));
             SetNamedSubStringValue('Text6',trim(EdtOther2.Text));
 
-            strver := trim(EdtSoftModel.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);;
+            //strver := trim(EdtSoftModel.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);;
             AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
             for i:=0 to (mmoMEI.Lines.Count-1) do
             begin
@@ -106,8 +106,8 @@ begin
                 StrList.Clear;
                 mmoMEI.Clear;
                 //箱号递增
-                WriteIni('default10','BoxNum',IntToStr(StrToInt(EdtBoxNum.Text)+1));
-                EdtBoxNum.Text :=IntToStr((StrToInt(EdtBoxNum.Text)+1));
+                //WriteIni('default10','BoxNum',IntToStr(StrToInt(EdtBoxNum.Text)+1));
+                //EdtBoxNum.Text :=IntToStr((StrToInt(EdtBoxNum.Text)+1));
                 AppendTxt('',LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
                 //btapp1.Quit(btDoNotSaveChanges);
             except
@@ -121,14 +121,14 @@ begin
         with btappBtnPrint.Formats.Open(strBarFile, True, '') do //打开标签文件
         begin
             //设置要打印的内容
-            SetNamedSubStringValue('Text','机型:'+trim(EdtSoftModel.Text));
-            SetNamedSubStringValue('Text1','箱号:'+trim(EdtBoxNum.Text));
+            //SetNamedSubStringValue('Text','机型:'+trim(EdtSoftModel.Text));
+            //SetNamedSubStringValue('Text1','箱号:'+trim(EdtBoxNum.Text));
             SetNamedSubStringValue('Text2','颜色:'+trim(EdtColor.Text));
             SetNamedSubStringValue('Text3','重量:'+trim(EdtQty.Text));
             SetNamedSubStringValue('Text5',trim(EdtOther1.Text));
             SetNamedSubStringValue('Text6',trim(EdtOther2.Text));
 
-            strver := trim(EdtSoftModel.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);;
+            //strver := trim(EdtSoftModel.Text) +'-'+ trim(EdtBoxNum.Text)+'-'+ trim(EdtColor.Text) +'-'+ trim(EdtQty.Text);;
             AppendTxt(strver,LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
             for i:=0 to (mmoMEI.Lines.Count-1) do
             begin
@@ -145,8 +145,8 @@ begin
                 StrList.Clear;
                 mmoMEI.Clear;
                 //箱号递增
-                WriteIni('default10','BoxNum',IntToStr(StrToInt(EdtBoxNum.Text)+1));
-                EdtBoxNum.Text :=IntToStr((StrToInt(EdtBoxNum.Text)+1));
+                //WriteIni('default10','BoxNum',IntToStr(StrToInt(EdtBoxNum.Text)+1));
+                //EdtBoxNum.Text :=IntToStr((StrToInt(EdtBoxNum.Text)+1));
                 AppendTxt('',LowerDir(ExtractFilePath(ParamStr(0)))+'PrintLog\dblog.txt');
                 //btapp1.Quit(btDoNotSaveChanges);
             except
@@ -163,9 +163,9 @@ procedure TfrmCartonBox_10.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   inherited;
-    WriteIni('default10','Version',trim(EdtSoftModel.Text));
-    WriteIni('default10','BoxNum',trim(EdtBoxNum.Text));
-    WriteIni('default10','Tac',trim(EdtTac.Text));
+    //WriteIni('default10','Version',trim(EdtSoftModel.Text));
+    //WriteIni('default10','BoxNum',trim(EdtBoxNum.Text));
+    //WriteIni('default10','Tac',trim(EdtTac.Text));
     WriteIni('default10','Color',trim(EdtColor.Text));
     WriteIni('default10','Qty',trim(EdtQty.Text));
     WriteIni('default10','Other1',trim(EdtOther1.Text));

@@ -5,7 +5,7 @@ interface
 uses
     Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
     Dialogs, StdCtrls, Buttons, StrUtils, uGlobalVar, OleServer, BarTender_TLB,
-    DB, MemDS, DBAccess, Uni, uDmMain;
+    DB, MemDS, DBAccess, Uni, uDmMain, DBCtrls, Mask;
 
 type
     TfrmGiftBoxMain = class(TForm)
@@ -33,30 +33,64 @@ type
         Label2: TLabel;
         Label5: TLabel;
         lbl18: TLabel;
-        edt_Tac: TEdit;
-        edt_SN1: TEdit;
-        Edt_IMEISTART: TEdit;
-        Edt_IMEIEND: TEdit;
-        edt_Date: TEdit;
         Label1: TLabel;
-        edt_SoftModel: TEdit;
-        edt_SN2: TEdit;
-        edt_SN3: TEdit;
         btappAutoPrint: TBTApplication;
         btappBtnPrint: TBTApplication;
         UniQuery_SIM: TUniQuery;
         lblrel: TLabel;
-        cbb_Rel: TComboBox;
         Label4: TLabel;
-        Edt_SIMSTART: TEdit;
-        Label6: TLabel;
-        Edt_SIMEND: TEdit;
         qry_UpdateDataRel: TUniQuery;
         UniQuery_InsertGiftBox: TUniQuery;
         UniQuery_GiftBoxByImei: TUniQuery;
         edtReprintImei: TEdit;
         UniQuery_GiftBoxBySIM: TUniQuery;
         UniQuery_GiftBoxByImeiReprint: TUniQuery;
+    UniQuery_ManuOrderParam: TUniQuery;
+    Label7: TLabel;
+    cbManuOrder: TComboBox;
+    UniQuery_ManuOrder: TUniQuery;
+    cbb_Rel: TDBLookupComboBox;
+    UniQuery_IMEIRel: TUniQuery;
+    UniQuery_IMEIRelRelId: TIntegerField;
+    UniQuery_IMEIRelIMEIRelNo: TStringField;
+    UniQuery_IMEIRelIMEIRelDes: TStringField;
+    UniQuery_IMEIRel_MASK_FROM_V2: TBytesField;
+    UniQuery_ManuOrderZhiDan: TStringField;
+    UniQuery_ManuOrderParamZhiDan: TStringField;
+    UniQuery_ManuOrderParamSoftModel: TStringField;
+    UniQuery_ManuOrderParamSN1: TStringField;
+    UniQuery_ManuOrderParamSN2: TStringField;
+    UniQuery_ManuOrderParamSN3: TStringField;
+    UniQuery_ManuOrderParamProductDate: TStringField;
+    UniQuery_ManuOrderParamProductNo: TStringField;
+    UniQuery_ManuOrderParamVersion: TStringField;
+    UniQuery_ManuOrderParamIMEIStart: TStringField;
+    UniQuery_ManuOrderParamIMEIEnd: TStringField;
+    UniQuery_ManuOrderParamSIMStart: TStringField;
+    UniQuery_ManuOrderParamSIMEnd: TStringField;
+    UniQuery_ManuOrderParamIMEIRel: TIntegerField;
+    UniQuery_ManuOrderParamTACInfo: TStringField;
+    UniQuery_ManuOrderParamCompanyName: TStringField;
+    UniQuery_ManuOrderParamStatus: TIntegerField;
+    UniQuery_ManuOrderParam_MASK_FROM_V2: TBytesField;
+    UniQuery_ManuOrderParamIMEIRelDesc: TStringField;
+    DS_ManuOrderParam: TDataSource;
+    edt_SoftModel: TDBEdit;
+    edt_SN1: TDBEdit;
+    edt_SN2: TDBEdit;
+    edt_SN3: TDBEdit;
+    edt_Date: TDBEdit;
+    Edt_IMEISTART: TDBEdit;
+    Edt_IMEIEND: TDBEdit;
+    edt_Tac: TDBEdit;
+    Edt_SIMSTART: TDBEdit;
+    Edt_SIMEND: TDBEdit;
+    Label6: TLabel;
+    UniQuery_UpdateSN: TUniQuery;
+    IntegerField1: TIntegerField;
+    StringField1: TStringField;
+    StringField2: TStringField;
+    BytesField1: TBytesField;
         procedure FormCreate(Sender: TObject);
         procedure edt_IMEIKeyPress(Sender: TObject; var Key: Char);
         procedure IMEIErrorPrompt(StrPrompt: string);
@@ -71,6 +105,7 @@ type
         procedure FormShow(Sender: TObject);
         procedure FormClose(Sender: TObject; var Action: TCloseAction);
         procedure edtReprintImeiKeyPress(Sender: TObject; var Key: Char);
+    procedure Button1Click(Sender: TObject);
     private
         { Private declarations }
     public
@@ -79,6 +114,7 @@ type
 
 var
     frmGiftBoxMain: TfrmGiftBoxMain;
+    IMEIRel:Integer;
 
 implementation
 
@@ -87,11 +123,22 @@ uses uClientMain, uPublicFunc;
 
 procedure TfrmGiftBoxMain.FormCreate(Sender: TObject);
 begin
+    UniQuery_ManuOrder.Close;
+    UniQuery_ManuOrder.Open;
+    UniQuery_ManuOrder.First;
+    cbManuOrder.Clear;
+    while not UniQuery_ManuOrder.Eof do
+    begin
+        cbManuOrder.Items.Add(UniQuery_ManuOrder.FieldByName('ZhiDan').AsString);
+        UniQuery_ManuOrder.Next;
+    end;
+
+
     //彩盒测试位
     IMEIErrorPrompt('');
     strPlanName := 'GiftBox';
     //读取参数
-    edt_SoftModel.Text := ReadIni('Gift', 'SoftModel', '');
+    {edt_SoftModel.Text := ReadIni('Gift', 'SoftModel', '');
     edt_SN1.Text := ReadIni('Gift', 'SN1', '');
     edt_SN2.Text := ReadIni('Gift', 'SN2', '');
     edt_SN3.Text := ReadIni('Gift', 'SN3', '');
@@ -111,7 +158,7 @@ begin
                 edt_SN2.Text := '00' + edt_SN2.Text
             else
                 if (Length(edt_SN2.Text) = 4) then
-                    edt_SN2.Text := '0' + edt_SN2.Text;
+                    edt_SN2.Text := '0' + edt_SN2.Text;}
     if ReadIni('Gift', 'AutoPrint', '0') = '1' then
         chkAuto.Checked := True
     else
@@ -268,7 +315,7 @@ begin
             MessageBox(0, PCHAR('当前IMEI已经扫描过请勿重复扫描'), '友情提醒,数据重复', mb_OK);
             Edt_IMEI.Text := '';
             edt_SIM.Text := '';
-            if (cbb_Rel.ItemIndex = 1) then
+            if (IMEIRel = 1) then
             begin
                 edt_SIM.SetFocus;
             end
@@ -307,11 +354,12 @@ begin
     begin
         SetNamedSubStringValue('IMEI', trim(Edt_IMEI.Text));
         SetNamedSubStringValue('IMEI_QR', trim(Edt_IMEI.Text));
+        SetNamedSubStringValue('SIMNO', trim(edt_SIM.Text));
         SetNamedSubStringValue('SN', trim(edt_SN1.Text) + trim(edt_SN2.Text) + trim(edt_SN3.Text));
         SetNamedSubStringValue('SoftModel', trim(edt_SoftModel.Text));
         SetNamedSubStringValue('ProductDate', trim(edt_Date.Text));
-        strver := SysUtils.Format('IMEI:%s' + #13#10 + 'SN:%s%s%s' + #13#10 + 'SoftModel:%s' + #13#10 + 'ProductDate:%s' + #13#10,
-            [edt_IMEI.Text, edt_SN1.Text, edt_SN2.text, edt_SN3.text, edt_SoftModel.Text, edt_Date.Text]);
+        strver := SysUtils.Format('IMEI:%s' + #13#10 + 'SN:%s%s%s' + #13#10 + 'SoftModel:%s' + #13#10 + 'ProductDate:%s' + #13#10+ 'SIMNO:%s' + #13#10,
+            [edt_IMEI.Text, edt_SN1.Text, edt_SN2.text, edt_SN3.text, edt_SoftModel.Text, edt_Date.Text,edt_Sim.text]);
         AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
 
         //更新数据库DataRelativeSheet
@@ -325,7 +373,7 @@ begin
         UniQuery_InsertGiftBox.ParamByName('SN').Value := edt_SN1.Text + edt_SN2.Text + edt_SN3.Text;
         UniQuery_InsertGiftBox.ParamByName('IMEI').Value := Edt_IMEI.Text;
         UniQuery_InsertGiftBox.ParamByName('SIMNO').Value := edt_SIM.Text;
-        UniQuery_InsertGiftBox.ParamByName('ZhiDan').Value := '';
+        UniQuery_InsertGiftBox.ParamByName('ZhiDan').Value := cbManuOrder.Text;
         UniQuery_InsertGiftBox.ParamByName('SoftModel').Value := edt_SoftModel.Text;
         UniQuery_InsertGiftBox.ParamByName('Date').Value := edt_Date.Text;
         UniQuery_InsertGiftBox.ParamByName('CompanyName').Value := '';
@@ -333,12 +381,15 @@ begin
         UniQuery_InsertGiftBox.Execute;
 
         IMEIErrorPrompt('');
-        if (cbb_Rel.ItemIndex = 1) then
+        if (IMEIRel = 1) then
         begin
+          Edt_IMEI.Text:='';
+          edt_SIM.Text:='';
             edt_SIM.SetFocus;
         end
         else
         begin
+            Edt_IMEI.Text:='';
             Edt_IMEI.SetFocus;
         end;
         try
@@ -365,7 +416,12 @@ begin
                     else
                         if (Length(edt_SN2.Text) = 4) then
                             edt_SN2.Text := '0' + edt_SN2.Text;
-            WriteIni('Gift', 'SN2', edt_SN2.Text);
+
+            UniQuery_UpdateSN.Close;
+            UniQuery_UpdateSN.ParamByName('SN2').AsString:=edt_SN2.Text;
+            UniQuery_UpdateSN.ParamByName('ZhiDan').AsString:=cbManuOrder.Text;
+            UniQuery_UpdateSN.Open;
+            //WriteIni('Gift', 'SN2', edt_SN2.Text);
             AppendTxt('', LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
         except
             Close(btDoNotSaveChanges); //关闭不保存
@@ -450,12 +506,20 @@ end;
 
 procedure TfrmGiftBoxMain.cbb_RelChange(Sender: TObject);
 begin
+    UniQuery_ManuOrderParam.Active:=false;
+    UniQuery_ManuOrderParam.Params.ParamByName('ZhiDan').AsString:=cbManuOrder.Text;
+    UniQuery_ManuOrderParam.Active:=true;
+
+    IMEIRel:=UniQuery_ManuOrderParam.FieldByName('IMEIRel').AsInteger;
+
     edt_SIM.Enabled := False;
-    if (cbb_Rel.ItemIndex = 1) then
+    if (IMEIRel = 1) then
     begin
         edt_SIM.Enabled := true;
         edt_SIM.SetFocus;
     end;
+
+    edtReprintImei.Enabled:=True;
 end;
 
 procedure TfrmGiftBoxMain.FormShow(Sender: TObject);
@@ -474,7 +538,7 @@ begin
     begin
         WriteIni('Gift', 'AutoPrint', '0');
     end;
-    WriteIni('Gift', 'SoftModel', edt_SoftModel.Text);
+    {WriteIni('Gift', 'SoftModel', edt_SoftModel.Text);
     WriteIni('Gift', 'SN1', edt_SN1.Text);
     WriteIni('Gift', 'SN2', edt_SN2.Text);
     WriteIni('Gift', 'SN3', edt_SN3.Text);
@@ -483,7 +547,7 @@ begin
     WriteIni('Gift', 'IMEIEND', Edt_IMEIEND.Text);
     WriteIni('Gift', 'TAC', edt_Tac.Text);
     WriteIni('Gift', 'SIMSTART', Edt_SIMSTART.Text);
-    WriteIni('Gift', 'SIMEND', Edt_SIMEND.Text);
+    WriteIni('Gift', 'SIMEND', Edt_SIMEND.Text);}
 end;
 
 procedure TfrmGiftBoxMain.edtReprintImeiKeyPress(Sender: TObject;
@@ -551,6 +615,7 @@ begin
                 begin
                     SetNamedSubStringValue('IMEI', UniQuery_GiftBoxByImeiReprint.FieldByName('IMEI').AsString);
                     SetNamedSubStringValue('IMEI_QR', UniQuery_GiftBoxByImeiReprint.FieldByName('IMEI').AsString);
+                    SetNamedSubStringValue('SIMNO', UniQuery_GiftBoxByImeiReprint.FieldByName('SIMNO').AsString);
                     SetNamedSubStringValue('SN', UniQuery_GiftBoxByImeiReprint.FieldByName('SN').AsString);
                     SetNamedSubStringValue('SoftModel', UniQuery_GiftBoxByImeiReprint.FieldByName('SoftModel').AsString);
                     SetNamedSubStringValue('ProductDate', UniQuery_GiftBoxByImeiReprint.FieldByName('Date').AsString);
@@ -577,6 +642,11 @@ begin
         end;
 
     end;
+end;
+
+procedure TfrmGiftBoxMain.Button1Click(Sender: TObject);
+begin
+ UniQuery_ManuOrderParam.Post;
 end;
 
 end.

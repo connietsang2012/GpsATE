@@ -20,10 +20,8 @@ type
         mmoMEI: TMemo;
         grp4: TGroupBox;
         lbl13: TLabel;
-        EdtTac: TEdit;
         DS_IMEI: TDataSource;
         lbl12: TLabel;
-        EdtBoxNum: TEdit;
         btappAutoPrint: TBTApplication;
         GrpTestPass: TGroupBox;
         chk_FuncTest: TCheckBox;
@@ -82,13 +80,10 @@ type
         UniQueryUserUserTestPlan: TStringField;
         unqry_ParamVersion: TUniQuery;
         ds1: TDataSource;
-        Edt_IMEISTART: TEdit;
         lbl16: TLabel;
-        Edt_IMEIEND: TEdit;
         lbl17: TLabel;
         strngfld_ParamVersionVersionS: TStringField;
         lbl18: TLabel;
-        EdtSoftModel: TEdit;
         sp1: TUniStoredProc;
         UniQuery_FindRidByImei: TUniQuery;
         procedure FormResize(Sender: TObject);
@@ -136,6 +131,7 @@ var
     imemoLines, lineLoop: Integer; //条码的条数,条码数循环量
     iRecordCount: Integer;
 begin
+    if(edtMEI.Text='') then Exit;
     imemoLines := mmoMEI.Lines.Count;
     //判断条码是否重复
     if imemoLines <> 0 then
@@ -151,12 +147,12 @@ begin
         end;
     end;
     //判断条码是否以TAC开始
-    if (copy(edtMEI.Text, 1, length(EdtTac.text)) <> EdtTac.Text) then
+    {if (copy(edtMEI.Text, 1, length(EdtTac.text)) <> EdtTac.Text) then
     begin
         IMEIErrorPrompt('非法IMEI');
         Exit;
     end
-    else
+    else}
     begin
         IMEIErrorPrompt('');
         { UniQuery_IMEI_10.Close;
@@ -191,15 +187,19 @@ begin
     begin
         paramVersion := unqry_ParamVersion.fieldbyname('VersionS').AsString;
     end;
-    if (Trim(EdtSoftModel.Text) <> paramVersion) and (paramVersion <> '') then //兼容不跑下载位的机型
+    {if (Trim(EdtSoftModel.Text) <> paramVersion) and (paramVersion <> '') then //兼容不跑下载位的机型
     begin
         //ShowMessage();
         //lbl8.Caption:= '下载版本号与单号设置版本不一致！';
         MessageBox(0, PChar('下载版本号' + paramVersion), '版本不一致', MB_ICONWARNING + mb_OK);
         Exit;
+    end; }
+    if(edtMEI.Text<>'') then
+    begin
+       mmoMEI.Lines.Add(edtMEI.Text);
+        StrList.Add(trim(edtMEI.Text));
     end;
-    mmoMEI.Lines.Add(edtMEI.Text);
-    StrList.Add(trim(edtMEI.Text));
+
 
     {if iRecordCount>=1 then
     begin
@@ -252,7 +252,7 @@ begin
     begin
         if Length(edtMEI.Text) = 15 then
         begin
-            if ((Edt_IMEISTART.Text <> '') and (Edt_IMEIEND.Text <> '')) then
+            {if ((Edt_IMEISTART.Text <> '') and (Edt_IMEIEND.Text <> '')) then
             begin
                 istart := strtoint64(Trim(Edt_IMEISTART.Text));
                 iend := strtoint64(Trim(Edt_IMEIEND.Text));
@@ -278,7 +278,7 @@ begin
             chk_ParamDownload.Checked := False;
             strSendText := 'Action=CheckTestPass#IMEI=' + edtMEI.Text + '#Tester=' + User.UserName + '#';
             //strSendText:=Format('Action=CheckTestPass#IMEI=%s#',[edtMEI.Text])
-            SendToServer(CommIndex, 'CheckTestPass', strSendText);
+            SendToServer(CommIndex, 'CheckTestPass', strSendText); }
         end;
     end;
 end;

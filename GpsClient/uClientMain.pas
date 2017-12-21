@@ -325,6 +325,12 @@ begin
     GPSTestParam.GPSDb:=UniQuery_GpsTestParamter.FieldByName('GPSDb').AsInteger;
     GPSTestParam.GPSDbMin:=StrToInt(ReadIni_GPS('GpsTC','MinDB','0'));
     GPSTestParam.GPSDbMax:=StrToInt(ReadIni_GPS('GpsTC','MaxDB','0'));
+    GPSTestParam.GPSDbMin2:=StrToInt(ReadIni_GPS('GpsTC','MinDB2','0'));
+    GPSTestParam.GPSDbMax2:=StrToInt(ReadIni_GPS('GpsTC','MaxDB2','0'));
+    GPSTestParam.GPSDbMin3:=StrToInt(ReadIni_GPS('GpsTC','MinDB3','0'));
+    GPSTestParam.GPSDbMax3:=StrToInt(ReadIni_GPS('GpsTC','MaxDB3','0'));
+    GPSTestParam.GPSDbMin4:=StrToInt(ReadIni_GPS('GpsTC','MinDB4','0'));
+    GPSTestParam.GPSDbMax4:=StrToInt(ReadIni_GPS('GpsTC','MaxDB4','0'));
     GPSTestParam.GPSNumbers_DY:=StrToInt(ReadIni_GPS('GpsNumberDY','num','0'));
     GPSTestParam.GPSContTime:=StrToInt(ReadIni_GPS('GPSContTime','Time','5'));
     GPSTestParam.GPSSer:=StrToInt(ReadIni_GPS('GPSSer','Ser','10'));
