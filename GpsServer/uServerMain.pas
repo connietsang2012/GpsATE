@@ -135,6 +135,15 @@ type
     spCheckTestedParamCpd: TADOStoredProc;
     spParamDownUpdateForm: TADOStoredProc;
     spTestParamFormAutoTest: TADOStoredProc;
+    dxNavBar_LabelParam: TdxNavBarGroup;
+    dxNavBarLabelParam_Gift: TdxNavBarItem;
+    dxNavBarLabelParam_Carton: TdxNavBarItem;
+    ac_GiftParam: TAction;
+    ac_CartonParam: TAction;
+    dxnvbrtmManuOrder: TdxNavBarItem;
+    ac_ManuOrderParam: TAction;
+    dxnvbrtmCartonBoxResult: TdxNavBarItem;
+    ac_CartonBoxResult: TAction;
     procedure FormCreate(Sender: TObject);
     procedure ac_exitExecute(Sender: TObject);
     procedure ac_UserTypeExecute(Sender: TObject);
@@ -175,6 +184,11 @@ type
     procedure ac_OQCTestParamExecute(Sender: TObject);
     procedure ac_WriteImeiParamExecute(Sender: TObject);
     procedure ac_WriteImeiPlanExecute(Sender: TObject);
+    procedure ac_GiftParamExecute(Sender: TObject);
+    procedure ac_CartonParamExecute(Sender: TObject);
+    procedure ac_ManuOrderParamExecute(Sender: TObject);
+    procedure ac_CartonBoxResultExecute(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -219,7 +233,8 @@ uses
   uAutoTestModel, uAutoTestItem, uAutoTestItemPlan, uOperRecord,
   uTestParameter, uVersionModel, uTcDataForm, uParamDownloadItem,
   uParamDownloadPlan,uAutoTestSMTItem, uAutoTestSMTItemPlan,uTestResult,
-  uOQCItemPlan, uOQCItem, uWriteImeiPlan,uWriteImei;
+  uOQCItemPlan, uOQCItem, uWriteImeiPlan,uWriteImei, uGiftParam,uCartonParam,
+  uManuOrderParam, uCartonBoxResult;
 
 {$R *.dfm}
 procedure TfrmServerMain.ShowForm(frm:TfrmModuleForm);
@@ -802,7 +817,9 @@ begin
     bIsLoaclIp:=CheckLocalIP();//程序启动就检测IP地址
 
     frmServerMain.Caption:=frmServerMain.Caption +'<V' + GetFileVersion(application.ExeName) +'  ' +GetFileTime(application.ExeName)+'>';
-end;
+
+    
+    end;
 
 procedure TfrmServerMain.ac_exitExecute(Sender: TObject);
 begin
@@ -1236,5 +1253,60 @@ begin
   end; 
 end;
 
+
+procedure TfrmServerMain.ac_GiftParamExecute(Sender: TObject);
+begin
+if frmGiftParam=nil then  frmGiftParam:=TfrmGiftParam.Create(Self);
+    ShowForm(frmGiftParam);
+end;
+
+procedure TfrmServerMain.ac_CartonParamExecute(Sender: TObject);
+begin
+if frmCartonParam=nil then  frmCartonParam:=TfrmCartonParam.Create(Self);
+    ShowForm(frmCartonParam);
+end;
+
+procedure TfrmServerMain.ac_ManuOrderParamExecute(Sender: TObject);
+begin
+if frmManuOrderParam=nil then  frmManuOrderParam:=TfrmManuOrderParam.Create(Self);
+    ShowForm(frmManuOrderParam);
+end;
+
+procedure TfrmServerMain.ac_CartonBoxResultExecute(Sender: TObject);
+begin
+if frmCartonBoxResult=nil then  frmCartonBoxResult:=TfrmCartonBoxResult.Create(Self);
+    ShowForm(frmCartonBoxResult);
+end;
+
+procedure TfrmServerMain.FormShow(Sender: TObject);
+begin
+if(User.UserType='SuperAdmin') then
+    begin
+        ac_UserType.Enabled:=True;
+        ac_User.Enabled:=True;
+        ac_TestWrong.Enabled:=True;
+        ac_TestPlan.Enabled:=True;
+        ac_Set.Enabled:=True;
+        ac_SubTestItem.Enabled:=True;
+        ac_TestPlanSet.Enabled:=True;
+        ac_AutoTestParam.Enabled:=True;
+        ac_AutoTestModel.Enabled:=True;
+        ac_AutoTestItemPlan.Enabled:=True;
+        ac_TestParameter.Enabled:=True;
+        ac_VersionModel.Enabled:=True;
+        ac_AutoTestSMTParam.Enabled:=True;
+        ac_AutoTestSMTItemPlan.Enabled:=True;
+        ac_ParamDownloadParam.Enabled:=True;
+        ac_ParamDownloadPlan.Enabled:=True;
+        ac_OQCItemPlan.Enabled:=True;
+        ac_OQCTestParam.Enabled:=True;
+        ac_WriteImeiParam.Enabled:=True;
+        ac_WriteImeiPlan.Enabled:=True;
+        ac_GiftParam.Enabled:=True;
+        ac_CartonParam.Enabled:=True;
+        N16.Enabled:=True;
+        
+        end;
+end;
 
 end.

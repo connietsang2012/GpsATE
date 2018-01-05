@@ -35,7 +35,11 @@ uses
   uOQCItem in 'uOQCItem.pas' {frmOQCItem},
   uOQCItemPlan in 'uOQCItemPlan.pas' {frmOQCItemPlan},
   uWriteImeiPlan in 'uWriteImeiPlan.pas' {frmWriteImeiPlan},
-  uWriteImei in 'uWriteImei.pas' {frmWriteImei};
+  uWriteImei in 'uWriteImei.pas' {frmWriteImei},
+  uGiftParam in 'LabelParam\uGiftParam.pas' {frmGiftParam},
+  uCartonParam in 'LabelParam\uCartonParam.pas' {frmCartonParam},
+  uManuOrderParam in 'ManuOrder\uManuOrderParam.pas' {frmManuOrderParam},
+  uCartonBoxResult in 'CartonBoxResult\uCartonBoxResult.pas' {frmCartonBoxResult};
 
 {$R *.res}
 
@@ -43,6 +47,9 @@ begin
   Application.Initialize;
   Application.CreateForm(TDMMain, DMMain);
   Application.CreateForm(TfrmServerMain, frmServerMain);
+  Application.CreateForm(TfrmCartonParam, frmCartonParam);
+  Application.CreateForm(TfrmManuOrderParam, frmManuOrderParam);
+  Application.CreateForm(TfrmCartonBoxResult, frmCartonBoxResult);
   Application.ShowMainForm:=False;
   //œ‘ æµ«¬ºΩÁ√Ê
   Application.CreateForm(TfrmClientLogin, frmClientLogin);

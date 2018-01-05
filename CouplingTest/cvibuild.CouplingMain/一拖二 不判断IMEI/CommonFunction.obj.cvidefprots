@@ -1,0 +1,32 @@
+[strpos]
+Class="Function"
+Prototype="int strpos(const char *haystack, const char *needle, _Bool ignorecase);"
+
+[substring]
+Class="Function"
+Prototype="void substring(char *pSrc, char *pDes, int StartPos, int Len);"
+
+[getTXPValue]
+Class="Function"
+Prototype="float getTXPValue(char *AG_Read_Str);"
+
+[AddLog_All]
+Class="Function"
+Prototype="int AddLog_All(char *LogMsg);"
+
+[AddLog]
+Class="Function"
+Prototype="int AddLog(int Target, char *LogMsg);"
+
+[GetIMEICheckDigit]
+Class="Function"
+Prototype="char GetIMEICheckDigit(char *pp_Imei);"
+
+[strreplace]
+Class="Function"
+Prototype="char *strreplace(const char *const original, const char *const pattern, const char *const replacement);"
+
+[strreplace2]
+Class="Function"
+Prototype="char *strreplace2(const char *src, const char *from, const char *to);"
+

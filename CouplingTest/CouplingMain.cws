@@ -13,10 +13,10 @@ Number of Projects = 1
 Active Project = 1
 Project 0001 = "CouplingMain.prj"
 Drag Bar Left = 227
-Window Top = 428
-Window Left = 22
-Window Bottom = 1205
-Window Right = 1258
+Window Top = 214
+Window Left = 716
+Window Bottom = 991
+Window Right = 1952
 Maximized = True
 Maximized Children = True
 Max32 Number Of Errors = 20
@@ -30,7 +30,7 @@ Save Changes Before Compiling = "Always"
 Hide Windows = False
 Break At First Statement = False
 Sort Type = "File Name"
-Number of Opened Files = 1
+Number of Opened Files = 2
 Window Confinement Region Enabled = True
 MainColumnWidth = 210
 FileDateColumnWidth = 70
@@ -48,14 +48,24 @@ Batch Build Debug = False
 [File 0001]
 Path = "/e/Project/GpsATE/CouplingTest/CouplingMain.c"
 File Type = "CSource"
-Disk Date = 3595479723
+Disk Date = 3597875414
 In Projects = "1,"
 Window Top = 45
 Window Z-Order = 1
-Source Window State = "1,41,41,41,8,11,11,0,3,160,0,232,0,0,0,29,27,0,41,8,431,775,1,78,"
+Source Window State = "1,887,887,887,63,67,63,0,0,160,0,232,0,0,0,29,852,0,887,63,431,775,1,78,"
 Breakpoint 0001 = "410,0,enabled,"
 
 [File 0002]
+Path = "/e/Project/GpsATE/CouplingTest/WinNT/INI/inifile.c"
+File Type = "CSource"
+Disk Date = 3539154020
+In Projects = ""
+Window Top = 47
+Window Left = 13
+Window Z-Order = 2
+Source Window State = "1,0,0,0,0,0,0,0,0,80,0,0,0,0,0,18,2958,0,2967,0,391,895,1,0,"
+
+[File 0003]
 Path = "/e/Project/GpsATE/CouplingTest/CouplingMain.uir"
 File Type = "User Interface Resource"
 Disk Date = 3595213085
@@ -65,7 +75,7 @@ Window Left = 13
 Window Height = 587
 Window Width = 1028
 
-[File 0003]
+[File 0004]
 Path = "/e/Project/GpsATE/CouplingTest/CommonFunction.c"
 File Type = "CSource"
 Disk Date = 3595215968
@@ -74,7 +84,7 @@ Window Top = 45
 Window Left = 6
 Source Window State = "1,91,91,91,4,10,10,0,0,0,0,0,0,0,0,0,6,0,105,7,323,517,1,0,"
 
-[File 0004]
+[File 0005]
 Path = "/e/Project/GpsATE/CouplingTest/ComPortFun.c"
 File Type = "CSource"
 Disk Date = 3594081328
@@ -83,14 +93,14 @@ Window Top = 227
 Window Left = 105
 Source Window State = "1,6,15,15,0,18,18,0,0,0,0,9,0,9,0,0,0,0,6,0,411,895,1,0,"
 
-[File 0005]
+[File 0006]
 Path = "/e/Project/GpsATE/CouplingTest/age1960.h"
 File Type = "Include"
 Disk Date = 3539153992
 In Projects = "1,"
 Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
 
-[File 0006]
+[File 0007]
 Path = "/e/Project/GpsATE/CouplingTest/brom.h"
 File Type = "Include"
 Disk Date = 3592607997
@@ -99,7 +109,7 @@ Window Top = 47
 Window Left = 13
 Source Window State = "1,32,32,32,10,19,10,0,0,0,0,74,0,74,0,0,0,0,73,0,351,895,1,0,"
 
-[File 0007]
+[File 0008]
 Path = "/e/Project/GpsATE/CouplingTest/com_enum.h"
 File Type = "Include"
 Disk Date = 3592608025
@@ -108,7 +118,7 @@ Window Top = 47
 Window Left = 13
 Source Window State = "1,90,90,90,0,7,7,0,3,0,0,0,0,0,0,0,62,0,90,0,411,895,1,0,"
 
-[File 0008]
+[File 0009]
 Path = "/e/Project/GpsATE/CouplingTest/CommonFunc.h"
 File Type = "Include"
 Disk Date = 3594786607
@@ -117,7 +127,7 @@ Window Top = 71
 Window Left = 30
 Source Window State = "1,53,53,53,4,14,14,0,0,0,0,11,0,0,0,0,47,0,54,0,323,517,1,15,"
 
-[File 0009]
+[File 0010]
 Path = "/e/Project/GpsATE/CouplingTest/ComPortFun.h"
 File Type = "Include"
 Disk Date = 3594081360
@@ -126,7 +136,7 @@ Window Top = 137
 Window Left = 59
 Source Window State = "1,3,5,5,0,26,26,0,0,0,0,7,0,7,0,0,0,0,3,0,411,895,1,0,"
 
-[File 0010]
+[File 0011]
 Path = "/e/Project/GpsATE/CouplingTest/CouplingMain.h"
 File Type = "Include"
 Disk Date = 3595049522
@@ -135,7 +145,7 @@ Window Top = 182
 Window Left = 82
 Source Window State = "1,26,26,26,9,45,45,0,0,0,0,24,0,0,0,0,40,0,57,17,411,895,1,28,"
 
-[File 0011]
+[File 0012]
 Path = "/e/Project/GpsATE/CouplingTest/meta.h"
 File Type = "Include"
 Disk Date = 3592606590
@@ -144,7 +154,7 @@ Window Top = 92
 Window Left = 36
 Source Window State = "1,69,70,70,0,8,8,0,0,0,0,72,0,72,0,0,47,0,70,6,411,895,1,0,"
 
-[File 0012]
+[File 0013]
 Path = "/e/Project/GpsATE/CouplingTest/brom.lib"
 File Type = "Library"
 Disk Date = 3556001974
@@ -152,6 +162,7 @@ In Projects = "1,"
 
 [Tab Order]
 Tab 0001 = "/e/Project/GpsATE/CouplingTest/CouplingMain.c"
+Tab 0002 = "/e/Project/GpsATE/CouplingTest/WinNT/INI/inifile.c"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True

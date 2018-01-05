@@ -690,15 +690,15 @@ void CVICALLBACK Event_Char_Func(int portNo, int eventMask, void *callbackData)
 			ViString readTemp=readBuf;
 			readTemp=strreplace(readTemp,"\r\n",""); 
 			char* data=strreplace(readTemp," ","");
-			int StartPos=strpos(data,"ChipRID:",0);
-			if(strlen (data)>=32+strlen("ChipRID:")){ 
-				substring(data,strRid[Target],StartPos+strlen("ChipRID:"),32);
+			int StartPos=strpos(data,"RID:",0);
+			//if(strlen (data)>=32+strlen("ChipRID:")){ 
+				substring(data,strRid[Target],StartPos+strlen("RID:"),32);
 				CommRec_OK(Target);
-			}
-			else 
-			{
-				return;
-			}
+			//}
+			//else 
+			//{
+			//	return;
+			//}
 			sprintf(TcpCmd[Target], "Action=CheckTested#PlanName=WriteImei#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#",
 					strRid[Target],SoftModel,Version,Tester);
 			SendToTcp(Target,"CheckTested",TcpCmd[Target]);
@@ -882,16 +882,16 @@ void CVICALLBACK Event_Char_Func_2(int portNo, int eventMask, void *callbackData
 			ViString readTemp=readBuf;
 			readTemp=strreplace(readTemp,"\r\n",""); 
 			char* data=strreplace(readTemp," ","");
-			int StartPos=strpos(data,"ChipRID:",0);
+			int StartPos=strpos(data,"RID:",0);
 			
-			if(strlen (data)>=32+strlen("ChipRID:")){ 
-				substring(data,strRid[Target],StartPos+strlen("ChipRID:"),32);
+			//if(strlen (data)>=32+strlen("ChipRID:")){ 
+				substring(data,strRid[Target],StartPos+strlen("RID:"),32);
 				CommRec_OK(Target);
-			}
-			else 
-			{
-				return;
-			}
+			//}
+			//else 
+			//{
+			//	return;
+			//}
 			
 			sprintf(TcpCmd[Target], "Action=CheckTested#PlanName=WriteImei#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#",
 					strRid[Target],SoftModel,Version,Tester);
@@ -1935,7 +1935,7 @@ int CVICALLBACK ClientTCPCB (unsigned handle, int event, int error,
 				AddLog(Target, receiveBuf);
 				//处理收到的数据
 				if((strcmp(TcpCmdKey[Target],"CheckIMEI")==0) || (strcmp(TcpCmdKey[Target],"UpdateResult")==0)
-						|| (strcmp(TcpCmdKey[Target],"CheckTested")==0))
+						|| (strcmp(TcpCmdKey[Target],"CheckTested")==0) || (strcmp(TcpCmdKey[Target],"CheckTested_ByAutoTest")==0))
 				{
 					SetCtrlAttribute (panelHandle, PANEL_TIMER_SENDTCPCMD, ATTR_ENABLED, 0);
 					//取结果
@@ -1951,11 +1951,31 @@ int CVICALLBACK ClientTCPCB (unsigned handle, int event, int error,
 						}
 						else
 						{
+							
+							sprintf(TcpCmd[Target], "Action=CheckTested#PlanName=AutoTest#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#",
+								strRid[Target],SoftModel,Version,Tester);
+							SendToTcp(Target,"CheckTested_ByAutoTest",TcpCmd[Target]);
+			
+							/*UpdateResultMsg(Target,"<====开始耦合测试====>");
+							strcpy(write_buffer[Target], ATLINK);
+							SendByte(Target,write_buffer[Target]);
+							UpdateResultMsg(Target,"<====获得LINK====>");*/
+						}
+					}
+					else if(strcmp(TcpCmdKey[Target],"CheckTested_ByAutoTest")==0)
+					{
+						if(iResult<1)
+						{
+							SetTestResultPrompt(Target,-2,"此机子未通过自动测试位测试!",VI_TRUE);
+						}
+						else
+						{
 							UpdateResultMsg(Target,"<====开始耦合测试====>");
 							strcpy(write_buffer[Target], ATLINK);
 							SendByte(Target,write_buffer[Target]);
 							UpdateResultMsg(Target,"<====获得LINK====>");
 						}
+						
 					}
 					else if(strcmp(TcpCmdKey[Target],"CheckIMEI")==0)
 					{
@@ -2015,7 +2035,7 @@ int CVICALLBACK ClientTCPCB_2 (unsigned handle, int event, int error,
 				AddLog(Target, receiveBuf);
 				//处理收到的数据
 				if((strcmp(TcpCmdKey[Target],"CheckIMEI")==0) || (strcmp(TcpCmdKey[Target],"UpdateResult")==0)
-						|| (strcmp(TcpCmdKey[Target],"CheckTested")==0))
+						|| (strcmp(TcpCmdKey[Target],"CheckTested")==0) || (strcmp(TcpCmdKey[Target],"CheckTested_ByAutoTest")==0))
 				{
 					SetCtrlAttribute (panelHandle, PANEL_TIMER_SENDTCPCMD_2, ATTR_ENABLED, 0);
 					//取结果
@@ -2031,11 +2051,30 @@ int CVICALLBACK ClientTCPCB_2 (unsigned handle, int event, int error,
 						}
 						else
 						{
+							sprintf(TcpCmd[Target], "Action=CheckTested#PlanName=AutoTest#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#",
+								strRid[Target],SoftModel,Version,Tester);
+							SendToTcp(Target,"CheckTested_ByAutoTest",TcpCmd[Target]);
+			
+							/*UpdateResultMsg(Target,"<====开始耦合测试====>");
+							strcpy(write_buffer[Target], ATLINK);
+							SendByte(Target,write_buffer[Target]);
+							UpdateResultMsg(Target,"<====获得LINK====>");*/
+						}
+					}
+					else if(strcmp(TcpCmdKey[Target],"CheckTested_ByAutoTest")==0)
+					{
+						if(iResult<1)
+						{
+							SetTestResultPrompt(Target,-2,"此机子未通过自动测试位测试!",VI_TRUE);
+						}
+						else
+						{
 							UpdateResultMsg(Target,"<====开始耦合测试====>");
 							strcpy(write_buffer[Target], ATLINK);
 							SendByte(Target,write_buffer[Target]);
 							UpdateResultMsg(Target,"<====获得LINK====>");
 						}
+						
 					}
 					else if(strcmp(TcpCmdKey[Target],"CheckIMEI")==0)
 					{
