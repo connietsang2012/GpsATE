@@ -1410,12 +1410,12 @@ begin
 
               strParamIMEI:=GetIMEI(StrCommRecText[CommIndex]);
               NoteCommLog(CommIndex,'[IMEI:]===='+strParamIMEI);
-              if (strParamIMEI <strIMEIStart) or (strParamIMEI>strIMEIEnd) then
+              {if (strParamIMEI <strIMEIStart) or (strParamIMEI>strIMEIEnd) then
               begin
                 NoteCommLog(CommIndex,'[IMEIRANG:]===='+strIMEIStart+'---'+strIMEIEnd);
                 TfrmModule(CurrentFrom).SetDisplayResult(CommIndex,-8);
                 Exit;
-              end;
+              end;}
               //strSoftModel[CommIndex]:=strParamAutoTestModel;
               //strVersion[CommIndex]:=strParamAutoTestModel;
               SendToComm(CommIndex);

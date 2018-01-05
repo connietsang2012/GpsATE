@@ -362,11 +362,14 @@ begin
             [edt_IMEI.Text, edt_SN1.Text, edt_SN2.text, edt_SN3.text, edt_SoftModel.Text, edt_Date.Text,edt_Sim.text]);
         AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
 
+        if (IMEIRel = 1) then
+        begin
         //更新数据库DataRelativeSheet
         qry_UpdateDataRel.Close;
         qry_UpdateDataRel.ParamByName('IMEI').Value := Edt_IMEI.Text;
         qry_UpdateDataRel.ParamByName('SIMNo').Value := edt_SIM.Text;
         qry_UpdateDataRel.Execute;
+        end;
 
         //更新数据库Gps_GiftBox_Result结果
         UniQuery_InsertGiftBox.Close;
@@ -420,7 +423,7 @@ begin
             UniQuery_UpdateSN.Close;
             UniQuery_UpdateSN.ParamByName('SN2').AsString:=edt_SN2.Text;
             UniQuery_UpdateSN.ParamByName('ZhiDan').AsString:=cbManuOrder.Text;
-            UniQuery_UpdateSN.Open;
+            UniQuery_UpdateSN.Execute;
             //WriteIni('Gift', 'SN2', edt_SN2.Text);
             AppendTxt('', LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
         except

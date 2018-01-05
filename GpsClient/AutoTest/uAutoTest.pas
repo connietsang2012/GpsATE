@@ -501,6 +501,10 @@ type
         LabelCalTime2: TLabel;
         LabelCalTime3: TLabel;
         LabelCalTime4: TLabel;
+    tmrGpsTimeout_1: TTimer;
+    tmrGpsTimeout_2: TTimer;
+    tmrGpsTimeout_3: TTimer;
+    tmrGpsTimeout_4: TTimer;
 
         //==================================================================//
         procedure FormCreate(Sender: TObject);
@@ -573,6 +577,10 @@ type
             DataSize: Integer);
         procedure Comm_04ReceiveData(Sender: TObject; DataPtr: Pointer;
             DataSize: Integer);
+    procedure tmrGpsTimeout_1Timer(Sender: TObject);
+    procedure tmrGpsTimeout_2Timer(Sender: TObject);
+    procedure tmrGpsTimeout_3Timer(Sender: TObject);
+    procedure tmrGpsTimeout_4Timer(Sender: TObject);
 
     private
         { Private declarations }
@@ -3195,6 +3203,13 @@ begin
                     if Pos('$', StrCommRecText[CommIndex]) <= 0 then exit;
                     TTimer(FindComponent('tmrRecCommTimeOut_' + IntToStr(CommIndex))).Enabled := False;
 
+                    //开启GPS定位的定时器 20171228
+                    if (strRemark2[CommIndex] <> '') then
+                    begin
+                        TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Interval := StrToInt(strRemark2[CommIndex]) * 1000;
+                        TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := True;
+                    end;
+                    
                     strTotal[CommIndex].Clear;
                     strGPGSA[CommIndex].Clear;
                     strGPGSV[CommIndex].Clear;
@@ -3262,12 +3277,14 @@ begin
                                     begin
                                       Count:=Count+1;
                                     end;}
+                                    NoteCommLog(CommIndex, 'GPSDW====:'+IntToStr(CommIndex));
                                     case CommIndex of
+
                                         1:
                                         begin
-                                        if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax) then
+                                        if (GpsDb >= GPSTestParam.GPSDbMin) and (GpsDb <= GPSTestParam.GPSDbMax) then
                                         begin
-                                            if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
+                                            if GpsDb >= GPSTestParam.GPSDb then
                                             begin
                                                 Count := Count + 1;
                                             end;
@@ -3275,9 +3292,10 @@ begin
                                         end;
                                         2:
                                         begin
-                                        if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin2) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax2) then
+                                          NoteCommLog(CommIndex, 'GPSDW====:'+inttostr(GpsDb)+','+inttostr(GPSTestParam.GPSDbMin2)+','+inttostr(GPSTestParam.GPSDbMax2));
+                                        if (GpsDb >= GPSTestParam.GPSDbMin2) and (GpsDb <= GPSTestParam.GPSDbMax2) then
                                         begin
-                                            if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
+                                            if GpsDb >= GPSTestParam.GPSDb then
                                             begin
                                                 Count := Count + 1;
                                             end;
@@ -3285,9 +3303,9 @@ begin
                                         end;
                                         3:
                                         begin
-                                        if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin3) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax3) then
+                                        if (GpsDb >= GPSTestParam.GPSDbMin3) and (GpsDb <= GPSTestParam.GPSDbMax3) then
                                         begin
-                                            if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
+                                            if GpsDb>= GPSTestParam.GPSDb then
                                             begin
                                                 Count := Count + 1;
                                             end;
@@ -3295,21 +3313,25 @@ begin
                                         end;
                                         4:
                                         begin
-                                        if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin4) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax4) then
+                                        if (GpsDb >= GPSTestParam.GPSDbMin4) and (GpsDb <= GPSTestParam.GPSDbMax4) then
                                         begin
-                                            if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
+                                            if GpsDb >= GPSTestParam.GPSDb then
                                             begin
                                                 Count := Count + 1;
                                             end;
                                         end;
                                         end;
                                     end;
+                                    NoteCommLog(CommIndex, 'GPSDW====count:' + IntToStr(Count));
                                     strSendText := Format('%s#GpsDb_%d=%d', [strSendText, j, GpsDb]);
                                     NoteCommLog(CommIndex, '====' + strSendText);
                                     end;
                                     NoteCommLog(CommIndex, '====Count=' + IntToStr(Count) + ',GPSTestParam.GPSNumbers=' + IntToStr(GPSTestParam.GPSNumbers));
                                     if Count >= GPSTestParam.GPSNumbers then
                                     begin
+                                        //GPS定位超时停止 2017.12.28
+                                        TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+
                                         if bFirstCount[CommIndex] then
                                         begin
                                             strSendText := Format('Action=UpdateGpsTcData#Rid=%s#FixMode=%s%s#Tester=%s#', [strChipRid[CommIndex],
@@ -3606,6 +3628,46 @@ begin
     inherited;
     Application.ProcessMessages;
     DeComReceieveDataAutoTest(CommIndex);
+end;
+
+procedure TfrmAutoTestMain.tmrGpsTimeout_1Timer(Sender: TObject);
+var
+    CommIndex: Integer;
+begin
+    inherited;
+    CommIndex := 1;
+    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+    SetTestItemResult(CommIndex, TListBox(FindComponent('TesItem_Comm' + inttostr(CommIndex))).Items[0], 0);
+end;
+
+procedure TfrmAutoTestMain.tmrGpsTimeout_2Timer(Sender: TObject);
+var
+    CommIndex: Integer;
+begin
+    inherited;
+    CommIndex := 2;
+    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+    SetTestItemResult(CommIndex, TListBox(FindComponent('TesItem_Comm' + inttostr(CommIndex))).Items[0], 0);
+end;
+
+procedure TfrmAutoTestMain.tmrGpsTimeout_3Timer(Sender: TObject);
+var
+    CommIndex: Integer;
+begin
+    inherited;
+    CommIndex := 3;
+    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+    SetTestItemResult(CommIndex, TListBox(FindComponent('TesItem_Comm' + inttostr(CommIndex))).Items[0], 0);
+end;
+
+procedure TfrmAutoTestMain.tmrGpsTimeout_4Timer(Sender: TObject);
+var
+    CommIndex: Integer;
+begin
+    inherited;
+    CommIndex := 4;
+    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+    SetTestItemResult(CommIndex, TListBox(FindComponent('TesItem_Comm' + inttostr(CommIndex))).Items[0], 0);
 end;
 
 end.

@@ -227,7 +227,7 @@ uses
   uCoupleTest, uWriteImeiTest, uParamDownloadTest,
   uBasicTestParam, uClientDataModuleForm,uTwiceTest, uAutoTest, uDmMain,
   uAutoTestSMT,uSMTIQCTest, uIncomCheck, uReadBack, uParamLoadConfig,
-  uGiftBoxMain;
+  uGiftBoxMain,uCartonBoxLlf;
 
 {$R *.dfm}
 //==================================================================//
@@ -792,7 +792,9 @@ begin
                 SendToServer(CommIndex);
                 if strPlanName='CartonBox' then
                 begin
-                        TfrmCartonBox(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex],CommIndex);
+                        Application.ProcessMessages;
+                        TfrmCartonBoxLlf(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex],CommIndex);
+                        Application.ProcessMessages;
                 end
                 else
                 begin

@@ -1,8 +1,8 @@
 unit uCartonBox;
 interface
 uses
-    Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-    Dialogs, ExtCtrls, StdCtrls, Buttons, DB, ADODB, OleServer, BarTender_TLB, StrUtils, uGlobalVar, uDmMain,
+    Windows, Messages, SysUtils, Variants, Classes, Forms, Graphics, Controls,
+    Dialogs, ExtCtrls, StdCtrls, Buttons, DB, ADODB, OleServer, StrUtils, uGlobalVar, uDmMain,
     MemDS, DBAccess, Uni, Mask;
 type
     TfrmCartonBox = class(TForm)
@@ -10,7 +10,6 @@ type
         grp1: TGroupBox;
         EdtMEI: TEdit;
         grp2: TGroupBox;
-        lbl8: TLabel;
         lbl9: TLabel;
         lbl10: TLabel;
         btnPrint: TSpeedButton;
@@ -22,7 +21,6 @@ type
         lbl13: TLabel;
         DS_IMEI: TDataSource;
         lbl12: TLabel;
-        btappAutoPrint: TBTApplication;
         GrpTestPass: TGroupBox;
         chk_FuncTest: TCheckBox;
         chk_GPSTest: TCheckBox;
@@ -31,7 +29,6 @@ type
         chk_ParamDownload: TCheckBox;
         chk_AutoTest: TCheckBox;
         UniQuery_IMEI: TUniQuery;
-        btappBtnPrint: TBTApplication;
         UniQuery_IMEI_20: TUniQuery;
         UniQuery_IMEI_20Id: TIntegerField;
         UniQuery_IMEI_20BoxNo: TStringField;
@@ -86,6 +83,7 @@ type
         lbl18: TLabel;
         sp1: TUniStoredProc;
         UniQuery_FindRidByImei: TUniQuery;
+    lbl8: TLabel;
         procedure FormResize(Sender: TObject);
         procedure FormCreate(Sender: TObject);
         procedure EdtMEIKeyPress(Sender: TObject; var Key: Char);
@@ -104,7 +102,8 @@ type
     public
         { Public declarations }
         procedure ImeiPrint(); virtual; abstract;
-        procedure AllowPrint();
+        procedure AllowPrint(); virtual; abstract;
+        procedure RefreseDisplay();
     end;
 var
     frmCartonBox: TfrmCartonBox;
@@ -115,6 +114,7 @@ var
     //i:Integer;
     strBar: string;
     iPrintCount: Integer; //窗体要打印的最多条码数
+    PrintType:string;//打印类型
     paramVersion: string; //2014.12.4下载版本
 implementation
 uses uClientMain, uPublicFunc;
@@ -126,106 +126,11 @@ begin
     pnlParent.Top := Trunc((frmClientMain.ts1.Height - pnlParent.Height) / 2);
 end;
 
-procedure TfrmCartonBox.AllowPrint();
-var
-    imemoLines, lineLoop: Integer; //条码的条数,条码数循环量
-    iRecordCount: Integer;
-begin
-    if(edtMEI.Text='') then Exit;
-    imemoLines := mmoMEI.Lines.Count;
-    //判断条码是否重复
-    if imemoLines <> 0 then
-    begin
-        for lineLoop := 0 to imemoLines - 1 do
-        begin
-            if edtMEI.Text = StrUtils.RightStr(mmoMEI.Lines[lineLoop], 15) then
-            begin
-                IMEIErrorPrompt('数据重复');
-                Exit;
-            end
-            else IMEIErrorPrompt('');
-        end;
-    end;
-    //判断条码是否以TAC开始
-    {if (copy(edtMEI.Text, 1, length(EdtTac.text)) <> EdtTac.Text) then
-    begin
-        IMEIErrorPrompt('非法IMEI');
-        Exit;
-    end
-    else}
-    begin
-        IMEIErrorPrompt('');
-        { UniQuery_IMEI_10.Close;
-         UniQuery_IMEI_10.ParamByName('IMEI').Value:=edtMEI.Text;
-         UniQuery_IMEI_10.Open;
-         iRecordCount:=UniQuery_IMEI_10.RecordCount;
-         UniQuery_IMEI_10.Close; }
-        UniQuery_IMEI_20.Close;
-        UniQuery_IMEI_20.ParamByName('IMEI').Value := edtMEI.Text;
-        UniQuery_IMEI_20.Open;
-        iRecordCount := iRecordCount + UniQuery_IMEI_20.RecordCount;
-        UniQuery_IMEI_20.Close;
-
-        if (iRecordCount) >= 1 then
-        begin
-            MessageBox(0, PCHAR('当前IMEI在箱号' + UniQuery_IMEI_20.FieldByName('BoxNo').AsString + '中已经扫描过请勿重复扫描'), '友情提醒,数据重复', mb_OK);
-            Exit;
-        end;
-    end;
-    if imemoLines + 1 > iPrintCount then
-    begin
-        ShowMessage('打印数据不能超过' + inttostr(iPrintCount) + '条,若继续扫描请先打印当前数据');
-        Exit;
-    end;
-    ///对应的SN和version
-    unqry_ParamVersion.Close;
-    unqry_ParamVersion.ParamByName('IMEI').Value := EdtMEI.Text;
-    unqry_ParamVersion.Open;
-    iRecordCount := unqry_ParamVersion.RecordCount;
-    paramVersion := '';
-    if iRecordCount >= 1 then
-    begin
-        paramVersion := unqry_ParamVersion.fieldbyname('VersionS').AsString;
-    end;
-    {if (Trim(EdtSoftModel.Text) <> paramVersion) and (paramVersion <> '') then //兼容不跑下载位的机型
-    begin
-        //ShowMessage();
-        //lbl8.Caption:= '下载版本号与单号设置版本不一致！';
-        MessageBox(0, PChar('下载版本号' + paramVersion), '版本不一致', MB_ICONWARNING + mb_OK);
-        Exit;
-    end; }
-    if(edtMEI.Text<>'') then
-    begin
-       mmoMEI.Lines.Add(edtMEI.Text);
-        StrList.Add(trim(edtMEI.Text));
-    end;
-
-
-    {if iRecordCount>=1 then
-    begin
-      SNList.Add(Trim(unqry_SNandVersion.FieldByName('SN').AsString));
-      VersionList.Add(unqry_SNandVersion.FieldByName('Version').AsString);
-      //ShowMessage('无对应SN和Version!');
-    end
-    else
-    begin
-      //ShowMessage('无对应SN和Version!');
-      //MessageDlg('无对应SN号或版本号',mtconfirmation,mbOKCancel,0);
-      SNList.Add('空');
-      VersionList.Add('空');
-    end;}
-    lbl10.Caption := IntToStr(imemoLines + 1);
-    edtMEI.Text := '';
-    //自动打印
-    if (imemoLines + 1 = iPrintCount) and (chkAuto.Checked) then
-    begin
-        SendNotifyMessage(Handle, WM_BarPrint, 0, 0);
-    end;
-end;
 
 procedure TfrmCartonBox.FormCreate(Sender: TObject);
 begin
-    iPrintCount := 20;
+    iPrintCount := StrToInt(ReadIni('CartonBoxSet','PrintCount','20'));
+    PrintType := ReadIni('CartonBoxSet','PrintType','中文');
     mmoMEI.Text := '';
     lbl10.Caption := '0';
     IMEIErrorPrompt('');
@@ -319,6 +224,62 @@ begin
     VersionList := TStringList.Create;
 end;
 
+
+
+procedure TfrmCartonBox.IMEIErrorPrompt(StrPrompt: string);
+begin
+    lbl8.Caption := StrPrompt;
+    if StrPrompt <> '' then
+    begin
+        //Windows.Beep(2000, 500);
+        //Windows.Beep(2000, 500);
+        edtMEI.Text := '';
+    end;
+    //Application.ProcessMessages;
+
+end;
+
+procedure TfrmCartonBox.MsgBarPrint(var msg: TMessage);
+begin
+    ImeiPrint();
+end;
+
+procedure TfrmCartonBox.chkMustParamterDownloadClick(Sender: TObject);
+begin
+    InsertOperRecord('CartonAdmin', medtParamterDownload.Text, DateTimeToStr(Now), BoolToStr(chkMustParamterDownload.Checked));
+    medtParamterDownload.Text := '';
+    chkMustParamterDownload.Enabled := False;
+end;
+
+procedure TfrmCartonBox.btnParamterDownloadClick(Sender: TObject);
+var
+    iRecordCount: Integer;
+begin
+    if medtParamterDownload.Text <> '' then
+    begin
+        UniQueryUser.Close;
+        UniQueryUser.ParamByName('UserPwd').Value := medtParamterDownload.Text;
+        UniQueryUser.Open;
+        iRecordCount := UniQueryUser.RecordCount;
+        UniQueryUser.Close;
+        if iRecordCount >= 1 then
+        begin
+            chkMustParamterDownload.Enabled := True;
+        end;
+
+    end
+    else
+    begin
+        Exit;
+    end;
+
+end;
+procedure TfrmCartonBox.RefreseDisplay();
+begin
+  Application.ProcessMessages;
+
+end;
+
 procedure TfrmCartonBox.MsgTestPass(var StrListNumberSign: TStringList; var comm: Integer);
 var
     iRecordCount: Integer;
@@ -392,68 +353,12 @@ begin
     end
     else
     begin
-        AllowPrint();
         GrpTestPass.Visible := False;
-    end;
-    //<1登录失败,否则成功
-    {if msg.wParam<1 then
-    begin
-        IMEIErrorPrompt('此机子其它测试项没测试通过');
-    end
-    else
-    begin
-        AllowPrint();
-    end;}
-end;
+        SendNotifyMessage(Handle, WM_AllowPrint, 0, 0);
+        RefreseDisplay();
+        //AllowPrint();
 
-procedure TfrmCartonBox.IMEIErrorPrompt(StrPrompt: string);
-begin
-    lbl8.Caption := StrPrompt;
-    if StrPrompt <> '' then
-    begin
-        Windows.Beep(2000, 500);
-        Windows.Beep(2000, 500);
-        edtMEI.Text := '';
-    end;
-    //Application.ProcessMessages;
-
-end;
-
-procedure TfrmCartonBox.MsgBarPrint(var msg: TMessage);
-begin
-    ImeiPrint();
-end;
-
-procedure TfrmCartonBox.chkMustParamterDownloadClick(Sender: TObject);
-begin
-    InsertOperRecord('CartonAdmin', medtParamterDownload.Text, DateTimeToStr(Now), BoolToStr(chkMustParamterDownload.Checked));
-    medtParamterDownload.Text := '';
-    chkMustParamterDownload.Enabled := False;
-end;
-
-procedure TfrmCartonBox.btnParamterDownloadClick(Sender: TObject);
-var
-    iRecordCount: Integer;
-begin
-    if medtParamterDownload.Text <> '' then
-    begin
-        UniQueryUser.Close;
-        UniQueryUser.ParamByName('UserPwd').Value := medtParamterDownload.Text;
-        UniQueryUser.Open;
-        iRecordCount := UniQueryUser.RecordCount;
-        UniQueryUser.Close;
-        if iRecordCount >= 1 then
-        begin
-            chkMustParamterDownload.Enabled := True;
-        end;
-
-    end
-    else
-    begin
-        Exit;
     end;
 
 end;
-
 end.
-.

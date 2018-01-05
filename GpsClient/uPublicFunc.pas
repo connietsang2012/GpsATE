@@ -1378,6 +1378,8 @@ begin
     end
     else if ReadIni('CartonBoxSet','PrintType','д╛хо')='с╒нд' then
     begin
+        frmCartonBoxLlf:=TfrmCartonBoxLlf.Create(frmClientMain);
+        ShowForm(frmCartonBoxLlf);
         //frmCartonBoxGmb:=TfrmCartonBoxGmb.Create(frmClientMain);
         //ShowForm(frmCartonBoxGmb);
     end;

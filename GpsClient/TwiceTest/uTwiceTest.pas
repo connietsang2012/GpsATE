@@ -27,6 +27,7 @@ type
     GroupBox1: TGroupBox;
     chk_AutoTestSMT: TCheckBox;
     chk_SMTIQCTest: TCheckBox;
+    chk_CheckImei: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure btnStartTestClick(Sender: TObject);
     procedure EdtImeiKeyPress(Sender: TObject; var Key: Char);
@@ -146,17 +147,21 @@ begin
 
         if (Length(strDeleteImei)=15) then
         begin
-            if strDeleteImei<>CheckImei(strDeleteImei) then
+            if chk_CheckImei.Checked then
             begin
-                MessageBox(0, '条码不合法,请重新扫描!', '警告!', MB_ICONWARNING + mb_OK);
-            end
-            else
-            begin
+              if strDeleteImei<>CheckImei(strDeleteImei) then
+              begin
+                  MessageBox(0, '条码不合法,请重新扫描!', '警告!', MB_ICONWARNING + mb_OK);
+                  Exit;
+              end
+            end;
+            //else
+            //begin
                 strSendText:=Format('Action=CheckIMEI#IMEI=%s#Tester=%s#',[strDeleteImei,User.UserName]);
                 SendToServer(CommIndex,'CheckIMEI',strSendText,True,CTimeOut*2);
 
                 EdtImei.Text:='';
-            end;
+            //end;
         end
         else
             Exit;

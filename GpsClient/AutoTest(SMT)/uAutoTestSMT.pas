@@ -542,6 +542,10 @@ type
         UniQuery_TestItemParam_ByItemName_2Remark4: TStringField;
         UniQuery_TestItemParam_ByItemName_2Remark5: TStringField;
         UniQuery_TestItemParam_ByItemName_2_MASK_FROM_V2: TStringField;
+        tmrGpsTimeout_1: TTimer;
+        tmrGpsTimeout_2: TTimer;
+        tmrGpsTimeout_3: TTimer;
+        tmrGpsTimeout_4: TTimer;
 
         //==================================================================//
         procedure FormCreate(Sender: TObject);
@@ -614,6 +618,10 @@ type
             DataSize: Integer);
         procedure Comm_04ReceiveData(Sender: TObject; DataPtr: Pointer;
             DataSize: Integer);
+        procedure tmrGpsTimeout_1Timer(Sender: TObject);
+        procedure tmrGpsTimeout_2Timer(Sender: TObject);
+        procedure tmrGpsTimeout_3Timer(Sender: TObject);
+        procedure tmrGpsTimeout_4Timer(Sender: TObject);
     private
         { Private declarations }
     public
@@ -2857,6 +2865,7 @@ begin
     iTimerCircleTime[CommIndex] := iTimerCircleTime[CommIndex] + 1;
     if iTimerCircleTime[CommIndex] > GPSTestParam.GPSContTime then
     begin
+        //TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
         if (iPassdNum[CommIndex] + iFaildNum[CommIndex]) > 0 then
             iDiv := iFaildNum[CommIndex] / (iPassdNum[CommIndex] + iFaildNum[CommIndex])
         else
@@ -2874,6 +2883,7 @@ begin
         Exit;
     end;
     TTimer(FindComponent('TimerLimitGPSTC_' + IntToStr(CommIndex))).Enabled := True;
+
 end;
 
 procedure TfrmAutoTestSMTMain.TimerLimitGPSTC_2Timer(Sender: TObject);
@@ -3306,7 +3316,12 @@ begin
                 begin
                     if Pos('$', StrCommRecText[CommIndex]) <= 0 then exit;
                     TTimer(FindComponent('tmrRecCommTimeOut_' + IntToStr(CommIndex))).Enabled := False;
-
+                    //开启GPS定位的定时器 20171228
+                    if (strRemark2[CommIndex] <> '') then
+                    begin
+                        TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Interval := StrToInt(strRemark2[CommIndex]) * 1000;
+                        TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := True;
+                    end;
                     strTotalSMT[CommIndex].Clear;
                     strGPGSASMT[CommIndex].Clear;
                     strGPGSVSMT[CommIndex].Clear;
@@ -3375,98 +3390,103 @@ begin
 
                                     case CommIndex of
                                         1:
-                                        begin
-                                        if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax) then
-                                        begin
-                                            if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
                                             begin
-                                                Count := Count + 1;
+                                                if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax) then
+                                                begin
+                                                    if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
+                                                    begin
+                                                        Count := Count + 1;
+                                                    end;
+                                                end;
                                             end;
-                                        end;
-                                        end;
                                         2:
-                                        begin
-                                        if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin2) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax2) then
-                                        begin
-                                            if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
                                             begin
-                                                Count := Count + 1;
+                                                NoteCommLog(CommIndex, 'GPSDW====:' + inttostr(GpsDBValue[CommIndex]) + ',' + inttostr(GPSTestParam.GPSDbMin2) + ',' + inttostr(GPSTestParam.GPSDbMax2));
+
+                                                if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin2) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax2) then
+                                                begin
+                                                    if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
+                                                    begin
+                                                        Count := Count + 1;
+                                                    end;
+                                                end;
                                             end;
-                                        end;
-                                        end;
                                         3:
-                                        begin
-                                        if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin3) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax3) then
-                                        begin
-                                            if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
                                             begin
-                                                Count := Count + 1;
+                                                if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin3) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax3) then
+                                                begin
+                                                    if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
+                                                    begin
+                                                        Count := Count + 1;
+                                                    end;
+                                                end;
                                             end;
-                                        end;
-                                        end;
                                         4:
-                                        begin
-                                        if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin4) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax4) then
-                                        begin
-                                            if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
                                             begin
-                                                Count := Count + 1;
+                                                if (GpsDBValue[CommIndex] >= GPSTestParam.GPSDbMin4) and (GpsDBValue[CommIndex] <= GPSTestParam.GPSDbMax4) then
+                                                begin
+                                                    if GpsDBValue[CommIndex] >= GPSTestParam.GPSDb then
+                                                    begin
+                                                        Count := Count + 1;
+                                                    end;
+                                                end;
                                             end;
-                                        end;
-                                        end;
                                     end;
 
                                     strSendText := Format('%s#GpsDb_%d=%d', [strSendText, j, GpsDBValue[CommIndex]]);
-                                    end;
-                                    if Count >= GPSTestParam.GPSNumbers then
-                                    begin
-                                        if bFirstCount[CommIndex] then
-                                        begin
-                                            strSendText := Format('Action=UpdateGpsTcData#Rid=%s#FixMode=%s%s#Tester=%s#', [strChipRid[CommIndex],
-                                                strFixMode[CommIndex], strSendText, User.UserName]);
-                                            SendToServer(CommIndex, 'UpdateGpsTcData', strSendText, true, CTimeOut * 2);
+                                end;
+                                if Count >= GPSTestParam.GPSNumbers then
+                                begin
+                                    //GPS定位超时停止 2017.12.28
+                                    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
 
-                                            ClearCountArrayList(CommIndex); //计算之前先清零 2014.03.12
-                                            TLabel(FindComponent('LabelCalTime' + inttostr(CommIndex))).Caption := '';
-                                            iTimerCircleTime[CommIndex] := 0;
-                                            TTimer(FindComponent('TimerLimitGPSTC_' + inttostr(CommIndex))).Enabled := True;
-                                            iPassdNum[CommIndex] := 1;
-                                            bFirstCount[CommIndex] := False;
-                                        end
-                                        else
-                                            iPassdNum[CommIndex] := iPassdNum[CommIndex] + 1; //获得达标的个数累加1  2014.03.12
+                                    if bFirstCount[CommIndex] then
+                                    begin
+                                        strSendText := Format('Action=UpdateGpsTcData#Rid=%s#FixMode=%s%s#Tester=%s#', [strChipRid[CommIndex],
+                                            strFixMode[CommIndex], strSendText, User.UserName]);
+                                        SendToServer(CommIndex, 'UpdateGpsTcData', strSendText, true, CTimeOut * 2);
+
+                                        ClearCountArrayList(CommIndex); //计算之前先清零 2014.03.12
+                                        TLabel(FindComponent('LabelCalTime' + inttostr(CommIndex))).Caption := '';
+                                        iTimerCircleTime[CommIndex] := 0;
+                                        TTimer(FindComponent('TimerLimitGPSTC_' + inttostr(CommIndex))).Enabled := True;
+                                        iPassdNum[CommIndex] := 1;
+                                        bFirstCount[CommIndex] := False;
                                     end
                                     else
-                                    begin
-                                        if not bFirstCount[CommIndex] then
-                                            iFaildNum[CommIndex] := iFaildNum[CommIndex] + 1 //获得未达标的数据累加1  2014.03.11
-                                        else
-                                            iFaildNum[CommIndex] := 1;
-                                    end;
-                                end;
-                                //if (strFixMode[CommIndex]='3D定位') then
+                                        iPassdNum[CommIndex] := iPassdNum[CommIndex] + 1; //获得达标的个数累加1  2014.03.12
+                                end
+                                else
                                 begin
-                                    TEdit(FindComponent('EdtLatitude_' + inttostr(CommIndex))).Text := strGGAResultSMT[CommIndex][0];
-                                    TEdit(FindComponent('EdtLongitude_' + inttostr(CommIndex))).Text := strGGAResultSMT[CommIndex][1];
-                                    TEdit(FindComponent('EdtAltitude_' + inttostr(CommIndex))).Text := strGGAResultSMT[CommIndex][2];
-                                    TEdit(FindComponent('EdtNumber_' + inttostr(CommIndex))).Text := strGGAResultSMT[CommIndex][3];
-                                    TEdit(FindComponent('EdtSpeed_' + inttostr(CommIndex))).Text := strRMCResultSMT[CommIndex][0];
-                                    TEdit(FindComponent('EdtCourse_' + inttostr(CommIndex))).Text := strRMCResultSMT[CommIndex][1];
-                                    TEdit(FindComponent('EdtGPStime_' + inttostr(CommIndex))).Text := strRMCResultSMT[CommIndex][2];
-                                    TEdit(FindComponent('EdtLocaltime_' + inttostr(CommIndex))).Text := strRMCResultSMT[CommIndex][3];
+                                    if not bFirstCount[CommIndex] then
+                                        iFaildNum[CommIndex] := iFaildNum[CommIndex] + 1 //获得未达标的数据累加1  2014.03.11
+                                    else
+                                        iFaildNum[CommIndex] := 1;
+                                end;
+                            end;
+                            //if (strFixMode[CommIndex]='3D定位') then
+                            begin
+                                TEdit(FindComponent('EdtLatitude_' + inttostr(CommIndex))).Text := strGGAResultSMT[CommIndex][0];
+                                TEdit(FindComponent('EdtLongitude_' + inttostr(CommIndex))).Text := strGGAResultSMT[CommIndex][1];
+                                TEdit(FindComponent('EdtAltitude_' + inttostr(CommIndex))).Text := strGGAResultSMT[CommIndex][2];
+                                TEdit(FindComponent('EdtNumber_' + inttostr(CommIndex))).Text := strGGAResultSMT[CommIndex][3];
+                                TEdit(FindComponent('EdtSpeed_' + inttostr(CommIndex))).Text := strRMCResultSMT[CommIndex][0];
+                                TEdit(FindComponent('EdtCourse_' + inttostr(CommIndex))).Text := strRMCResultSMT[CommIndex][1];
+                                TEdit(FindComponent('EdtGPStime_' + inttostr(CommIndex))).Text := strRMCResultSMT[CommIndex][2];
+                                TEdit(FindComponent('EdtLocaltime_' + inttostr(CommIndex))).Text := strRMCResultSMT[CommIndex][3];
 
-                                end;
-                                {else
-                                begin
-                                  TEdit(FindComponent('EdtLatitude_'+inttostr(CommIndex))).Text:='';
-                                  TEdit(FindComponent('EdtLongitude_'+inttostr(CommIndex))).Text:='';
-                                  TEdit(FindComponent('EdtAltitude_'+inttostr(CommIndex))).Text:='';
-                                  TEdit(FindComponent('EdtNumber_'+inttostr(CommIndex))).Text:='';
-                                  TEdit(FindComponent('EdtSpeed_'+inttostr(CommIndex))).Text:='';
-                                  TEdit(FindComponent('EdtCourse_'+inttostr(CommIndex))).Text:='';
-                                  TEdit(FindComponent('EdtGPStime_'+inttostr(CommIndex))).Text:='';
-                                  TEdit(FindComponent('EdtLocaltime_'+inttostr(CommIndex))).Text:='';
-                                end;}
+                            end;
+                            {else
+                            begin
+                              TEdit(FindComponent('EdtLatitude_'+inttostr(CommIndex))).Text:='';
+                              TEdit(FindComponent('EdtLongitude_'+inttostr(CommIndex))).Text:='';
+                              TEdit(FindComponent('EdtAltitude_'+inttostr(CommIndex))).Text:='';
+                              TEdit(FindComponent('EdtNumber_'+inttostr(CommIndex))).Text:='';
+                              TEdit(FindComponent('EdtSpeed_'+inttostr(CommIndex))).Text:='';
+                              TEdit(FindComponent('EdtCourse_'+inttostr(CommIndex))).Text:='';
+                              TEdit(FindComponent('EdtGPStime_'+inttostr(CommIndex))).Text:='';
+                              TEdit(FindComponent('EdtLocaltime_'+inttostr(CommIndex))).Text:='';
+                            end;}
                         except
                             on EStringListError do Sleep(1);
                         end;
@@ -3703,6 +3723,46 @@ begin
     CommIndex := 4;
     Application.ProcessMessages;
     DeComReceieveDataAUTOSMT(CommIndex);
+end;
+
+procedure TfrmAutoTestSMTMain.tmrGpsTimeout_1Timer(Sender: TObject);
+var
+    CommIndex: Integer;
+begin
+    inherited;
+    CommIndex := 1;
+    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+    SetTestItemResult(CommIndex, TListBox(FindComponent('TesItem_Comm' + inttostr(CommIndex))).Items[0], 0);
+end;
+
+procedure TfrmAutoTestSMTMain.tmrGpsTimeout_2Timer(Sender: TObject);
+var
+    CommIndex: Integer;
+begin
+    inherited;
+    CommIndex := 2;
+    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+    SetTestItemResult(CommIndex, TListBox(FindComponent('TesItem_Comm' + inttostr(CommIndex))).Items[0], 0);
+end;
+
+procedure TfrmAutoTestSMTMain.tmrGpsTimeout_3Timer(Sender: TObject);
+var
+    CommIndex: Integer;
+begin
+    inherited;
+    CommIndex := 3;
+    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+    SetTestItemResult(CommIndex, TListBox(FindComponent('TesItem_Comm' + inttostr(CommIndex))).Items[0], 0);
+end;
+
+procedure TfrmAutoTestSMTMain.tmrGpsTimeout_4Timer(Sender: TObject);
+var
+    CommIndex: Integer;
+begin
+    inherited;
+    CommIndex := 4;
+    TTimer(FindComponent('tmrGpsTimeout_' + IntToStr(CommIndex))).Enabled := False;
+    SetTestItemResult(CommIndex, TListBox(FindComponent('TesItem_Comm' + inttostr(CommIndex))).Items[0], 0);
 end;
 
 end.

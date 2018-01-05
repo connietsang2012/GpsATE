@@ -77,7 +77,7 @@ begin
     strver :='';
     strBarFile :=ExtractFilePath(ParamStr(0))+'CartonBox\config10\'+IntToStr(mmoMEI.Lines.Count)+'.btw';
 
-    if  ChkAuto.Checked  then
+    {if  ChkAuto.Checked  then
     begin
         with btappAutoPrint.Formats.Open(strBarFile, True, '') do //打开标签文件
         begin
@@ -154,7 +154,7 @@ begin
                 //btapp1.Quit(btDoNotSaveChanges);
             end;
         end;
-    end;
+    end; }
     //Application.ProcessMessages;
 end;
 

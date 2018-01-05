@@ -134,6 +134,7 @@ const
     WM_CheckIMEI            =   WM_USER+107;        //查看IMEI是否使用过
     WM_BarPrint            =   WM_USER+108;        //查看IMEI是否使用过
     WM_TwiceByBoxNo        =   WM_USER+109;        //入库整箱返工
+    WM_AllowPrint            =   WM_USER+110;        //可以打印
 
     WM_LoadFlashTool       =   WM_USER+120;
     WM_TestCount           =   WM_USER+121;         ///OCQ工位测试数量处理

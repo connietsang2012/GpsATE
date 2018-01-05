@@ -4,7 +4,7 @@ uses
     Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
     Dialogs, uCartonBox, StdCtrls, Buttons, ExtCtrls, DB, ADODB, OleServer, ComObj, OleExcel,
     BarTender_TLB, MemDS, DBAccess, Uni, uDmMain, uGlobalVar, Mask, Grids,
-    DBTables, Excel2000, DBCtrls, StrUtils;
+    DBTables, Excel2000, DBCtrls, StrUtils, AppEvnts;
 type
     TfrmCartonBoxLlf = class(TfrmCartonBox)
         lbl11: TLabel;
@@ -116,33 +116,69 @@ type
         StringField1: TStringField;
         StringField2: TStringField;
         BytesField1: TBytesField;
+        cbb_Rel: TDBLookupComboBox;
+        lblrel: TLabel;
+        UniQuery_ManuOrderParamIMEIRel: TIntegerField;
+        UniQuery_ManuOrderParamIMEIRelDesc: TStringField;
+        UniQuery_DataRelativeSheetByImei: TUniQuery;
+        lbl_IMEI: TLabel;
+        Label4: TLabel;
+        edt_SIM: TEdit;
+        UniQuery_SIM: TUniQuery;
+        UniQuery_DataRelativeSheetBySIM: TUniQuery;
+        Label5: TLabel;
+        Edt_SIMSTART: TDBEdit;
+        Label6: TLabel;
+        Edt_SIMEND: TDBEdit;
+        UniQuery_ManuOrderParamSIMStart: TStringField;
+        UniQuery_ManuOrderParamSIMEnd: TStringField;
+        qry_UpdateDataRel: TUniQuery;
+        btappAutoPrint: TBTApplication;
+        btappBtnPrint: TBTApplication;
+        Label8: TLabel;
+        edt_preSim: TEdit;
+        Label9: TLabel;
+        edt_preIMEI: TEdit;
+        sp_CheckSim: TUniStoredProc;
+        UniQuery_SIMIMEI1: TStringField;
+        edt_IMEI1: TDBEdit;
+        ds_SIM: TDataSource;
+        UniQuery_DataRelativeSheetByImeiSIM: TUniQuery;
+    ch_CheckInfo: TCheckBox;
         procedure FormClose(Sender: TObject; var Action: TCloseAction);
         procedure FormCreate(Sender: TObject);
         procedure btn_RePrintClick(Sender: TObject);
         procedure cbManuOrderChange(Sender: TObject);
         procedure EdtMEIKeyPress(Sender: TObject; var Key: Char);
+        procedure edt_SIMKeyPress(Sender: TObject; var Key: Char);
+        procedure MsgAllowPrint(var msg: TMessage); message WM_AllowPrint;
     private
         { Private declarations }
     public
         { Public declarations }
         procedure ImeiPrint(); override;
+        procedure AllowPrint(); override;
     end;
 var
     frmCartonBoxLlf: TfrmCartonBoxLlf;
-    ExcelApp: OleVariant;
-    CardBoxExcelApp: TOLEExcel;
+    IMEIRel: Integer; //IMEI绑定关系
+    StrList_IMEISIM: TStringList; //扫描数据列表
 implementation
 uses
     uPublicFunc;
 {$R *.dfm}
 
+procedure TfrmCartonBoxLlf.MsgAllowPrint(var msg: TMessage);
+begin
+    AllowPrint();
+end;
+
 procedure TfrmCartonBoxLlf.ImeiPrint();
 var
-    strFile, strver, strExcel: string;
-    i, iGrid: Integer;
-    strtemp: string;
-    strRid: string;
-    iIMEI, istart, iend: Integer;
+    strFile, strver: string; //打印的模版文件,日志文件
+    i, iRecordCount: Integer; //循环变量,数据记录总数
+    strSQL, strRid: string; //SQL语句,机子基带ID
+    iIMEI, istart, iend: Integer; //判断IMEI是否在范围内
 begin
     if (mmoMEI.Lines.Count = 0) then
     begin
@@ -156,32 +192,51 @@ begin
     end;
     strBar := '';
     strver := '';
-    strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\' + IntToStr(mmoMEI.Lines.Count) + '.btw';
-    AppendTxt(strFile, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+    if(PrintType='中文') then
+        begin
+                strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Cn' + IntToStr(mmoMEI.Lines.Count) + '.btw';
+        end
+        else
+        begin
+               strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Eng' + IntToStr(mmoMEI.Lines.Count) + '.btw';
+        end;
+    AppendTxt(strFile, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\log.txt');
     with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
     begin
         //贴纸标题赋值
         SetNamedSubStringValue('BoxNum', trim(EdtBoxNum.Text) + trim(EdtBoxNum1.Text));
-        SetNamedSubStringValue('ZhiDan', '制单:' + trim(Edtzhidan.Text));
+        SetNamedSubStringValue('ZhiDan', trim(Edtzhidan.Text));
         SetNamedSubStringValue('MachineType', trim(EdtSoftModel.Text));
-        SetNamedSubStringValue('ProductColor', '颜色:' + trim(EdtColor.Text));
-        SetNamedSubStringValue('ProductDate', '日期:' + trim(EdtDate.Text));
-        SetNamedSubStringValue('ProductCount', '数量:' + trim(EdtQty.Text));
-        SetNamedSubStringValue('ProductWeight', '毛重:' + (EdtWeight.Text));
-        SetNamedSubStringValue('ProductNum', '产品编码:' + trim(EdtProNo.Text));
+        SetNamedSubStringValue('ProductColor',  trim(EdtColor.Text));
+        SetNamedSubStringValue('ProductDate', trim(EdtDate.Text));
+        SetNamedSubStringValue('ProductCount', trim(EdtQty.Text));
+        SetNamedSubStringValue('ProductWeight',  (EdtWeight.Text));
+        SetNamedSubStringValue('ProductNum',  trim(EdtProNo.Text));
         SetNamedSubStringValue('Remark', trim(edt_Remark1.Text));
-        strver := SysUtils.Format('箱号:%s%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
-            [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+        if(PrintType='中文') then
+        begin
+          strver := SysUtils.Format('箱号:%s%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
+              [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+        end
+        else
+        begin
+           strver := SysUtils.Format('BOX NO:%s%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
+              [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+        end;
         AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
         //IMEI赋值
         for i := 0 to (mmoMEI.Lines.Count - 1) do
         begin
+            //解析要打印的数据 StrList_IMEISIM[0]=>IMEI      StrList_IMEISIM[1]=>SIM
+            StrList_IMEISIM.Delimiter := ',';
+            StrList_IMEISIM.DelimitedText := StrList.Strings[i];
+
             //判断IMEI号是否在范围内
             if ((Edt_IMEISTART.Text <> '') and (Edt_IMEIEND.Text <> '')) then
             begin
                 istart := strtoint64(Trim(Edt_IMEISTART.Text));
                 iend := strtoint64(Trim(Edt_IMEIEND.Text));
-                iIMEI := strtoint64(LeftStr(StrList.Strings[i], 14));
+                iIMEI := strtoint64(LeftStr(StrList_IMEISIM[0], 14));
                 if iend <= istart then
                 begin
                     IMEIErrorPrompt('此IMEI号段设置错误(起始大于结束)！');
@@ -192,48 +247,90 @@ begin
                     IMEIErrorPrompt('此IMEI不在设置号段内！');
                     Exit;
                 end;
-            end;
-
-            UniQuery_FindRidByImei.Close;
-            UniQuery_FindRidByImei.ParamByName('IMEI').value := StrList.Strings[i];
-            UniQuery_FindRidByImei.Open;
-            if(UniQuery_FindRidByImei.RecordCount<>1) then
+            end
+            else
             begin
-                IMEIErrorPrompt('此机子异常,请联系管理员！');
+                IMEIErrorPrompt('IMEI号段未设置！');
                 Exit;
             end;
+
+            if(ch_CheckInfo.Checked) then
+            begin
+              //IMEI判断基带ID是否正常
+              UniQuery_FindRidByImei.Close;
+              UniQuery_FindRidByImei.ParamByName('IMEI').value := StrList_IMEISIM[0];
+              UniQuery_FindRidByImei.Open;
+              //得到基带ID
+              strRid := '';
+              if (UniQuery_FindRidByImei.RecordCount <> 1) then
+              begin
+                  IMEIErrorPrompt('此机子异常,请联系管理员！');
+                  Exit;
+              end
+              else
+              begin
+                  UniQuery_FindRidByImei.First;
+                  strRid := UniQuery_FindRidByImei.FieldByName('Rid').AsString;
+                  AppendTxt(StrList.Strings[i] + ',' + strRid, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+
+              end;
+            end;
+
             //每个单独的IMEI
-            strver := strver + StrList.Strings[i] + '' + #13#10 + '';
+            strver := strver + StrList_IMEISIM[0] + '' + #13#10 + '';
             strBar := 'IMEI' + IntToStr(i);
-            SetNamedSubStringValue(strBar, StrList.Strings[i]); //设置值
-            AppendTxt(DateTimeToStr(Now) + '-----------' + StrList.Strings[i], LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+            SetNamedSubStringValue(strBar, StrList_IMEISIM[0]); //设置值
+            AppendTxt(DateTimeToStr(Now) + '-----------' + StrList_IMEISIM[0], LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
 
-        end;
-        SetNamedSubStringValue('QRCode', strver); //设置值
+            case IMEIRel of
+                1:
+                    begin
+                        //更新DataRelativeSheet表
+                        qry_UpdateDataRel.Close;
+                        qry_UpdateDataRel.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+                        qry_UpdateDataRel.ParamByName('SIMNo').Value := StrList_IMEISIM[1];
+                        qry_UpdateDataRel.Execute;
 
-        //更新卡通扫描结果
-        for i := 0 to (mmoMEI.Lines.Count - 1) do
-        begin
-            //得到基带ID
-            strRid := '';
-            UniQuery_FindRidByImei.Close;
-            UniQuery_FindRidByImei.ParamByName('IMEI').value := StrList.Strings[i];
-            UniQuery_FindRidByImei.Open;
-            UniQuery_FindRidByImei.First;
-            strRid := UniQuery_FindRidByImei.FieldByName('Rid').AsString;
-            AppendTxt(StrList.Strings[i] + ',' + strRid, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+                        //查看DataRelativeSheet表是否更改
+                        UniQuery_DataRelativeSheetByImeiSIM.Close;
+                        UniQuery_DataRelativeSheetByImeiSIM.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+                        UniQuery_DataRelativeSheetByImeiSIM.ParamByName('SIMNO').Value := StrList_IMEISIM[1];
+                        UniQuery_DataRelativeSheetByImeiSIM.Open;
+                        iRecordCount := UniQuery_DataRelativeSheetByImeiSIM.RecordCount;
+                        UniQuery_DataRelativeSheetByImeiSIM.Close;
+                        if (iRecordCount < 1) then
+                        begin
+                            IMEIErrorPrompt('IMEI与SIM绑定失败,请联系管理员!');
+                            Exit;
+                        end
+                    end;
+            end;
+
             //更新Gps_CartonBoxTwenty_Result表
             UniQuery_IMEI.Close;
             UniQuery_IMEI.Sql.Clear;
-            strtemp := 'Insert into Gps_CartonBoxTwenty_Result(BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId,Remark2,Remark1) values('''
-                + EdtBoxNum.Text + EdtBoxNum1.Text + ''',''' + StrList.Strings[i] + ''',''' + Edtzhidan.Text
+            strSQL := 'Insert into Gps_CartonBoxTwenty_Result(BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId,Remark2,Remark1) values('''
+                + EdtBoxNum.Text + EdtBoxNum1.Text + ''',''' + StrList_IMEISIM[0] + ''',''' + Edtzhidan.Text
                 + ''',''' + edtsoftmodel.Text + ''',''' + edtVersion.Text + ''',''' + EdtProNo.Text + ''','''
                 + EdtColor.Text + ''',''' + EdtQty.Text + ''',''' + EdtWeight.Text + ''',''' + EdtDate.Text + ''','''
                 + EdtTac.Text + ''',''' + EdtCpName.Text + ''',''' + User.UserName + ''',''' + strRid + ''',''' + edt_remark1.Text + ''')';
-            UniQuery_IMEI.SQL.Text := strtemp;
+            UniQuery_IMEI.SQL.Text := strSQL;
             UniQuery_IMEI.Execute;
-        end;
 
+            //查看Gps_CartonBoxTwenty_Result是否更新
+            UniQuery_IMEI_20.Close;
+            UniQuery_IMEI_20.ParamByName('IMEI').Value :=StrList_IMEISIM[0];
+            UniQuery_IMEI_20.Open;
+            iRecordCount := UniQuery_IMEI_20.RecordCount;
+            UniQuery_IMEI_20.Close;
+            if (iRecordCount) < 1 then
+            begin
+                MessageBox(0, PCHAR('当前IMEI更新卡通测试结果失败,请联系管理员!'), '友情提醒,数据更新失败', mb_OK);
+                Exit;
+            end;
+
+        end;
+        SetNamedSubStringValue('QRCode', strver); //设置值
         //更新箱号
         EdtBoxNum1.Text := IntToStr((StrToInt(EdtBoxNum1.Text) + 1));
         lbl10.Caption := '0';
@@ -248,22 +345,23 @@ begin
                 else
                     if (Length(EdtBoxNum1.Text) = 4) then
                         EdtBoxNum1.Text := '0' + EdtBoxNum1.Text;
+
+        //更新箱号
         UniQuery_UpdateBoxNo.Close;
         UniQuery_UpdateBoxNo.ParamByName('BoxNo2').AsString := EdtBoxNum1.Text;
         UniQuery_UpdateBoxNo.ParamByName('ZhiDan').AsString := cbManuOrder.Text;
-        //UniQuery_UpdateBoxNo.Open;
         UniQuery_UpdateBoxNo.Execute;
 
         //打印贴纸
-        if chkAuto.Checked then
-        begin
+        //if chkAuto.Checked then
+        //begin
         try
             PrintOut(False, False);
             Close(btDoNotSaveChanges); //关闭不保存
         except
             Close(btDoNotSaveChanges); //关闭不保存
         end;
-        end
+        {end
         else
         begin
             try
@@ -272,7 +370,7 @@ begin
             except
                 Close(btDoNotSaveChanges); //关闭不保存
             end;
-        end;
+        end; }
         StrList.Clear;
         SNList.Clear;
         VersionList.Clear;
@@ -281,6 +379,120 @@ begin
         AppendTxt('', LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
         AppendTxt('', LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
     end;
+end;
+
+procedure TfrmCartonBoxLlf.AllowPrint();
+var
+    imemoLines, lineLoop: Integer; //条码的条数,条码数循环量
+    iRecordCount: Integer;
+begin
+
+    if (edtMEI.Text = '') then Exit;
+    imemoLines := mmoMEI.Lines.Count;
+    if imemoLines + 1 > iPrintCount then
+    begin
+        ShowMessage('打印数据不能超过' + inttostr(iPrintCount) + '条,若继续扫描请先打印当前数据');
+        Exit;
+    end;
+    //判断条码是否重复
+    if imemoLines <> 0 then
+    begin
+        for lineLoop := 0 to imemoLines - 1 do
+        begin
+            if edtMEI.Text = StrUtils.LeftStr(mmoMEI.Lines[lineLoop], 15) then
+            begin
+                IMEIErrorPrompt('IMEI数据重复');
+                Exit;
+            end
+            else IMEIErrorPrompt('');
+        end;
+    end;
+    begin
+        IMEIErrorPrompt('');
+        UniQuery_IMEI_20.Close;
+        UniQuery_IMEI_20.ParamByName('IMEI').Value := edtMEI.Text;
+        UniQuery_IMEI_20.Open;
+        iRecordCount := iRecordCount + UniQuery_IMEI_20.RecordCount;
+        //UniQuery_IMEI_20.Close;
+
+        if (iRecordCount) >= 1 then
+        begin
+            EdtMEI.Text := '';
+            EdtMEI.SetFocus;
+            MessageBox(0, PCHAR('当前IMEI在箱号' + UniQuery_IMEI_20.FieldByName('BoxNo').AsString + '中已经扫描过请勿重复扫描'), '友情提醒,数据重复', mb_OK);
+            Exit;
+        end;
+    end;
+
+    case IMEIRel of
+        //无绑定
+        0:
+            begin
+                if (edtMEI.Text <> '') then
+                begin
+                    mmoMEI.Lines.Add(edtMEI.Text);
+                    StrList.Add(trim(edtMEI.Text));
+                    //AppendTxt(DateTimeToStr(Now) + '-----------AddPrintNote:' + edtMEI.Text , LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+                    edt_SIM.Text := '';
+                    edtMEI.Text := '';
+                    EdtMEI.SetFocus;
+
+                end;
+            end;
+        //与SIM卡绑定
+        1:
+            begin
+                if (edt_SIM.Text = '') then Exit;
+                imemoLines := mmoMEI.Lines.Count;
+                //判断条码是否重复
+                if imemoLines <> 0 then
+                begin
+                    for lineLoop := 0 to imemoLines - 1 do
+                    begin
+                        if edt_SIM.Text = StrUtils.RightStr(mmoMEI.Lines[lineLoop], 13) then
+                        begin
+                            IMEIErrorPrompt('SIM数据重复');
+                            Exit;
+                        end
+                        else IMEIErrorPrompt('');
+                    end;
+                end;
+                IMEIErrorPrompt('');
+
+                //查看IMEI是否打印过
+                UniQuery_DataRelativeSheetBySIM.Close;
+                UniQuery_DataRelativeSheetBySIM.ParamByName('SIMNO').Value := Edt_SIM.Text;
+                UniQuery_DataRelativeSheetBySIM.Open;
+                iRecordCount := UniQuery_DataRelativeSheetBySIM.RecordCount;
+                UniQuery_DataRelativeSheetBySIM.Close;
+                if (iRecordCount <= 0) then
+                begin
+                    MessageBox(0, PCHAR('当前SIM已绑定!'), '友情提醒,数据重复', mb_OK);
+                    Exit;
+                end;
+
+                if (edtMEI.Text <> '') and (edt_SIM.Text <> '') then
+                begin
+                    mmoMEI.Lines.Add(edtMEI.Text + ',' + edt_Sim.Text);
+                    StrList.Add(trim(edtMEI.Text + ',' + edt_Sim.Text));
+                    //AppendTxt(DateTimeToStr(Now) + '-----------AddPrintNote:' + edtMEI.Text + ',' + edt_Sim.Text, LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+                    edtMEI.Text := '';
+                    edt_SIM.Text := '';
+                    edt_SIM.SetFocus;
+                    edt_SIM.SetFocus;
+                end;
+
+                lbl10.Caption := IntToStr(imemoLines + 1);
+            end;
+    end;
+
+    //自动打印
+    if (imemoLines + 1 = iPrintCount) and (chkAuto.Checked) then
+    begin
+        //SendNotifyMessage(Handle, WM_BarPrint, 0, 0);
+        ImeiPrint();
+    end;
+
 end;
 
 procedure TfrmCartonBoxLlf.FormClose(Sender: TObject;
@@ -300,6 +512,8 @@ begin
     WriteIni('llf', 'Qty', trim(EdtQty.Text)); //数量
     WriteIni('llf', 'CpName', trim(EdtCpName.Text)); //公司名称
     WriteIni('llf', 'Remark1', trim(edt_Remark1.Text)); //备注一}
+
+    StrList_IMEISIM.Free;
 end;
 
 procedure TfrmCartonBoxLlf.FormCreate(Sender: TObject);
@@ -368,6 +582,8 @@ begin
         btnPrint.Visible := False;
     end;
 
+    StrList_IMEISIM := TStringList.Create; //
+
 end;
 
 procedure TfrmCartonBoxLlf.btn_RePrintClick(Sender: TObject);
@@ -381,6 +597,19 @@ begin
     UniQuery_RePrint.ParamByName('BoxNo').Value := edt_RePrint.Text;
     UniQuery_RePrint.ParamByName('ZhiDan').Value := edtZhiDan.Text;
     UniQuery_RePrint.Open;
+    if(    EdtSoftModel.Text<>'') and  (edt_Remark1.Text<>'') then
+    begin
+       UniQuery_RePrint.Filter:='SoftModel='+QuotedStr(EdtSoftModel.Text)+' and '+'Remark1='+QuotedStr(edt_Remark1.Text);
+
+    end
+    else
+    begin
+        UniQuery_RePrint.Filter:='SoftModel='+QuotedStr(EdtSoftModel.Text);
+
+    end;
+    UniQuery_RePrint.Filtered:=True;
+    //UniQuery_RePrint.Filter:='Remark1='+QuotedStr(edt_Remark1.Text);
+    //UniQuery_RePrint.Filtered:=True;
     iRecordCount := UniQuery_RePrint.RecordCount;
 
     if (iRecordCount) <= 0 then
@@ -391,20 +620,31 @@ begin
 
     strBar := '';
     strver := '';
-    strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\' + IntToStr(iRecordCount) + '.btw';
+    if(PrintType='中文') then
+        begin
+                strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Cn20.btw';
+        end
+        else
+        begin
+               strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Eng20.btw';
+        end;
+    //strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\' + IntToStr(iRecordCount) + '.btw';
     AppendTxt(strFile, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
     UniQuery_RePrint.First;
     with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
     begin
         SetNamedSubStringValue('BoxNum', UniQuery_RePrint.FieldByName('BoxNo').AsString);
-        SetNamedSubStringValue('ZhiDan', '制单:' + UniQuery_RePrint.FieldByName('ZhiDan').AsString);
+        SetNamedSubStringValue('ZhiDan', UniQuery_RePrint.FieldByName('ZhiDan').AsString);
         SetNamedSubStringValue('MachineType', UniQuery_RePrint.FieldByName('SoftModel').AsString);
-        SetNamedSubStringValue('ProductColor', '颜色:' + UniQuery_RePrint.FieldByName('Color').AsString);
-        SetNamedSubStringValue('ProductDate', '日期:' + UniQuery_RePrint.FieldByName('Date').AsString);
-        SetNamedSubStringValue('ProductCount', '数量:' + UniQuery_RePrint.FieldByName('Qty').AsString);
-        SetNamedSubStringValue('ProductWeight', '毛重:' + UniQuery_RePrint.FieldByName('Weight').AsString);
-        SetNamedSubStringValue('ProductNum', '产品编码:' + UniQuery_RePrint.FieldByName('ProductCode').AsString);
+        SetNamedSubStringValue('ProductColor', UniQuery_RePrint.FieldByName('Color').AsString);
+        SetNamedSubStringValue('ProductDate',  UniQuery_RePrint.FieldByName('Date').AsString);
+        SetNamedSubStringValue('ProductCount', UniQuery_RePrint.FieldByName('Qty').AsString);
+        SetNamedSubStringValue('ProductWeight',  UniQuery_RePrint.FieldByName('Weight').AsString);
+        SetNamedSubStringValue('ProductNum',  UniQuery_RePrint.FieldByName('ProductCode').AsString);
         SetNamedSubStringValue('Remark', UniQuery_RePrint.FieldByName('Remark1').AsString);
+        
+        if(PrintType='中文') then
+        begin
         strver := SysUtils.Format('箱号:%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
             [UniQuery_RePrint.FieldByName('BoxNo').AsString,
             UniQuery_RePrint.FieldByName('ZhiDan').AsString,
@@ -416,6 +656,21 @@ begin
                 UniQuery_RePrint.FieldByName('ProductCode').AsString,
                 UniQuery_RePrint.FieldByName('Remark1').AsString
                 ]);
+        end
+        else
+        begin
+        strver := SysUtils.Format('BOX NO:%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
+            [UniQuery_RePrint.FieldByName('BoxNo').AsString,
+            UniQuery_RePrint.FieldByName('ZhiDan').AsString,
+                UniQuery_RePrint.FieldByName('SoftModel').AsString,
+                UniQuery_RePrint.FieldByName('Color').AsString,
+                UniQuery_RePrint.FieldByName('Date').AsString,
+                UniQuery_RePrint.FieldByName('Qty').AsString,
+                UniQuery_RePrint.FieldByName('Weight').AsString,
+                UniQuery_RePrint.FieldByName('ProductCode').AsString,
+                UniQuery_RePrint.FieldByName('Remark1').AsString
+                ]);
+        end;
         AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
         rowCount := 0;
         while not UniQuery_RePrint.Eof do
@@ -463,7 +718,25 @@ begin
     UniQuery_ManuOrderParam.Params.ParamByName('ZhiDan').AsString := cbManuOrder.Text;
     UniQuery_ManuOrderParam.Active := true;
 
+    IMEIRel := UniQuery_ManuOrderParam.FieldByName('IMEIRel').AsInteger;
     edt_RePrint.Enabled := True;
+
+    case IMEIRel of
+        //无绑定
+        0:
+            begin
+                edt_SIM.Enabled := False;
+                EdtMEI.Text := '';
+                EdtMEI.SetFocus;
+            end;
+        //与SIM卡绑定
+        1:
+            begin
+                edt_SIM.Enabled := True;
+                edt_SIM.Text := '';
+                edt_SIM.SetFocus;
+            end;
+    end;
 end;
 
 procedure TfrmCartonBoxLlf.EdtMEIKeyPress(Sender: TObject; var Key: Char);
@@ -472,6 +745,8 @@ var
     CommIndex: Integer;
     iIMEI, istart, iend: Integer;
 begin
+    IMEIErrorPrompt('');
+    //只可输入数字
     if Length(edtMEI.Text) = 0 then
     begin
         if (((ord(key) <= 48) or (ord(key) > 57)) and (key <> #13) and (key <> #8)) then
@@ -486,6 +761,10 @@ begin
     begin
         if Length(edtMEI.Text) = 15 then
         begin
+            AppendTxt(DateTimeToStr(Now) + '-----------AddPrintNote:IMEI=>' + edtMEI.Text, LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+
+            edt_preIMEI.Text := EdtMEI.Text;
+            //判断IMEI是否在IMEI号段
             if ((Edt_IMEISTART.Text <> '') and (Edt_IMEIEND.Text <> '')) then
             begin
                 istart := strtoint64(Trim(Edt_IMEISTART.Text));
@@ -494,13 +773,57 @@ begin
                 if iend <= istart then
                 begin
                     IMEIErrorPrompt('此IMEI号段设置错误(起始大于结束)！');
+                    EdtMEI.Text := '';
+                    EdtMEI.SetFocus;
                     Exit;
                 end;
                 if ((iIMEI < istart) or (iIMEI > iend)) then
                 begin
                     IMEIErrorPrompt('此IMEI不在设置号段内！');
+                    EdtMEI.Text := '';
+                    EdtMEI.SetFocus;
                     Exit;
                 end;
+            end
+            else
+            begin
+                IMEIErrorPrompt('未设置IMEI号号段！');
+                EdtMEI.Text := '';
+                EdtMEI.SetFocus;
+                Exit;
+            end;
+
+            if (ch_CheckInfo.Checked) then
+            begin
+            //判断机子IMEI绑定的基带ID是否唯一
+            UniQuery_FindRidByImei.Close;
+            UniQuery_FindRidByImei.ParamByName('IMEI').value := EdtMEI.Text;
+            UniQuery_FindRidByImei.Open;
+            if (UniQuery_FindRidByImei.RecordCount <> 1) then
+            begin
+                IMEIErrorPrompt('此机子绑定RID异常,请联系管理员！');
+                EdtMEI.Text := '';
+                EdtMEI.SetFocus;
+                Exit;
+            end;
+            end;
+
+            //判断此IMEI是否关联了数据
+            case IMEIRel of
+                //与SIM卡绑定
+                1:
+                    begin
+                        UniQuery_DataRelativeSheetByImei.Close;
+                        UniQuery_DataRelativeSheetByImei.ParamByName('IMEI').value := edtMEI.Text;
+                        UniQuery_DataRelativeSheetByImei.Open;
+                        if (UniQuery_DataRelativeSheetByImei.RecordCount >= 1) then
+                        begin
+                            IMEIErrorPrompt('此机子已与其它SIM卡绑定,请联系管理员！');
+                            EdtMEI.Text := '';
+                            EdtMEI.SetFocus;
+                            Exit;
+                        end;
+                    end;
             end;
             CommIndex := 0;
             GrpTestPass.Visible := False;
@@ -510,9 +833,136 @@ begin
             chk_WriteImei.Checked := False;
             chk_AutoTest.Checked := False;
             chk_ParamDownload.Checked := False;
+
+            if (ch_CheckInfo.Checked) then
+            begin
             strSendText := 'Action=CheckTestPass#IMEI=' + edtMEI.Text + '#Tester=' + User.UserName + '#';
-            //strSendText:=Format('Action=CheckTestPass#IMEI=%s#',[edtMEI.Text])
             SendToServer(CommIndex, 'CheckTestPass', strSendText);
+            end
+            else
+            begin
+                AllowPrint();
+            end;
+        end
+        else
+        begin
+            IMEIErrorPrompt('无效IMEI,可能为SIM号!');
+            EdtMEI.Text := '';
+            EdtMEI.SetFocus;
+            Exit;
+        end;
+    end;
+end;
+
+procedure TfrmCartonBoxLlf.edt_SIMKeyPress(Sender: TObject; var Key: Char);
+var
+    iRecordCount: Integer;
+    iSIM, istart, iend: Integer;
+    imemoLines, lineLoop: Integer;
+begin
+    IMEIErrorPrompt('');
+    //只可输入数字
+    if Length(edt_SIM.Text) = 0 then
+    begin
+        if (((ord(key) <= 48) or (ord(key) > 57)) and (key <> #13) and (key <> #8)) then
+            key := #0
+    end
+    else
+    begin
+        if (((ord(key) < 48) or (ord(key) > 57)) and (key <> #13) and (key <> #8)) then
+            key := #0
+    end;
+    if key = #13 then
+    begin
+        if Length(edt_SIM.Text) = 13 then
+        begin
+            AppendTxt(DateTimeToStr(Now) + '-----------AddPrintNote:SIM=>' + edt_SIM.Text, LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+
+            edt_preSim.Text := edt_SIM.Text;
+            if ((Edt_SIMSTART.Text <> '') and (Edt_SIMEND.Text <> '')) then
+            begin
+                //判断SIM卡是否在范围内
+                istart := strtoint64(Trim(Edt_SIMSTART.Text));
+                iend := strtoint64(Trim(Edt_SIMEND.Text));
+                iSIM := strtoint64(Trim(edt_SIM.Text));
+                if iend <= istart then
+                begin
+                    IMEIErrorPrompt('此SIM号段设置错误(起始大于结束)！');
+                    edt_SIM.Text := '';
+                    edt_SIM.SetFocus;
+                    Exit;
+                end;
+                if ((iSIM < istart) or (iSIM > iend)) then
+                begin
+                    IMEIErrorPrompt('此SIM号不在设置号段内！');
+                    edt_SIM.Text := '';
+                    edt_SIM.SetFocus;
+                    Exit;
+                end;
+            end
+            else
+            begin
+                IMEIErrorPrompt('未设置SIM号号段！');
+                edt_SIM.Text := '';
+                edt_SIM.SetFocus;
+                Exit;
+            end;
+
+            //判断SIM码是否重复
+            imemoLines := mmoMEI.Lines.Count;
+            if imemoLines + 1 > iPrintCount then
+            begin
+                ShowMessage('打印数据不能超过' + inttostr(iPrintCount) + '条,若继续扫描请先打印当前数据');
+                Exit;
+            end;
+            if imemoLines <> 0 then
+            begin
+                for lineLoop := 0 to imemoLines - 1 do
+                begin
+                    if edt_SIM.Text = StrUtils.RightStr(mmoMEI.Lines[lineLoop], 13) then
+                    begin
+                        IMEIErrorPrompt('SIM号数据重复');
+                        edt_SIM.Text := '';
+                        edt_SIM.SetFocus;
+                        Exit;
+                    end
+                    else IMEIErrorPrompt('');
+                end;
+            end;
+
+            //判断SIM卡号是否存在，SIM是否与其他IMEI绑定
+            UniQuery_SIM.Close;
+            UniQuery_SIM.ParamByName('SIMNo').Value := edt_SIM.Text;
+            //UniQuery_SIM.ParamByName('IMEI').Value := edt_SIM.Text;
+            UniQuery_SIM.Open;
+            iRecordCount := UniQuery_SIM.RecordCount;
+
+            //判断SIM卡号是否存在
+            if ((iRecordCount <= 0)) then
+            begin
+                IMEIErrorPrompt('SIM卡号不存在!');
+                edt_SIM.Text := '';
+                edt_SIM.SetFocus;
+                Exit;
+            end;
+            //SIM是否与其他IMEI绑定
+            if (edt_SIM.Text <> UniQuery_SIM.FieldByName('IMEI1').AsString) then
+            begin
+                IMEIErrorPrompt('SIM已经与其他IMEI绑定!');
+                edt_SIM.Text := '';
+                edt_SIM.SetFocus;
+                Exit;
+            end;
+
+            EdtMEI.Text := '';
+            EdtMEI.SetFocus;
+        end
+        else
+        begin
+            IMEIErrorPrompt('SIM号长度不正确！!');
+            edt_SIM.Text := '';
+            edt_SIM.SetFocus;
+            Exit;
         end;
     end;
 end;
