@@ -74,8 +74,11 @@ begin
 
     if UniQuery_User.RecordCount>0 then
     begin
-      if (UniQuery_User.FieldByName('UserTypeDes').AsString='超级管理员')  or
-        (UniQuery_User.FieldByName('UserTypeDes').AsString='工厂管理员')then
+      //if (UniQuery_User.FieldByName('UserTypeDes').AsString='超级管理员')  or
+       // (UniQuery_User.FieldByName('UserTypeDes').AsString='工厂管理员')then
+
+      if (UniQuery_User.FieldByName('UserType').AsString='SuperAdmin')  or
+        (UniQuery_User.FieldByName('UserType').AsString='admin')then
       begin
         InsertOperRecord(User.UserName,'登入 Server',DateTimeToStr(Now));
         Self.ModalResult:=mrOk;

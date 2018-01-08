@@ -39,7 +39,8 @@ uses
   uGiftParam in 'LabelParam\uGiftParam.pas' {frmGiftParam},
   uCartonParam in 'LabelParam\uCartonParam.pas' {frmCartonParam},
   uManuOrderParam in 'ManuOrder\uManuOrderParam.pas' {frmManuOrderParam},
-  uCartonBoxResult in 'CartonBoxResult\uCartonBoxResult.pas' {frmCartonBoxResult};
+  uCartonBoxResult in 'CartonBoxResult\uCartonBoxResult.pas' {frmCartonBoxResult},
+  uDataRelResult in 'DataRelResult\uDataRelResult.pas' {frmDataRelResult};
 
 {$R *.res}
 
@@ -50,6 +51,7 @@ begin
   Application.CreateForm(TfrmCartonParam, frmCartonParam);
   Application.CreateForm(TfrmManuOrderParam, frmManuOrderParam);
   Application.CreateForm(TfrmCartonBoxResult, frmCartonBoxResult);
+  Application.CreateForm(TfrmDataRelResult, frmDataRelResult);
   Application.ShowMainForm:=False;
   //œ‘ æµ«¬ºΩÁ√Ê
   Application.CreateForm(TfrmClientLogin, frmClientLogin);

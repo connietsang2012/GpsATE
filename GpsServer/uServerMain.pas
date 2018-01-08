@@ -144,6 +144,8 @@ type
     ac_ManuOrderParam: TAction;
     dxnvbrtmCartonBoxResult: TdxNavBarItem;
     ac_CartonBoxResult: TAction;
+    dxnvbrtmDataRel: TdxNavBarItem;
+    ac_DataRel: TAction;
     procedure FormCreate(Sender: TObject);
     procedure ac_exitExecute(Sender: TObject);
     procedure ac_UserTypeExecute(Sender: TObject);
@@ -189,6 +191,7 @@ type
     procedure ac_ManuOrderParamExecute(Sender: TObject);
     procedure ac_CartonBoxResultExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure ac_DataRelExecute(Sender: TObject);
 
   private
     { Private declarations }
@@ -234,7 +237,7 @@ uses
   uTestParameter, uVersionModel, uTcDataForm, uParamDownloadItem,
   uParamDownloadPlan,uAutoTestSMTItem, uAutoTestSMTItemPlan,uTestResult,
   uOQCItemPlan, uOQCItem, uWriteImeiPlan,uWriteImei, uGiftParam,uCartonParam,
-  uManuOrderParam, uCartonBoxResult;
+  uManuOrderParam, uCartonBoxResult, uDataRelResult;
 
 {$R *.dfm}
 procedure TfrmServerMain.ShowForm(frm:TfrmModuleForm);
@@ -1305,8 +1308,15 @@ if(User.UserType='SuperAdmin') then
         ac_GiftParam.Enabled:=True;
         ac_CartonParam.Enabled:=True;
         N16.Enabled:=True;
+        ac_DataRel.Enabled:=true;
         
         end;
+end;
+
+procedure TfrmServerMain.ac_DataRelExecute(Sender: TObject);
+begin
+if frmDataRelResult=nil then  frmDataRelResult:=TfrmDataRelResult.Create(Self);
+    ShowForm(frmDataRelResult);
 end;
 
 end.

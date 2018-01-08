@@ -1,4 +1,4 @@
-unit uCartonBoxResult;
+unit uDataRelResult;
 
 interface
 
@@ -7,13 +7,14 @@ uses
   Dialogs, DB, MemDS, DBAccess, Uni, GridsEh, DBGridEh, StdCtrls, ComCtrls,ComObj;
 
 type
-  TfrmCartonBoxResult = class(TForm)
+  TfrmDataRelResult = class(TForm)
     GroupBoxSeacCon: TGroupBox;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
+    Label1: TLabel;
     BtnSearch: TButton;
     EditSN: TEdit;
     DateTimePicker1: TDateTimePicker;
@@ -23,32 +24,39 @@ type
     BtnLogOut: TButton;
     EdtSoftModel: TEdit;
     EdtVersion: TEdit;
+    Edit1: TEdit;
+    GroupBox2: TGroupBox;
+    Label9: TLabel;
+    Button1: TButton;
+    edt_IMEI: TEdit;
+    Button2: TButton;
     GroupBoxSearRes: TGroupBox;
     DBGridEh1: TDBGridEh;
     GroupBox1: TGroupBox;
     DBGridEh2: TDBGridEh;
     DataSrcTestResult: TDataSource;
-    UniQry_CartonBoxResult: TUniQuery;
+    UniQry_DataRelResult: TUniQuery;
     SaveDialog1: TSaveDialog;
-    Label1: TLabel;
-    Edit1: TEdit;
-    GroupBox2: TGroupBox;
+    UniQry_DataRelResultSN: TStringField;
+    UniQry_DataRelResultIMEI1: TStringField;
+    UniQry_DataRelResultIMEI2: TStringField;
+    UniQry_DataRelResultIMEI3: TStringField;
+    UniQry_DataRelResultIMEI4: TStringField;
+    UniQry_DataRelResultIMEI5: TStringField;
+    UniQry_DataRelResultIMEI6: TStringField;
+    UniQry_DataRelResultIMEI7: TStringField;
+    UniQry_DataRelResultIMEI8: TStringField;
+    UniQry_DataRelResultIMEI9: TStringField;
+    UniQry_DataRelResultIMEI10: TStringField;
+    UniQry_DataRelResultIMEI11: TStringField;
+    UniQry_DataRelResultIMEI12: TStringField;
+    UniQry_DataRelResultZhiDan: TStringField;
+    UniQry_DataRelResultTestTime: TDateTimeField;
+    UniQry_DataRelResult_MASK_FROM_V2: TBytesField;
     Label2: TLabel;
-    Label9: TLabel;
-    Label10: TLabel;
-    Label11: TLabel;
-    Label12: TLabel;
-    Button1: TButton;
-    edt_Rid: TEdit;
-    edt_IMEI: TEdit;
-    Button2: TButton;
-    edt_SoftModel: TEdit;
-    edt_Version: TEdit;
-    edt_BoxNo: TEdit;
-    Label13: TLabel;
-    edt_ZhiDan: TEdit;
+    edt_SIM: TEdit;
     Label8: TLabel;
-    edt_ProductCode: TEdit;
+    edt_ICCID: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DBGridEh2DblClick(Sender: TObject);
@@ -63,82 +71,75 @@ type
   end;
 
 var
-  frmCartonBoxResult: TfrmCartonBoxResult;
+  frmDataRelResult: TfrmDataRelResult;
   sSQL,sWhere,sOrder : string;
+
 implementation
 
 {$R *.dfm}
 
-procedure TfrmCartonBoxResult.Button1Click(Sender: TObject);
+procedure TfrmDataRelResult.Button1Click(Sender: TObject);
 begin
-  SearchTestResult;
-  GroupBoxSearRes.Caption := ' 共' + IntToStr(UniQry_CartonBoxResult.RecordCount) + ' 记录';
-
+SearchTestResult;
+  GroupBoxSearRes.Caption := ' 共' + IntToStr(UniQry_DataRelResult.RecordCount) + ' 记录';
 end;
-procedure TfrmCartonBoxResult.SearchTestResult(sNowDate : string = '1');
+procedure TfrmDataRelResult.SearchTestResult(sNowDate : string = '1');
 var
   sTemp : string;
 begin
-  sSQL := 'SELECT *  FROM Gps_CartonBoxTwenty_Result';
+  sSQL := 'SELECT *  FROM DataRelativeSheet';
   
   if sNowDate = '1' then
   begin
     sWhere := ' where (1=1) ';
 
-    if Length(Trim(edt_BoxNo.Text)) > 0 then
-      sWhere := sWhere + ' and (Boxno like ''%' + Trim(edt_BoxNo.Text) + '%'') ';
-    if Length(Trim(edt_ZhiDan.Text)) > 0 then
-      sWhere := sWhere + ' and (ZhiDan like ''%' + Trim(edt_ZhiDan.Text) + '%'') ';
-    if Length(Trim(edt_ProductCode.Text)) > 0 then
-      sWhere := sWhere + ' and (ProductCode like ''%' + Trim(edt_ProductCode.Text) + '%'') ';
     if Length(Trim(edt_IMEI.Text)) > 0 then
-      sWhere := sWhere + ' and (IMEI like ''%'+ Trim(edt_IMEI.Text) + '%'') ';
-    if Length(Trim(edt_SoftModel.Text)) > 0 then
-      sWhere := sWhere + ' and ([SoftModel] like ''%'+ Trim(edt_SoftModel.Text) + '%'') ';
-    if Length(Trim(edt_Version.Text)) > 0 then
-      sWhere := sWhere + ' and ([Version] like ''%'+ Trim(edt_Version.Text) + '%'') ';
-    if Length(Trim(edt_Rid.Text)) > 0 then
-      sWhere := sWhere + ' and ([Remark2] like ''%'+ Trim(edt_Rid.Text) + '%'') ';
+      sWhere := sWhere + ' and (IMEI1 like ''%' + Trim(edt_IMEI.Text) + '%'') ';
+    if Length(Trim(edt_SIM.Text)) > 0 then
+      sWhere := sWhere + ' and (IMEI3 like ''%' + Trim(edt_SIM.Text) + '%'') ';
+    if Length(Trim(edt_ICCID.Text)) > 0 then
+      sWhere := sWhere + ' and (IMEI4 like ''%' + Trim(edt_ICCID.Text) + '%'') ';
   end;
 
-  sOrder := ' order by BoxNo';
+  sOrder := ' order by IMEI1';
   sTemp := sSQL + sWhere + sOrder;
-  UniQry_CartonBoxResult.SQL.Clear;
-  UniQry_CartonBoxResult.SQL.Add(sTemp);
-  UniQry_CartonBoxResult.Open;
+  UniQry_DataRelResult.SQL.Clear;
+  UniQry_DataRelResult.SQL.Add(sTemp);
+  UniQry_DataRelResult.Open;
 end;
-procedure TfrmCartonBoxResult.FormShow(Sender: TObject);
+
+
+
+
+procedure TfrmDataRelResult.FormShow(Sender: TObject);
 begin
-  edt_BoxNo.Text:='';
-  edt_ZhiDan.Text:='';
-  edt_ProductCode.Text:='';
-  edt_IMEI.Text:='';
-  edt_SoftModel.Text:='';
-  edt_Version.Text:='';
-  edt_Rid.Text:='';
+edt_IMEI.Text:='';
+  edt_Sim.Text:='';
+  edt_ICCID.Text:='';
 
   SearchTestResult('2');
-  GroupBoxSearRes.Caption := ' 共' + IntToStr(UniQry_CartonBoxResult.RecordCount) + ' 记录';
-
+  GroupBoxSearRes.Caption := ' 共' + IntToStr(UniQry_DataRelResult.RecordCount) + ' 记录';
 end;
 
-procedure TfrmCartonBoxResult.DBGridEh2DblClick(Sender: TObject);
+procedure TfrmDataRelResult.DBGridEh2DblClick(Sender: TObject);
 var
   sTp:string;
 begin
-if UniQry_CartonBoxResult.RecordCount > 0 then
+if UniQry_DataRelResult.RecordCount > 0 then
   begin
-    sTp :=         '      箱  号：' + Trim(UniQry_CartonBoxResult.fieldbyname('BoxNo').AsString) + #10;
-    sTp := sTp +   '    IMEI编号：' + Trim(UniQry_CartonBoxResult.fieldbyname('IMEI').AsString) + #10;
-    sTp := sTp +   '     制   单：' + Trim(UniQry_CartonBoxResult.fieldbyname('ZhiDan').AsString) + #10;
-    sTp := sTp +   '     机   型：' + Trim(UniQry_CartonBoxResult.fieldbyname('SoftModel').AsString) + #10;
+    sTp :=         '      IMEI：' + Trim(UniQry_DataRelResult.fieldbyname('IMEI1').AsString) + #10;
+    sTp := sTp +   '       SIM：' + Trim(UniQry_DataRelResult.fieldbyname('IMEI3').AsString) + #10;
+    sTp := sTp +   '     ICCID：' + Trim(UniQry_DataRelResult.fieldbyname('IMEI4').AsString) + #10;
     
-    sTp := sTp +   '  软件版本号：' + Trim(UniQry_CartonBoxResult.fieldbyname('Version').AsString) + #10;
-
-    Application.MessageBox(PChar(sTp),'卡通测试结果',MB_OK);
+    Application.MessageBox(PChar(sTp),'数据关系结果',MB_OK);
   end;
 end;
-procedure TfrmCartonBoxResult.SingleDBGridExport(GRID: TDBGridEh);
+
+procedure TfrmDataRelResult.Button2Click(Sender: TObject);
+begin
+DBGridExport(DBGridEh1);
+end;
+procedure TfrmDataRelResult.SingleDBGridExport(GRID: TDBGridEh);
 var       //DBGRID控件内容存储到EXCEL
   EclApp:Variant;
   XlsFileName:String;
@@ -210,7 +211,7 @@ begin
   end;
 end;
 
-procedure TfrmCartonBoxResult.DBGridExport(GRID:TDBGridEh);
+procedure TfrmDataRelResult.DBGridExport(GRID:TDBGridEh);
 var       //DBGRID控件内容存储到EXCEL 只有第一行有标题
   EclApp:Variant;
   XlsFileName:String;
@@ -293,10 +294,6 @@ begin
     eclapp.quit;
     exit;
   end;
-end;
-procedure TfrmCartonBoxResult.Button2Click(Sender: TObject);
-begin
-DBGridExport(DBGridEh1);
 end;
 
 end.
