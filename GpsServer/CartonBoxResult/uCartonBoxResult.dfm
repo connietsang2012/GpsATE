@@ -1,6 +1,6 @@
 object frmCartonBoxResult: TfrmCartonBoxResult
-  Left = 46
-  Top = 126
+  Left = 155
+  Top = 197
   Width = 1026
   Height = 480
   Caption = #21345#36890#25968#25454#26597#35810
@@ -262,6 +262,7 @@ object frmCartonBoxResult: TfrmCartonBoxResult
         Height = 29
         Caption = #23548' '#20986
         TabOrder = 3
+        OnClick = Button2Click
       end
       object edt_SoftModel: TEdit
         Left = 286
@@ -307,87 +308,6 @@ object frmCartonBoxResult: TfrmCartonBoxResult
     Height = 317
     Align = alClient
     TabOrder = 1
-    object DBGridEh1: TDBGridEh
-      Left = 2
-      Top = 15
-      Width = 1014
-      Height = 300
-      Align = alClient
-      Flat = False
-      FooterColor = clWindow
-      FooterFont.Charset = DEFAULT_CHARSET
-      FooterFont.Color = clWindowText
-      FooterFont.Height = -11
-      FooterFont.Name = 'MS Sans Serif'
-      FooterFont.Style = []
-      ReadOnly = True
-      TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -11
-      TitleFont.Name = 'MS Sans Serif'
-      TitleFont.Style = []
-      Columns = <
-        item
-          EditButtons = <>
-          FieldName = 'SN'
-          Footers = <>
-          Title.Alignment = taCenter
-          Width = 230
-        end
-        item
-          EditButtons = <>
-          FieldName = 'IMEI'
-          Footers = <>
-          Title.Alignment = taCenter
-          Width = 120
-        end
-        item
-          Alignment = taRightJustify
-          EditButtons = <>
-          FieldName = 'SoftModel'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #26426#22411
-          Width = 100
-        end
-        item
-          Alignment = taRightJustify
-          EditButtons = <>
-          FieldName = 'Version'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #36719#20214#29256#26412#21495
-          Width = 220
-        end
-        item
-          Alignment = taCenter
-          EditButtons = <>
-          FieldName = 'Result'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #27979#35797#32467#26524
-          Width = 60
-        end
-        item
-          Alignment = taCenter
-          EditButtons = <>
-          FieldName = 'TesterId'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #27979#35797#21592
-          Width = 70
-        end
-        item
-          Alignment = taRightJustify
-          EditButtons = <>
-          FieldName = 'TestTime'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #27979#35797#26102#38388
-          Width = 130
-        end>
-    end
     object GroupBox1: TGroupBox
       Left = 2
       Top = 15
@@ -395,8 +315,8 @@ object frmCartonBoxResult: TfrmCartonBoxResult
       Height = 300
       Align = alClient
       Caption = #21345#36890#25968#25454
-      TabOrder = 1
-      object DBGridEh2: TDBGridEh
+      TabOrder = 0
+      object DBGridEh1: TDBGridEh
         Left = 2
         Top = 15
         Width = 1010
@@ -417,7 +337,7 @@ object frmCartonBoxResult: TfrmCartonBoxResult
         TitleFont.Height = -11
         TitleFont.Name = 'MS Sans Serif'
         TitleFont.Style = []
-        OnDblClick = DBGridEh2DblClick
+        OnDblClick = DBGridEh1DblClick
         Columns = <
           item
             EditButtons = <>
@@ -600,7 +520,10 @@ object frmCartonBoxResult: TfrmCartonBoxResult
     Top = 152
   end
   object SaveDialog1: TSaveDialog
-    Left = 704
-    Top = 152
+    Filter = 
+      #25991#26412#25991#20214'(*.txt)|*.txt|CSV'#25991#20214'(*.csv)|*.csv|HTML'#25991#20214'(*.html)|*.html|RTF'#25991#20214 +
+      '(*.rtf)|*.rtf|Excel'#25991#20214'(*.xls)|*.xls'
+    Left = 728
+    Top = 24
   end
 end

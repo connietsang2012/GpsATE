@@ -31,9 +31,8 @@ type
     edt_IMEI: TEdit;
     Button2: TButton;
     GroupBoxSearRes: TGroupBox;
-    DBGridEh1: TDBGridEh;
     GroupBox1: TGroupBox;
-    DBGridEh2: TDBGridEh;
+    DBGridEh1: TDBGridEh;
     DataSrcTestResult: TDataSource;
     UniQry_DataRelResult: TUniQuery;
     SaveDialog1: TSaveDialog;
@@ -59,7 +58,7 @@ type
     edt_ICCID: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure DBGridEh2DblClick(Sender: TObject);
+    procedure DBGridEh1DblClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
@@ -121,7 +120,7 @@ edt_IMEI.Text:='';
   GroupBoxSearRes.Caption := ' ¹²' + IntToStr(UniQry_DataRelResult.RecordCount) + ' ¼ÇÂ¼';
 end;
 
-procedure TfrmDataRelResult.DBGridEh2DblClick(Sender: TObject);
+procedure TfrmDataRelResult.DBGridEh1DblClick(Sender: TObject);
 var
   sTp:string;
 begin

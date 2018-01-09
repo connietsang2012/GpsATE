@@ -64,7 +64,7 @@ begin
   DateTimePicker1.Date := Now-1;
   DateTimePicker2.Date := Now;
   CheckBoxTestTime.Checked := false;
-  SearchTestResult('2');
+  SearchTestResult('1');
   GroupBoxSearRes.Caption := Trim(ComboBoxTestPosition.Text) + ' 共' + IntToStr(UniQryTestResult.RecordCount) + ' 记录';
 end;
 
@@ -78,6 +78,7 @@ procedure TFrmTestResult.SearchTestResult(sNowDate : string = '1');
 var
   sTemp : string;
 begin
+  try
   case ComboBoxTestPosition.ItemIndex of
     0: sSQL := 'select SN,IMEI,SoftModel,[Version],Result,TesterId,TestTime from Gps_AutoTestSMT_Result ';     //SMT自动测试位结果
     1: sSQL := 'select SN,IMEI,SoftModel,[Version],Result,TesterId,TestTime from Gps_CoupleTest_Result ';      //耦合测试位结果
@@ -141,6 +142,8 @@ begin
   UniQryTestResult.SQL.Clear;
   UniQryTestResult.SQL.Add(sTemp);
   UniQryTestResult.Open;
+  except
+  end;
 end;
 
 procedure TFrmTestResult.ComboBoxTestPositionChange(Sender: TObject);

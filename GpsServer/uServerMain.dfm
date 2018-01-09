@@ -1,6 +1,6 @@
 object frmServerMain: TfrmServerMain
-  Left = 226
-  Top = 112
+  Left = 131
+  Top = 86
   Width = 1024
   Height = 689
   Caption = #29983#20135#21806#21518#30417#25511#31995#32479'('#26381#21153#22120')'
@@ -15,8 +15,9 @@ object frmServerMain: TfrmServerMain
   WindowState = wsMaximized
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 11
+  TextHeight = 13
   object tlb1: TToolBar
     Left = 0
     Top = 0
@@ -47,7 +48,7 @@ object frmServerMain: TfrmServerMain
   object dxNavBar1: TdxNavBar
     Left = 0
     Top = 2
-    Width = 170
+    Width = 201
     Height = 633
     Align = alLeft
     ActiveGroupIndex = 0
@@ -79,6 +80,9 @@ object frmServerMain: TfrmServerMain
         end
         item
           Item = dxnvbrtmTestParameter
+        end
+        item
+          Item = dxnvbrtmManuOrder
         end>
     end
     object dxNavBar_TestPlan: TdxNavBarGroup
@@ -211,6 +215,30 @@ object frmServerMain: TfrmServerMain
         end
         item
           Item = dxNavBar1ItemTestResult
+        end
+        item
+          Item = dxnvbrtmCartonBoxResult
+        end
+        item
+          Item = dxnvbrtmDataRel
+        end>
+    end
+    object dxNavBar_LabelParam: TdxNavBarGroup
+      Caption = #36148#32440#37197#32622
+      LinksUseSmallImages = True
+      SelectedLinkIndex = -1
+      ShowAsIconView = False
+      ShowControl = False
+      TopVisibleLinkIndex = 0
+      UseControl = False
+      UseSmallImages = True
+      Visible = True
+      Links = <
+        item
+          Item = dxNavBarLabelParam_Gift
+        end
+        item
+          Item = dxNavBarLabelParam_Carton
         end>
     end
     object dxNavBar_Exit: TdxNavBarGroup
@@ -308,26 +336,41 @@ object frmServerMain: TfrmServerMain
     object dxnvbrtmNavBarWriteImeiPlan: TdxNavBarItem
       Action = ac_WriteImeiPlan
     end
+    object dxNavBarLabelParam_Gift: TdxNavBarItem
+      Action = ac_GiftParam
+    end
+    object dxNavBarLabelParam_Carton: TdxNavBarItem
+      Action = ac_CartonParam
+    end
+    object dxnvbrtmManuOrder: TdxNavBarItem
+      Action = ac_ManuOrderParam
+    end
+    object dxnvbrtmCartonBoxResult: TdxNavBarItem
+      Action = ac_CartonBoxResult
+    end
+    object dxnvbrtmDataRel: TdxNavBarItem
+      Action = ac_DataRel
+    end
   end
   object pnl1: TPanel
-    Left = 170
+    Left = 201
     Top = 2
-    Width = 846
+    Width = 815
     Height = 633
     Align = alClient
     TabOrder = 2
     object pnl2: TPanel
       Left = 1
       Top = 1
-      Width = 844
-      Height = 41
+      Width = 813
+      Height = 49
       Align = alTop
       TabOrder = 0
       object lbl1: TLabel
-        Left = 94
-        Top = 12
-        Width = 102
-        Height = 14
+        Left = 111
+        Top = 14
+        Width = 121
+        Height = 17
         Alignment = taRightJustify
         AutoSize = False
         Caption = #26381#21153#22120#31471#21475#65306
@@ -339,8 +382,8 @@ object frmServerMain: TfrmServerMain
         ParentFont = False
       end
       object imgTCPRed: TImage
-        Left = 502
-        Top = 4
+        Left = 593
+        Top = 5
         Width = 32
         Height = 32
         AutoSize = True
@@ -372,8 +415,8 @@ object frmServerMain: TfrmServerMain
           FFFFFFFF}
       end
       object imgTCPGreen: TImage
-        Left = 502
-        Top = 4
+        Left = 593
+        Top = 5
         Width = 32
         Height = 32
         AutoSize = True
@@ -406,47 +449,47 @@ object frmServerMain: TfrmServerMain
         Visible = False
       end
       object edtTCPPort: TMaskEdit
-        Left = 205
-        Top = 10
-        Width = 81
-        Height = 19
+        Left = 242
+        Top = 12
+        Width = 96
+        Height = 21
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
         MaxLength = 5
         TabOrder = 0
         OnKeyPress = edtTCPPortKeyPress
       end
       object btnStartTcp: TBitBtn
-        Left = 300
-        Top = 7
-        Width = 75
-        Height = 21
+        Left = 355
+        Top = 8
+        Width = 88
+        Height = 25
         Caption = #24320#22987#30417#21548
         TabOrder = 1
         OnClick = btnStartTcpClick
       end
       object btnStopTcp: TBitBtn
-        Left = 394
-        Top = 7
-        Width = 76
-        Height = 21
+        Left = 466
+        Top = 8
+        Width = 89
+        Height = 25
         Caption = #20572#27490#30417#21548
         TabOrder = 2
         OnClick = btnStopTcpClick
       end
       object chkTCPAuto: TCheckBox
-        Left = 19
-        Top = 14
-        Width = 70
-        Height = 14
+        Left = 22
+        Top = 17
+        Width = 83
+        Height = 16
         Caption = #33258#21160#30417#21548
         TabOrder = 3
       end
     end
     object PageControlpgc1: TPageControl
       Left = 1
-      Top = 42
-      Width = 844
-      Height = 590
+      Top = 50
+      Width = 813
+      Height = 582
       ActivePage = TabSheet1
       Align = alClient
       TabIndex = 0
@@ -459,6 +502,7 @@ object frmServerMain: TfrmServerMain
     Active = True
     DisableTag = 99
     SkinControls = [xcMainMenu, xcPopupMenu, xcToolbar, xcControlbar, xcCombo, xcCheckBox, xcRadioButton, xcProgress, xcScrollbar, xcEdit, xcButton, xcBitBtn, xcSpeedButton, xcPanel, xcGroupBox, xcStatusBar, xcTab, xcSystemMenu]
+    Options = [xoPreview, xoToolbarBK]
     Skin3rd.Strings = (
       'TTBDock=Panel'
       'TTBToolbar=Panel'
@@ -557,8 +601,9 @@ object frmServerMain: TfrmServerMain
       'TOVCDBNUMERICFIELD=Edit')
     SkinStore = '(none)'
     SkinFormtype = sfMainform
-    Version = '2.62.5.26'
+    Version = '4.11.06.25'
     MenuUpdate = True
+    MenuMerge = False
     Left = 912
     SkinStream = {00000000}
   end
@@ -2279,6 +2324,7 @@ object frmServerMain: TfrmServerMain
       Caption = #25805#20316#35760#24405
       object N16: TMenuItem
         Caption = #26597'  '#35810
+        Enabled = False
         OnClick = N16Click
       end
     end
@@ -2701,54 +2747,66 @@ object frmServerMain: TfrmServerMain
     end
     object ac_UserType: TAction
       Caption = '  '#29992#25143#31867#22411'  '
+      Enabled = False
       ImageIndex = 0
       OnExecute = ac_UserTypeExecute
     end
     object ac_User: TAction
       Caption = '  '#29992#25143#31649#29702'  '
+      Enabled = False
       ImageIndex = 1
       OnExecute = ac_UserExecute
     end
     object ac_TestWrong: TAction
       Caption = '  '#27979#35797#38169#35823
+      Enabled = False
       ImageIndex = 4
       OnExecute = ac_TestWrongExecute
     end
     object ac_TestPlan: TAction
       Caption = #27979#35797#35745#21010
+      Enabled = False
       OnExecute = ac_TestPlanExecute
     end
     object ac_Set: TAction
       Caption = '  '#20135#21697#35268#26684#35774#32622
+      Enabled = False
       OnExecute = ac_SetExecute
     end
     object ac_SubTestItem: TAction
       Caption = ' '#23376#27979#35797#39033#31649#29702
+      Enabled = False
       OnExecute = ac_SubTestItemExecute
     end
     object ac_TestPlanSet: TAction
       Caption = #27979#35797#24037#31449#37197#21046
+      Enabled = False
       OnExecute = ac_TestPlanSetExecute
     end
     object ac_AutoTestParam: TAction
       Caption = #33258#21160#27979#35797#20301#21442#25968
+      Enabled = False
       OnExecute = ac_AutoTestParamExecute
     end
     object ac_AutoTestModel: TAction
       Caption = #27979#35797#26426#22411
+      Enabled = False
       ImageIndex = 0
       OnExecute = ac_AutoTestModelExecute
     end
     object ac_AutoTestItemPlan: TAction
       Caption = #33258#21160#27979#35797#39033#30446#35745#21010
+      Enabled = False
       OnExecute = ac_AutoTestItemPlanExecute
     end
     object ac_TestParameter: TAction
       Caption = '  '#27979#35797#21442#25968
+      Enabled = False
       OnExecute = ac_TestParameterExecute
     end
     object ac_VersionModel: TAction
       Caption = #36719#20214#29256#26412#19982#26426#22411#23545#24212#34920
+      Enabled = False
       ImageIndex = 0
       OnExecute = ac_VersionModelExecute
     end
@@ -2767,35 +2825,67 @@ object frmServerMain: TfrmServerMain
     end
     object ac_ParamDownloadParam: TAction
       Caption = #19979#36733#21442#25968#35774#32622
+      Enabled = False
       OnExecute = ac_ParamDownloadParamExecute
     end
     object ac_AutoTestSMTParam: TAction
       Caption = #33258#21160#27979#35797#20301#21442#25968'(SMT)'
+      Enabled = False
       OnExecute = ac_AutoTestSMTParamExecute
     end
     object ac_AutoTestSMTItemPlan: TAction
       Caption = #33258#21160#27979#35797#39033#30446#35745#21010'(SMT)'
+      Enabled = False
       OnExecute = ac_AutoTestSMTItemPlanExecute
     end
     object ac_ParamDownloadPlan: TAction
       Caption = #19979#36733#21442#25968#35745#21010
+      Enabled = False
       OnExecute = ac_ParamDownloadPlanExecute
     end
     object ac_OQCItemPlan: TAction
       Caption = 'OQC'#24037#20301#27979#35797#35745#21010
+      Enabled = False
       OnExecute = ac_OQCItemPlanExecute
     end
     object ac_OQCTestParam: TAction
       Caption = 'OQC'#24037#20301#27979#35797#21442#25968
+      Enabled = False
       OnExecute = ac_OQCTestParamExecute
     end
     object ac_WriteImeiParam: TAction
       Caption = 'IMEI'#28903#20889#20301#21442#25968
+      Enabled = False
       OnExecute = ac_WriteImeiParamExecute
     end
     object ac_WriteImeiPlan: TAction
       Caption = 'IMEI'#28903#20889#20301#27979#35797#35745#21010
+      Enabled = False
       OnExecute = ac_WriteImeiPlanExecute
+    end
+    object ac_GiftParam: TAction
+      Caption = #24425#30418#37197#32622
+      Enabled = False
+      OnExecute = ac_GiftParamExecute
+    end
+    object ac_CartonParam: TAction
+      Caption = #21345#36890#37197#32622
+      Enabled = False
+      OnExecute = ac_CartonParamExecute
+    end
+    object ac_ManuOrderParam: TAction
+      Caption = '  '#21046#21333#37197#32622
+      OnExecute = ac_ManuOrderParamExecute
+    end
+    object ac_CartonBoxResult: TAction
+      Caption = '  '#21345#36890#35760#24405#26597#35810
+      OnExecute = ac_CartonBoxResultExecute
+    end
+    object ac_DataRel: TAction
+      AutoCheck = True
+      Caption = '  '#23545#24212#20851#31995#26597#35810
+      Checked = True
+      OnExecute = ac_DataRelExecute
     end
   end
   object TcpServer: TServerSocket
@@ -3951,7 +4041,6 @@ object frmServerMain: TfrmServerMain
     Top = 408
   end
   object spOQCParamCopy: TADOStoredProc
-    Active = True
     Connection = DMMain.conConnGpsTest
     CursorType = ctStatic
     ProcedureName = 'OQCParamCopy;1'

@@ -244,87 +244,6 @@ object frmDataRelResult: TfrmDataRelResult
     Height = 317
     Align = alClient
     TabOrder = 1
-    object DBGridEh1: TDBGridEh
-      Left = 2
-      Top = 15
-      Width = 778
-      Height = 300
-      Align = alClient
-      Flat = False
-      FooterColor = clWindow
-      FooterFont.Charset = DEFAULT_CHARSET
-      FooterFont.Color = clWindowText
-      FooterFont.Height = -11
-      FooterFont.Name = 'MS Sans Serif'
-      FooterFont.Style = []
-      ReadOnly = True
-      TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -11
-      TitleFont.Name = 'MS Sans Serif'
-      TitleFont.Style = []
-      Columns = <
-        item
-          EditButtons = <>
-          FieldName = 'SN'
-          Footers = <>
-          Title.Alignment = taCenter
-          Width = 230
-        end
-        item
-          EditButtons = <>
-          FieldName = 'IMEI'
-          Footers = <>
-          Title.Alignment = taCenter
-          Width = 120
-        end
-        item
-          Alignment = taRightJustify
-          EditButtons = <>
-          FieldName = 'SoftModel'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #26426#22411
-          Width = 100
-        end
-        item
-          Alignment = taRightJustify
-          EditButtons = <>
-          FieldName = 'Version'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #36719#20214#29256#26412#21495
-          Width = 220
-        end
-        item
-          Alignment = taCenter
-          EditButtons = <>
-          FieldName = 'Result'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #27979#35797#32467#26524
-          Width = 60
-        end
-        item
-          Alignment = taCenter
-          EditButtons = <>
-          FieldName = 'TesterId'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #27979#35797#21592
-          Width = 70
-        end
-        item
-          Alignment = taRightJustify
-          EditButtons = <>
-          FieldName = 'TestTime'
-          Footers = <>
-          Title.Alignment = taCenter
-          Title.Caption = #27979#35797#26102#38388
-          Width = 130
-        end>
-    end
     object GroupBox1: TGroupBox
       Left = 2
       Top = 15
@@ -332,8 +251,8 @@ object frmDataRelResult: TfrmDataRelResult
       Height = 300
       Align = alClient
       Caption = #21345#36890#25968#25454
-      TabOrder = 1
-      object DBGridEh2: TDBGridEh
+      TabOrder = 0
+      object DBGridEh1: TDBGridEh
         Left = 2
         Top = 15
         Width = 774
@@ -354,7 +273,7 @@ object frmDataRelResult: TfrmDataRelResult
         TitleFont.Height = -11
         TitleFont.Name = 'MS Sans Serif'
         TitleFont.Style = []
-        OnDblClick = DBGridEh2DblClick
+        OnDblClick = DBGridEh1DblClick
         Columns = <
           item
             Alignment = taCenter
@@ -497,7 +416,6 @@ object frmDataRelResult: TfrmDataRelResult
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
       'SELECT *  FROM DataRelativeSheet')
-    Active = True
     Left = 576
     Top = 112
     object UniQry_DataRelResultSN: TStringField
