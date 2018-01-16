@@ -1,18 +1,18 @@
 inherited frmManuOrderParam: TfrmManuOrderParam
-  Left = 217
-  Top = 162
-  Height = 590
+  Left = 175
+  Top = 137
+  Height = 640
   Caption = #21046#21333#35814#24773
   OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited PageControl1: TPageControl
-    Height = 492
+    Height = 542
     ActivePage = TabSheet2
     TabIndex = 1
     inherited TabSheet1: TTabSheet
       inherited DBGridEh1: TDBGridEh
-        Height = 464
+        Height = 514
         Columns = <
           item
             EditButtons = <>
@@ -275,7 +275,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label3: TLabel
         Left = 384
-        Top = 295
+        Top = 335
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -284,7 +284,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label4: TLabel
         Left = 16
-        Top = 223
+        Top = 263
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -311,7 +311,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label8: TLabel
         Left = 384
-        Top = 215
+        Top = 255
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -320,7 +320,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label10: TLabel
         Left = 583
-        Top = 215
+        Top = 255
         Width = 50
         Height = 13
         Alignment = taRightJustify
@@ -329,7 +329,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label12: TLabel
         Left = 384
-        Top = 259
+        Top = 299
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -356,7 +356,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label15: TLabel
         Left = 16
-        Top = 333
+        Top = 373
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -365,7 +365,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label17: TLabel
         Left = 384
-        Top = 380
+        Top = 420
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -374,7 +374,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label7: TLabel
         Left = 384
-        Top = 337
+        Top = 377
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -383,7 +383,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label18: TLabel
         Left = 16
-        Top = 416
+        Top = 456
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -392,7 +392,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label16: TLabel
         Left = 16
-        Top = 375
+        Top = 415
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -401,7 +401,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label19: TLabel
         Left = 384
-        Top = 416
+        Top = 456
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -410,7 +410,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label9: TLabel
         Left = 16
-        Top = 299
+        Top = 339
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -419,7 +419,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object Label20: TLabel
         Left = 16
-        Top = 264
+        Top = 304
         Width = 100
         Height = 13
         Alignment = taRightJustify
@@ -444,6 +444,15 @@ inherited frmManuOrderParam: TfrmManuOrderParam
         AutoSize = False
         Caption = 'SIM'#21495#27573#65306
       end
+      object Label13: TLabel
+        Left = 16
+        Top = 222
+        Width = 100
+        Height = 13
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = #30005#27744#21495#27573#65306
+      end
       object DBEdit1: TDBEdit
         Left = 121
         Top = 16
@@ -464,7 +473,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit3: TDBEdit
         Left = 488
-        Top = 252
+        Top = 292
         Width = 256
         Height = 21
         DataField = 'ProductNo'
@@ -473,7 +482,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit4: TDBEdit
         Left = 248
-        Top = 290
+        Top = 330
         Width = 129
         Height = 21
         DataField = 'BoxNo2'
@@ -483,7 +492,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit6: TDBEdit
         Left = 121
-        Top = 213
+        Top = 253
         Width = 257
         Height = 21
         DataField = 'ProductDate'
@@ -522,7 +531,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit5: TDBEdit
         Left = 488
-        Top = 213
+        Top = 253
         Width = 89
         Height = 21
         DataField = 'Color'
@@ -532,7 +541,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit10: TDBEdit
         Left = 120
-        Top = 252
+        Top = 292
         Width = 257
         Height = 21
         DataField = 'Qty'
@@ -542,7 +551,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit11: TDBEdit
         Left = 121
-        Top = 291
+        Top = 331
         Width = 121
         Height = 21
         DataField = 'BoxNo1'
@@ -570,7 +579,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit14: TDBEdit
         Left = 121
-        Top = 330
+        Top = 370
         Width = 257
         Height = 21
         DataField = 'CompanyName'
@@ -579,7 +588,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit17: TDBEdit
         Left = 488
-        Top = 333
+        Top = 373
         Width = 257
         Height = 21
         DataField = 'Remark1'
@@ -588,7 +597,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit15: TDBEdit
         Left = 121
-        Top = 369
+        Top = 409
         Width = 257
         Height = 21
         DataField = 'Remark2'
@@ -597,7 +606,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit18: TDBEdit
         Left = 488
-        Top = 372
+        Top = 412
         Width = 257
         Height = 21
         DataField = 'Remark3'
@@ -606,7 +615,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit16: TDBEdit
         Left = 121
-        Top = 408
+        Top = 448
         Width = 257
         Height = 21
         DataField = 'Remark4'
@@ -615,7 +624,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit19: TDBEdit
         Left = 488
-        Top = 408
+        Top = 448
         Width = 257
         Height = 21
         DataField = 'Remark5'
@@ -624,7 +633,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit20: TDBEdit
         Left = 488
-        Top = 290
+        Top = 330
         Width = 65
         Height = 21
         DataField = 'SN1'
@@ -633,7 +642,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit21: TDBEdit
         Left = 560
-        Top = 290
+        Top = 330
         Width = 89
         Height = 21
         DataField = 'SN2'
@@ -643,7 +652,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit22: TDBEdit
         Left = 656
-        Top = 290
+        Top = 330
         Width = 89
         Height = 21
         DataField = 'SN3'
@@ -652,7 +661,7 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       end
       object DBEdit23: TDBEdit
         Left = 632
-        Top = 213
+        Top = 253
         Width = 113
         Height = 21
         DataField = 'Weight'
@@ -689,10 +698,30 @@ inherited frmManuOrderParam: TfrmManuOrderParam
         MaxLength = 14
         TabOrder = 25
       end
+      object DBEdit12: TDBEdit
+        Left = 121
+        Top = 213
+        Width = 256
+        Height = 21
+        DataField = 'BATStart'
+        DataSource = DS_Module
+        MaxLength = 10
+        TabOrder = 26
+      end
+      object DBEdit26: TDBEdit
+        Left = 416
+        Top = 213
+        Width = 329
+        Height = 21
+        DataField = 'BATEnd'
+        DataSource = DS_Module
+        MaxLength = 10
+        TabOrder = 27
+      end
     end
   end
   inherited SB_Module: TStatusBar
-    Top = 532
+    Top = 582
   end
   inherited DS_Module: TDataSource
     DataSet = UniQuery_ManuOrderParam
@@ -858,6 +887,14 @@ inherited frmManuOrderParam: TfrmManuOrderParam
       LookupResultField = 'IMEIRelDes'
       KeyFields = 'IMEIRel'
       Lookup = True
+    end
+    object UniQuery_ManuOrderParamBATStart: TStringField
+      FieldName = 'BATStart'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamBATEnd: TStringField
+      FieldName = 'BATEnd'
+      Size = 50
     end
   end
   object UniQuery_ManuDesc: TUniQuery

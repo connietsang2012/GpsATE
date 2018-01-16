@@ -146,6 +146,8 @@ type
     ac_CartonBoxResult: TAction;
     dxnvbrtmDataRel: TdxNavBarItem;
     ac_DataRel: TAction;
+    ac_DataRelative_BAT: TAction;
+    dxnvbrtmDataRelative_BAT: TdxNavBarItem;
     procedure FormCreate(Sender: TObject);
     procedure ac_exitExecute(Sender: TObject);
     procedure ac_UserTypeExecute(Sender: TObject);
@@ -192,6 +194,7 @@ type
     procedure ac_CartonBoxResultExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ac_DataRelExecute(Sender: TObject);
+    procedure ac_DataRelative_BATExecute(Sender: TObject);
 
   private
     { Private declarations }
@@ -237,7 +240,7 @@ uses
   uTestParameter, uVersionModel, uTcDataForm, uParamDownloadItem,
   uParamDownloadPlan,uAutoTestSMTItem, uAutoTestSMTItemPlan,uTestResult,
   uOQCItemPlan, uOQCItem, uWriteImeiPlan,uWriteImei, uGiftParam,uCartonParam,
-  uManuOrderParam, uCartonBoxResult, uDataRelResult;
+  uManuOrderParam, uCartonBoxResult,uDataRelative_BAT, uDataRelResult;
 
 {$R *.dfm}
 procedure TfrmServerMain.ShowForm(frm:TfrmModuleForm);
@@ -1317,6 +1320,12 @@ procedure TfrmServerMain.ac_DataRelExecute(Sender: TObject);
 begin
 if frmDataRelResult=nil then  frmDataRelResult:=TfrmDataRelResult.Create(Self);
     ShowForm(frmDataRelResult);
+end;
+
+procedure TfrmServerMain.ac_DataRelative_BATExecute(Sender: TObject);
+begin
+if frmDataRelative_BAT=nil then  frmDataRelative_BAT:=TfrmDataRelative_BAT.Create(Self);
+    ShowForm(frmDataRelative_BAT);
 end;
 
 end.

@@ -98,6 +98,11 @@ type
     UniQuery_IMEIRelIMEIRelDes: TStringField;
     UniQuery_IMEIRel_MASK_FROM_V2: TBytesField;
     UniQuery_ManuOrderParamIMEIRelDesc: TStringField;
+    Label13: TLabel;
+    DBEdit12: TDBEdit;
+    DBEdit26: TDBEdit;
+    UniQuery_ManuOrderParamBATStart: TStringField;
+    UniQuery_ManuOrderParamBATEnd: TStringField;
   private
     { Private declarations }
   public

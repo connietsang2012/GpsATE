@@ -40,6 +40,7 @@ uses
   uCartonParam in 'LabelParam\uCartonParam.pas' {frmCartonParam},
   uManuOrderParam in 'ManuOrder\uManuOrderParam.pas' {frmManuOrderParam},
   uCartonBoxResult in 'CartonBoxResult\uCartonBoxResult.pas' {frmCartonBoxResult},
+  uDataRelative_BAT in 'DataRelResult\uDataRelative_BAT.pas' {frmDataRelative_BAT},
   uDataRelResult in 'DataRelResult\uDataRelResult.pas' {frmDataRelResult};
 
 {$R *.res}
@@ -51,6 +52,7 @@ begin
   Application.CreateForm(TfrmCartonParam, frmCartonParam);
   Application.CreateForm(TfrmManuOrderParam, frmManuOrderParam);
   Application.CreateForm(TfrmCartonBoxResult, frmCartonBoxResult);
+  Application.CreateForm(TfrmDataRelative_BAT, frmDataRelative_BAT);
   Application.CreateForm(TfrmDataRelResult, frmDataRelResult);
   Application.ShowMainForm:=False;
   //œ‘ æµ«¬ºΩÁ√Ê

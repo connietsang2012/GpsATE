@@ -220,6 +220,9 @@ object frmServerMain: TfrmServerMain
           Item = dxnvbrtmCartonBoxResult
         end
         item
+          Item = dxnvbrtmDataRelative_BAT
+        end
+        item
           Item = dxnvbrtmDataRel
         end>
     end
@@ -350,6 +353,9 @@ object frmServerMain: TfrmServerMain
     end
     object dxnvbrtmDataRel: TdxNavBarItem
       Action = ac_DataRel
+    end
+    object dxnvbrtmDataRelative_BAT: TdxNavBarItem
+      Action = ac_DataRelative_BAT
     end
   end
   object pnl1: TPanel
@@ -2886,6 +2892,10 @@ object frmServerMain: TfrmServerMain
       Caption = '  '#23545#24212#20851#31995#26597#35810
       Checked = True
       OnExecute = ac_DataRelExecute
+    end
+    object ac_DataRelative_BAT: TAction
+      Caption = '  '#30005#27744#25968#25454#26597#35810
+      OnExecute = ac_DataRelative_BATExecute
     end
   end
   object TcpServer: TServerSocket
