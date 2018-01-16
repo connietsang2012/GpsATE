@@ -1,5 +1,5 @@
 object frmCartonBox: TfrmCartonBox
-  Left = 408
+  Left = 88
   Top = 125
   Width = 936
   Height = 634
@@ -55,19 +55,6 @@ object frmCartonBox: TfrmCartonBox
       Height = 45
       Caption = #21151#33021#21306
       TabOrder = 1
-      object lbl8: TLabel
-        Left = 319
-        Top = 15
-        Width = 382
-        Height = 25
-        AutoSize = False
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clRed
-        Font.Height = -19
-        Font.Name = #23435#20307
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object lbl9: TLabel
         Left = 210
         Top = 17
@@ -146,6 +133,19 @@ object frmCartonBox: TfrmCartonBox
           0000000000FF00FFFFFFFFFFFFFF00FFFFFFFFFFFFFFFF00FFFFFFFFFFFFFF00
           0000000000000000FFFF}
         OnClick = btnPrintClick
+      end
+      object lbl8: TLabel
+        Left = 319
+        Top = 15
+        Width = 382
+        Height = 25
+        AutoSize = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -19
+        Font.Name = #23435#20307
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object chkAuto: TCheckBox
         Left = 9
@@ -353,18 +353,6 @@ object frmCartonBox: TfrmCartonBox
   object UniQuery_IMEI: TUniQuery
     Left = 464
     Top = 8
-  end
-  object btappBtnPrint: TBTApplication
-    AutoConnect = True
-    ConnectKind = ckRunningOrNew
-    Left = 344
-    Top = 56
-  end
-  object btappAutoPrint: TBTApplication
-    AutoConnect = True
-    ConnectKind = ckRunningOrNew
-    Left = 312
-    Top = 56
   end
   object UniQuery_IMEI_20: TUniQuery
     Connection = DMMain.UniConGpsTest

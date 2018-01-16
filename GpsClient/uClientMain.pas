@@ -118,7 +118,9 @@ type
     UniQuery_TestType_MASK_FROM_V2: TBytesField;
     ParamConfig: TMenuItem;
     GiftBox: TMenuItem;
-    ac_GiftBox: TAction;////线程
+    ac_GiftBox: TAction;
+    ac_DataRelative: TAction;
+    N2: TMenuItem;////线程
 
     //==================================================================//
     procedure FormCreate(Sender: TObject);
@@ -192,6 +194,7 @@ type
 
     procedure ParamConfigClick(Sender: TObject);
     procedure ac_GiftBoxExecute(Sender: TObject);
+    procedure ac_DataRelativeExecute(Sender: TObject);
 
 
   private
@@ -227,7 +230,7 @@ uses
   uCoupleTest, uWriteImeiTest, uParamDownloadTest,
   uBasicTestParam, uClientDataModuleForm,uTwiceTest, uAutoTest, uDmMain,
   uAutoTestSMT,uSMTIQCTest, uIncomCheck, uReadBack, uParamLoadConfig,
-  uGiftBoxMain,uCartonBoxLlf;
+  uGiftBoxMain,uCartonBoxLlf, uDataRelative;
 
 {$R *.dfm}
 //==================================================================//
@@ -795,6 +798,13 @@ begin
                         Application.ProcessMessages;
                         TfrmCartonBoxLlf(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex],CommIndex);
                         Application.ProcessMessages;
+                end
+                else if  strPlanName='DataRelative' then
+                begin
+                        Application.ProcessMessages;
+                        TfrmDataRelative(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex],CommIndex);
+                        Application.ProcessMessages;
+
                 end
                 else
                 begin
@@ -1549,6 +1559,15 @@ begin
     begin
         frmGiftBoxMain:=TfrmGiftBoxMain.Create(Self);
         ShowForm(frmGiftBoxMain);
+    end;
+end;
+
+procedure TfrmClientMain.ac_DataRelativeExecute(Sender: TObject);
+begin
+    if (CurrentFrom=nil) or ( CurrentFrom.ClassName<>'TfrmDataRelative') then
+    begin
+        frmDataRelative:=TfrmDataRelative.Create(Self);
+        ShowForm(frmDataRelative);
     end;
 end;
 

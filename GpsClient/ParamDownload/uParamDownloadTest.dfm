@@ -1,6 +1,6 @@
 inherited frmParamDownloadTest: TfrmParamDownloadTest
-  Left = 195
-  Top = 121
+  Left = 130
+  Top = 53
   Width = 1036
   Height = 696
   Caption = #36719#20214#21442#25968#19979#36733#20301
@@ -33,32 +33,33 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
         Height = 674
         TabOrder = 2
         object grp1: TGroupBox
-          Left = 0
-          Top = 0
-          Width = 600
-          Height = 331
+          Left = 1
+          Top = 1
+          Width = 1206
+          Height = 672
+          Align = alClient
           Caption = #19979#36733#32467#26524'('#20018#21475#19968')'
           TabOrder = 0
           object pnl3: TPanel
             Left = 2
             Top = 15
-            Width = 596
-            Height = 261
+            Width = 1202
+            Height = 602
             Align = alClient
             TabOrder = 0
             object Panel2: TPanel
               Left = 1
               Top = 1
-              Width = 594
-              Height = 259
+              Width = 1200
+              Height = 600
               Align = alClient
               Caption = 'Panel1'
               TabOrder = 0
               object Panel3: TPanel
                 Left = 1
                 Top = 1
-                Width = 592
-                Height = 59
+                Width = 1198
+                Height = 112
                 Align = alTop
                 TabOrder = 0
                 object Label2: TLabel
@@ -143,6 +144,36 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                     FF8001FFFFE007FFFFF81FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                     FFFFFFFF}
                 end
+                object Label3: TLabel
+                  Left = -1
+                  Top = 56
+                  Width = 57
+                  Height = 24
+                  Alignment = taRightJustify
+                  AutoSize = False
+                  Caption = 'IMEI:'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -20
+                  Font.Name = 'MS Sans Serif'
+                  Font.Style = []
+                  ParentFont = False
+                end
+                object Label4: TLabel
+                  Left = 282
+                  Top = 56
+                  Width = 80
+                  Height = 24
+                  Alignment = taRightJustify
+                  AutoSize = False
+                  Caption = 'PREIMEI:'
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -20
+                  Font.Name = 'MS Sans Serif'
+                  Font.Style = []
+                  ParentFont = False
+                end
                 object cbbCom_1: TComboBox
                   Left = 87
                   Top = 8
@@ -201,20 +232,49 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
                   Caption = #33258#21160#26816#27979#20018#21475
                   TabOrder = 4
                 end
+                object edt_PreIMEI: TEdit
+                  Left = 368
+                  Top = 48
+                  Width = 209
+                  Height = 37
+                  Color = clScrollBar
+                  Enabled = False
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -24
+                  Font.Name = 'MS Sans Serif'
+                  Font.Style = []
+                  ParentFont = False
+                  TabOrder = 5
+                end
+                object edt_IMEI: TEdit
+                  Left = 63
+                  Top = 48
+                  Width = 209
+                  Height = 37
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -24
+                  Font.Name = 'MS Sans Serif'
+                  Font.Style = []
+                  ParentFont = False
+                  TabOrder = 6
+                  OnKeyPress = edt_IMEIKeyPress
+                end
               end
               object pnlTestResult_1: TPanel
                 Left = 1
-                Top = 60
-                Width = 592
-                Height = 198
+                Top = 113
+                Width = 1198
+                Height = 486
                 Align = alClient
                 Caption = 'pnlTestResult_1'
                 TabOrder = 1
                 object TestResultDetail_1: TDBGrid
                   Left = 1
                   Top = 1
-                  Width = 590
-                  Height = 196
+                  Width = 1196
+                  Height = 484
                   Align = alClient
                   DataSource = DS_TestResult_1
                   Font.Charset = DEFAULT_CHARSET
@@ -278,8 +338,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object TestResult1: TPanel
             Left = 2
-            Top = 276
-            Width = 596
+            Top = 617
+            Width = 1202
             Height = 31
             Align = alBottom
             Color = clRed
@@ -293,8 +353,8 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           end
           object SB_TestStatus_1: TStatusBar
             Left = 2
-            Top = 307
-            Width = 596
+            Top = 648
+            Width = 1202
             Height = 22
             Panels = <
               item
@@ -431,6 +491,7 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           Height = 331
           Caption = #19979#36733#32467#26524'('#20018#21475#20108')'
           TabOrder = 10
+          Visible = False
           object estResult1: TPanel
             Left = 2
             Top = 15
@@ -712,6 +773,7 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           Height = 331
           Caption = #19979#36733#32467#26524'('#20018#21475#19977')'
           TabOrder = 11
+          Visible = False
           object estResult4: TPanel
             Left = 2
             Top = 15
@@ -980,6 +1042,7 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
           Height = 331
           Caption = #19979#36733#32467#26524'('#20018#21475#22235')'
           TabOrder = 12
+          Visible = False
           object estResult9: TPanel
             Left = 2
             Top = 15
@@ -1365,10 +1428,26 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
     Left = 334
     Top = 152
   end
+  inherited Comm_00: TCommPortDriver
+    Left = 80
+    Top = 64
+  end
+  inherited Comm_01: TCommPortDriver
+    Left = 120
+    Top = 64
+  end
+  inherited Comm_02: TCommPortDriver
+    Left = 160
+    Top = 64
+  end
+  inherited Comm_03: TCommPortDriver
+    Left = 200
+    Top = 64
+  end
   object DS_TestResult_1: TDataSource [31]
     DataSet = UniQuery_TestResult_1
     Left = 40
-    Top = 136
+    Top = 160
   end
   object DS_TestItemParam_1: TDataSource [32]
     AutoEdit = False
@@ -1733,7 +1812,7 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
     SQL.Strings = (
       'select * from t_Test_Result1')
     Left = 72
-    Top = 136
+    Top = 160
     object intgrfldUniQuery_TestResult1Id: TIntegerField
       FieldName = 'Id'
       ReadOnly = True
@@ -1870,6 +1949,10 @@ inherited frmParamDownloadTest: TfrmParamDownloadTest
     DataSet = UniQuery_DstSubItem
     Left = 984
     Top = 56
+  end
+  inherited Comm_04: TCommPortDriver
+    Left = 240
+    Top = 64
   end
   object tmrCheckComm1: TTimer [50]
     Enabled = False

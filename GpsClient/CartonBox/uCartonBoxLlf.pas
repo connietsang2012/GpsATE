@@ -144,7 +144,9 @@ type
         edt_IMEI1: TDBEdit;
         ds_SIM: TDataSource;
         UniQuery_DataRelativeSheetByImeiSIM: TUniQuery;
-    ch_CheckInfo: TCheckBox;
+        ch_CheckInfo: TCheckBox;
+        UniQuery_DataRelative_ByIMEI: TUniQuery;
+    spCheckTestpass: TUniStoredProc;
         procedure FormClose(Sender: TObject; var Action: TCloseAction);
         procedure FormCreate(Sender: TObject);
         procedure btn_RePrintClick(Sender: TObject);
@@ -283,7 +285,7 @@ begin
             AppendTxt(DateTimeToStr(Now) + '-----------' + StrList_IMEISIM[0], LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
 
             case IMEIRel of
-                1:
+                1, 2:
                     begin
                         //更新DataRelativeSheet表
                         qry_UpdateDataRel.Close;
@@ -440,7 +442,7 @@ begin
                 end;
             end;
         //与SIM卡绑定
-        1:
+        1, 2:
             begin
                 if (edt_SIM.Text = '') then Exit;
                 imemoLines := mmoMEI.Lines.Count;
@@ -482,10 +484,9 @@ begin
                     edt_SIM.SetFocus;
                 end;
 
-                lbl10.Caption := IntToStr(imemoLines + 1);
             end;
     end;
-
+    lbl10.Caption := IntToStr(imemoLines + 1);
     //自动打印
     if (imemoLines + 1 = iPrintCount) and (chkAuto.Checked) then
     begin
@@ -579,7 +580,7 @@ begin
     end;}
     if (User.UserType <> 'SuperAdmin') then
     begin
-        btnPrint.Visible := False;
+        btnPrint.Enabled := False;
     end;
 
     StrList_IMEISIM := TStringList.Create; //
@@ -730,7 +731,7 @@ begin
                 EdtMEI.SetFocus;
             end;
         //与SIM卡绑定
-        1:
+        1, 2:
             begin
                 edt_SIM.Enabled := True;
                 edt_SIM.Text := '';
@@ -744,6 +745,14 @@ var
     strSendText: string;
     CommIndex: Integer;
     iIMEI, istart, iend: Integer;
+    iRecordCount: Integer;
+    iFuncTestPass: Integer;
+    iGPSPass: Integer;
+    iCoupleTestPass: Integer;
+     iWriteImeiPass: Integer;
+    iParamDownloadPass: Integer;
+     iAutoPass: Integer;
+    CheckResult: Integer;
 begin
     IMEIErrorPrompt('');
     //只可输入数字
@@ -811,7 +820,7 @@ begin
             //判断此IMEI是否关联了数据
             case IMEIRel of
                 //与SIM卡绑定
-                1:
+                1, 2:
                     begin
                         UniQuery_DataRelativeSheetByImei.Close;
                         UniQuery_DataRelativeSheetByImei.ParamByName('IMEI').value := edtMEI.Text;
@@ -819,6 +828,25 @@ begin
                         if (UniQuery_DataRelativeSheetByImei.RecordCount >= 1) then
                         begin
                             IMEIErrorPrompt('此机子已与其它SIM卡绑定,请联系管理员！');
+                            EdtMEI.Text := '';
+                            EdtMEI.SetFocus;
+                            Exit;
+                        end;
+                    end;
+
+            end;
+            case IMEIRel of
+                2:
+                    begin
+                        UniQuery_DataRelative_ByIMEI.Close;
+                        UniQuery_DataRelative_ByIMEI.ParamByName('IMEI').Value := EdtMEI.Text;
+                        UniQuery_DataRelative_ByIMEI.Open;
+                        iRecordCount := UniQuery_DataRelative_ByIMEI.RecordCount;
+                        UniQuery_DataRelative_ByIMEI.Close;
+
+                        if (iRecordCount) < 1 then
+                        begin
+                            IMEIErrorPrompt('此机子未与电池做绑定,请联系管理员！');
                             EdtMEI.Text := '';
                             EdtMEI.SetFocus;
                             Exit;
@@ -836,8 +864,75 @@ begin
 
             if (ch_CheckInfo.Checked) then
             begin
-            strSendText := 'Action=CheckTestPass#IMEI=' + edtMEI.Text + '#Tester=' + User.UserName + '#';
-            SendToServer(CommIndex, 'CheckTestPass', strSendText);
+                //strSendText := 'Action=CheckTestPass#IMEI=' + edtMEI.Text + '#Tester=' + User.UserName + '#';
+                //SendToServer(CommIndex, 'CheckTestPass', strSendText);
+                with spCheckTestpass do
+                begin
+                    Close;
+                    ParamByName('cIMEI').Value := EdtMEI.Text;
+                    ExecProc;
+                    //iAutoTestSMTPass:=Parameters.ParamByName('iAutoTestSMTPass').Value;
+                    iFuncTestPass := ParamByName('iFunctionPass').Value;
+                    iGPSPass := ParamByName('iGPSPass').Value;
+                    iCoupleTestPass := ParamByName('iCouplePass').Value;
+                    iWriteImeiPass := ParamByName('iWriteImeiPass').Value;
+                    iParamDownloadPass := ParamByName('iParamDownloadPass').Value;
+                    iAutoPass := ParamByName('iAutoPass').Value;
+                    CheckResult := ParamByName('cResult').Value;
+
+                    if CheckResult< 1 then
+                    begin
+                        if iFuncTestPass = 0 then
+                        begin
+                            chk_FuncTest.Checked := True;
+                        end;
+                        if iGPSPass = 0 then
+                        begin
+                            chk_GPSTest.Checked := True;
+                        end;
+                        if iCoupleTestPass = 0 then
+                        begin
+                            chk_CoupleTest.Checked := True;
+                        end;
+                        if iAutoPass = 0 then
+                        begin
+                            chk_AutoTest.Checked := True;
+                        end;
+                        if iWriteImeiPass = 0 then
+                        begin
+                            chk_WriteImei.Checked := True;
+
+                        end;
+                        if iParamDownloadPass = 0 then
+                        begin
+                            if chkMustParamterDownload.Checked then
+                            begin
+                                chk_ParamDownload.Checked := True;
+                            end
+                            else
+                            begin
+                                chk_ParamDownload.Checked := False;
+                                {if not (chk_FuncTest.Checked or chk_GPSTest.Checked or chk_CoupleTest.Checked or chk_WriteImei.Checked
+                                        or chk_AutoTest.Checked or chk_ParamDownload.Checked) then
+                                begin
+                                  AllowPrint();
+                                  GrpTestPass.Visible:=False;
+                                  Exit;
+                                end;}
+                            end;
+                        end;
+                        GrpTestPass.Visible := True;
+                        IMEIErrorPrompt('此机子其它测试项没测试通过');
+                    end
+                    else
+                    begin
+                        GrpTestPass.Visible := False;
+                        //SendNotifyMessage(Handle, WM_AllowPrint, 0, 0);
+                        //RefreseDisplay();
+                        AllowPrint();
+
+                    end;
+                end;
             end
             else
             begin

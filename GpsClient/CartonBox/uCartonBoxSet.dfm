@@ -1,6 +1,6 @@
 object frmCartonBoxSet: TfrmCartonBoxSet
-  Left = 518
-  Top = 277
+  Left = 357
+  Top = 245
   Width = 361
   Height = 178
   Caption = #25171#21360#21442#25968#35774#32622
@@ -46,7 +46,8 @@ object frmCartonBoxSet: TfrmCartonBoxSet
     TabOrder = 0
     OnChange = cbbPrintCountChange
     Items.Strings = (
-      '20')
+      '20'
+      '60')
   end
   object cbbPrintType: TComboBox
     Left = 102

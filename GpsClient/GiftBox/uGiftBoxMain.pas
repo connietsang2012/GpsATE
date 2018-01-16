@@ -243,8 +243,8 @@ begin
     lbl8.Caption := StrPrompt;
     if StrPrompt <> '' then
     begin
-        Windows.Beep(2000, 500);
-        Windows.Beep(2000, 500);
+        //Windows.Beep(2000, 500);
+        //Windows.Beep(2000, 500);
         edt_IMEI.Text := '';
         edt_SIM.Text := '';
     end;

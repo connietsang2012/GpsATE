@@ -1,6 +1,6 @@
 object frmClientMain: TfrmClientMain
-  Left = 113
-  Top = 237
+  Left = 119
+  Top = 181
   Width = 974
   Height = 778
   Align = alClient
@@ -230,12 +230,16 @@ object frmClientMain: TfrmClientMain
       Visible = False
       OnClick = ROM1Click
     end
+    object N2: TMenuItem
+      Action = ac_DataRelative
+    end
     object GiftBox: TMenuItem
       Action = ac_GiftBox
       Caption = #24425#30418#25171#21360
     end
     object CartonBox: TMenuItem
       Action = ac_CartonBoxSet
+      Caption = #21345#36890#31665
       object N12: TMenuItem
         Action = ac_CartonBoxSet
         Caption = #22522#26412#35774#32622
@@ -328,6 +332,10 @@ object frmClientMain: TfrmClientMain
     object ac_GiftBox: TAction
       Caption = 'ac_GiftBox'
       OnExecute = ac_GiftBoxExecute
+    end
+    object ac_DataRelative: TAction
+      Caption = #25968#25454#32465#23450
+      OnExecute = ac_DataRelativeExecute
     end
   end
   object tmrSocket_1: TTimer

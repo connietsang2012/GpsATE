@@ -1,6 +1,6 @@
 inherited frmAutoTestMain: TfrmAutoTestMain
-  Left = 194
-  Top = 140
+  Left = -39
+  Top = 155
   Width = 1036
   Height = 734
   Align = alClient
@@ -16110,12 +16110,14 @@ inherited frmAutoTestMain: TfrmAutoTestMain
         Height = 617
         Align = alRight
         TabOrder = 3
+        Visible = False
         object Label3: TLabel
           Left = 8
           Top = 144
           Width = 41
           Height = 13
           Caption = 'DB(Min):'
+          Visible = False
         end
         object Label4: TLabel
           Left = 8
@@ -16123,6 +16125,7 @@ inherited frmAutoTestMain: TfrmAutoTestMain
           Width = 44
           Height = 13
           Caption = 'DB(Max):'
+          Visible = False
         end
         object lblGpsDbMin: TLabel
           Left = 8
@@ -16136,6 +16139,7 @@ inherited frmAutoTestMain: TfrmAutoTestMain
           Font.Name = 'MS Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
+          Visible = False
         end
         object lblGpsDbMax: TLabel
           Left = 8
@@ -16149,6 +16153,7 @@ inherited frmAutoTestMain: TfrmAutoTestMain
           Font.Name = 'MS Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
+          Visible = False
         end
       end
     end
@@ -16948,5 +16953,29 @@ inherited frmAutoTestMain: TfrmAutoTestMain
   inherited Comm_4: TComm
     Left = 792
     Top = 7
+  end
+  object tmrGpsTimeout_1: TTimer
+    Enabled = False
+    OnTimer = tmrGpsTimeout_1Timer
+    Left = 918
+    Top = 48
+  end
+  object tmrGpsTimeout_2: TTimer
+    Enabled = False
+    OnTimer = tmrGpsTimeout_2Timer
+    Left = 950
+    Top = 48
+  end
+  object tmrGpsTimeout_3: TTimer
+    Enabled = False
+    OnTimer = tmrGpsTimeout_3Timer
+    Left = 974
+    Top = 48
+  end
+  object tmrGpsTimeout_4: TTimer
+    Enabled = False
+    OnTimer = tmrGpsTimeout_4Timer
+    Left = 998
+    Top = 48
   end
 end

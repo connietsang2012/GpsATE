@@ -355,7 +355,7 @@ begin
     begin
         GrpTestPass.Visible := False;
         SendNotifyMessage(Handle, WM_AllowPrint, 0, 0);
-        RefreseDisplay();
+        //RefreseDisplay();
         //AllowPrint();
 
     end;

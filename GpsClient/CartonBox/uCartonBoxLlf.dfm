@@ -1,9 +1,9 @@
 inherited frmCartonBoxLlf: TfrmCartonBoxLlf
-  Left = 144
-  Top = 104
+  Left = 135
+  Top = 107
   Width = 1036
-  Height = 749
-  Caption = #22269#20869#24086#32440'(20)'
+  Height = 703
+  Caption = #22269#20869#24086#32440
   OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
@@ -28,29 +28,175 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     Left = 0
     Top = 41
     Width = 1028
-    Height = 674
+    Height = 628
     Align = alClient
     object Label1: TLabel [0]
-      Left = 720
-      Top = 440
-      Width = 27
-      Height = 13
+      Left = 746
+      Top = 354
+      Width = 31
+      Height = 17
+      AutoSize = False
       Caption = #31665#21495':'
     end
     inherited grp1: TGroupBox
-      inherited EdtMEI: TEdit
+      Left = 22
+      Top = 104
+      Width = 899
+      Height = 113
+      object lbl_IMEI: TLabel [0]
+        Left = 352
+        Top = 16
+        Width = 80
+        Height = 32
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'IMEI:'
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -27
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label4: TLabel [1]
         Left = 8
+        Top = 17
+        Width = 80
+        Height = 32
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'SIM:'
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -27
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label8: TLabel [2]
+        Left = 8
+        Top = 57
+        Width = 80
+        Height = 32
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'PSIM:'
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -27
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label9: TLabel [3]
+        Left = 352
+        Top = 56
+        Width = 80
+        Height = 32
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'PIMEI:'
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -27
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+      end
+      inherited EdtMEI: TEdit
+        Tag = 1
+        Left = 436
+        Width = 245
+        Height = 32
+        Font.Color = clGray
+        Font.Height = -27
+        TabOrder = 1
+      end
+      object edt_SIM: TEdit
+        Left = 92
+        Top = 18
+        Width = 245
+        Height = 32
+        AutoSize = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clGray
+        Font.Height = -27
+        Font.Name = #23435#20307
+        Font.Style = [fsBold]
+        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+        MaxLength = 13
+        ParentFont = False
+        TabOrder = 0
+        OnKeyPress = edt_SIMKeyPress
+      end
+      object edt_preSim: TEdit
+        Left = 92
+        Top = 58
+        Width = 245
+        Height = 32
+        AutoSize = False
+        Color = clScrollBar
+        Enabled = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clGray
+        Font.Height = -27
+        Font.Name = #23435#20307
+        Font.Style = [fsBold]
+        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+        MaxLength = 13
+        ParentFont = False
+        TabOrder = 2
+        OnKeyPress = edt_SIMKeyPress
+      end
+      object edt_preIMEI: TEdit
+        Tag = 1
+        Left = 436
+        Top = 57
+        Width = 245
+        Height = 32
+        AutoSize = False
+        Color = clScrollBar
+        Enabled = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clGray
+        Font.Height = -27
+        Font.Name = #23435#20307
+        Font.Style = [fsBold]
+        ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+        MaxLength = 15
+        ParentFont = False
+        TabOrder = 3
+        OnKeyPress = EdtMEIKeyPress
       end
     end
     inherited grp2: TGroupBox
+      Left = 22
+      Top = 8
+      Height = 89
       inherited lbl10: TLabel
         Left = 318
       end
+      inherited lbl8: TLabel
+        Left = 15
+        Top = 47
+        Width = 690
+      end
+      object edt_IMEI1: TDBEdit
+        Left = 536
+        Top = 16
+        Width = 121
+        Height = 21
+        DataField = 'IMEI1'
+        DataSource = ds_SIM
+        TabOrder = 2
+      end
     end
     inherited grp3: TGroupBox
-      Height = 180
+      Left = 22
+      Top = 224
+      Height = 185
       inherited mmoMEI: TMemo
-        Height = 163
+        Height = 168
         Lines.Strings = (
           '1'
           '2'
@@ -75,13 +221,21 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
     end
     inherited grp4: TGroupBox
-      Left = 7
-      Top = 313
-      Width = 701
-      Height = 331
+      Left = 22
+      Top = 416
+      Width = 882
+      Height = 233
+      Caption = #20449#24687#21306
+      inherited lbl13: TLabel
+        Left = 637
+        Top = 261
+      end
+      inherited lbl12: TLabel
+        Top = 54
+      end
       object lbl11: TLabel [2]
         Left = 5
-        Top = 24
+        Top = 21
         Width = 60
         Height = 13
         Alignment = taRightJustify
@@ -91,8 +245,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ParentBiDiMode = False
       end
       object lbl14: TLabel [3]
-        Left = 303
-        Top = 24
+        Left = 599
+        Top = 21
         Width = 39
         Height = 13
         Alignment = taRightJustify
@@ -100,8 +254,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Caption = #39068#33394':'
       end
       object lbl15: TLabel [4]
-        Left = 303
-        Top = 52
+        Left = 599
+        Top = 55
         Width = 39
         Height = 13
         Alignment = taRightJustify
@@ -116,8 +270,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Caption = '-'
       end
       object lbl2: TLabel [6]
-        Left = 5
-        Top = 80
+        Left = 285
+        Top = 24
         Width = 60
         Height = 13
         Alignment = taRightJustify
@@ -127,8 +281,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ParentBiDiMode = False
       end
       object lbl3: TLabel [7]
-        Left = 303
-        Top = 80
+        Left = 599
+        Top = 88
         Width = 39
         Height = 13
         Alignment = taRightJustify
@@ -136,8 +290,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Caption = #26085#26399':'
       end
       object lbl4: TLabel [8]
-        Left = 5
-        Top = 108
+        Left = 285
+        Top = 60
         Width = 60
         Height = 13
         Alignment = taRightJustify
@@ -147,8 +301,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ParentBiDiMode = False
       end
       object lbl6: TLabel [9]
-        Left = 303
-        Top = 165
+        Left = 599
+        Top = 121
         Width = 39
         Height = 13
         Alignment = taRightJustify
@@ -157,7 +311,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       object lbl7: TLabel [10]
         Left = 5
-        Top = 230
+        Top = 188
         Width = 60
         Height = 13
         Alignment = taRightJustify
@@ -168,28 +322,50 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       inherited lbl16: TLabel
         Left = 0
-        Top = 194
+        Top = 155
         Width = 63
       end
       inherited lbl17: TLabel
         Left = 255
-        Top = 194
+        Top = 154
         Width = 20
         Caption = '__'
       end
       inherited lbl18: TLabel
         Left = 5
-        Top = 137
+        Top = 121
       end
       object Label3: TLabel
-        Left = 5
-        Top = 254
+        Left = 578
+        Top = 155
         Width = 60
         Height = 13
         Alignment = taRightJustify
         AutoSize = False
         BiDiMode = bdRightToLeft
         Caption = #22791#27880':'
+        ParentBiDiMode = False
+      end
+      object Label5: TLabel
+        Left = 0
+        Top = 88
+        Width = 65
+        Height = 13
+        Alignment = taRightJustify
+        AutoSize = False
+        BiDiMode = bdRightToLeft
+        Caption = 'SIM'#21495#27573':'
+        ParentBiDiMode = False
+      end
+      object Label6: TLabel
+        Left = 253
+        Top = 83
+        Width = 20
+        Height = 13
+        Alignment = taRightJustify
+        AutoSize = False
+        BiDiMode = bdRightToLeft
+        Caption = '---'
         ParentBiDiMode = False
       end
       object EdtSoftModel: TDBEdit
@@ -203,9 +379,9 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         TabOrder = 0
       end
       object EdtColor: TDBEdit
-        Left = 352
+        Left = 648
         Top = 16
-        Width = 217
+        Width = 210
         Height = 21
         DataField = 'Color'
         DataSource = DS_ManuOrderParam
@@ -214,7 +390,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       object EdtBoxNum: TDBEdit
         Left = 72
-        Top = 48
+        Top = 49
         Width = 81
         Height = 21
         DataField = 'BoxNo1'
@@ -224,7 +400,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       object EdtBoxNum1: TDBEdit
         Left = 168
-        Top = 48
+        Top = 49
         Width = 113
         Height = 21
         DataField = 'BoxNo2'
@@ -233,9 +409,9 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         TabOrder = 3
       end
       object EdtWeight: TDBEdit
-        Left = 352
-        Top = 48
-        Width = 217
+        Left = 648
+        Top = 49
+        Width = 210
         Height = 21
         DataField = 'Weight'
         DataSource = DS_ManuOrderParam
@@ -243,8 +419,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         TabOrder = 4
       end
       object Edtzhidan: TDBEdit
-        Left = 72
-        Top = 76
+        Left = 352
+        Top = 16
         Width = 217
         Height = 21
         DataField = 'ZhiDan'
@@ -253,9 +429,9 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         TabOrder = 5
       end
       object EdtDate: TDBEdit
-        Left = 352
-        Top = 76
-        Width = 217
+        Left = 648
+        Top = 83
+        Width = 210
         Height = 21
         DataField = 'ProductDate'
         DataSource = DS_ManuOrderParam
@@ -263,9 +439,9 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         TabOrder = 6
       end
       object EdtProNo: TDBEdit
-        Left = 72
-        Top = 103
-        Width = 497
+        Left = 352
+        Top = 49
+        Width = 217
         Height = 21
         DataField = 'ProductNo'
         DataSource = DS_ManuOrderParam
@@ -274,7 +450,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       object EdtVersion: TDBEdit
         Left = 72
-        Top = 131
+        Top = 116
         Width = 497
         Height = 21
         DataField = 'Version'
@@ -283,8 +459,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         TabOrder = 8
       end
       object EdtTac: TDBEdit
-        Left = 72
-        Top = 160
+        Left = 704
+        Top = 256
         Width = 217
         Height = 21
         DataField = 'TACInfo'
@@ -293,9 +469,9 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         TabOrder = 9
       end
       object EdtQty: TDBEdit
-        Left = 352
-        Top = 160
-        Width = 217
+        Left = 648
+        Top = 117
+        Width = 210
         Height = 21
         DataField = 'Qty'
         DataSource = DS_ManuOrderParam
@@ -304,7 +480,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       object Edt_IMEISTART: TDBEdit
         Left = 72
-        Top = 192
+        Top = 150
         Width = 185
         Height = 21
         DataField = 'IMEIStart'
@@ -314,7 +490,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       object Edt_IMEIEND: TDBEdit
         Left = 280
-        Top = 193
+        Top = 150
         Width = 185
         Height = 21
         DataField = 'IMEIEnd'
@@ -324,7 +500,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end
       object EdtCpName: TDBEdit
         Left = 72
-        Top = 223
+        Top = 183
         Width = 497
         Height = 21
         DataField = 'CompanyName'
@@ -333,37 +509,83 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         TabOrder = 13
       end
       object edt_Remark1: TDBEdit
-        Left = 72
-        Top = 252
-        Width = 497
+        Left = 648
+        Top = 150
+        Width = 210
         Height = 21
         DataField = 'Remark1'
         DataSource = DS_ManuOrderParam
         Enabled = False
         TabOrder = 14
       end
+      object Edt_SIMSTART: TDBEdit
+        Left = 72
+        Top = 83
+        Width = 185
+        Height = 21
+        DataField = 'SIMStart'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 15
+      end
+      object Edt_SIMEND: TDBEdit
+        Left = 280
+        Top = 83
+        Width = 161
+        Height = 21
+        DataField = 'SIMEnd'
+        DataSource = DS_ManuOrderParam
+        Enabled = False
+        TabOrder = 16
+      end
+    end
+    inherited GrpTestPass: TGroupBox
+      Left = 756
+      Top = 216
+      Height = 129
+    end
+    inherited chkMustParamterDownload: TCheckBox
+      Left = 739
+      Top = 8
+    end
+    inherited medtParamterDownload: TMaskEdit
+      Left = 739
+      Top = 32
+    end
+    inherited btnParamterDownload: TBitBtn
+      Top = 56
     end
     object edt_RePrint: TEdit
-      Left = 768
-      Top = 432
-      Width = 153
+      Left = 777
+      Top = 350
+      Width = 113
       Height = 21
       Enabled = False
       TabOrder = 8
     end
     object btn_RePrint: TButton
-      Left = 720
-      Top = 464
-      Width = 209
+      Left = 744
+      Top = 376
+      Width = 161
       Height = 25
       Caption = #37325#25171
       TabOrder = 9
       OnClick = btn_RePrintClick
     end
+    object ch_CheckInfo: TCheckBox
+      Left = 752
+      Top = 80
+      Width = 97
+      Height = 17
+      Caption = #26816#26597#20449#24687
+      Checked = True
+      State = cbChecked
+      TabOrder = 10
+    end
   end
   object StringGrid1: TStringGrid [3]
-    Left = 749
-    Top = 252
+    Left = 917
+    Top = -12
     Width = 161
     Height = 151
     ColCount = 11
@@ -402,6 +624,14 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       AutoSize = False
       Caption = #21046#21333#21495':'
     end
+    object lblrel: TLabel
+      Left = 328
+      Top = 16
+      Width = 65
+      Height = 13
+      AutoSize = False
+      Caption = #32465#23450#20851#31995':'
+    end
     object cbManuOrder: TComboBox
       Left = 112
       Top = 8
@@ -414,6 +644,16 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       Items.Strings = (
         #26080
         'IMEI'#19982'SIM'#21345#32465#23450)
+    end
+    object cbb_Rel: TDBLookupComboBox
+      Left = 392
+      Top = 8
+      Width = 145
+      Height = 21
+      DataField = 'IMEIRelDesc'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 1
     end
   end
   inherited UniQuery_IMEI: TUniQuery
@@ -512,7 +752,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         Name = 'IMEI'
       end>
   end
-  object unqry1: TUniQuery [12]
+  object unqry1: TUniQuery [10]
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
       'SELECT *  '
@@ -582,8 +822,8 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       '  FROM Gps_CartonBoxTwenty_Result'
       '  where BoxNo=:BoxNo and ZhiDan=:ZhiDan'
       'order by id')
-    Left = 744
-    Top = 400
+    Left = 736
+    Top = 624
     ParamData = <
       item
         DataType = ftUnknown
@@ -697,27 +937,9 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
   object UniQuery_ManuOrderParam: TUniQuery
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
-      'SELECT ZhiDan'
-      '      ,SoftModel'
-      '      ,BoxNo1'
-      '      ,BoxNo2'
-      '      ,ProductDate'
-      '      ,Color'
-      '      ,Weight'
-      '      ,Qty'
-      '      ,ProductNo'
-      '      ,Version'
-      '      ,IMEIStart'
-      '      ,IMEIEnd'
-      '      ,TACInfo'
-      '      ,CompanyName'
-      '      ,Remark1'
-      '      ,Remark2'
-      '      ,Remark3'
-      '      ,Remark4'
-      '      ,Remark5'
+      'SELECT *'
       '  FROM Gps_ManuOrderParam'
-      '  WHERE ZhiDan=:ZhiDan')
+      'WHERE ZhiDan=:ZhiDan')
     Left = 712
     Top = 8
     ParamData = <
@@ -814,6 +1036,27 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       FieldName = 'Remark5'
       Size = 50
     end
+    object UniQuery_ManuOrderParamIMEIRelDesc: TStringField
+      FieldKind = fkLookup
+      FieldName = 'IMEIRelDesc'
+      LookupDataSet = UniQuery_IMEIRel
+      LookupKeyFields = 'IMEIRelNo'
+      LookupResultField = 'IMEIRelDes'
+      KeyFields = 'IMEIRel'
+      Lookup = True
+    end
+    object UniQuery_ManuOrderParamIMEIRel: TIntegerField
+      FieldName = 'IMEIRel'
+      Required = True
+    end
+    object UniQuery_ManuOrderParamSIMStart: TStringField
+      FieldName = 'SIMStart'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamSIMEnd: TStringField
+      FieldName = 'SIMEnd'
+      Size = 50
+    end
   end
   object UniQuery_IMEIRel: TUniQuery
     Connection = DMMain.UniConGpsTest
@@ -822,6 +1065,7 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     Left = 760
     Top = 8
     object UniQuery_IMEIRelRelId: TIntegerField
+      AutoGenerateValue = arAutoInc
       FieldName = 'RelId'
       ReadOnly = True
       Required = True
@@ -882,5 +1126,213 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       Required = True
       Size = 8
     end
+  end
+  object UniQuery_DataRelativeSheetByImei: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT *'
+      'FROM DataRelativeSheet'
+      'WHERE IMEI1=:IMEI')
+    Left = 728
+    Top = 128
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end>
+  end
+  object UniQuery_SIM: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT IMEI1  '
+      'FROM DataRelativeSheet'
+      'WHERE IMEI3=:SIMNo'
+      'ORDER BY IMEI1 DESC')
+    Left = 520
+    Top = 96
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'SIMNO'
+      end>
+    object UniQuery_SIMIMEI1: TStringField
+      FieldName = 'IMEI1'
+      Required = True
+      Size = 50
+    end
+  end
+  object UniQuery_DataRelativeSheetBySIM: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT IMEI1 From DataRelativeSheet'
+      'WHERE IMEI1=:SIMNO'
+      'ORDER BY IMEI1 DESC')
+    Left = 560
+    Top = 128
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'SIMNO'
+      end>
+  end
+  object qry_UpdateDataRel: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'UPDATE DataRelativeSheet'
+      'SET IMEI1=:IMEI'
+      'WHERE IMEI3=:SIMNo')
+    Left = 728
+    Top = 168
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'SIMNO'
+      end>
+  end
+  object btappAutoPrint: TBTApplication
+    AutoConnect = True
+    ConnectKind = ckRunningOrNew
+    Left = 600
+    Top = 88
+  end
+  object btappBtnPrint: TBTApplication
+    AutoConnect = True
+    ConnectKind = ckRunningOrNew
+    Left = 632
+    Top = 88
+  end
+  object sp_CheckSim: TUniStoredProc
+    StoredProcName = 'CheckSIM'
+    Connection = DMMain.UniConGpsTest
+    Left = 360
+    Top = 128
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cIMEI'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'cSIM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'iRecordCount'
+        ParamType = ptInputOutput
+        Value = 0
+      end>
+    CommandStoredProcName = 'CheckSIM'
+  end
+  object ds_SIM: TDataSource
+    DataSet = UniQuery_SIM
+    Left = 557
+    Top = 93
+  end
+  object UniQuery_DataRelativeSheetByImeiSIM: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT *'
+      'FROM DataRelativeSheet'
+      'WHERE IMEI1=:IMEI and IMEI3=:SIMNO')
+    Left = 768
+    Top = 128
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'SIMNO'
+      end>
+  end
+  object UniQuery_DataRelative_ByIMEI: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT *  '
+      'FROM DataRelative_BAT'
+      'WHERE IMEI=:IMEI')
+    Left = 880
+    Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end>
+  end
+  object spCheckTestpass: TUniStoredProc
+    StoredProcName = 'CheckTestPass'
+    Connection = DMMain.UniConGpsTest
+    Left = 832
+    Top = 328
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cIMEI'
+        ParamType = ptInput
+        Size = 15
+      end
+      item
+        DataType = ftInteger
+        Name = 'iFunctionPass'
+        ParamType = ptInputOutput
+        Value = 0
+      end
+      item
+        DataType = ftInteger
+        Name = 'iGPSPass'
+        ParamType = ptInputOutput
+        Value = 0
+      end
+      item
+        DataType = ftInteger
+        Name = 'iCouplePass'
+        ParamType = ptInputOutput
+        Value = 0
+      end
+      item
+        DataType = ftInteger
+        Name = 'iWriteImeiPass'
+        ParamType = ptInputOutput
+        Value = 0
+      end
+      item
+        DataType = ftInteger
+        Name = 'iParamDownloadPass'
+        ParamType = ptInputOutput
+        Value = 0
+      end
+      item
+        DataType = ftInteger
+        Name = 'iAutoPass'
+        ParamType = ptInputOutput
+        Value = 0
+      end
+      item
+        DataType = ftInteger
+        Name = 'cResult'
+        ParamType = ptInputOutput
+        Value = 0
+      end>
+    CommandStoredProcName = 'CheckTestPass'
+    StoredProcIsQuery = True
   end
 end
