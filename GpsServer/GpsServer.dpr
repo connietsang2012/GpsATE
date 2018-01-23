@@ -41,7 +41,8 @@ uses
   uManuOrderParam in 'ManuOrder\uManuOrderParam.pas' {frmManuOrderParam},
   uCartonBoxResult in 'CartonBoxResult\uCartonBoxResult.pas' {frmCartonBoxResult},
   uDataRelative_BAT in 'DataRelResult\uDataRelative_BAT.pas' {frmDataRelative_BAT},
-  uDataRelResult in 'DataRelResult\uDataRelResult.pas' {frmDataRelResult};
+  uDataRelResult in 'DataRelResult\uDataRelResult.pas' {frmDataRelResult},
+  uDataRelative_VIP in 'DataRelResult\uDataRelative_VIP.pas' {frmDataRelative_VIP};
 
 {$R *.res}
 
@@ -54,6 +55,7 @@ begin
   Application.CreateForm(TfrmCartonBoxResult, frmCartonBoxResult);
   Application.CreateForm(TfrmDataRelative_BAT, frmDataRelative_BAT);
   Application.CreateForm(TfrmDataRelResult, frmDataRelResult);
+  Application.CreateForm(TfrmDataRelative_VIP, frmDataRelative_VIP);
   Application.ShowMainForm:=False;
   //œ‘ æµ«¬ºΩÁ√Ê
   Application.CreateForm(TfrmClientLogin, frmClientLogin);

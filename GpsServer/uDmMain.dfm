@@ -9,10 +9,6 @@ object DMMain: TDMMain
   object UniConGpsTest: TUniConnection
     ProviderName = 'SQL Server'
     Database = 'GPSTest'
-    Username = 'sa'
-    Password = 'sa123ABC'
-    Server = '10.10.11.130'
-    Connected = True
     ConnectDialog = UniConDGpsTest
     LoginPrompt = False
     Left = 64

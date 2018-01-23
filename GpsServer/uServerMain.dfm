@@ -223,6 +223,9 @@ object frmServerMain: TfrmServerMain
           Item = dxnvbrtmDataRelative_BAT
         end
         item
+          Item = dxnvbrtmDataRelative_VIP
+        end
+        item
           Item = dxnvbrtmDataRel
         end>
     end
@@ -356,6 +359,10 @@ object frmServerMain: TfrmServerMain
     end
     object dxnvbrtmDataRelative_BAT: TdxNavBarItem
       Action = ac_DataRelative_BAT
+    end
+    object dxnvbrtmDataRelative_VIP: TdxNavBarItem
+      Action = ac_DataRelative_VIP
+      Caption = '  '#26381#21153#21345#25968#25454#32465#23450
     end
   end
   object pnl1: TPanel
@@ -2896,6 +2903,10 @@ object frmServerMain: TfrmServerMain
     object ac_DataRelative_BAT: TAction
       Caption = '  '#30005#27744#25968#25454#26597#35810
       OnExecute = ac_DataRelative_BATExecute
+    end
+    object ac_DataRelative_VIP: TAction
+      Caption = #26381#21153#21345#25968#25454#32465#23450
+      OnExecute = ac_DataRelative_VIPExecute
     end
   end
   object TcpServer: TServerSocket

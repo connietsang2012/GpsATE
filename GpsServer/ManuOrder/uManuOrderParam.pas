@@ -103,6 +103,11 @@ type
     DBEdit26: TDBEdit;
     UniQuery_ManuOrderParamBATStart: TStringField;
     UniQuery_ManuOrderParamBATEnd: TStringField;
+    UniQuery_ManuOrderParamVIPStart: TStringField;
+    UniQuery_ManuOrderParamVIPEnd: TStringField;
+    Label23: TLabel;
+    DBEdit27: TDBEdit;
+    DBEdit28: TDBEdit;
   private
     { Private declarations }
   public
