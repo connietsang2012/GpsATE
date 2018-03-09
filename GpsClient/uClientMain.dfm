@@ -235,6 +235,9 @@ object frmClientMain: TfrmClientMain
     object N2: TMenuItem
       Action = ac_DataRelative
     end
+    object SIM1: TMenuItem
+      Action = ac_SIMRel
+    end
     object GiftBox: TMenuItem
       Action = ac_GiftBox
       Caption = #24425#30418#25171#21360
@@ -341,6 +344,10 @@ object frmClientMain: TfrmClientMain
     object ac_DataRelative: TAction
       Caption = #25968#25454#32465#23450
       OnExecute = ac_DataRelativeExecute
+    end
+    object ac_SIMRel: TAction
+      Caption = 'SIM'#21345#32465#23450
+      OnExecute = ac_SIMRelExecute
     end
   end
   object tmrSocket_1: TTimer

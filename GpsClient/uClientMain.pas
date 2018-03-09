@@ -140,7 +140,9 @@ type
     spUpdateForm: TUniStoredProc;
     spParamDownUpdateForm1: TADOStoredProc;
     spParamDownUpdateForm: TUniStoredProc;
-    spSMTUpdateForm: TUniStoredProc; ////线程
+    spSMTUpdateForm: TUniStoredProc;
+    SIM1: TMenuItem;
+    ac_SIMRel: TAction; ////线程
 
         //==================================================================//
         procedure FormCreate(Sender: TObject);
@@ -215,6 +217,7 @@ type
         procedure ParamConfigClick(Sender: TObject);
         procedure ac_GiftBoxExecute(Sender: TObject);
         procedure ac_DataRelativeExecute(Sender: TObject);
+    procedure ac_SIMRelExecute(Sender: TObject);
 
     private
         { Private declarations }
@@ -249,7 +252,7 @@ uses
     uCoupleTest, uWriteImeiTest, uParamDownloadTest,
     uBasicTestParam, uClientDataModuleForm, uTwiceTest, uAutoTest, uDmMain,
     uAutoTestSMT, uSMTIQCTest, uIncomCheck, uReadBack, uParamLoadConfig,
-    uGiftBoxMain, uCartonBoxLlf, uDataRelative;
+    uGiftBoxMain, uCartonBoxLlf, uDataRelative, uSIMRel;
 
 {$R *.dfm}
 //==================================================================//
@@ -914,6 +917,14 @@ begin
                                                                         begin
                                                                             Application.ProcessMessages;
                                                                             TfrmDataRelative(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex], CommIndex);
+                                                                            Application.ProcessMessages;
+
+                                                                        end
+                                                                        else
+                                                                        if strPlanName = 'SIMRel' then
+                                                                        begin
+                                                                            Application.ProcessMessages;
+                                                                            TfrmSIMRel(CurrentFrom).MsgTestPass(StrListNumberSign[CommIndex], CommIndex);
                                                                             Application.ProcessMessages;
 
                                                                         end
@@ -1701,6 +1712,15 @@ begin
     begin
         frmDataRelative := TfrmDataRelative.Create(Self);
         ShowForm(frmDataRelative);
+    end;
+end;
+
+procedure TfrmClientMain.ac_SIMRelExecute(Sender: TObject);
+begin
+   if (CurrentFrom = nil) or (CurrentFrom.ClassName <> 'TfrmSIMRel') then
+    begin
+        frmSIMRel := TfrmSIMRel.Create(Self);
+        ShowForm(frmSIMRel);
     end;
 end;
 

@@ -1,6 +1,6 @@
 inherited frmCartonBoxLlf: TfrmCartonBoxLlf
-  Left = 64
-  Top = 170
+  Left = 259
+  Top = 165
   Width = 1036
   Height = 703
   Caption = #22269#20869#24086#32440
@@ -1212,36 +1212,6 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
     ConnectKind = ckRunningOrNew
     Left = 632
     Top = 88
-  end
-  object sp_CheckSim: TUniStoredProc
-    StoredProcName = 'CheckSIM'
-    Connection = DMMain.UniConGpsTest
-    Left = 360
-    Top = 128
-    ParamData = <
-      item
-        DataType = ftInteger
-        Name = 'RETURN_VALUE'
-        ParamType = ptResult
-        Value = 0
-      end
-      item
-        DataType = ftString
-        Name = 'cIMEI'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftString
-        Name = 'cSIM'
-        ParamType = ptInput
-      end
-      item
-        DataType = ftInteger
-        Name = 'iRecordCount'
-        ParamType = ptInputOutput
-        Value = 0
-      end>
-    CommandStoredProcName = 'CheckSIM'
   end
   object ds_SIM: TDataSource
     DataSet = UniQuery_SIM

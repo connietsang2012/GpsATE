@@ -26,7 +26,6 @@ uses
   uTwiceTest in 'TwiceTest\uTwiceTest.pas' {frmTwiceTest},
   ufrmMessageBox in 'AutoTest\ufrmMessageBox.pas' {frmMessagebox},
   uAutoTestSMT in 'AutoTest(SMT)\uAutoTestSMT.pas' {frmAutoTestSMTMain},
-  uSMTIQCTest in 'SMTIQC\uSMTIQCTest.pas' {frmSMTIQCTest},
   uAutoTest in 'AutoTest\uAutoTest.pas' {frmAutoTestMain},
   uIncomCheck in 'uIncomCheck.pas' {frmIncomCheck},
   uLongWaitTrd in 'uLongWaitTrd.pas',
@@ -34,7 +33,9 @@ uses
   uPrintProcess in 'uPrintProcess.pas' {frmPrintProcess},
   uParamLoadConfig in 'ParamLoadConfig\uParamLoadConfig.pas' {frmParamDownLoadConfig},
   uGiftBoxMain in 'GiftBox\uGiftBoxMain.pas' {frmGiftBoxMain},
-  uDataRelative in 'DataRelative\uDataRelative.pas' {frmDataRelative};
+  uDataRelative in 'DataRelative\uDataRelative.pas' {frmDataRelative},
+  uSMTIQCTest in 'SMTIQC\uSMTIQCTest.pas' {frmSMTIQCTest},
+  uSIMRel in 'DataRelative\uSIMRel.pas' {frmSIMRel};
 
 {$R *.res}
 var
@@ -48,6 +49,7 @@ begin
         Application.Initialize;
         Application.CreateForm(TDMMain, DMMain);
   Application.CreateForm(TfrmClientMain, frmClientMain);
+  Application.CreateForm(TfrmSIMRel, frmSIMRel);
   Application.ShowMainForm:=False;
           
         //œ‘ æµ«¬ºΩÁ√Ê

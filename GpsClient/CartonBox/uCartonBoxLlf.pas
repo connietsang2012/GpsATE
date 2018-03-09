@@ -139,7 +139,6 @@ type
         edt_preSim: TEdit;
         Label9: TLabel;
         edt_preIMEI: TEdit;
-        sp_CheckSim: TUniStoredProc;
         UniQuery_SIMIMEI1: TStringField;
         edt_IMEI1: TDBEdit;
         ds_SIM: TDataSource;
@@ -293,10 +292,10 @@ begin
                 1, 2, 3:
                     begin
                         //更新DataRelativeSheet表
-                        qry_UpdateDataRel.Close;
+                        {qry_UpdateDataRel.Close;
                         qry_UpdateDataRel.ParamByName('IMEI').Value := StrList_IMEISIM[0];
                         qry_UpdateDataRel.ParamByName('SIMNo').Value := StrList_IMEISIM[1];
-                        qry_UpdateDataRel.Execute;
+                        qry_UpdateDataRel.Execute; }
 
                         //查看DataRelativeSheet表是否更改
                         UniQuery_DataRelativeSheetByImeiSIM.Close;
@@ -307,7 +306,7 @@ begin
                         UniQuery_DataRelativeSheetByImeiSIM.Close;
                         if (iRecordCount < 1) then
                         begin
-                            IMEIErrorPrompt('IMEI与SIM绑定失败,请联系管理员!');
+                            IMEIErrorPrompt('IMEI未与SIM绑定,请联系管理员!');
                             Exit;
                         end
                     end;
@@ -523,10 +522,10 @@ begin
                 1, 2, 3:
                     begin
                         //更新DataRelativeSheet表
-                        qry_UpdateDataRel.Close;
+                        {qry_UpdateDataRel.Close;
                         qry_UpdateDataRel.ParamByName('IMEI').Value := StrList_IMEISIM[0];
                         qry_UpdateDataRel.ParamByName('SIMNo').Value := StrList_IMEISIM[1];
-                        qry_UpdateDataRel.Execute;
+                        qry_UpdateDataRel.Execute; }
 
                         //查看DataRelativeSheet表是否更改
                         UniQuery_DataRelativeSheetByImeiSIM.Close;
@@ -537,7 +536,7 @@ begin
                         UniQuery_DataRelativeSheetByImeiSIM.Close;
                         if (iRecordCount < 1) then
                         begin
-                            IMEIErrorPrompt('IMEI与SIM绑定失败,请联系管理员!');
+                            IMEIErrorPrompt('IMEI未与SIM绑定,请联系管理员!');
                             Exit;
                         end
                     end;
@@ -664,10 +663,10 @@ begin
                 1, 2, 3:
                     begin
                         //更新DataRelativeSheet表
-                        qry_UpdateDataRel.Close;
+                        {qry_UpdateDataRel.Close;
                         qry_UpdateDataRel.ParamByName('IMEI').Value := StrList_IMEISIM[0];
                         qry_UpdateDataRel.ParamByName('SIMNo').Value := StrList_IMEISIM[1];
-                        qry_UpdateDataRel.Execute;
+                        qry_UpdateDataRel.Execute;}
 
                         //查看DataRelativeSheet表是否更改
                         UniQuery_DataRelativeSheetByImeiSIM.Close;
@@ -788,7 +787,8 @@ begin
         begin
             EdtMEI.Text := '';
             EdtMEI.SetFocus;
-            MessageBox(0, PCHAR('当前IMEI在箱号' + UniQuery_IMEI_20.FieldByName('BoxNo').AsString + '中已经扫描过请勿重复扫描'), '友情提醒,数据重复', mb_OK);
+            IMEIErrorPrompt('当前IMEI在箱号' + UniQuery_IMEI_20.FieldByName('BoxNo').AsString + '中已经扫描过请勿重复扫描');
+            //MessageBox(0, PCHAR('当前IMEI在箱号' + UniQuery_IMEI_20.FieldByName('BoxNo').AsString + '中已经扫描过请勿重复扫描'), '友情提醒,数据重复', mb_OK);
             Exit;
         end;
     end;
@@ -828,7 +828,7 @@ begin
                 end;
                 IMEIErrorPrompt('');
 
-                //查看IMEI是否打印过
+                {//查看IMEI是否打印过
                 UniQuery_DataRelativeSheetBySIM.Close;
                 UniQuery_DataRelativeSheetBySIM.ParamByName('SIMNO').Value := Edt_SIM.Text;
                 UniQuery_DataRelativeSheetBySIM.Open;
@@ -838,7 +838,7 @@ begin
                 begin
                     MessageBox(0, PCHAR('当前SIM已绑定!'), '友情提醒,数据重复', mb_OK);
                     Exit;
-                end;
+                end;}
 
                 if (edtMEI.Text <> '') and (edt_SIM.Text <> '') then
                 begin
@@ -1363,12 +1363,13 @@ begin
                 //与SIM卡绑定
                 1, 2, 3:
                     begin
-                        UniQuery_DataRelativeSheetByImei.Close;
-                        UniQuery_DataRelativeSheetByImei.ParamByName('IMEI').value := edtMEI.Text;
-                        UniQuery_DataRelativeSheetByImei.Open;
-                        if (UniQuery_DataRelativeSheetByImei.RecordCount >= 1) then
+                        UniQuery_DataRelativeSheetByImeiSIM.Close;
+                        UniQuery_DataRelativeSheetByImeiSIM.ParamByName('IMEI').value := edtMEI.Text;
+                        UniQuery_DataRelativeSheetByImeiSIM.ParamByName('SIMNO').value := edt_SIM.Text;
+                        UniQuery_DataRelativeSheetByImeiSIM.Open;
+                        if (UniQuery_DataRelativeSheetByImeiSIM.RecordCount < 1) then
                         begin
-                            IMEIErrorPrompt('此机子已与其它SIM卡绑定,请联系管理员！');
+                            IMEIErrorPrompt('此机子不是和这个SIM卡绑定,请联系管理员！');
                             //EdtMEI.Text := '';
                             //EdtMEI.SetFocus;
                             Exit;
@@ -1591,18 +1592,11 @@ begin
             UniQuery_SIM.Open;
             iRecordCount := UniQuery_SIM.RecordCount;
 
-            //判断SIM卡号是否存在
-            if ((iRecordCount <= 0)) then
-            begin
-                IMEIErrorPrompt('SIM卡号不存在!');
-                edt_SIM.Text := '';
-                edt_SIM.SetFocus;
-                Exit;
-            end;
+
             //SIM是否与其他IMEI绑定
-            if (edt_SIM.Text <> UniQuery_SIM.FieldByName('IMEI1').AsString) then
+            if (edt_SIM.Text = UniQuery_SIM.FieldByName('IMEI1').AsString) then
             begin
-                IMEIErrorPrompt('SIM已经与其他IMEI绑定!');
+                IMEIErrorPrompt('SIM未与其他IMEI绑定!');
                 edt_SIM.Text := '';
                 edt_SIM.SetFocus;
                 Exit;
