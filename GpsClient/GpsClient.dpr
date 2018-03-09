@@ -48,8 +48,6 @@ begin
         Application.Initialize;
         Application.CreateForm(TDMMain, DMMain);
   Application.CreateForm(TfrmClientMain, frmClientMain);
-  Application.CreateForm(TfrmMessagebox, frmMessagebox);
-  Application.CreateForm(TfrmDataRelative, frmDataRelative);
   Application.ShowMainForm:=False;
           
         //œ‘ æµ«¬ºΩÁ√Ê

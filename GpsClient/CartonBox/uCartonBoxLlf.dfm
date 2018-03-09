@@ -1,5 +1,5 @@
 inherited frmCartonBoxLlf: TfrmCartonBoxLlf
-  Left = 135
+  Left = 93
   Top = 107
   Width = 1036
   Height = 703
@@ -1334,5 +1334,19 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       end>
     CommandStoredProcName = 'CheckTestPass'
     StoredProcIsQuery = True
+  end
+  object UniQuery_DataRelative_VIP_ByIMEI: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT *  '
+      'FROM DataRelative_VIP'
+      'WHERE IMEI=:IMEI')
+    Left = 880
+    Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end>
   end
 end

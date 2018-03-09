@@ -11,12 +11,12 @@ type
   TDMMain = class(TDataModule)
     UniConGpsTest: TUniConnection;
     UniConDGpsTest: TUniConnectDialog;
-    SQLServerUniGpsTest: TSQLServerUniProvider;
     UniConnectionAutoTest: TUniConnection;
     UniConDAutoTest: TUniConnectDialog;
     AccessUniAutoTest: TAccessUniProvider;
     conConnGpsTest: TADOConnection;
     con1: TUniConnection;
+    SQLServerUniGpsTest: TSQLServerUniProvider;
     procedure DataModuleDestroy(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
   private

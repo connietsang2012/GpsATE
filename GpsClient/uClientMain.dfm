@@ -1,7 +1,7 @@
 object frmClientMain: TfrmClientMain
-  Left = 119
-  Top = 181
-  Width = 974
+  Left = 196
+  Top = 125
+  Width = 1036
   Height = 778
   Align = alClient
   Caption = #29983#20135#21806#21518#30417#25511#31995#32479'('#23458#25143#31471') '
@@ -23,7 +23,7 @@ object frmClientMain: TfrmClientMain
   object status_Main: TStatusBar
     Left = 0
     Top = 697
-    Width = 966
+    Width = 1028
     Height = 27
     Panels = <
       item
@@ -43,7 +43,7 @@ object frmClientMain: TfrmClientMain
   object PCForm: TPageControl
     Left = 0
     Top = 0
-    Width = 966
+    Width = 1028
     Height = 629
     ActivePage = ts1
     Align = alClient
@@ -85,7 +85,7 @@ object frmClientMain: TfrmClientMain
   object pnlBottom: TPanel
     Left = 0
     Top = 629
-    Width = 966
+    Width = 1028
     Height = 68
     Align = alBottom
     TabOrder = 2
@@ -93,7 +93,7 @@ object frmClientMain: TfrmClientMain
     object grpSocketLog: TGroupBox
       Left = 457
       Top = 1
-      Width = 508
+      Width = 570
       Height = 66
       Align = alClient
       Caption = #26381#21153#22120#31471#20449#24687
@@ -101,7 +101,7 @@ object frmClientMain: TfrmClientMain
       object mmoTcpLog: TMemo
         Left = 2
         Top = 15
-        Width = 504
+        Width = 566
         Height = 49
         Align = alClient
         ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -197,28 +197,30 @@ object frmClientMain: TfrmClientMain
       Action = ac_GPSTest
       Visible = False
     end
+    object N1: TMenuItem
+      Caption = #21151#33021#27979#35797#20301'('#19968#27979')'
+      OnClick = ac_AutoTestExecute
+    end
     object SMT1: TMenuItem
       Action = ac_AutoTestSMT
+      Caption = #21151#33021#27979#35797#20301'('#20108#27979')'
     end
     object SMTIQC: TMenuItem
       Action = ac_SMTIQC
       Caption = 'SMT OQC'#27979#35797#20301
+      Visible = False
     end
     object CoupleTest: TMenuItem
       Action = ac_CoupleTest
+      Visible = False
     end
     object ParamDownload: TMenuItem
       Action = ac_ParamDownloadTest
-    end
-    object N1: TMenuItem
-      Caption = #33258#21160#27979#35797#20301
-      OnClick = ac_AutoTestExecute
+      Caption = 'IMEI'#23545#27604'/'#36719#20214#19979#36733#21442#25968#20301
     end
     object IMEI1: TMenuItem
       Action = ac_WriteImeiTest
-    end
-    object Twice: TMenuItem
-      Action = ac_Twice
+      Visible = False
     end
     object Incoming: TMenuItem
       Action = ac_IncomCheck
@@ -250,6 +252,9 @@ object frmClientMain: TfrmClientMain
         Caption = #25968#25454#31649#29702
         Visible = False
       end
+    end
+    object Twice: TMenuItem
+      Action = ac_Twice
     end
   end
   object ActionList1: TActionList
@@ -310,7 +315,7 @@ object frmClientMain: TfrmClientMain
       OnExecute = ac_TwiceExecute
     end
     object ac_AutoTest: TAction
-      Caption = #33258#21160#27979#35797#20301
+      Caption = #21151#33021#27979#35797#20301'('#19968#27979')'
       OnExecute = ac_AutoTestExecute
     end
     object ac_SMTIQC: TAction
@@ -2278,8 +2283,8 @@ object frmClientMain: TfrmClientMain
         Size = 250
         Value = Null
       end>
-    Left = 728
-    Top = 136
+    Left = 664
+    Top = 128
   end
   object DS_TestType: TDataSource
     DataSet = UniQuery_TestType
@@ -2356,5 +2361,1275 @@ object frmClientMain: TfrmClientMain
       Required = True
       Size = 8
     end
+  end
+  object spCheckTestedParamCpd1: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'CheckTestedParamCpd;1'
+    Parameters = <
+      item
+        Name = '@cChipId'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cIMEI'
+        DataType = ftString
+        Size = 15
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@cVersionEx'
+        DataType = ftString
+        Direction = pdOutput
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@iRecordCount'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = 0
+      end>
+    Prepared = True
+    Left = 568
+    Top = 128
+  end
+  object spGetUserInformation: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'GetUserInformation;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = 0
+      end
+      item
+        Name = '@cUserName'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@cUserPwd'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@cUserDes'
+        Attributes = [paNullable]
+        DataType = ftString
+        Direction = pdInputOutput
+        Size = 20
+        Value = ''
+      end
+      item
+        Name = '@cUserType'
+        Attributes = [paNullable]
+        DataType = ftString
+        Direction = pdInputOutput
+        Size = 20
+        Value = ''
+      end
+      item
+        Name = '@cUserTestPlan'
+        Attributes = [paNullable]
+        DataType = ftString
+        Direction = pdInputOutput
+        Size = 20
+        Value = ''
+      end
+      item
+        Name = '@cResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = 0
+      end>
+    Prepared = True
+    Left = 504
+    Top = 128
+  end
+  object spCheckTested1: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'CheckTested;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cFormName'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 30
+        Value = Null
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cSoftModel'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@iRecordCount'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Prepared = True
+    Left = 536
+    Top = 128
+  end
+  object spGetTempRid: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'GetTempRid;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cIMEI'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 15
+        Value = Null
+      end
+      item
+        Name = '@iRecordCount'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Direction = pdInputOutput
+        Size = 32
+        Value = Null
+      end>
+    Prepared = True
+    Left = 600
+    Top = 128
+  end
+  object spCheckMustTest1: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'CheckMustTest;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cSoftModel'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@cFormName'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 30
+        Value = Null
+      end
+      item
+        Name = '@cResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Left = 632
+    Top = 128
+  end
+  object spUpdateForm1: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    CursorType = ctStatic
+    ProcedureName = 'UpdateForm;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = 0
+      end
+      item
+        Name = '@cFormName'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 30
+        Value = Null
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cSoftModel'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@cIMEI'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 15
+        Value = Null
+      end
+      item
+        Name = '@iResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cTester'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@UpdateResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = 0
+      end>
+    Prepared = True
+    Left = 504
+    Top = 176
+  end
+  object spSMTUpdateForm1: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    CursorType = ctStatic
+    ProcedureName = 'SMTUpdateForm;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cFormName'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 30
+        Value = Null
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cSoftModel'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@cIMEI'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 15
+        Value = Null
+      end
+      item
+        Name = '@iResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cTester'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@GpsDBValue'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 10
+        Value = Null
+      end
+      item
+        Name = '@UpdateResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Prepared = True
+    Left = 568
+    Top = 176
+  end
+  object spCheckTestpass: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'CheckTestPass;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cIMEI'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 15
+        Value = Null
+      end
+      item
+        Name = '@iFunctionPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGPSPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iCouplePass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iWriteImeiPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iParamDownloadPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iAutoPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Prepared = True
+    Left = 536
+    Top = 176
+  end
+  object spCheckTestPass_WriteIMEI: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'CheckTestPass_WriteIMEI;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = 0
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cSoftModel'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 100
+        Value = Null
+      end
+      item
+        Name = '@iFunctionPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGPSPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iCouplePass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iParamDownloadPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iAutoPass'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Left = 600
+    Top = 176
+  end
+  object spDeleteImei: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'UpdateTestResultForm_DeleteImei;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cIMEI'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 15
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@UpdateResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Prepared = True
+    Left = 976
+    Top = 144
+  end
+  object spDeleteTestResult_ByImei: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'DeleteTestResult_ByImei_Twice;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cFormName'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 30
+        Value = Null
+      end
+      item
+        Name = '@cImei'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 15
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@cTesterId'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@iRecordCount'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Prepared = True
+    Left = 976
+    Top = 192
+  end
+  object spDeleteTestResult_ByRid: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'DeleteTestResult_ByRid_Twice'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cFormName'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 30
+        Value = Null
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@cTesterId'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@iRecordCount'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Prepared = True
+    Left = 976
+    Top = 232
+  end
+  object spUpdateGpsSMT_TcData: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    CursorType = ctStatic
+    ProcedureName = 'UpdateGpsSMT_TcData;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = 250
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cFixMode'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb0'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb1'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb2'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb3'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb4'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb5'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb6'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb7'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb8'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb9'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb10'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb11'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@UpdateResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Left = 928
+    Top = 80
+  end
+  object spUpdateGpsTcData: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    ProcedureName = 'UpdateGpsTcData;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cFixMode'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb0'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb1'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb2'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb3'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb4'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb5'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb6'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb7'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb8'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb9'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb10'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@iGpsDb11'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@UpdateResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Left = 928
+    Top = 48
+  end
+  object spCheckTested: TUniStoredProc
+    StoredProcName = 'CheckTested'
+    Connection = DMMain.UniConGpsTest
+    Left = 536
+    Top = 88
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cFormName'
+        ParamType = ptInput
+        Size = 30
+      end
+      item
+        DataType = ftString
+        Name = 'cChipRid'
+        ParamType = ptInput
+        Size = 32
+      end
+      item
+        DataType = ftString
+        Name = 'cSoftModel'
+        ParamType = ptInput
+        Size = 20
+      end
+      item
+        DataType = ftString
+        Name = 'cVersion'
+        ParamType = ptInput
+        Size = 50
+      end
+      item
+        DataType = ftInteger
+        Name = 'iRecordCount'
+        ParamType = ptInputOutput
+        Value = 1
+      end>
+    CommandStoredProcName = 'CheckTested'
+    StoredProcIsQuery = True
+  end
+  object spCheckMustTest: TUniStoredProc
+    StoredProcName = 'CheckMustTest'
+    Connection = DMMain.UniConGpsTest
+    Left = 632
+    Top = 88
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cSoftModel'
+        ParamType = ptInput
+        Size = 20
+      end
+      item
+        DataType = ftString
+        Name = 'cFormName'
+        ParamType = ptInput
+        Size = 30
+      end
+      item
+        DataType = ftInteger
+        Name = 'cResult'
+        ParamType = ptInputOutput
+        Value = 1
+      end>
+    CommandStoredProcName = 'CheckMustTest'
+    StoredProcIsQuery = True
+  end
+  object spCheckTestedParamCpd: TUniStoredProc
+    StoredProcName = 'CheckTestedParamCpd'
+    Connection = DMMain.UniConGpsTest
+    Left = 568
+    Top = 88
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cChipRid'
+        ParamType = ptInput
+        Size = 32
+      end
+      item
+        DataType = ftString
+        Name = 'cIMEI'
+        ParamType = ptInput
+        Size = 15
+      end
+      item
+        DataType = ftString
+        Name = 'cVersion'
+        ParamType = ptInputOutput
+        Size = 50
+      end
+      item
+        DataType = ftString
+        Name = 'cVersionEx'
+        ParamType = ptInputOutput
+        Size = 50
+      end
+      item
+        DataType = ftInteger
+        Name = 'iRecordCount'
+        ParamType = ptInputOutput
+        Value = 0
+      end>
+    CommandStoredProcName = 'CheckTestedParamCpd'
+    StoredProcIsQuery = True
+  end
+  object spUpdateForm: TUniStoredProc
+    StoredProcName = 'UpdateForm'
+    Connection = DMMain.UniConGpsTest
+    Left = 504
+    Top = 208
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cFormName'
+        ParamType = ptInput
+        Value = ''
+      end
+      item
+        DataType = ftString
+        Name = 'cChipRid'
+        ParamType = ptInput
+        Value = ''
+      end
+      item
+        DataType = ftString
+        Name = 'cSoftModel'
+        ParamType = ptInput
+        Value = ''
+      end
+      item
+        DataType = ftString
+        Name = 'cVersion'
+        ParamType = ptInput
+        Value = ''
+      end
+      item
+        DataType = ftString
+        Name = 'cIMEI'
+        ParamType = ptInput
+        Value = ''
+      end
+      item
+        DataType = ftInteger
+        Name = 'iResult'
+        ParamType = ptInput
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cTester'
+        ParamType = ptInput
+        Value = ''
+      end
+      item
+        DataType = ftInteger
+        Name = 'UpdateResult'
+        ParamType = ptInputOutput
+        Value = 0
+      end>
+    CommandStoredProcName = 'UpdateForm'
+    StoredProcIsQuery = True
+  end
+  object spParamDownUpdateForm1: TADOStoredProc
+    Connection = DMMain.conConnGpsTest
+    CursorType = ctStatic
+    ProcedureName = 'ParamDownUpdateForm;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = 0
+      end
+      item
+        Name = '@cFormName'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 30
+        Value = Null
+      end
+      item
+        Name = '@cChipRid'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 32
+        Value = Null
+      end
+      item
+        Name = '@cSoftModel'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@cVersion'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@cVersionS'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 50
+        Value = Null
+      end
+      item
+        Name = '@cIMEI'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 15
+        Value = Null
+      end
+      item
+        Name = '@iResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Precision = 10
+        Value = Null
+      end
+      item
+        Name = '@cTester'
+        Attributes = [paNullable]
+        DataType = ftString
+        Size = 20
+        Value = Null
+      end
+      item
+        Name = '@UpdateResult'
+        Attributes = [paNullable]
+        DataType = ftInteger
+        Direction = pdInputOutput
+        Precision = 10
+        Value = Null
+      end>
+    Prepared = True
+    Left = 632
+    Top = 176
+  end
+  object spParamDownUpdateForm: TUniStoredProc
+    StoredProcName = 'ParamDownUpdateForm'
+    Connection = DMMain.UniConGpsTest
+    Left = 632
+    Top = 208
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+        Size = 1650720869
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'cFormName'
+        ParamType = ptInput
+        Size = 30
+      end
+      item
+        DataType = ftString
+        Name = 'cChipRid'
+        ParamType = ptInput
+        Size = 32
+      end
+      item
+        DataType = ftString
+        Name = 'cSoftModel'
+        ParamType = ptInput
+        Size = 20
+      end
+      item
+        DataType = ftString
+        Name = 'cVersion'
+        ParamType = ptInput
+        Size = 50
+      end
+      item
+        DataType = ftString
+        Name = 'cVersionS'
+        ParamType = ptInput
+        Size = 50
+      end
+      item
+        DataType = ftString
+        Name = 'cIMEI'
+        ParamType = ptInput
+        Size = 15
+      end
+      item
+        DataType = ftInteger
+        Name = 'iResult'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'cTester'
+        ParamType = ptInput
+        Size = 20
+      end
+      item
+        DataType = ftInteger
+        Name = 'UpdateResult'
+        ParamType = ptInputOutput
+        Value = 0
+      end>
+    CommandStoredProcName = 'ParamDownUpdateForm'
+    StoredProcIsQuery = True
+  end
+  object spSMTUpdateForm: TUniStoredProc
+    StoredProcName = 'SMTUpdateForm'
+    Connection = DMMain.UniConGpsTest
+    Left = 568
+    Top = 208
   end
 end

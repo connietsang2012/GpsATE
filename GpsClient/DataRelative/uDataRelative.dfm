@@ -1,8 +1,8 @@
 object frmDataRelative: TfrmDataRelative
-  Left = 188
-  Top = 55
-  Width = 865
-  Height = 650
+  Left = 187
+  Top = 115
+  Width = 1036
+  Height = 739
   Caption = #25968#25454#32465#23450
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -96,7 +96,7 @@ object frmDataRelative: TfrmDataRelative
     TabOrder = 1
     object lbl13: TLabel
       Left = 13
-      Top = 189
+      Top = 215
       Width = 60
       Height = 13
       Alignment = taRightJustify
@@ -107,7 +107,7 @@ object frmDataRelative: TfrmDataRelative
     end
     object Label2: TLabel
       Left = 8
-      Top = 147
+      Top = 173
       Width = 65
       Height = 13
       Alignment = taRightJustify
@@ -118,7 +118,7 @@ object frmDataRelative: TfrmDataRelative
     end
     object Label5: TLabel
       Left = 261
-      Top = 147
+      Top = 173
       Width = 20
       Height = 13
       Alignment = taRightJustify
@@ -129,7 +129,7 @@ object frmDataRelative: TfrmDataRelative
     end
     object lbl18: TLabel
       Left = 13
-      Top = 104
+      Top = 130
       Width = 60
       Height = 13
       Alignment = taRightJustify
@@ -171,6 +171,28 @@ object frmDataRelative: TfrmDataRelative
       Caption = '---'
       ParentBiDiMode = False
     end
+    object Label8: TLabel
+      Left = 8
+      Top = 91
+      Width = 65
+      Height = 13
+      Alignment = taRightJustify
+      AutoSize = False
+      BiDiMode = bdRightToLeft
+      Caption = 'VIP'#21495#27573':'
+      ParentBiDiMode = False
+    end
+    object Label9: TLabel
+      Left = 261
+      Top = 91
+      Width = 20
+      Height = 13
+      Alignment = taRightJustify
+      AutoSize = False
+      BiDiMode = bdRightToLeft
+      Caption = '---'
+      ParentBiDiMode = False
+    end
     object edt_SoftModel: TDBEdit
       Left = 80
       Top = 16
@@ -183,7 +205,7 @@ object frmDataRelative: TfrmDataRelative
     end
     object edt_Date: TDBEdit
       Left = 80
-      Top = 102
+      Top = 128
       Width = 369
       Height = 21
       DataField = 'ProductDate'
@@ -193,7 +215,7 @@ object frmDataRelative: TfrmDataRelative
     end
     object Edt_IMEISTART: TDBEdit
       Left = 80
-      Top = 144
+      Top = 170
       Width = 185
       Height = 21
       DataField = 'IMEIStart'
@@ -203,7 +225,7 @@ object frmDataRelative: TfrmDataRelative
     end
     object Edt_IMEIEND: TDBEdit
       Left = 288
-      Top = 144
+      Top = 170
       Width = 161
       Height = 21
       DataField = 'IMEIEnd'
@@ -213,7 +235,7 @@ object frmDataRelative: TfrmDataRelative
     end
     object edt_Tac: TDBEdit
       Left = 80
-      Top = 184
+      Top = 210
       Width = 369
       Height = 21
       DataField = 'TACInfo'
@@ -241,40 +263,60 @@ object frmDataRelative: TfrmDataRelative
       Enabled = False
       TabOrder = 6
     end
+    object edt_VIPSTART: TDBEdit
+      Left = 80
+      Top = 88
+      Width = 185
+      Height = 21
+      DataField = 'VIPStart'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 7
+    end
+    object edt_VIPEND: TDBEdit
+      Left = 288
+      Top = 88
+      Width = 161
+      Height = 21
+      DataField = 'VIPEnd'
+      DataSource = DS_ManuOrderParam
+      Enabled = False
+      TabOrder = 8
+    end
   end
   object grp1: TGroupBox
     Left = 8
     Top = 72
-    Width = 657
+    Width = 857
     Height = 217
     Caption = #25195#25551#21306
     TabOrder = 2
     object lbl_SIM: TLabel
       Left = 8
-      Top = 88
-      Width = 120
-      Height = 41
+      Top = 60
+      Width = 80
+      Height = 35
       Alignment = taRightJustify
       AutoSize = False
       Caption = 'BAT'#21495':'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -24
+      Font.Height = -13
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object lbl_IMEI: TLabel
       Left = 8
-      Top = 152
-      Width = 120
-      Height = 41
+      Top = 172
+      Width = 80
+      Height = 35
       Alignment = taRightJustify
       AutoSize = False
       Caption = 'IMEI:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -24
+      Font.Height = -13
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -296,16 +338,31 @@ object frmDataRelative: TfrmDataRelative
       AutoSize = False
       Caption = #21046#21333#21495':'
     end
+    object Label3: TLabel
+      Left = 8
+      Top = 114
+      Width = 80
+      Height = 34
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = #26381#21153#21495':'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
     object Edt_IMEI: TEdit
-      Left = 133
-      Top = 145
-      Width = 492
-      Height = 56
+      Left = 93
+      Top = 160
+      Width = 325
+      Height = 48
       AutoSize = False
       Enabled = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlue
-      Font.Height = -57
+      Font.Height = -40
       Font.Name = #23435#20307
       Font.Style = [fsBold]
       ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -315,15 +372,15 @@ object frmDataRelative: TfrmDataRelative
       OnKeyPress = Edt_IMEIKeyPress
     end
     object edt_BAT: TEdit
-      Left = 133
-      Top = 81
-      Width = 492
-      Height = 56
+      Left = 93
+      Top = 49
+      Width = 325
+      Height = 48
       AutoSize = False
       Enabled = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlue
-      Font.Height = -57
+      Font.Height = -40
       Font.Name = #23435#20307
       Font.Style = [fsBold]
       ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
@@ -355,18 +412,36 @@ object frmDataRelative: TfrmDataRelative
       Enabled = False
       TabOrder = 3
     end
+    object edt_VIP: TEdit
+      Left = 93
+      Top = 105
+      Width = 325
+      Height = 48
+      AutoSize = False
+      Enabled = False
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlue
+      Font.Height = -40
+      Font.Name = #23435#20307
+      Font.Style = [fsBold]
+      ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+      MaxLength = 8
+      ParentFont = False
+      TabOrder = 4
+      OnKeyPress = edt_VIPKeyPress
+    end
   end
   object pnlClientBottom: TPanel
     Left = 0
-    Top = 556
-    Width = 857
+    Top = 645
+    Width = 1028
     Height = 60
     Align = alBottom
     TabOrder = 3
     object TestResult: TPanel
       Left = 1
       Top = 1
-      Width = 855
+      Width = 1026
       Height = 58
       Align = alClient
       Color = clRed
@@ -379,6 +454,63 @@ object frmDataRelative: TfrmDataRelative
       TabOrder = 0
     end
   end
+  object edt_preBAT: TEdit
+    Left = 437
+    Top = 121
+    Width = 325
+    Height = 48
+    AutoSize = False
+    Color = clGray
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clSilver
+    Font.Height = -40
+    Font.Name = #23435#20307
+    Font.Style = [fsBold]
+    ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+    MaxLength = 10
+    ParentFont = False
+    TabOrder = 4
+    OnKeyPress = edt_BATKeyPress
+  end
+  object edt_preVIP: TEdit
+    Left = 437
+    Top = 177
+    Width = 325
+    Height = 48
+    AutoSize = False
+    Color = clGray
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clSilver
+    Font.Height = -40
+    Font.Name = #23435#20307
+    Font.Style = [fsBold]
+    ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+    MaxLength = 8
+    ParentFont = False
+    TabOrder = 5
+    OnKeyPress = edt_BATKeyPress
+  end
+  object Edt_preIMEI: TEdit
+    Left = 437
+    Top = 232
+    Width = 325
+    Height = 48
+    AutoSize = False
+    Color = clGray
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clSilver
+    Font.Height = -40
+    Font.Name = #23435#20307
+    Font.Style = [fsBold]
+    ImeName = #26497#21697#20116#31508#36755#20837#27861'6.9'#29256
+    MaxLength = 15
+    ParentFont = False
+    TabOrder = 6
+    OnKeyPress = Edt_IMEIKeyPress
+  end
   object UniQuery_ManuOrder: TUniQuery
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
@@ -386,44 +518,126 @@ object frmDataRelative: TfrmDataRelative
       '  FROM Gps_ManuOrderParam'
       '  WHERE status=1')
     Left = 672
-    Top = 56
+    Top = 8
     object UniQuery_ManuOrderZhiDan: TStringField
       FieldName = 'ZhiDan'
       Required = True
       Size = 50
     end
   end
+  object UniQuery_IMEIRel: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'select * from Gps_IMEIRel')
+    Left = 760
+    Top = 8
+    object UniQuery_IMEIRelRelId: TIntegerField
+      FieldName = 'RelId'
+      ReadOnly = True
+      Required = True
+    end
+    object UniQuery_IMEIRelIMEIRelNo: TStringField
+      FieldName = 'IMEIRelNo'
+      Required = True
+    end
+    object UniQuery_IMEIRelIMEIRelDes: TStringField
+      FieldName = 'IMEIRelDes'
+      Required = True
+    end
+    object UniQuery_IMEIRel_MASK_FROM_V2: TBytesField
+      FieldName = '_MASK_FROM_V2'
+      ReadOnly = True
+      Required = True
+      Size = 8
+    end
+  end
+  object DS_ManuOrderParam: TDataSource
+    DataSet = UniQuery_ManuOrderParam
+    Left = 712
+    Top = 96
+  end
+  object UniQuery_DataRelative_ByBAT: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT *  '
+      'FROM DataRelative_BAT'
+      'WHERE BAT=:BATNo')
+    Left = 680
+    Top = 160
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'BATNo'
+      end>
+  end
+  object UniQuery_DataRelative_ByIMEI: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'SELECT *  '
+      'FROM DataRelative_BAT'
+      'WHERE IMEI=:IMEI')
+    Left = 712
+    Top = 160
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end>
+  end
+  object UniQuery_InsertDataRelative_BAT: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'INSERT INTO DataRelative_BAT'
+      '           ([IMEI]'
+      '           ,[BAT]'
+      '           ,[ZhiDan]'
+      '           ,[TesterId])'
+      '     VALUES'
+      '           (:IMEI,'
+      '           :BAT,'
+      '           :ZhiDan, '
+      '           :TesterId '
+      '           )')
+    Left = 744
+    Top = 160
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'BAT'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'ZhiDan'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'TesterId'
+      end>
+  end
   object UniQuery_ManuOrderParam: TUniQuery
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
-      'SELECT ZhiDan'
-      '      ,SoftModel'
-      '      ,SN1'
-      '      ,SN2'
-      '      ,SN3'
-      '      ,ProductDate'
-      '      ,ProductNo'
-      '      ,Version'
-      '      ,IMEIStart'
-      '      ,IMEIEnd'
-      '      ,SIMStart'
-      '      ,SIMEnd'
-      '      ,BATStart'
-      '      ,BATEnd'
-      '      ,IMEIRel'
-      '      ,TACInfo'
-      '      ,CompanyName'
-      '      ,Status'
-      '      ,_MASK_FROM_V2'
+      'SELECT *'
       '  FROM Gps_ManuOrderParam'
+      ''
       'WHERE ZhiDan=:ZhiDan')
     Left = 712
-    Top = 56
+    Top = 8
     ParamData = <
       item
         DataType = ftUnknown
         Name = 'ZhiDan'
       end>
+    object UniQuery_ManuOrderParamId: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'Id'
+      ReadOnly = True
+      Required = True
+    end
     object UniQuery_ManuOrderParamZhiDan: TStringField
       FieldName = 'ZhiDan'
       Required = True
@@ -436,20 +650,43 @@ object frmDataRelative: TfrmDataRelative
     end
     object UniQuery_ManuOrderParamSN1: TStringField
       FieldName = 'SN1'
-      Required = True
       Size = 50
     end
     object UniQuery_ManuOrderParamSN2: TStringField
       FieldName = 'SN2'
-      Required = True
       Size = 50
     end
     object UniQuery_ManuOrderParamSN3: TStringField
       FieldName = 'SN3'
       Size = 50
     end
+    object UniQuery_ManuOrderParamBoxNo1: TStringField
+      FieldName = 'BoxNo1'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamBoxNo2: TStringField
+      FieldName = 'BoxNo2'
+      Required = True
+      Size = 50
+    end
     object UniQuery_ManuOrderParamProductDate: TStringField
       FieldName = 'ProductDate'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamColor: TStringField
+      FieldName = 'Color'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamWeight: TStringField
+      FieldName = 'Weight'
+      Required = True
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamQty: TStringField
+      FieldName = 'Qty'
       Required = True
       Size = 50
     end
@@ -481,6 +718,22 @@ object frmDataRelative: TfrmDataRelative
       FieldName = 'SIMEnd'
       Size = 50
     end
+    object UniQuery_ManuOrderParamBATStart: TStringField
+      FieldName = 'BATStart'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamBATEnd: TStringField
+      FieldName = 'BATEnd'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamVIPStart: TStringField
+      FieldName = 'VIPStart'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamVIPEnd: TStringField
+      FieldName = 'VIPEnd'
+      Size = 50
+    end
     object UniQuery_ManuOrderParamIMEIRel: TIntegerField
       FieldName = 'IMEIRel'
       Required = True
@@ -492,6 +745,26 @@ object frmDataRelative: TfrmDataRelative
     end
     object UniQuery_ManuOrderParamCompanyName: TStringField
       FieldName = 'CompanyName'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark1: TStringField
+      FieldName = 'Remark1'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark2: TStringField
+      FieldName = 'Remark2'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark3: TStringField
+      FieldName = 'Remark3'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark4: TStringField
+      FieldName = 'Remark4'
+      Size = 50
+    end
+    object UniQuery_ManuOrderParamRemark5: TStringField
+      FieldName = 'Remark5'
       Size = 50
     end
     object UniQuery_ManuOrderParamStatus: TIntegerField
@@ -511,97 +784,54 @@ object frmDataRelative: TfrmDataRelative
       LookupKeyFields = 'IMEIRelNo'
       LookupResultField = 'IMEIRelDes'
       KeyFields = 'IMEIRel'
+      Size = 0
       Lookup = True
     end
-    object UniQuery_ManuOrderParamBATStart: TStringField
-      FieldName = 'BATStart'
-      Size = 50
-    end
-    object UniQuery_ManuOrderParamBATEnd: TStringField
-      FieldName = 'BATEnd'
-      Size = 50
-    end
   end
-  object UniQuery_IMEIRel: TUniQuery
-    Connection = DMMain.UniConGpsTest
-    SQL.Strings = (
-      'select * from Gps_IMEIRel')
-    Left = 760
-    Top = 56
-    object UniQuery_IMEIRelRelId: TIntegerField
-      FieldName = 'RelId'
-      ReadOnly = True
-      Required = True
-    end
-    object UniQuery_IMEIRelIMEIRelNo: TStringField
-      FieldName = 'IMEIRelNo'
-      Required = True
-    end
-    object UniQuery_IMEIRelIMEIRelDes: TStringField
-      FieldName = 'IMEIRelDes'
-      Required = True
-    end
-    object UniQuery_IMEIRel_MASK_FROM_V2: TBytesField
-      FieldName = '_MASK_FROM_V2'
-      ReadOnly = True
-      Required = True
-      Size = 8
-    end
-  end
-  object DS_ManuOrderParam: TDataSource
-    DataSet = UniQuery_ManuOrderParam
-    Left = 712
-    Top = 96
-  end
-  object DataSource1: TDataSource
-    DataSet = UniQuery_ManuOrderParam
-    Left = 712
-    Top = 96
-  end
-  object UniQuery_DataRelative_ByBAT: TUniQuery
+  object UniQuery_DataRelative_ByVIP: TUniQuery
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
       'SELECT *  '
-      'FROM DataRelative_BAT'
-      'WHERE BAT=:BATNo')
+      'FROM DataRelative_VIP'
+      'WHERE VIP=:VIPNo')
     Left = 680
-    Top = 160
+    Top = 192
     ParamData = <
       item
         DataType = ftUnknown
-        Name = 'BATNo'
+        Name = 'VIPNo'
       end>
   end
-  object UniQuery_DataRelative_ByIMEI: TUniQuery
+  object UniQuery_DataRelativeVIP_ByIMEI: TUniQuery
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
       'SELECT *  '
-      'FROM DataRelative_BAT'
+      'FROM DataRelative_VIP'
       'WHERE IMEI=:IMEI')
-    Left = 728
-    Top = 160
+    Left = 712
+    Top = 192
     ParamData = <
       item
         DataType = ftUnknown
         Name = 'IMEI'
       end>
   end
-  object UniQuery_InsertDataRelative_BAT: TUniQuery
+  object UniQuery_InsertDataRelative_VIP: TUniQuery
     Connection = DMMain.UniConGpsTest
     SQL.Strings = (
-      'INSERT INTO DataRelative_BAT'
+      'INSERT INTO DataRelative_VIP'
       '           ([IMEI]'
-      '           ,[BAT]'
+      '           ,[VIP]'
       '           ,[ZhiDan]'
       '           ,[TesterId])'
       '     VALUES'
       '           (:IMEI,'
-      '           :BAT,'
+      '           :VIP,'
       '           :ZhiDan, '
       '           :TesterId '
       '           )')
-    Left = 712
-    Top = 216
+    Left = 744
+    Top = 192
     ParamData = <
       item
         DataType = ftUnknown
@@ -609,7 +839,7 @@ object frmDataRelative: TfrmDataRelative
       end
       item
         DataType = ftUnknown
-        Name = 'BAT'
+        Name = 'VIP'
       end
       item
         DataType = ftUnknown

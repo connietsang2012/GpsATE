@@ -47,6 +47,7 @@ object frmCartonBoxSet: TfrmCartonBoxSet
     OnChange = cbbPrintCountChange
     Items.Strings = (
       '20'
+      '40'
       '60')
   end
   object cbbPrintType: TComboBox

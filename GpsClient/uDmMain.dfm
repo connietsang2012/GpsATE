@@ -11,7 +11,7 @@ object DMMain: TDMMain
     Database = 'GPSTest'
     Username = 'sa'
     Password = 'sa123ABC'
-    Server = '192.168.0.167'
+    Server = '192.168.30.185'
     Connected = True
     ConnectDialog = UniConDGpsTest
     LoginPrompt = False
@@ -30,10 +30,6 @@ object DMMain: TDMMain
     CancelButton = 'Cancel'
     Left = 64
     Top = 136
-  end
-  object SQLServerUniGpsTest: TSQLServerUniProvider
-    Left = 56
-    Top = 184
   end
   object UniConnectionAutoTest: TUniConnection
     ProviderName = 'Access'
@@ -75,5 +71,9 @@ object DMMain: TDMMain
     LoginPrompt = False
     Left = 264
     Top = 256
+  end
+  object SQLServerUniGpsTest: TSQLServerUniProvider
+    Left = 56
+    Top = 312
   end
 end

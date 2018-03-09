@@ -444,6 +444,7 @@ procedure TfrmParamDownloadTest.SetResult(CommIndex: Integer; iResult: Integer);
 var
     strTestTime, strSendText: string;
     hWindow: HWND;
+    iRecordCount:Integer;
 begin
     Application.ProcessMessages;
 
@@ -462,9 +463,16 @@ begin
                       [strPlanName,strChipRid[CommIndex],strSoftModel[CommIndex],strVersion[CommIndex],strIMEI[CommIndex],iResult,User.UserName]);
                       SendToServer(CommIndex,'UpdateResult',strSendText,True,CTimeOut*2);}
 
-                    strSendText := Format('Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#VersionS=%s#Imei=%s#iResult=%d#Tester=%s#',
+                    {strSendText := Format('Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#VersionS=%s#Imei=%s#iResult=%d#Tester=%s#',
                         [strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strVersionS[CommIndex], strIMEI[CommIndex], iResult, User.UserName]);
-                    SendToServer(CommIndex, 'UpdateResult', strSendText, True, CTimeOut * 2);
+                    SendToServer(CommIndex, 'UpdateResult', strSendText, True, CTimeOut * 2);  }
+
+                    UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strVersionS[CommIndex], strIMEI[CommIndex], iResult, User.UserName,iRecordCount);
+                    if iRecordCount = 0 then
+                    begin
+                        SetResult(CommIndex, -2);
+                        MessageBox(0, UPDATEFORMERROR, '少御', MB_ICONWARNING + MB_OK);
+                    end;
 
                     strSendText := Format('Action=CheckTested_SetResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#',
                         [strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], User.UserName]);
@@ -479,10 +487,16 @@ begin
                 edt_IMEI.SetFocus;
                 if (not (strChipRid[CommIndex] = '')) and bUpdateForm then
                 begin
-                    strSendText := Format('Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#VersionS=%s#Version=%s#Imei=%s#iResult=%d#Tester=%s#',
+                    {strSendText := Format('Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#VersionS=%s#Version=%s#Imei=%s#iResult=%d#Tester=%s#',
                         [strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersionS[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName]);
-                    SendToServer(CommIndex, 'UpdateResult', strSendText, True, CTimeOut * 2);
+                    SendToServer(CommIndex, 'UpdateResult', strSendText, True, CTimeOut * 2);}
 
+                    UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersionS[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName,iRecordCount);
+                    if iRecordCount = 0 then
+                    begin
+                        SetResult(CommIndex, -2);
+                        MessageBox(0, UPDATEFORMERROR, '少御', MB_ICONWARNING + MB_OK);
+                    end;
                 end;
                 SetDisplayResult(CommIndex, iResult);
             end;

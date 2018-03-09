@@ -322,6 +322,7 @@ procedure TfrmCoupleTest.SetResult(CommIndex:Integer;iResult:Integer);
 var
     strTestTime,strSendText:String;
     hWindow:HWND;
+    iRecordCount:Integer;
 begin
     Application.ProcessMessages;
     case iResult of
@@ -333,9 +334,15 @@ begin
             begin
                 if (not (strChipRid[CommIndex]='')) and bUpdateForm then
                 begin
-                    strSendText:=Format('Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#Imei=%s#iResult=%d#Tester=%s',
+                    {strSendText:=Format('Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#Imei=%s#iResult=%d#Tester=%s',
                                     [strPlanName,strChipRid[CommIndex],strSoftModel[CommIndex],strVersion[CommIndex],strIMEI[CommIndex],iResult,User.UserName]);
-                    SendToServer(CommIndex,'UpdateResult',strSendText,True,CTimeOut*2);
+                    SendToServer(CommIndex,'UpdateResult',strSendText,True,CTimeOut*2); }
+                    UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName, iRecordCount);
+                    if iRecordCount = 0 then
+                    begin
+                        SetResult(CommIndex, -2);
+                        MessageBox(0, UPDATEFORMERROR, '少御', MB_ICONWARNING + MB_OK);
+                    end;
 
                     strSendText:=Format('Action=CheckTested_SetResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#Tester=%s#',
               		        [strPlanName,strChipRid[CommIndex],strSoftModel[CommIndex],strVersion[CommIndex],User.UserName]);
@@ -348,9 +355,15 @@ begin
             begin
                 if (not (strChipRid[CommIndex]='')) and bUpdateForm then
                 begin
-                        strSendText:=Format('Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#Imei=%s#iResult=%d#Tester=%s',
+                        {strSendText:=Format('Action=UpdateResult#PlanName=%s#ChipRid=%s#SoftModel=%s#Version=%s#Imei=%s#iResult=%d#Tester=%s',
                                         [strPlanName,strChipRid[CommIndex],strSoftModel[CommIndex],strVersion[CommIndex],strIMEI[CommIndex],iResult,User.UserName]);
-                    SendToServer(CommIndex,'UpdateResult',strSendText,True,CTimeOut*2);
+                    SendToServer(CommIndex,'UpdateResult',strSendText,True,CTimeOut*2);}
+                    UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName, iRecordCount);
+                    if iRecordCount = 0 then
+                    begin
+                        SetResult(CommIndex, -2);
+                        MessageBox(0, UPDATEFORMERROR, '少御', MB_ICONWARNING + MB_OK);
+                    end;
                 end;
                 SetDisplayResult(CommIndex,iResult);
             end;

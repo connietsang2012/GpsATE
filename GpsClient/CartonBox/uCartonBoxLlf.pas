@@ -146,7 +146,8 @@ type
         UniQuery_DataRelativeSheetByImeiSIM: TUniQuery;
         ch_CheckInfo: TCheckBox;
         UniQuery_DataRelative_ByIMEI: TUniQuery;
-    spCheckTestpass: TUniStoredProc;
+        spCheckTestpass: TUniStoredProc;
+        UniQuery_DataRelative_VIP_ByIMEI: TUniQuery;
         procedure FormClose(Sender: TObject; var Action: TCloseAction);
         procedure FormCreate(Sender: TObject);
         procedure btn_RePrintClick(Sender: TObject);
@@ -159,6 +160,7 @@ type
     public
         { Public declarations }
         procedure ImeiPrint(); override;
+        procedure ImeiPrint_40();
         procedure AllowPrint(); override;
     end;
 var
@@ -194,14 +196,14 @@ begin
     end;
     strBar := '';
     strver := '';
-    if(PrintType='中文') then
-        begin
-                strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Cn' + IntToStr(mmoMEI.Lines.Count) + '.btw';
-        end
-        else
-        begin
-               strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Eng' + IntToStr(mmoMEI.Lines.Count) + '.btw';
-        end;
+    if (PrintType = '中文') then
+    begin
+        strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Cn' + IntToStr(mmoMEI.Lines.Count) + '.btw';
+    end
+    else
+    begin
+        strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Eng' + IntToStr(mmoMEI.Lines.Count) + '.btw';
+    end;
     AppendTxt(strFile, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\log.txt');
     with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
     begin
@@ -209,21 +211,21 @@ begin
         SetNamedSubStringValue('BoxNum', trim(EdtBoxNum.Text) + trim(EdtBoxNum1.Text));
         SetNamedSubStringValue('ZhiDan', trim(Edtzhidan.Text));
         SetNamedSubStringValue('MachineType', trim(EdtSoftModel.Text));
-        SetNamedSubStringValue('ProductColor',  trim(EdtColor.Text));
+        SetNamedSubStringValue('ProductColor', trim(EdtColor.Text));
         SetNamedSubStringValue('ProductDate', trim(EdtDate.Text));
         SetNamedSubStringValue('ProductCount', trim(EdtQty.Text));
-        SetNamedSubStringValue('ProductWeight',  (EdtWeight.Text));
-        SetNamedSubStringValue('ProductNum',  trim(EdtProNo.Text));
+        SetNamedSubStringValue('ProductWeight', (EdtWeight.Text));
+        SetNamedSubStringValue('ProductNum', trim(EdtProNo.Text));
         SetNamedSubStringValue('Remark', trim(edt_Remark1.Text));
-        if(PrintType='中文') then
+        if (PrintType = '中文') then
         begin
-          strver := SysUtils.Format('箱号:%s%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
-              [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+            strver := SysUtils.Format('箱号:%s%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
+                [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
         end
         else
         begin
-           strver := SysUtils.Format('BOX NO:%s%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
-              [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+            strver := SysUtils.Format('BOX NO:%s%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
+                [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
         end;
         AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
         //IMEI赋值
@@ -256,26 +258,26 @@ begin
                 Exit;
             end;
 
-            if(ch_CheckInfo.Checked) then
+            if (ch_CheckInfo.Checked) then
             begin
-              //IMEI判断基带ID是否正常
-              UniQuery_FindRidByImei.Close;
-              UniQuery_FindRidByImei.ParamByName('IMEI').value := StrList_IMEISIM[0];
-              UniQuery_FindRidByImei.Open;
-              //得到基带ID
-              strRid := '';
-              if (UniQuery_FindRidByImei.RecordCount <> 1) then
-              begin
-                  IMEIErrorPrompt('此机子异常,请联系管理员！');
-                  Exit;
-              end
-              else
-              begin
-                  UniQuery_FindRidByImei.First;
-                  strRid := UniQuery_FindRidByImei.FieldByName('Rid').AsString;
-                  AppendTxt(StrList.Strings[i] + ',' + strRid, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+                //IMEI判断基带ID是否正常
+                UniQuery_FindRidByImei.Close;
+                UniQuery_FindRidByImei.ParamByName('IMEI').value := StrList_IMEISIM[0];
+                UniQuery_FindRidByImei.Open;
+                //得到基带ID
+                strRid := '';
+                if (UniQuery_FindRidByImei.RecordCount <> 1) then
+                begin
+                    IMEIErrorPrompt('此机子异常,请联系管理员！');
+                    Exit;
+                end
+                else
+                begin
+                    UniQuery_FindRidByImei.First;
+                    strRid := UniQuery_FindRidByImei.FieldByName('Rid').AsString;
+                    AppendTxt(StrList.Strings[i] + ',' + strRid, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
 
-              end;
+                end;
             end;
 
             //每个单独的IMEI
@@ -285,7 +287,7 @@ begin
             AppendTxt(DateTimeToStr(Now) + '-----------' + StrList_IMEISIM[0], LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
 
             case IMEIRel of
-                1, 2:
+                1, 2, 3:
                     begin
                         //更新DataRelativeSheet表
                         qry_UpdateDataRel.Close;
@@ -321,7 +323,7 @@ begin
 
             //查看Gps_CartonBoxTwenty_Result是否更新
             UniQuery_IMEI_20.Close;
-            UniQuery_IMEI_20.ParamByName('IMEI').Value :=StrList_IMEISIM[0];
+            UniQuery_IMEI_20.ParamByName('IMEI').Value := StrList_IMEISIM[0];
             UniQuery_IMEI_20.Open;
             iRecordCount := UniQuery_IMEI_20.RecordCount;
             UniQuery_IMEI_20.Close;
@@ -373,6 +375,348 @@ begin
                 Close(btDoNotSaveChanges); //关闭不保存
             end;
         end; }
+        StrList.Clear;
+        SNList.Clear;
+        VersionList.Clear;
+        mmoMEI.Clear;
+
+        AppendTxt('', LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+        AppendTxt('', LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+    end;
+end;
+
+procedure TfrmCartonBoxLlf.ImeiPrint_40();
+var
+    strFile, strver: string; //打印的模版文件,日志文件
+    i, iRecordCount: Integer; //循环变量,数据记录总数
+    strSQL, strRid: string; //SQL语句,机子基带ID
+    iIMEI, istart, iend: Integer; //判断IMEI是否在范围内
+begin
+    if (mmoMEI.Lines.Count = 0) then
+    begin
+        ShowMessage('当前数据为空,不能进行打印');
+        Exit;
+    end;
+    if (trim(EdtVersion.Text) = '') then
+    begin
+        ShowMessage('版本信息不能为空');
+        Exit;
+    end;
+
+    strBar := '';
+    strver := '';
+    if (PrintType = '中文') then
+    begin
+        strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Cn20.btw';
+    end
+    else
+    begin
+        strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Eng20.btw';
+    end;
+    AppendTxt(strFile, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\log.txt');
+    //first box
+    with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
+    begin
+        //贴纸标题赋值
+        SetNamedSubStringValue('BoxNum', trim(EdtBoxNum.Text) + trim(EdtBoxNum1.Text));
+        SetNamedSubStringValue('ZhiDan', trim(Edtzhidan.Text));
+        SetNamedSubStringValue('MachineType', trim(EdtSoftModel.Text));
+        SetNamedSubStringValue('ProductColor', trim(EdtColor.Text));
+        SetNamedSubStringValue('ProductDate', trim(EdtDate.Text));
+        SetNamedSubStringValue('ProductCount', trim(EdtQty.Text));
+        SetNamedSubStringValue('ProductWeight', (EdtWeight.Text));
+        SetNamedSubStringValue('ProductNum', trim(EdtProNo.Text));
+        SetNamedSubStringValue('Remark', trim(edt_Remark1.Text));
+        if (PrintType = '中文') then
+        begin
+            strver := SysUtils.Format('箱号:%s%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
+                [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+        end
+        else
+        begin
+            strver := SysUtils.Format('BOX NO:%s%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
+                [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+        end;
+        AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+        //IMEI赋值
+        for i := 0 to 19 do
+        begin
+            //解析要打印的数据 StrList_IMEISIM[0]=>IMEI      StrList_IMEISIM[1]=>SIM
+            StrList_IMEISIM.Delimiter := ',';
+            StrList_IMEISIM.DelimitedText := StrList.Strings[i];
+
+            //判断IMEI号是否在范围内
+            if ((Edt_IMEISTART.Text <> '') and (Edt_IMEIEND.Text <> '')) then
+            begin
+                istart := strtoint64(Trim(Edt_IMEISTART.Text));
+                iend := strtoint64(Trim(Edt_IMEIEND.Text));
+                iIMEI := strtoint64(LeftStr(StrList_IMEISIM[0], 14));
+                if iend <= istart then
+                begin
+                    IMEIErrorPrompt('此IMEI号段设置错误(起始大于结束)！');
+                    Exit;
+                end;
+                if ((iIMEI < istart) or (iIMEI > iend)) then
+                begin
+                    IMEIErrorPrompt('此IMEI不在设置号段内！');
+                    Exit;
+                end;
+            end
+            else
+            begin
+                IMEIErrorPrompt('IMEI号段未设置！');
+                Exit;
+            end;
+
+            if (ch_CheckInfo.Checked) then
+            begin
+                //IMEI判断基带ID是否正常
+                UniQuery_FindRidByImei.Close;
+                UniQuery_FindRidByImei.ParamByName('IMEI').value := StrList_IMEISIM[0];
+                UniQuery_FindRidByImei.Open;
+                //得到基带ID
+                strRid := '';
+                if (UniQuery_FindRidByImei.RecordCount <> 1) then
+                begin
+                    IMEIErrorPrompt('此机子异常,请联系管理员！');
+                    Exit;
+                end
+                else
+                begin
+                    UniQuery_FindRidByImei.First;
+                    strRid := UniQuery_FindRidByImei.FieldByName('Rid').AsString;
+                    AppendTxt(StrList.Strings[i] + ',' + strRid, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+
+                end;
+            end;
+
+            //每个单独的IMEI
+            strver := strver + StrList_IMEISIM[0] + '' + #13#10 + '';
+            strBar := 'IMEI' + IntToStr(i);
+            SetNamedSubStringValue(strBar, StrList_IMEISIM[0]); //设置值
+            AppendTxt(DateTimeToStr(Now) + '-----------' + StrList_IMEISIM[0], LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+
+            case IMEIRel of
+                1, 2, 3:
+                    begin
+                        //更新DataRelativeSheet表
+                        qry_UpdateDataRel.Close;
+                        qry_UpdateDataRel.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+                        qry_UpdateDataRel.ParamByName('SIMNo').Value := StrList_IMEISIM[1];
+                        qry_UpdateDataRel.Execute;
+
+                        //查看DataRelativeSheet表是否更改
+                        UniQuery_DataRelativeSheetByImeiSIM.Close;
+                        UniQuery_DataRelativeSheetByImeiSIM.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+                        UniQuery_DataRelativeSheetByImeiSIM.ParamByName('SIMNO').Value := StrList_IMEISIM[1];
+                        UniQuery_DataRelativeSheetByImeiSIM.Open;
+                        iRecordCount := UniQuery_DataRelativeSheetByImeiSIM.RecordCount;
+                        UniQuery_DataRelativeSheetByImeiSIM.Close;
+                        if (iRecordCount < 1) then
+                        begin
+                            IMEIErrorPrompt('IMEI与SIM绑定失败,请联系管理员!');
+                            Exit;
+                        end
+                    end;
+            end;
+
+            //更新Gps_CartonBoxTwenty_Result表
+            UniQuery_IMEI.Close;
+            UniQuery_IMEI.Sql.Clear;
+            strSQL := 'Insert into Gps_CartonBoxTwenty_Result(BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId,Remark2,Remark1) values('''
+                + EdtBoxNum.Text + EdtBoxNum1.Text + ''',''' + StrList_IMEISIM[0] + ''',''' + Edtzhidan.Text
+                + ''',''' + edtsoftmodel.Text + ''',''' + edtVersion.Text + ''',''' + EdtProNo.Text + ''','''
+                + EdtColor.Text + ''',''' + EdtQty.Text + ''',''' + EdtWeight.Text + ''',''' + EdtDate.Text + ''','''
+                + EdtTac.Text + ''',''' + EdtCpName.Text + ''',''' + User.UserName + ''',''' + strRid + ''',''' + edt_remark1.Text + ''')';
+            UniQuery_IMEI.SQL.Text := strSQL;
+            UniQuery_IMEI.Execute;
+
+            //查看Gps_CartonBoxTwenty_Result是否更新
+            UniQuery_IMEI_20.Close;
+            UniQuery_IMEI_20.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+            UniQuery_IMEI_20.Open;
+            iRecordCount := UniQuery_IMEI_20.RecordCount;
+            UniQuery_IMEI_20.Close;
+            if (iRecordCount) < 1 then
+            begin
+                MessageBox(0, PCHAR('当前IMEI更新卡通测试结果失败,请联系管理员!'), '友情提醒,数据更新失败', mb_OK);
+                Exit;
+            end;
+
+        end;
+        SetNamedSubStringValue('QRCode', strver); //设置值
+        try
+            PrintOut(False, False);
+            Close(btDoNotSaveChanges); //关闭不保存
+        except
+            Close(btDoNotSaveChanges); //关闭不保存
+        end;
+
+        AppendTxt('', LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+        AppendTxt('', LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+    end;
+    //second box
+    with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
+    begin
+        //贴纸标题赋值
+        SetNamedSubStringValue('BoxNum', trim(EdtBoxNum.Text) + trim(EdtBoxNum1.Text));
+        SetNamedSubStringValue('ZhiDan', trim(Edtzhidan.Text));
+        SetNamedSubStringValue('MachineType', trim(EdtSoftModel.Text));
+        SetNamedSubStringValue('ProductColor', trim(EdtColor.Text));
+        SetNamedSubStringValue('ProductDate', trim(EdtDate.Text));
+        SetNamedSubStringValue('ProductCount', trim(EdtQty.Text));
+        SetNamedSubStringValue('ProductWeight', (EdtWeight.Text));
+        SetNamedSubStringValue('ProductNum', trim(EdtProNo.Text));
+        SetNamedSubStringValue('Remark', trim(edt_Remark1.Text));
+        if (PrintType = '中文') then
+        begin
+            strver := SysUtils.Format('箱号:%s%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
+                [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+        end
+        else
+        begin
+            strver := SysUtils.Format('BOX NO:%s%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
+                [EdtBoxNum.Text, EdtBoxNum1.Text, Edtzhidan.Text, edtsoftmodel.Text, EdtColor.Text, EdtDate.Text, EdtQty.Text, EdtWeight.Text, EdtProNo.Text, edt_Remark1.text]);
+        end;
+        AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+        //IMEI赋值
+        for i := 20 to (mmoMEI.Lines.Count - 1) do
+        begin
+            //解析要打印的数据 StrList_IMEISIM[0]=>IMEI      StrList_IMEISIM[1]=>SIM
+            StrList_IMEISIM.Delimiter := ',';
+            StrList_IMEISIM.DelimitedText := StrList.Strings[i];
+
+            //判断IMEI号是否在范围内
+            if ((Edt_IMEISTART.Text <> '') and (Edt_IMEIEND.Text <> '')) then
+            begin
+                istart := strtoint64(Trim(Edt_IMEISTART.Text));
+                iend := strtoint64(Trim(Edt_IMEIEND.Text));
+                iIMEI := strtoint64(LeftStr(StrList_IMEISIM[0], 14));
+                if iend <= istart then
+                begin
+                    IMEIErrorPrompt('此IMEI号段设置错误(起始大于结束)！');
+                    Exit;
+                end;
+                if ((iIMEI < istart) or (iIMEI > iend)) then
+                begin
+                    IMEIErrorPrompt('此IMEI不在设置号段内！');
+                    Exit;
+                end;
+            end
+            else
+            begin
+                IMEIErrorPrompt('IMEI号段未设置！');
+                Exit;
+            end;
+
+            if (ch_CheckInfo.Checked) then
+            begin
+                //IMEI判断基带ID是否正常
+                UniQuery_FindRidByImei.Close;
+                UniQuery_FindRidByImei.ParamByName('IMEI').value := StrList_IMEISIM[0];
+                UniQuery_FindRidByImei.Open;
+                //得到基带ID
+                strRid := '';
+                if (UniQuery_FindRidByImei.RecordCount <> 1) then
+                begin
+                    IMEIErrorPrompt('此机子异常,请联系管理员！');
+                    Exit;
+                end
+                else
+                begin
+                    UniQuery_FindRidByImei.First;
+                    strRid := UniQuery_FindRidByImei.FieldByName('Rid').AsString;
+                    AppendTxt(StrList.Strings[i mod 20] + ',' + strRid, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+
+                end;
+            end;
+
+            //每个单独的IMEI
+            strver := strver + StrList_IMEISIM[0] + '' + #13#10 + '';
+            strBar := 'IMEI' + IntToStr(i mod 20);
+            SetNamedSubStringValue(strBar, StrList_IMEISIM[0]); //设置值
+            AppendTxt(DateTimeToStr(Now) + '-----------' + StrList_IMEISIM[0], LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+
+            case IMEIRel of
+                1, 2, 3:
+                    begin
+                        //更新DataRelativeSheet表
+                        qry_UpdateDataRel.Close;
+                        qry_UpdateDataRel.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+                        qry_UpdateDataRel.ParamByName('SIMNo').Value := StrList_IMEISIM[1];
+                        qry_UpdateDataRel.Execute;
+
+                        //查看DataRelativeSheet表是否更改
+                        UniQuery_DataRelativeSheetByImeiSIM.Close;
+                        UniQuery_DataRelativeSheetByImeiSIM.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+                        UniQuery_DataRelativeSheetByImeiSIM.ParamByName('SIMNO').Value := StrList_IMEISIM[1];
+                        UniQuery_DataRelativeSheetByImeiSIM.Open;
+                        iRecordCount := UniQuery_DataRelativeSheetByImeiSIM.RecordCount;
+                        UniQuery_DataRelativeSheetByImeiSIM.Close;
+                        if (iRecordCount < 1) then
+                        begin
+                            IMEIErrorPrompt('IMEI与SIM绑定失败,请联系管理员!');
+                            Exit;
+                        end
+                    end;
+            end;
+
+            //更新Gps_CartonBoxTwenty_Result表
+            UniQuery_IMEI.Close;
+            UniQuery_IMEI.Sql.Clear;
+            strSQL := 'Insert into Gps_CartonBoxTwenty_Result(BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId,Remark2,Remark1) values('''
+                + EdtBoxNum.Text + EdtBoxNum1.Text + ''',''' + StrList_IMEISIM[0] + ''',''' + Edtzhidan.Text
+                + ''',''' + edtsoftmodel.Text + ''',''' + edtVersion.Text + ''',''' + EdtProNo.Text + ''','''
+                + EdtColor.Text + ''',''' + EdtQty.Text + ''',''' + EdtWeight.Text + ''',''' + EdtDate.Text + ''','''
+                + EdtTac.Text + ''',''' + EdtCpName.Text + ''',''' + User.UserName + ''',''' + strRid + ''',''' + edt_remark1.Text + ''')';
+            UniQuery_IMEI.SQL.Text := strSQL;
+            UniQuery_IMEI.Execute;
+
+            //查看Gps_CartonBoxTwenty_Result是否更新
+            UniQuery_IMEI_20.Close;
+            UniQuery_IMEI_20.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+            UniQuery_IMEI_20.Open;
+            iRecordCount := UniQuery_IMEI_20.RecordCount;
+            UniQuery_IMEI_20.Close;
+            if (iRecordCount) < 1 then
+            begin
+                MessageBox(0, PCHAR('当前IMEI更新卡通测试结果失败,请联系管理员!'), '友情提醒,数据更新失败', mb_OK);
+                Exit;
+            end;
+
+        end;
+        SetNamedSubStringValue('QRCode', strver); //设置值
+        //更新箱号
+        EdtBoxNum1.Text := IntToStr((StrToInt(EdtBoxNum1.Text) + 1));
+        lbl10.Caption := '0';
+        if (Length(EdtBoxNum1.Text) = 1) then
+            EdtBoxNum1.Text := '0000' + EdtBoxNum1.Text
+        else
+            if (Length(EdtBoxNum1.Text) = 2) then
+                EdtBoxNum1.Text := '000' + EdtBoxNum1.Text
+            else
+                if (Length(EdtBoxNum1.Text) = 3) then
+                    EdtBoxNum1.Text := '00' + EdtBoxNum1.Text
+                else
+                    if (Length(EdtBoxNum1.Text) = 4) then
+                        EdtBoxNum1.Text := '0' + EdtBoxNum1.Text;
+
+        //更新箱号
+        UniQuery_UpdateBoxNo.Close;
+        UniQuery_UpdateBoxNo.ParamByName('BoxNo2').AsString := EdtBoxNum1.Text;
+        UniQuery_UpdateBoxNo.ParamByName('ZhiDan').AsString := cbManuOrder.Text;
+        UniQuery_UpdateBoxNo.Execute;
+
+        //打印贴纸
+        //if chkAuto.Checked then
+        //begin
+        try
+            PrintOut(False, False);
+            Close(btDoNotSaveChanges); //关闭不保存
+        except
+            Close(btDoNotSaveChanges); //关闭不保存
+        end;
+
         StrList.Clear;
         SNList.Clear;
         VersionList.Clear;
@@ -442,7 +786,7 @@ begin
                 end;
             end;
         //与SIM卡绑定
-        1, 2:
+        1, 2, 3:
             begin
                 if (edt_SIM.Text = '') then Exit;
                 imemoLines := mmoMEI.Lines.Count;
@@ -485,13 +829,22 @@ begin
                 end;
 
             end;
+
     end;
     lbl10.Caption := IntToStr(imemoLines + 1);
     //自动打印
     if (imemoLines + 1 = iPrintCount) and (chkAuto.Checked) then
     begin
         //SendNotifyMessage(Handle, WM_BarPrint, 0, 0);
-        ImeiPrint();
+        if (iPrintCount = 40) then
+        begin
+            ImeiPrint_40();
+        end
+        else
+        begin
+            ImeiPrint();
+        end;
+
     end;
 
 end;
@@ -598,17 +951,17 @@ begin
     UniQuery_RePrint.ParamByName('BoxNo').Value := edt_RePrint.Text;
     UniQuery_RePrint.ParamByName('ZhiDan').Value := edtZhiDan.Text;
     UniQuery_RePrint.Open;
-    if(    EdtSoftModel.Text<>'') and  (edt_Remark1.Text<>'') then
+    if (EdtSoftModel.Text <> '') and (edt_Remark1.Text <> '') then
     begin
-       UniQuery_RePrint.Filter:='SoftModel='+QuotedStr(EdtSoftModel.Text)+' and '+'Remark1='+QuotedStr(edt_Remark1.Text);
+        UniQuery_RePrint.Filter := 'SoftModel=' + QuotedStr(EdtSoftModel.Text) + ' and ' + 'Remark1=' + QuotedStr(edt_Remark1.Text);
 
     end
     else
     begin
-        UniQuery_RePrint.Filter:='SoftModel='+QuotedStr(EdtSoftModel.Text);
+        UniQuery_RePrint.Filter := 'SoftModel=' + QuotedStr(EdtSoftModel.Text);
 
     end;
-    UniQuery_RePrint.Filtered:=True;
+    UniQuery_RePrint.Filtered := True;
     //UniQuery_RePrint.Filter:='Remark1='+QuotedStr(edt_Remark1.Text);
     //UniQuery_RePrint.Filtered:=True;
     iRecordCount := UniQuery_RePrint.RecordCount;
@@ -621,92 +974,218 @@ begin
 
     strBar := '';
     strver := '';
-    if(PrintType='中文') then
-        begin
-                strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Cn20.btw';
-        end
-        else
-        begin
-               strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Eng20.btw';
-        end;
+    if (PrintType = '中文') then
+    begin
+        strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Cn20.btw';
+    end
+    else
+    begin
+        strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\Eng20.btw';
+    end;
     //strFile := ExtractFilePath(ParamStr(0)) + 'CartonBox\llf\' + IntToStr(iRecordCount) + '.btw';
     AppendTxt(strFile, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
     UniQuery_RePrint.First;
-    with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
+    if (iRecordCount = 40) then
     begin
-        SetNamedSubStringValue('BoxNum', UniQuery_RePrint.FieldByName('BoxNo').AsString);
-        SetNamedSubStringValue('ZhiDan', UniQuery_RePrint.FieldByName('ZhiDan').AsString);
-        SetNamedSubStringValue('MachineType', UniQuery_RePrint.FieldByName('SoftModel').AsString);
-        SetNamedSubStringValue('ProductColor', UniQuery_RePrint.FieldByName('Color').AsString);
-        SetNamedSubStringValue('ProductDate',  UniQuery_RePrint.FieldByName('Date').AsString);
-        SetNamedSubStringValue('ProductCount', UniQuery_RePrint.FieldByName('Qty').AsString);
-        SetNamedSubStringValue('ProductWeight',  UniQuery_RePrint.FieldByName('Weight').AsString);
-        SetNamedSubStringValue('ProductNum',  UniQuery_RePrint.FieldByName('ProductCode').AsString);
-        SetNamedSubStringValue('Remark', UniQuery_RePrint.FieldByName('Remark1').AsString);
-        
-        if(PrintType='中文') then
+        //first box
+        with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
         begin
-        strver := SysUtils.Format('箱号:%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
-            [UniQuery_RePrint.FieldByName('BoxNo').AsString,
-            UniQuery_RePrint.FieldByName('ZhiDan').AsString,
-                UniQuery_RePrint.FieldByName('SoftModel').AsString,
-                UniQuery_RePrint.FieldByName('Color').AsString,
-                UniQuery_RePrint.FieldByName('Date').AsString,
-                UniQuery_RePrint.FieldByName('Qty').AsString,
-                UniQuery_RePrint.FieldByName('Weight').AsString,
-                UniQuery_RePrint.FieldByName('ProductCode').AsString,
-                UniQuery_RePrint.FieldByName('Remark1').AsString
-                ]);
-        end
-        else
-        begin
-        strver := SysUtils.Format('BOX NO:%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
-            [UniQuery_RePrint.FieldByName('BoxNo').AsString,
-            UniQuery_RePrint.FieldByName('ZhiDan').AsString,
-                UniQuery_RePrint.FieldByName('SoftModel').AsString,
-                UniQuery_RePrint.FieldByName('Color').AsString,
-                UniQuery_RePrint.FieldByName('Date').AsString,
-                UniQuery_RePrint.FieldByName('Qty').AsString,
-                UniQuery_RePrint.FieldByName('Weight').AsString,
-                UniQuery_RePrint.FieldByName('ProductCode').AsString,
-                UniQuery_RePrint.FieldByName('Remark1').AsString
-                ]);
+            SetNamedSubStringValue('BoxNum', UniQuery_RePrint.FieldByName('BoxNo').AsString);
+            SetNamedSubStringValue('ZhiDan', UniQuery_RePrint.FieldByName('ZhiDan').AsString);
+            SetNamedSubStringValue('MachineType', UniQuery_RePrint.FieldByName('SoftModel').AsString);
+            SetNamedSubStringValue('ProductColor', UniQuery_RePrint.FieldByName('Color').AsString);
+            SetNamedSubStringValue('ProductDate', UniQuery_RePrint.FieldByName('Date').AsString);
+            SetNamedSubStringValue('ProductCount', UniQuery_RePrint.FieldByName('Qty').AsString);
+            SetNamedSubStringValue('ProductWeight', UniQuery_RePrint.FieldByName('Weight').AsString);
+            SetNamedSubStringValue('ProductNum', UniQuery_RePrint.FieldByName('ProductCode').AsString);
+            SetNamedSubStringValue('Remark', UniQuery_RePrint.FieldByName('Remark1').AsString);
+
+            if (PrintType = '中文') then
+            begin
+                strver := SysUtils.Format('箱号:%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
+                    [UniQuery_RePrint.FieldByName('BoxNo').AsString,
+                    UniQuery_RePrint.FieldByName('ZhiDan').AsString,
+                        UniQuery_RePrint.FieldByName('SoftModel').AsString,
+                        UniQuery_RePrint.FieldByName('Color').AsString,
+                        UniQuery_RePrint.FieldByName('Date').AsString,
+                        UniQuery_RePrint.FieldByName('Qty').AsString,
+                        UniQuery_RePrint.FieldByName('Weight').AsString,
+                        UniQuery_RePrint.FieldByName('ProductCode').AsString,
+                        UniQuery_RePrint.FieldByName('Remark1').AsString
+                        ]);
+            end
+            else
+            begin
+                strver := SysUtils.Format('BOX NO:%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
+                    [UniQuery_RePrint.FieldByName('BoxNo').AsString,
+                    UniQuery_RePrint.FieldByName('ZhiDan').AsString,
+                        UniQuery_RePrint.FieldByName('SoftModel').AsString,
+                        UniQuery_RePrint.FieldByName('Color').AsString,
+                        UniQuery_RePrint.FieldByName('Date').AsString,
+                        UniQuery_RePrint.FieldByName('Qty').AsString,
+                        UniQuery_RePrint.FieldByName('Weight').AsString,
+                        UniQuery_RePrint.FieldByName('ProductCode').AsString,
+                        UniQuery_RePrint.FieldByName('Remark1').AsString
+                        ]);
+            end;
+            AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+            rowCount := 0;
+            while (not UniQuery_RePrint.Eof) and (rowCount<=19) do
+            begin
+                strver := strver + UniQuery_RePrint.FieldByName('IMEI').AsString + '' + #13#10 + '';
+                strBar := 'IMEI' + IntToStr(rowCount);
+                SetNamedSubStringValue(strBar, UniQuery_RePrint.FieldByName('IMEI').AsString); //设置值
+                AppendTxt(DateTimeToStr(Now) + '-----------' + UniQuery_RePrint.FieldByName('IMEI').AsString, LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+
+                rowCount := rowCount + 1;
+                UniQuery_RePrint.Next;
+
+            end;
+            SetNamedSubStringValue('QRCode', strver); //设置值
+            try
+                PrintOut(False, False);
+                Close(btDoNotSaveChanges); //关闭不保存
+                StrList.Clear;
+                SNList.Clear;
+                VersionList.Clear;
+                mmoMEI.Clear;
+            except
+                Close(btDoNotSaveChanges); //关闭不保存
+            end;
         end;
-        AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
-        rowCount := 0;
-        while not UniQuery_RePrint.Eof do
+        //second box
+        with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
         begin
-            strver := strver + UniQuery_RePrint.FieldByName('IMEI').AsString + '' + #13#10 + '';
-            strBar := 'IMEI' + IntToStr(rowCount);
-            SetNamedSubStringValue(strBar, UniQuery_RePrint.FieldByName('IMEI').AsString); //设置值
-            AppendTxt(DateTimeToStr(Now) + '-----------' + UniQuery_RePrint.FieldByName('IMEI').AsString, LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+            SetNamedSubStringValue('BoxNum', UniQuery_RePrint.FieldByName('BoxNo').AsString);
+            SetNamedSubStringValue('ZhiDan', UniQuery_RePrint.FieldByName('ZhiDan').AsString);
+            SetNamedSubStringValue('MachineType', UniQuery_RePrint.FieldByName('SoftModel').AsString);
+            SetNamedSubStringValue('ProductColor', UniQuery_RePrint.FieldByName('Color').AsString);
+            SetNamedSubStringValue('ProductDate', UniQuery_RePrint.FieldByName('Date').AsString);
+            SetNamedSubStringValue('ProductCount', UniQuery_RePrint.FieldByName('Qty').AsString);
+            SetNamedSubStringValue('ProductWeight', UniQuery_RePrint.FieldByName('Weight').AsString);
+            SetNamedSubStringValue('ProductNum', UniQuery_RePrint.FieldByName('ProductCode').AsString);
+            SetNamedSubStringValue('Remark', UniQuery_RePrint.FieldByName('Remark1').AsString);
 
-            rowCount := rowCount + 1;
-            UniQuery_RePrint.Next;
-            {UniQuery_IMEI.Close;
-            UniQuery_IMEI.Sql.Clear;
-            //strtemp := Format('Insert into Gps_CartonBoxTwenty_Result (BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId) values(''%s%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'', ''%s'')',
-            //[EdtBoxNum.Text, EdtBoxNum1.Text, StrList.Strings[i], Edtzhidan.Text, EdtVersion.Text, EdtVersion1.Text, EdtProNo.Text, EdtColor.Text, EdtQty1.Text, EdtQty.Text, EdtDate.Text, EdtTac.Text, EdtCpName.Text, User.UserName]);
-            strtemp:='Insert into Gps_CartonBoxTwenty_Result(BoxNo,IMEI,ZhiDan,SoftModel,Version,ProductCode,Color,Qty,Weight,Date,TACInfo,CompanyName,TesterId,Remark2) values('''
-                      + EdtBoxNum.Text+EdtBoxNum1.Text+''','''+StrList.Strings[i]+''','''+Edtzhidan.Text
-                      + ''','''+EdtVersion.Text+''','''+EdtParamVersion.Text+''','''+EdtProNo.Text+''','''
-                      + EdtColor.Text+''','''+EdtQty1.Text+''','''+EdtQty.Text+''','''+EdtDate.Text+''','''
-                      + EdtTac.Text+''','''+EdtCpName.Text+''','''+User.UserName + ''','''+strRid+''')';
+            if (PrintType = '中文') then
+            begin
+                strver := SysUtils.Format('箱号:%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
+                    [UniQuery_RePrint.FieldByName('BoxNo').AsString,
+                    UniQuery_RePrint.FieldByName('ZhiDan').AsString,
+                        UniQuery_RePrint.FieldByName('SoftModel').AsString,
+                        UniQuery_RePrint.FieldByName('Color').AsString,
+                        UniQuery_RePrint.FieldByName('Date').AsString,
+                        UniQuery_RePrint.FieldByName('Qty').AsString,
+                        UniQuery_RePrint.FieldByName('Weight').AsString,
+                        UniQuery_RePrint.FieldByName('ProductCode').AsString,
+                        UniQuery_RePrint.FieldByName('Remark1').AsString
+                        ]);
+            end
+            else
+            begin
+                strver := SysUtils.Format('BOX NO:%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
+                    [UniQuery_RePrint.FieldByName('BoxNo').AsString,
+                    UniQuery_RePrint.FieldByName('ZhiDan').AsString,
+                        UniQuery_RePrint.FieldByName('SoftModel').AsString,
+                        UniQuery_RePrint.FieldByName('Color').AsString,
+                        UniQuery_RePrint.FieldByName('Date').AsString,
+                        UniQuery_RePrint.FieldByName('Qty').AsString,
+                        UniQuery_RePrint.FieldByName('Weight').AsString,
+                        UniQuery_RePrint.FieldByName('ProductCode').AsString,
+                        UniQuery_RePrint.FieldByName('Remark1').AsString
+                        ]);
+            end;
+            AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+            rowCount := 0;
+            while (not UniQuery_RePrint.Eof) and (rowCount<=19) do
+            begin
+                strver := strver + UniQuery_RePrint.FieldByName('IMEI').AsString + '' + #13#10 + '';
+                strBar := 'IMEI' + IntToStr(rowCount);
+                SetNamedSubStringValue(strBar, UniQuery_RePrint.FieldByName('IMEI').AsString); //设置值
+                AppendTxt(DateTimeToStr(Now) + '-----------' + UniQuery_RePrint.FieldByName('IMEI').AsString, LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
 
-            UniQuery_IMEI.SQL.Text:=strtemp;
-            UniQuery_IMEI.Execute; }
+                rowCount := rowCount + 1;
+                UniQuery_RePrint.Next;
 
+            end;
+            SetNamedSubStringValue('QRCode', strver); //设置值
+            try
+                PrintOut(False, False);
+                Close(btDoNotSaveChanges); //关闭不保存
+                StrList.Clear;
+                SNList.Clear;
+                VersionList.Clear;
+                mmoMEI.Clear;
+            except
+                Close(btDoNotSaveChanges); //关闭不保存
+            end;
         end;
-        SetNamedSubStringValue('QRCode', strver); //设置值
-        try
-            PrintOut(False, False);
-            Close(btDoNotSaveChanges); //关闭不保存
-            StrList.Clear;
-            SNList.Clear;
-            VersionList.Clear;
-            mmoMEI.Clear;
-        except
-            Close(btDoNotSaveChanges); //关闭不保存
+    end
+    else
+    begin
+        with btappAutoPrint.Formats.Open(strFile, True, '') do //打开标签文件
+        begin
+            SetNamedSubStringValue('BoxNum', UniQuery_RePrint.FieldByName('BoxNo').AsString);
+            SetNamedSubStringValue('ZhiDan', UniQuery_RePrint.FieldByName('ZhiDan').AsString);
+            SetNamedSubStringValue('MachineType', UniQuery_RePrint.FieldByName('SoftModel').AsString);
+            SetNamedSubStringValue('ProductColor', UniQuery_RePrint.FieldByName('Color').AsString);
+            SetNamedSubStringValue('ProductDate', UniQuery_RePrint.FieldByName('Date').AsString);
+            SetNamedSubStringValue('ProductCount', UniQuery_RePrint.FieldByName('Qty').AsString);
+            SetNamedSubStringValue('ProductWeight', UniQuery_RePrint.FieldByName('Weight').AsString);
+            SetNamedSubStringValue('ProductNum', UniQuery_RePrint.FieldByName('ProductCode').AsString);
+            SetNamedSubStringValue('Remark', UniQuery_RePrint.FieldByName('Remark1').AsString);
+
+            if (PrintType = '中文') then
+            begin
+                strver := SysUtils.Format('箱号:%s' + #13#10 + '制单:%s' + #13#10 + '机型:%s' + #13#10 + '颜色:%s' + #13#10 + '日期:%s' + #13#10 + '数量:%s' + #13#10 + '毛重:%s' + #13#10 + '产品编码:%s' + #13#10 + '%s' + #13#10 + '',
+                    [UniQuery_RePrint.FieldByName('BoxNo').AsString,
+                    UniQuery_RePrint.FieldByName('ZhiDan').AsString,
+                        UniQuery_RePrint.FieldByName('SoftModel').AsString,
+                        UniQuery_RePrint.FieldByName('Color').AsString,
+                        UniQuery_RePrint.FieldByName('Date').AsString,
+                        UniQuery_RePrint.FieldByName('Qty').AsString,
+                        UniQuery_RePrint.FieldByName('Weight').AsString,
+                        UniQuery_RePrint.FieldByName('ProductCode').AsString,
+                        UniQuery_RePrint.FieldByName('Remark1').AsString
+                        ]);
+            end
+            else
+            begin
+                strver := SysUtils.Format('BOX NO:%s' + #13#10 + 'P.O.:%s' + #13#10 + 'Model:%s' + #13#10 + 'Color:%s' + #13#10 + 'Date:%s' + #13#10 + 'QTY:%s' + #13#10 + 'G.W:%s' + #13#10 + 'Product Code:%s' + #13#10 + '%s' + #13#10 + '',
+                    [UniQuery_RePrint.FieldByName('BoxNo').AsString,
+                    UniQuery_RePrint.FieldByName('ZhiDan').AsString,
+                        UniQuery_RePrint.FieldByName('SoftModel').AsString,
+                        UniQuery_RePrint.FieldByName('Color').AsString,
+                        UniQuery_RePrint.FieldByName('Date').AsString,
+                        UniQuery_RePrint.FieldByName('Qty').AsString,
+                        UniQuery_RePrint.FieldByName('Weight').AsString,
+                        UniQuery_RePrint.FieldByName('ProductCode').AsString,
+                        UniQuery_RePrint.FieldByName('Remark1').AsString
+                        ]);
+            end;
+            AppendTxt(strver, LowerDir(ExtractFilePath(ParamStr(0))) + 'PrintLog\dblog.txt');
+            rowCount := 0;
+            while not UniQuery_RePrint.Eof do
+            begin
+                strver := strver + UniQuery_RePrint.FieldByName('IMEI').AsString + '' + #13#10 + '';
+                strBar := 'IMEI' + IntToStr(rowCount);
+                SetNamedSubStringValue(strBar, UniQuery_RePrint.FieldByName('IMEI').AsString); //设置值
+                AppendTxt(DateTimeToStr(Now) + '-----------' + UniQuery_RePrint.FieldByName('IMEI').AsString, LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+
+                rowCount := rowCount + 1;
+                UniQuery_RePrint.Next;
+
+            end;
+            SetNamedSubStringValue('QRCode', strver); //设置值
+            try
+                PrintOut(False, False);
+                Close(btDoNotSaveChanges); //关闭不保存
+                StrList.Clear;
+                SNList.Clear;
+                VersionList.Clear;
+                mmoMEI.Clear;
+            except
+                Close(btDoNotSaveChanges); //关闭不保存
+            end;
         end;
     end;
 
@@ -731,7 +1210,7 @@ begin
                 EdtMEI.SetFocus;
             end;
         //与SIM卡绑定
-        1, 2:
+        1, 2, 3:
             begin
                 edt_SIM.Enabled := True;
                 edt_SIM.Text := '';
@@ -749,9 +1228,9 @@ var
     iFuncTestPass: Integer;
     iGPSPass: Integer;
     iCoupleTestPass: Integer;
-     iWriteImeiPass: Integer;
+    iWriteImeiPass: Integer;
     iParamDownloadPass: Integer;
-     iAutoPass: Integer;
+    iAutoPass: Integer;
     CheckResult: Integer;
 begin
     IMEIErrorPrompt('');
@@ -804,23 +1283,23 @@ begin
 
             if (ch_CheckInfo.Checked) then
             begin
-            //判断机子IMEI绑定的基带ID是否唯一
-            UniQuery_FindRidByImei.Close;
-            UniQuery_FindRidByImei.ParamByName('IMEI').value := EdtMEI.Text;
-            UniQuery_FindRidByImei.Open;
-            if (UniQuery_FindRidByImei.RecordCount <> 1) then
-            begin
-                IMEIErrorPrompt('此机子绑定RID异常,请联系管理员！');
-                EdtMEI.Text := '';
-                EdtMEI.SetFocus;
-                Exit;
-            end;
+                //判断机子IMEI绑定的基带ID是否唯一
+                UniQuery_FindRidByImei.Close;
+                UniQuery_FindRidByImei.ParamByName('IMEI').value := EdtMEI.Text;
+                UniQuery_FindRidByImei.Open;
+                if (UniQuery_FindRidByImei.RecordCount <> 1) then
+                begin
+                    IMEIErrorPrompt('此机子绑定RID异常,请联系管理员！');
+                    EdtMEI.Text := '';
+                    EdtMEI.SetFocus;
+                    Exit;
+                end;
             end;
 
             //判断此IMEI是否关联了数据
             case IMEIRel of
                 //与SIM卡绑定
-                1, 2:
+                1, 2, 3:
                     begin
                         UniQuery_DataRelativeSheetByImei.Close;
                         UniQuery_DataRelativeSheetByImei.ParamByName('IMEI').value := edtMEI.Text;
@@ -847,6 +1326,24 @@ begin
                         if (iRecordCount) < 1 then
                         begin
                             IMEIErrorPrompt('此机子未与电池做绑定,请联系管理员！');
+                            EdtMEI.Text := '';
+                            EdtMEI.SetFocus;
+                            Exit;
+                        end;
+                    end;
+            end;
+            case IMEIRel of
+                3:
+                    begin
+                        UniQuery_DataRelative_VIP_ByIMEI.Close;
+                        UniQuery_DataRelative_VIP_ByIMEI.ParamByName('IMEI').Value := EdtMEI.Text;
+                        UniQuery_DataRelative_VIP_ByIMEI.Open;
+                        iRecordCount := UniQuery_DataRelative_VIP_ByIMEI.RecordCount;
+                        UniQuery_DataRelative_VIP_ByIMEI.Close;
+
+                        if (iRecordCount) < 1 then
+                        begin
+                            IMEIErrorPrompt('此机子未与服务卡做绑定,请联系管理员！');
                             EdtMEI.Text := '';
                             EdtMEI.SetFocus;
                             Exit;
@@ -880,7 +1377,7 @@ begin
                     iAutoPass := ParamByName('iAutoPass').Value;
                     CheckResult := ParamByName('cResult').Value;
 
-                    if CheckResult< 1 then
+                    if CheckResult < 1 then
                     begin
                         if iFuncTestPass = 0 then
                         begin
