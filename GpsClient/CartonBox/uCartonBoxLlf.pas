@@ -148,6 +148,8 @@ type
         UniQuery_DataRelative_ByIMEI: TUniQuery;
         spCheckTestpass: TUniStoredProc;
         UniQuery_DataRelative_VIP_ByIMEI: TUniQuery;
+    qry_InsertDataRel_BAT: TUniQuery;
+    chk_ConNo: TCheckBox;
         procedure FormClose(Sender: TObject; var Action: TCloseAction);
         procedure FormCreate(Sender: TObject);
         procedure btn_RePrintClick(Sender: TObject);
@@ -155,6 +157,7 @@ type
         procedure EdtMEIKeyPress(Sender: TObject; var Key: Char);
         procedure edt_SIMKeyPress(Sender: TObject; var Key: Char);
         procedure MsgAllowPrint(var msg: TMessage); message WM_AllowPrint;
+        procedure IMEIErrorPrompt(StrPrompt: string);
     private
         { Private declarations }
     public
@@ -305,6 +308,26 @@ begin
                         if (iRecordCount < 1) then
                         begin
                             IMEIErrorPrompt('IMEI与SIM绑定失败,请联系管理员!');
+                            Exit;
+                        end
+                    end;
+                4:
+                    begin
+                        qry_InsertDataRel_BAT.Close;
+                        qry_InsertDataRel_BAT.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+                        //qry_InsertDataRel_BAT.ParamByName('SIMNo').Value := StrList_IMEISIM[1];
+                        qry_InsertDataRel_BAT.Execute;
+
+                        //查看DataRelativeSheet表是否更改
+                        UniQuery_DataRelativeSheetByImei.Close;
+                        UniQuery_DataRelativeSheetByImei.ParamByName('IMEI').Value := StrList_IMEISIM[0];
+                        //UniQuery_DataRelativeSheetByImeiSIM.ParamByName('SIMNO').Value := nil;
+                        UniQuery_DataRelativeSheetByImei.Open;
+                        iRecordCount := UniQuery_DataRelativeSheetByImei.RecordCount;
+                        UniQuery_DataRelativeSheetByImei.Close;
+                        if (iRecordCount < 1) then
+                        begin
+                            IMEIErrorPrompt('BAT绑定失败,请联系管理员!');
                             Exit;
                         end
                     end;
@@ -772,7 +795,7 @@ begin
 
     case IMEIRel of
         //无绑定
-        0:
+        0,4:
             begin
                 if (edtMEI.Text <> '') then
                 begin
@@ -1203,7 +1226,7 @@ begin
 
     case IMEIRel of
         //无绑定
-        0:
+        0,4:
             begin
                 edt_SIM.Enabled := False;
                 EdtMEI.Text := '';
@@ -1218,12 +1241,37 @@ begin
             end;
     end;
 end;
+procedure TfrmCartonBoxLlf.IMEIErrorPrompt(StrPrompt: string);
+begin
+    lbl8.Caption := StrPrompt;
+    if StrPrompt <> '' then
+    begin
+        //Windows.Beep(2000, 500);
+        //Windows.Beep(2000, 500);
+        case IMEIRel of
+        //无绑定
+        0,4:
+            begin
+                EdtMEI.Text := '';
+                EdtMEI.SetFocus;
+            end;
+        //与SIM卡绑定
+        1, 2, 3:
+            begin
+                EdtMEI.Text := '';
+                edt_SIM.Text := '';
+                edt_SIM.SetFocus;
+            end;
+    end;
+    end;
+    //Application.ProcessMessages;
 
+end;
 procedure TfrmCartonBoxLlf.EdtMEIKeyPress(Sender: TObject; var Key: Char);
 var
     strSendText: string;
     CommIndex: Integer;
-    iIMEI, istart, iend: Integer;
+    iIMEI,iPreIMEI, istart, iend: Integer;
     iRecordCount: Integer;
     iFuncTestPass: Integer;
     iGPSPass: Integer;
@@ -1250,6 +1298,20 @@ begin
         if Length(edtMEI.Text) = 15 then
         begin
             AppendTxt(DateTimeToStr(Now) + '-----------AddPrintNote:IMEI=>' + edtMEI.Text, LowerDir(ExtractFilePath(ParamStr(0))) + '\PrintLog\log.txt');
+            //连号检测
+            if(chk_ConNo.Checked) and (edt_preIMEI.Text<>'') then
+            begin
+                iIMEI := strtoint64(Trim(edtMEI.Text));
+                iPreIMEI:= strtoint64(Trim(edt_preIMEI.Text));
+                if(iIMEI<> iPreIMEI+1) then
+                begin
+                   IMEIErrorPrompt('IMEI号未连续！');
+                    //EdtMEI.Text := '';
+                    //EdtMEI.SetFocus;
+                    Exit;
+                end;
+            end;
+
 
             edt_preIMEI.Text := EdtMEI.Text;
             //判断IMEI是否在IMEI号段
@@ -1261,23 +1323,23 @@ begin
                 if iend <= istart then
                 begin
                     IMEIErrorPrompt('此IMEI号段设置错误(起始大于结束)！');
-                    EdtMEI.Text := '';
-                    EdtMEI.SetFocus;
+                    //EdtMEI.Text := '';
+                    //EdtMEI.SetFocus;
                     Exit;
                 end;
                 if ((iIMEI < istart) or (iIMEI > iend)) then
                 begin
                     IMEIErrorPrompt('此IMEI不在设置号段内！');
-                    EdtMEI.Text := '';
-                    EdtMEI.SetFocus;
+                    //EdtMEI.Text := '';
+                    //EdtMEI.SetFocus;
                     Exit;
                 end;
             end
             else
             begin
                 IMEIErrorPrompt('未设置IMEI号号段！');
-                EdtMEI.Text := '';
-                EdtMEI.SetFocus;
+                //EdtMEI.Text := '';
+                //EdtMEI.SetFocus;
                 Exit;
             end;
 
@@ -1290,8 +1352,8 @@ begin
                 if (UniQuery_FindRidByImei.RecordCount <> 1) then
                 begin
                     IMEIErrorPrompt('此机子绑定RID异常,请联系管理员！');
-                    EdtMEI.Text := '';
-                    EdtMEI.SetFocus;
+                    //EdtMEI.Text := '';
+                    //EdtMEI.SetFocus;
                     Exit;
                 end;
             end;
@@ -1307,15 +1369,15 @@ begin
                         if (UniQuery_DataRelativeSheetByImei.RecordCount >= 1) then
                         begin
                             IMEIErrorPrompt('此机子已与其它SIM卡绑定,请联系管理员！');
-                            EdtMEI.Text := '';
-                            EdtMEI.SetFocus;
+                            //EdtMEI.Text := '';
+                            //EdtMEI.SetFocus;
                             Exit;
                         end;
                     end;
 
             end;
             case IMEIRel of
-                2:
+                2,4:
                     begin
                         UniQuery_DataRelative_ByIMEI.Close;
                         UniQuery_DataRelative_ByIMEI.ParamByName('IMEI').Value := EdtMEI.Text;
@@ -1326,8 +1388,8 @@ begin
                         if (iRecordCount) < 1 then
                         begin
                             IMEIErrorPrompt('此机子未与电池做绑定,请联系管理员！');
-                            EdtMEI.Text := '';
-                            EdtMEI.SetFocus;
+                            //EdtMEI.Text := '';
+                            //EdtMEI.SetFocus;
                             Exit;
                         end;
                     end;
@@ -1344,8 +1406,8 @@ begin
                         if (iRecordCount) < 1 then
                         begin
                             IMEIErrorPrompt('此机子未与服务卡做绑定,请联系管理员！');
-                            EdtMEI.Text := '';
-                            EdtMEI.SetFocus;
+                            //EdtMEI.Text := '';
+                            //EdtMEI.SetFocus;
                             Exit;
                         end;
                     end;
@@ -1439,8 +1501,8 @@ begin
         else
         begin
             IMEIErrorPrompt('无效IMEI,可能为SIM号!');
-            EdtMEI.Text := '';
-            EdtMEI.SetFocus;
+            //EdtMEI.Text := '';
+            //EdtMEI.SetFocus;
             Exit;
         end;
     end;

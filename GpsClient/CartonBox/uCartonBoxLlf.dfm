@@ -1,6 +1,6 @@
 inherited frmCartonBoxLlf: TfrmCartonBoxLlf
-  Left = 93
-  Top = 107
+  Left = 64
+  Top = 170
   Width = 1036
   Height = 703
   Caption = #22269#20869#24086#32440
@@ -167,6 +167,14 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
         ParentFont = False
         TabOrder = 3
         OnKeyPress = EdtMEIKeyPress
+      end
+      object chk_ConNo: TCheckBox
+        Left = 688
+        Top = 24
+        Width = 97
+        Height = 17
+        Caption = #26816#27979#36830#21495
+        TabOrder = 4
       end
     end
     inherited grp2: TGroupBox
@@ -1343,6 +1351,20 @@ inherited frmCartonBoxLlf: TfrmCartonBoxLlf
       'WHERE IMEI=:IMEI')
     Left = 880
     Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'IMEI'
+      end>
+  end
+  object qry_InsertDataRel_BAT: TUniQuery
+    Connection = DMMain.UniConGpsTest
+    SQL.Strings = (
+      'Insert into DataRelativeSheet '
+      '(IMEI1)'
+      'VALUES(:IMEI)')
+    Left = 728
+    Top = 224
     ParamData = <
       item
         DataType = ftUnknown

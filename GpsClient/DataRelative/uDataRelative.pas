@@ -3,131 +3,132 @@ unit uDataRelative;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, DBCtrls, StdCtrls, Mask, DB, MemDS, DBAccess, Uni,uGlobalVar,uDmMain,
+    Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+    Dialogs, DBCtrls, StdCtrls, Mask, DB, MemDS, DBAccess, Uni, uGlobalVar, uDmMain,
 
-
-      Buttons, StrUtils,  OleServer, ExtCtrls;
+    Buttons, StrUtils, OleServer, ExtCtrls;
 
 type
-  TfrmDataRelative = class(TForm)
-    GrpTestPass: TGroupBox;
-    chk_FuncTest: TCheckBox;
-    chk_GPSTest: TCheckBox;
-    chk_CoupleTest: TCheckBox;
-    chk_WriteImei: TCheckBox;
-    chk_ParamDownload: TCheckBox;
-    chk_AutoTest: TCheckBox;
-    UniQuery_ManuOrder: TUniQuery;
-    UniQuery_ManuOrderZhiDan: TStringField;
-    UniQuery_IMEIRel: TUniQuery;
-    UniQuery_IMEIRelRelId: TIntegerField;
-    UniQuery_IMEIRelIMEIRelNo: TStringField;
-    UniQuery_IMEIRelIMEIRelDes: TStringField;
-    UniQuery_IMEIRel_MASK_FROM_V2: TBytesField;
-    DS_ManuOrderParam: TDataSource;
-    grp4: TGroupBox;
-    lbl13: TLabel;
-    Label2: TLabel;
-    Label5: TLabel;
-    lbl18: TLabel;
-    Label1: TLabel;
-    edt_SoftModel: TDBEdit;
-    edt_Date: TDBEdit;
-    Edt_IMEISTART: TDBEdit;
-    Edt_IMEIEND: TDBEdit;
-    edt_Tac: TDBEdit;
-    grp1: TGroupBox;
-    lbl_SIM: TLabel;
-    lbl_IMEI: TLabel;
-    lblrel: TLabel;
-    Label7: TLabel;
-    Edt_IMEI: TEdit;
-    edt_BAT: TEdit;
-    cbManuOrder: TComboBox;
-    cbb_Rel: TDBLookupComboBox;
-    Label4: TLabel;
-    Edt_BATSTART: TDBEdit;
-    Label6: TLabel;
-    Edt_BATEND: TDBEdit;
-    lbl8: TLabel;
-    UniQuery_DataRelative_ByBAT: TUniQuery;
-    UniQuery_DataRelative_ByIMEI: TUniQuery;
-    UniQuery_InsertDataRelative_BAT: TUniQuery;
-    pnlClientBottom: TPanel;
-    TestResult: TPanel;
-    Label3: TLabel;
-    edt_VIP: TEdit;
-    edt_preBAT: TEdit;
-    edt_preVIP: TEdit;
-    Edt_preIMEI: TEdit;
-    Label8: TLabel;
-    edt_VIPSTART: TDBEdit;
-    Label9: TLabel;
-    edt_VIPEND: TDBEdit;
-    UniQuery_ManuOrderParam: TUniQuery;
-    UniQuery_ManuOrderParamId: TIntegerField;
-    UniQuery_ManuOrderParamZhiDan: TStringField;
-    UniQuery_ManuOrderParamSoftModel: TStringField;
-    UniQuery_ManuOrderParamSN1: TStringField;
-    UniQuery_ManuOrderParamSN2: TStringField;
-    UniQuery_ManuOrderParamSN3: TStringField;
-    UniQuery_ManuOrderParamBoxNo1: TStringField;
-    UniQuery_ManuOrderParamBoxNo2: TStringField;
-    UniQuery_ManuOrderParamProductDate: TStringField;
-    UniQuery_ManuOrderParamColor: TStringField;
-    UniQuery_ManuOrderParamWeight: TStringField;
-    UniQuery_ManuOrderParamQty: TStringField;
-    UniQuery_ManuOrderParamProductNo: TStringField;
-    UniQuery_ManuOrderParamVersion: TStringField;
-    UniQuery_ManuOrderParamIMEIStart: TStringField;
-    UniQuery_ManuOrderParamIMEIEnd: TStringField;
-    UniQuery_ManuOrderParamSIMStart: TStringField;
-    UniQuery_ManuOrderParamSIMEnd: TStringField;
-    UniQuery_ManuOrderParamBATStart: TStringField;
-    UniQuery_ManuOrderParamBATEnd: TStringField;
-    UniQuery_ManuOrderParamVIPStart: TStringField;
-    UniQuery_ManuOrderParamVIPEnd: TStringField;
-    UniQuery_ManuOrderParamIMEIRel: TIntegerField;
-    UniQuery_ManuOrderParamTACInfo: TStringField;
-    UniQuery_ManuOrderParamCompanyName: TStringField;
-    UniQuery_ManuOrderParamRemark1: TStringField;
-    UniQuery_ManuOrderParamRemark2: TStringField;
-    UniQuery_ManuOrderParamRemark3: TStringField;
-    UniQuery_ManuOrderParamRemark4: TStringField;
-    UniQuery_ManuOrderParamRemark5: TStringField;
-    UniQuery_ManuOrderParamStatus: TIntegerField;
-    UniQuery_ManuOrderParam_MASK_FROM_V2: TBytesField;
-    UniQuery_ManuOrderParamIMEIRelDesc: TStringField;
-    UniQuery_DataRelative_ByVIP: TUniQuery;
-    UniQuery_DataRelativeVIP_ByIMEI: TUniQuery;
-    UniQuery_InsertDataRelative_VIP: TUniQuery;
-    procedure FormCreate(Sender: TObject);
-    procedure cbManuOrderChange(Sender: TObject);
-    procedure Edt_IMEIKeyPress(Sender: TObject; var Key: Char);
-    procedure edt_BATKeyPress(Sender: TObject; var Key: Char);
-    procedure MsgAllowPrint(var msg: TMessage); message WM_AllowPrint;
-    procedure edt_VIPKeyPress(Sender: TObject; var Key: Char);
-  private
-    { Private declarations }
-    procedure IMEIErrorPrompt(StrPrompt: string);
-    procedure AllowPrint();
-    procedure SetResult(iResult:Integer);
-  public
-    { Public declarations }
-    procedure MsgTestPass(var StrListNumberSign: TStringList; var comm: Integer);
-  end;
+    TfrmDataRelative = class(TForm)
+        GrpTestPass: TGroupBox;
+        chk_FuncTest: TCheckBox;
+        chk_GPSTest: TCheckBox;
+        chk_CoupleTest: TCheckBox;
+        chk_WriteImei: TCheckBox;
+        chk_ParamDownload: TCheckBox;
+        chk_AutoTest: TCheckBox;
+        UniQuery_ManuOrder: TUniQuery;
+        UniQuery_ManuOrderZhiDan: TStringField;
+        UniQuery_IMEIRel: TUniQuery;
+        UniQuery_IMEIRelRelId: TIntegerField;
+        UniQuery_IMEIRelIMEIRelNo: TStringField;
+        UniQuery_IMEIRelIMEIRelDes: TStringField;
+        UniQuery_IMEIRel_MASK_FROM_V2: TBytesField;
+        DS_ManuOrderParam: TDataSource;
+        grp4: TGroupBox;
+        lbl13: TLabel;
+        Label2: TLabel;
+        Label5: TLabel;
+        lbl18: TLabel;
+        Label1: TLabel;
+        edt_SoftModel: TDBEdit;
+        edt_Date: TDBEdit;
+        Edt_IMEISTART: TDBEdit;
+        Edt_IMEIEND: TDBEdit;
+        edt_Tac: TDBEdit;
+        grp1: TGroupBox;
+        lbl_SIM: TLabel;
+        lbl_IMEI: TLabel;
+        lblrel: TLabel;
+        Label7: TLabel;
+        Edt_IMEI: TEdit;
+        edt_BAT: TEdit;
+        cbManuOrder: TComboBox;
+        cbb_Rel: TDBLookupComboBox;
+        Label4: TLabel;
+        Edt_BATSTART: TDBEdit;
+        Label6: TLabel;
+        Edt_BATEND: TDBEdit;
+        lbl8: TLabel;
+        UniQuery_DataRelative_ByBAT: TUniQuery;
+        UniQuery_DataRelative_ByIMEI: TUniQuery;
+        UniQuery_InsertDataRelative_BAT: TUniQuery;
+        pnlClientBottom: TPanel;
+        TestResult: TPanel;
+        Label3: TLabel;
+        edt_VIP: TEdit;
+        edt_preBAT: TEdit;
+        edt_preVIP: TEdit;
+        Edt_preIMEI: TEdit;
+        Label8: TLabel;
+        edt_VIPSTART: TDBEdit;
+        Label9: TLabel;
+        edt_VIPEND: TDBEdit;
+        UniQuery_ManuOrderParam: TUniQuery;
+        UniQuery_ManuOrderParamId: TIntegerField;
+        UniQuery_ManuOrderParamZhiDan: TStringField;
+        UniQuery_ManuOrderParamSoftModel: TStringField;
+        UniQuery_ManuOrderParamSN1: TStringField;
+        UniQuery_ManuOrderParamSN2: TStringField;
+        UniQuery_ManuOrderParamSN3: TStringField;
+        UniQuery_ManuOrderParamBoxNo1: TStringField;
+        UniQuery_ManuOrderParamBoxNo2: TStringField;
+        UniQuery_ManuOrderParamProductDate: TStringField;
+        UniQuery_ManuOrderParamColor: TStringField;
+        UniQuery_ManuOrderParamWeight: TStringField;
+        UniQuery_ManuOrderParamQty: TStringField;
+        UniQuery_ManuOrderParamProductNo: TStringField;
+        UniQuery_ManuOrderParamVersion: TStringField;
+        UniQuery_ManuOrderParamIMEIStart: TStringField;
+        UniQuery_ManuOrderParamIMEIEnd: TStringField;
+        UniQuery_ManuOrderParamSIMStart: TStringField;
+        UniQuery_ManuOrderParamSIMEnd: TStringField;
+        UniQuery_ManuOrderParamBATStart: TStringField;
+        UniQuery_ManuOrderParamBATEnd: TStringField;
+        UniQuery_ManuOrderParamVIPStart: TStringField;
+        UniQuery_ManuOrderParamVIPEnd: TStringField;
+        UniQuery_ManuOrderParamIMEIRel: TIntegerField;
+        UniQuery_ManuOrderParamTACInfo: TStringField;
+        UniQuery_ManuOrderParamCompanyName: TStringField;
+        UniQuery_ManuOrderParamRemark1: TStringField;
+        UniQuery_ManuOrderParamRemark2: TStringField;
+        UniQuery_ManuOrderParamRemark3: TStringField;
+        UniQuery_ManuOrderParamRemark4: TStringField;
+        UniQuery_ManuOrderParamRemark5: TStringField;
+        UniQuery_ManuOrderParamStatus: TIntegerField;
+        UniQuery_ManuOrderParam_MASK_FROM_V2: TBytesField;
+        UniQuery_ManuOrderParamIMEIRelDesc: TStringField;
+        UniQuery_DataRelative_ByVIP: TUniQuery;
+        UniQuery_DataRelativeVIP_ByIMEI: TUniQuery;
+        UniQuery_InsertDataRelative_VIP: TUniQuery;
+        procedure FormCreate(Sender: TObject);
+        procedure cbManuOrderChange(Sender: TObject);
+        procedure Edt_IMEIKeyPress(Sender: TObject; var Key: Char);
+        procedure edt_BATKeyPress(Sender: TObject; var Key: Char);
+        procedure MsgAllowPrint(var msg: TMessage); message WM_AllowPrint;
+        procedure edt_VIPKeyPress(Sender: TObject; var Key: Char);
+    private
+        { Private declarations }
+        procedure IMEIErrorPrompt(StrPrompt: string);
+        procedure AllowPrint();
+        procedure SetResult(iResult: Integer);
+    public
+        { Public declarations }
+        procedure MsgTestPass(var StrListNumberSign: TStringList; var comm: Integer);
+    end;
 
 var
-  frmDataRelative: TfrmDataRelative;
-  IMEIRel:Integer;
+    frmDataRelative: TfrmDataRelative;
+    IMEIRel: Integer;
 implementation
 uses uClientMain, uPublicFunc;
 {$R *.dfm}
+
 procedure TfrmDataRelative.MsgAllowPrint(var msg: TMessage);
 begin
     AllowPrint();
 end;
+
 procedure TfrmDataRelative.FormCreate(Sender: TObject);
 begin
     UniQuery_ManuOrder.Close;
@@ -139,7 +140,6 @@ begin
         cbManuOrder.Items.Add(UniQuery_ManuOrder.FieldByName('ZhiDan').AsString);
         UniQuery_ManuOrder.Next;
     end;
-
 
     //彩盒测试位
     //IMEIErrorPrompt('');
@@ -164,30 +164,32 @@ end;
 
 procedure TfrmDataRelative.cbManuOrderChange(Sender: TObject);
 begin
-    UniQuery_ManuOrderParam.Active:=false;
-    UniQuery_ManuOrderParam.Params.ParamByName('ZhiDan').AsString:=cbManuOrder.Text;
-    UniQuery_ManuOrderParam.Active:=true;
+    UniQuery_ManuOrderParam.Active := false;
+    UniQuery_ManuOrderParam.Params.ParamByName('ZhiDan').AsString := cbManuOrder.Text;
+    UniQuery_ManuOrderParam.Active := true;
 
-    IMEIRel:=UniQuery_ManuOrderParam.FieldByName('IMEIRel').AsInteger;
+    IMEIRel := UniQuery_ManuOrderParam.FieldByName('IMEIRel').AsInteger;
 
     edt_BAT.Enabled := False;
-    if (IMEIRel = 2) then
-    begin
-        edt_BAT.Enabled := true;
-        edt_BAT.SetFocus;
-        edt_IMEI.Enabled:=True;
-    end
-    else  if (IMEIRel = 3) then
-    begin
-        edt_VIP.Enabled := true;
-        edt_VIP.SetFocus;
-        edt_IMEI.Enabled:=True;
-    end
+    case IMEIRel of
+        2, 4:
+            begin
+                edt_BAT.Enabled := true;
+                edt_BAT.SetFocus;
+                edt_IMEI.Enabled := True;
+            end;
+        3:
+            begin
+                edt_VIP.Enabled := true;
+                edt_VIP.SetFocus;
+                edt_IMEI.Enabled := True;
+            end;
+    end;
 
 end;
 
 procedure TfrmDataRelative.Edt_IMEIKeyPress(Sender: TObject;
-  var Key: Char);
+    var Key: Char);
 var
     strSendText: string;
     CommIndex: Integer;
@@ -208,7 +210,7 @@ begin
     begin
         if Length(edt_IMEI.Text) = 15 then
         begin
-            Edt_preIMEI.Text:=Edt_IMEI.Text;
+            Edt_preIMEI.Text := Edt_IMEI.Text;
             if ((Edt_IMEISTART.Text <> '') and (Edt_IMEIEND.Text <> '')) then
             begin
                 istart := strtoint64(Trim(Edt_IMEISTART.Text));
@@ -241,6 +243,7 @@ begin
         end;
     end;
 end;
+
 procedure TfrmDataRelative.IMEIErrorPrompt(StrPrompt: string);
 begin
     lbl8.Caption := StrPrompt;
@@ -294,97 +297,96 @@ procedure TfrmDataRelative.AllowPrint();
 var
     iRecordCount: Integer;
 begin
-    if (IMEIRel = 2) then
-    begin
-        //查看IMEI是否打印过
-        UniQuery_DataRelative_ByIMEI.Close;
-        UniQuery_DataRelative_ByIMEI.ParamByName('IMEI').Value := Edt_IMEI.Text;
-        UniQuery_DataRelative_ByIMEI.Open;
-        iRecordCount := UniQuery_DataRelative_ByIMEI.RecordCount;
-        UniQuery_DataRelative_ByIMEI.Close;
+    case IMEIRel of
+        2, 4:
+            begin
+                //查看IMEI是否打印过
+                UniQuery_DataRelative_ByIMEI.Close;
+                UniQuery_DataRelative_ByIMEI.ParamByName('IMEI').Value := Edt_IMEI.Text;
+                UniQuery_DataRelative_ByIMEI.Open;
+                iRecordCount := UniQuery_DataRelative_ByIMEI.RecordCount;
+                UniQuery_DataRelative_ByIMEI.Close;
 
-        if (iRecordCount) >= 1 then
-        begin
-            IMEIErrorPrompt('当前IMEI已经绑定电池号!');
-            Edt_IMEI.Text := '';
-            edt_BAT.Text := '';
+                if (iRecordCount) >= 1 then
+                begin
+                    IMEIErrorPrompt('当前IMEI已经绑定电池号!');
+                    Edt_IMEI.Text := '';
+                    edt_BAT.Text := '';
 
+                    edt_BAT.SetFocus;
+
+                    Exit;
+                end;
+
+                if (edt_BAT.Text <> '') and (Edt_IMEI.Text <> '') then
+                begin
+                    //更新数据库Gps_GiftBox_Result结果
+                    UniQuery_InsertDataRelative_BAT.Close;
+                    UniQuery_InsertDataRelative_BAT.ParamByName('IMEI').Value := Edt_IMEI.Text;
+                    UniQuery_InsertDataRelative_BAT.ParamByName('BAT').Value := edt_BAT.Text;
+                    UniQuery_InsertDataRelative_BAT.ParamByName('ZhiDan').Value := cbManuOrder.Text;
+                    UniQuery_InsertDataRelative_BAT.ParamByName('TesterId').Value := User.UserName;
+                    UniQuery_InsertDataRelative_BAT.Execute;
+
+                    if (UniQuery_InsertDataRelative_BAT.RowsAffected = 1) then
+                    begin
+                        SetResult(1);
+                    end
+                    else
+                    begin
+                        SetResult(0);
+                    end;
+
+                end;
+                edt_BAT.Text := '';
+                Edt_IMEI.Text := '';
                 edt_BAT.SetFocus;
+            end;
+            3:
+            begin
+                //查看IMEI是否打印过
+                UniQuery_DataRelativeVIP_ByIMEI.Close;
+                UniQuery_DataRelativeVIP_ByIMEI.ParamByName('IMEI').Value := Edt_IMEI.Text;
+                UniQuery_DataRelativeVIP_ByIMEI.Open;
+                iRecordCount := UniQuery_DataRelativeVIP_ByIMEI.RecordCount;
+                UniQuery_DataRelativeVIP_ByIMEI.Close;
 
-            Exit;
-        end;
+                if (iRecordCount) >= 1 then
+                begin
+                    IMEIErrorPrompt('当前IMEI已经绑定服务号!');
+                    Edt_IMEI.Text := '';
+                    Edt_VIP.Text := '';
 
-        if(edt_BAT.Text<>'') and (Edt_IMEI.Text<>'') then
-        begin
-          //更新数据库Gps_GiftBox_Result结果
-          UniQuery_InsertDataRelative_BAT.Close;
-          UniQuery_InsertDataRelative_BAT.ParamByName('IMEI').Value := Edt_IMEI.Text;
-          UniQuery_InsertDataRelative_BAT.ParamByName('BAT').Value := edt_BAT.Text;
-          UniQuery_InsertDataRelative_BAT.ParamByName('ZhiDan').Value := cbManuOrder.Text;
-          UniQuery_InsertDataRelative_BAT.ParamByName('TesterId').Value := User.UserName;
-          UniQuery_InsertDataRelative_BAT.Execute;
+                    edt_VIP.SetFocus;
 
-          if(UniQuery_InsertDataRelative_BAT.RowsAffected=1)  then
-          begin
-            SetResult(1);
-          end
-          else
-          begin
-            SetResult(0);
-          end;
+                    Exit;
+                end;
 
-          
-        end;
-          edt_BAT.Text:='';
-          Edt_IMEI.Text:='';
-          edt_BAT.SetFocus;
-    end
-    else if (IMEIRel = 3) then
-    begin
-        //查看IMEI是否打印过
-        UniQuery_DataRelativeVIP_ByIMEI.Close;
-        UniQuery_DataRelativeVIP_ByIMEI.ParamByName('IMEI').Value := Edt_IMEI.Text;
-        UniQuery_DataRelativeVIP_ByIMEI.Open;
-        iRecordCount := UniQuery_DataRelativeVIP_ByIMEI.RecordCount;
-        UniQuery_DataRelativeVIP_ByIMEI.Close;
+                if (edt_VIP.Text <> '') and (Edt_IMEI.Text <> '') then
+                begin
+                    //更新数据库Gps_GiftBox_Result结果
+                    UniQuery_InsertDataRelative_VIP.Close;
+                    UniQuery_InsertDataRelative_VIP.ParamByName('IMEI').Value := Edt_IMEI.Text;
+                    UniQuery_InsertDataRelative_VIP.ParamByName('VIP').Value := edt_VIP.Text;
+                    UniQuery_InsertDataRelative_VIP.ParamByName('ZhiDan').Value := cbManuOrder.Text;
+                    UniQuery_InsertDataRelative_VIP.ParamByName('TesterId').Value := User.UserName;
+                    UniQuery_InsertDataRelative_VIP.Execute;
 
-        if (iRecordCount) >= 1 then
-        begin
-            IMEIErrorPrompt('当前IMEI已经绑定服务号!');
-            Edt_IMEI.Text := '';
-            Edt_VIP.Text := '';
+                    if (UniQuery_InsertDataRelative_VIP.RowsAffected = 1) then
+                    begin
+                        SetResult(1);
+                    end
+                    else
+                    begin
+                        SetResult(0);
+                    end;
 
+                end;
+                edt_VIP.Text := '';
+                Edt_IMEI.Text := '';
                 edt_VIP.SetFocus;
-
-            Exit;
-        end;
-
-        if(edt_VIP.Text<>'') and (Edt_IMEI.Text<>'') then
-        begin
-          //更新数据库Gps_GiftBox_Result结果
-          UniQuery_InsertDataRelative_VIP.Close;
-          UniQuery_InsertDataRelative_VIP.ParamByName('IMEI').Value := Edt_IMEI.Text;
-          UniQuery_InsertDataRelative_VIP.ParamByName('VIP').Value := edt_VIP.Text;
-          UniQuery_InsertDataRelative_VIP.ParamByName('ZhiDan').Value := cbManuOrder.Text;
-          UniQuery_InsertDataRelative_VIP.ParamByName('TesterId').Value := User.UserName;
-          UniQuery_InsertDataRelative_VIP.Execute;
-
-          if(UniQuery_InsertDataRelative_VIP.RowsAffected=1)  then
-          begin
-            SetResult(1);
-          end
-          else
-          begin
-            SetResult(0);
-          end;
-
-          
-        end;
-          edt_VIP.Text:='';
-          Edt_IMEI.Text:='';
-          edt_VIP.SetFocus;
+            end;
     end;
-
 
 end;
 
@@ -447,14 +449,15 @@ begin
                 Edt_IMEI.Text := '';
                 Edt_IMEI.SetFocus;
             end;
-            
+
         end;
     end;
 end;
 {
 iResult<  -2->初始状态或显示内容? -1->倒计时  1->成功  0->失败 >
 }
-procedure TfrmDataRelative.SetResult(iResult:Integer);
+
+procedure TfrmDataRelative.SetResult(iResult: Integer);
 var
     strTestTime, strSendText: string;
     hWindow: HWND;
@@ -465,18 +468,18 @@ begin
         -1:
             begin
                 TPanel(FindComponent('TestResult')).Caption := '';
-                TPanel(FindComponent('TestResult' )).Color := clSilver;
+                TPanel(FindComponent('TestResult')).Color := clSilver;
 
             end;
         1:
             begin
-                TPanel(FindComponent('TestResult' )).Caption := 'PASS';
-                TPanel(FindComponent('TestResult' )).Color := clGreen;
+                TPanel(FindComponent('TestResult')).Caption := 'PASS';
+                TPanel(FindComponent('TestResult')).Color := clGreen;
             end;
         0:
             begin
-                TPanel(FindComponent('TestResult' )).Caption := 'FAIL';
-                TPanel(FindComponent('TestResult' )).Color := clRed;
+                TPanel(FindComponent('TestResult')).Caption := 'FAIL';
+                TPanel(FindComponent('TestResult')).Color := clRed;
             end;
     end;
     Application.ProcessMessages;
@@ -541,9 +544,10 @@ begin
                 Edt_IMEI.Text := '';
                 Edt_IMEI.SetFocus;
             end;
-            
+
         end;
     end;
 end;
 
 end.
+
