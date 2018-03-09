@@ -3472,7 +3472,7 @@ object frmClientMain: TfrmClientMain
         DataType = ftInteger
         Name = 'UpdateResult'
         ParamType = ptInputOutput
-        Value = 0
+        Value = 1
       end>
     CommandStoredProcName = 'UpdateForm'
     StoredProcIsQuery = True
@@ -3567,7 +3567,6 @@ object frmClientMain: TfrmClientMain
         DataType = ftInteger
         Name = 'RETURN_VALUE'
         ParamType = ptResult
-        Size = 1650720869
         Value = 0
       end
       item
@@ -3621,7 +3620,7 @@ object frmClientMain: TfrmClientMain
         DataType = ftInteger
         Name = 'UpdateResult'
         ParamType = ptInputOutput
-        Value = 0
+        Value = 1
       end>
     CommandStoredProcName = 'ParamDownUpdateForm'
     StoredProcIsQuery = True

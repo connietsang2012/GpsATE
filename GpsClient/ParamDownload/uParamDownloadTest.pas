@@ -467,7 +467,8 @@ begin
                         [strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strVersionS[CommIndex], strIMEI[CommIndex], iResult, User.UserName]);
                     SendToServer(CommIndex, 'UpdateResult', strSendText, True, CTimeOut * 2);  }
 
-                    UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strVersionS[CommIndex], strIMEI[CommIndex], iResult, User.UserName,iRecordCount);
+                    UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName, iRecordCount);
+                    //UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strVersionS[CommIndex], strIMEI[CommIndex], iResult, User.UserName,iRecordCount);
                     if iRecordCount = 0 then
                     begin
                         SetResult(CommIndex, -2);
@@ -491,7 +492,8 @@ begin
                         [strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersionS[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName]);
                     SendToServer(CommIndex, 'UpdateResult', strSendText, True, CTimeOut * 2);}
 
-                    UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersionS[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName,iRecordCount);
+                    UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName, iRecordCount);
+                    //UpdateForm(strPlanName, strChipRid[CommIndex], strSoftModel[CommIndex], strVersionS[CommIndex], strVersion[CommIndex], strIMEI[CommIndex], iResult, User.UserName,iRecordCount);
                     if iRecordCount = 0 then
                     begin
                         SetResult(CommIndex, -2);

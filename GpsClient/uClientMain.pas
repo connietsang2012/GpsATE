@@ -1310,7 +1310,8 @@ begin
         frmAutoTestMain := TfrmAutoTestMain.Create(Self);
         ShowForm(frmAutoTestMain);
 
-        UpdateForm('AutoTest', 'rid', 'softmodel', 'version', 'versions', 'imei', 0, User.UserName,iRecordCount);
+        //UpdateForm('AutoTest', 'rid', 'softmodel', 'version', 'versions', 'imei', 0, User.UserName,iRecordCount);
+        //UpdateForm('ParamDownload', 'A2A199AB3977F8EBA9F6A832DDAF9A73', 'NT74_R0_V07', 'NT74_10_A1D_R0_V07', '', 1, User.UserName,iRecordCount);
 
 
     end;

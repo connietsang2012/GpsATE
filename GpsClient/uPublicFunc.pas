@@ -99,9 +99,9 @@ procedure CheckTestedParamCpd(ChipRid: string; IMEI: string; var Version: string
 procedure GetTempRid(IMEI: string; var iRecordCount: Integer; var strRid: string);
 procedure CheckMustTest(PlanName: string; SoftModel: string; var iRecordCount: Integer);
 //procedure CheckIMEI(IMEI:string;var iRecordCount:Integer);
-procedure UpdateForm(PlanName: string; ChipRid: string; Version: string; SoftModel: string; Imei: string; iResult: Integer; Tester: string; var iUpdateResult: Integer); overload;
+procedure UpdateForm(PlanName: string; ChipRid: string;  SoftModel: string; Version: string;Imei: string; iResult: Integer; Tester: string; var iUpdateResult: Integer); overload;
 //procedure UpdateForm(PlanName: string; ChipRid: string; Version: string; SoftModel: string; Imei: string; iResult: Integer; Tester: string; GpsDBValue: string; var iUpdateResult: Integer); overload;
-procedure UpdateForm(PlanName: string; ChipRid: string; Version: string; VersionS: string; SoftModel: string; Imei: string; iResult: Integer; Tester: string; var iUpdateResult: Integer); overload;  //参数下载
+//procedure UpdateForm(PlanName: string; ChipRid: string; Version: string; VersionS: string; SoftModel: string; Imei: string; iResult: Integer; Tester: string; var iUpdateResult: Integer); overload;  //参数下载
 
 procedure CheckTestPass(IMEI: string; var iFuncTestPass: Integer; var iGPSPass: Integer;
     var iCoupleTestPass: Integer; var iWriteImeiPass: Integer;
@@ -2204,7 +2204,7 @@ begin
     end;
 end;}
 
-procedure UpdateForm(PlanName: string; ChipRid: string; Version: string; SoftModel: string; Imei: string; iResult: Integer; Tester: string; var iUpdateResult: Integer);
+procedure UpdateForm(PlanName: string; ChipRid:  string; SoftModel: string; Version:string; Imei: string; iResult: Integer; Tester: string; var iUpdateResult: Integer);
 begin
     strLog := Format('Func=UpdateForm#PlanName=%s#ChipRid=%s#Version=%s#SoftModel=%s#IMEI=%s#iResult=%d#Tester=%s#',
         [PlanName,ChipRid,Version, SoftModel,Imei,iResult, Tester]);
@@ -2272,7 +2272,7 @@ begin
 end;
 //Paramdown重载更新函数
 
-procedure UpdateForm(PlanName: string; ChipRid: string; Version: string; VersionS: string; SoftModel: string; Imei: string; iResult: Integer; Tester: string; var iUpdateResult: Integer);
+{procedure UpdateForm(PlanName: string; ChipRid: string; Version: string; VersionS: string; SoftModel: string; Imei: string; iResult: Integer; Tester: string; var iUpdateResult: Integer);
 var
     stem: string;
 begin
@@ -2297,7 +2297,7 @@ begin
             [iUpdateResult]);
         NoteSocketLog(0, strLog);
     end;
-end;
+end;}
 //SMT重载更新函数
 
 {procedure UpdateForm(PlanName: string; ChipRid: string; Version: string; SoftModel: string; Imei: string; iResult: Integer; Tester: string; GpsDBValue: string; var iUpdateResult: Integer);
